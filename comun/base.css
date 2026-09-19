@@ -138,3 +138,21 @@ details[open] summary{margin-bottom:.6rem}
 .compruebate{display:grid;gap:1rem}
 @media (min-width:1100px){.compruebate{grid-template-columns:1fr 1fr}}
 .compruebate .pregunta{margin:0}
+
+/* ── EJERCICIOS INFINITOS ── */
+.ejercicio{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:1.1rem 1.2rem;display:grid;gap:.8rem}
+.ej-cab{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.ej-cab b{font-size:1.02rem}
+.ej-enunciado{font-size:1.25rem;text-align:center;padding:.6rem 0;overflow-x:auto}
+.ej-responde{display:flex;gap:.6rem;flex-wrap:wrap}
+.ej-responde input{flex:1;min-width:11rem;min-height:48px;padding:.7rem .9rem;border:1px solid var(--linea);border-radius:12px;font:inherit;background:var(--papel)}
+.ej-responde input.bien{border-color:var(--repasar);background:#eaf6ef}
+.ej-responde input.mal{border-color:var(--mal);background:#fdeee9}
+.ej-veredicto{padding:.8rem .9rem;border-radius:12px;background:#f4f2ed;font-size:.97rem}
+.ej-veredicto.bien{background:#eaf6ef}.ej-veredicto.mal{background:#fdeee9}
+.ej-solucion{margin:0;border-radius:12px}
+.ej-solucion .pasos li{background:var(--papel)}
+.ej-pie{display:flex;gap:.6rem;flex-wrap:wrap}
+.ej-pie .btn{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+.taller{display:grid;gap:1rem}
+@media (min-width:1150px){.taller{grid-template-columns:1fr 1fr}}

@@ -24,6 +24,16 @@ De ahí las decisiones que verás:
 - **Botones de 48 px y todo en color desde el principio**: lo van a abrir en el móvil,
   y en el móvil no existe pasar el ratón por encima.
 
+## Las tres capas de un tema
+
+1. **Teoría** (`temas/…/index.html`): explicada, con algo que se toca al lado de cada idea.
+2. **Taller** (`comun/ejercicios.js`): ejercicios **generados al azar, infinitos**, con
+   corrección y solución paso a paso. Aquí es donde se aprende de verdad: un alumno
+   necesita hacer cuarenta simplificaciones, no elegir entre cuatro opciones.
+   La respuesta se admite escrita de varias formas: `5√3`, `5r3`, `5 raiz 3`.
+3. **Repaso** (`repaso.html`): preguntas del banco, mezcladas entre temas y repartidas
+   en el tiempo, para que no se olvide.
+
 ## Añadir un tema
 
 1. `cp -r plantilla temas/mi-tema` y rellena los corchetes.

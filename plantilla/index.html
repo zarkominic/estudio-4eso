@@ -70,6 +70,10 @@
       <div class="caja"><h3>[Uso 3]</h3><p>[…]</p></div>
     </div>
 
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo al pulsar «otro», con su solución paso a paso.</p>
+    <div class="taller" id="taller"></div>
+
     <h2>Compruébate</h2>
     <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
     <div class="compruebate" id="ahora"></div>
@@ -88,6 +92,7 @@
 
 <script src="../../comun/preguntas.js"></script>
 <script src="../../comun/app.js"></script>
+<script src="../../comun/ejercicios.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script>
@@ -99,6 +104,8 @@ $("r1").addEventListener("input", pinta);
 
 BANCO.filter(x => x.tema === "ID-DEL-TEMA").slice(0, 2).forEach(q => pintarPregunta(q, $("pretest")));
 compruebate("ID-DEL-TEMA", $("ahora"), 6);
+/* Añade en comun/ejercicios.js los generadores de este tema y ponlos aquí: */
+// ["tipo1","tipo2"].forEach(tipo => bloqueEjercicios(tipo, $("taller")));
 
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
