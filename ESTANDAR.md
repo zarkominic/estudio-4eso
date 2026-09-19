@@ -30,6 +30,20 @@ terminado.
 - Los datos de `curriculo.js` mandan: el campo `entra` es el guion de contenidos y
   `generadores` la lista de talleres a escribir.
 
+## 2 bis. El taller según la asignatura
+
+El taller **siempre existe**, pero lo que genera cambia:
+
+| asignatura | qué genera el taller |
+|---|---|
+| Matemáticas, Física y Química, Tecnología | ejercicios numéricos con solución paso a paso |
+| Lengua | oraciones que analizar, palabras que clasificar, textos que corregir |
+| Inglés | huecos, transformaciones (*key word*), elegir el tiempo o el modal |
+| Historia y Geografía | ordenar cronologías, relacionar causa y consecuencia, leer gráficos |
+
+En todos los casos: **generado, no fijo**, para poder repetirlo sin fin, y con
+corrección y explicación inmediatas.
+
 ## 3. Reglas pedagógicas, no opcionales
 
 Vienen de los metaanálisis (Dunlosky 2013; Hattie y Donoghue 2021; Rohrer y Taylor 2007).
