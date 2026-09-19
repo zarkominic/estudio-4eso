@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"mates-radicales", asignatura:"Matemáticas", titulo:"Radicales",
+    resumen:"Qué es una raíz, cómo simplificarla, sumarlas, multiplicarlas y quitar raíces de los denominadores.",
+    estado:"listo" },
   { id:"mates-funcion-cuadratica", asignatura:"Matemáticas", titulo:"La función cuadrática",
     resumen:"Qué hace cada número de $y=ax^2+bx+c$, dónde está el vértice y cuándo corta al eje X.",
     estado:"listo" },

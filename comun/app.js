@@ -113,3 +113,29 @@ function activarHuecos(raiz = document){
     h.replaceWith(input);
   });
 }
+
+/* Índice lateral automático: se arma leyendo los h2 del tema, y marca dónde vas.
+   Así un tema nuevo no tiene que mantener su propio menú. */
+function indiceAutomatico(){
+  const indice = document.querySelector(".indice"); if (!indice) return;
+  const hs = [...document.querySelectorAll(".cuerpo h2")];
+  hs.forEach((h, i) => { if (!h.id) h.id = "s" + i; });
+  indice.innerHTML = `<div class="titulin">En este tema</div><ol>` +
+    hs.map(h => `<li><a href="#${h.id}">${h.textContent.replace(/\$[^$]*\$/g, "…")}</a></li>`).join("") + `</ol>`;
+  const enlaces = [...indice.querySelectorAll("a")];
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting){
+      enlaces.forEach(a => a.classList.toggle("aqui", a.getAttribute("href") === "#" + e.target.id)); } });
+  }, {rootMargin: "-20% 0px -70% 0px"});
+  hs.forEach(h => obs.observe(h));
+}
+
+/* Un bloque de preguntas del propio tema, para practicar justo después de leer.
+   Esto NO sustituye al repaso: recordar ahora consolida, recordar dentro de unos días
+   es lo que hace que dure. Por eso están las dos cosas. */
+function compruebate(idTema, donde, cuantas = 6){
+  const mias = BANCO.filter(q => q.tema === idTema);
+  const elegidas = mias.slice().sort(() => Math.random() - .5).slice(0, cuantas);
+  elegidas.forEach(q => pintarPregunta(q, donde));
+  return elegidas.length;
+}

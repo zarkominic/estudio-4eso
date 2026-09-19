@@ -6,119 +6,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../comun/base.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css">
 </head>
 <body>
 <div class="barra"><a class="marca" href="../../index.html">📘 Estudio 4º ESO</a><span class="sep"></span>
   <a href="../../index.html">Temas</a><a href="../../repaso.html">Repaso</a></div>
 
-<div class="envoltura">
-  <span class="etiqueta">[Asignatura] · 4º ESO</span>
-  <h1>[Título del tema]</h1>
-  <p class="mini">[Una frase de qué entra. Cuánto se tarda.]</p>
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
 
-  <!-- ─── 1. PREGUNTA ANTES DE EXPLICAR ───
-       Fallar una pregunta antes de ver el tema prepara para aprenderlo: se llama pretest,
-       y está en la lista de lo que funciona. Por eso va primero, no al final. -->
-  <div class="caja ojo">
-    <h3>Antes de nada, una apuesta</h3>
-    <p>No hace falta que lo sepas. Arriesga: al ver la respuesta se te queda mejor que si te lo cuento directamente.</p>
-    <div id="pretest"></div>
-  </div>
+  <div class="cuerpo">
+    <span class="etiqueta">Matemáticas · 4º ESO</span>
+    <h1>[Título del tema]</h1>
+    <p class="mini">[Qué entra. Cuánto se tarda. Cuántas preguntas.]</p>
 
-  <!-- ─── 2. LA TEORÍA. La animación va PEGADA al texto que explica ─── -->
-  <h2>[La primera idea]</h2>
-  <p>[Explícalo como se lo contarías a alguien en la cocina. Frases cortas.]</p>
-
-  <div class="lab">
-    <div class="lienzo" id="tablero"></div>
-    <div class="mandos">
-      <div class="mando"><label for="r1">[qué mueve] = <b id="v1">1</b> — [qué le pasa al dibujo]</label>
-        <input type="range" id="r1" min="-3" max="3" step="0.1" value="1"></div>
-      <div class="caja" style="margin:0"><p style="margin:0"><b>Ahora mismo:</b> <span id="lectura"></span></p></div>
-      <p class="mini">[Sugiérele algo concreto que probar: «pon esto en negativo y mira qué pasa».]</p>
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
     </div>
-  </div>
 
-  <div class="caja idea">
-    <h3>Las cosas que hay que saberse</h3>
-    <p><b>1.</b> […]</p><p><b>2.</b> […]</p><p><b>3.</b> […]</p>
-  </div>
+    <!-- ══ LA TEORÍA ══ Cada h2 entra solo en el índice lateral.
+         Bloques disponibles, todos en base.css:
+           <div class="par">…dos columnas…</div>        <div class="par tres">…tres…</div>
+           <div class="caja idea">   destacado azul     <div class="caja ojo">  aviso
+           <div class="reglas"><div class="regla"><b>Título</b>texto</div>…</div>
+           <div class="desliza"><table>…</table></div>   <details><summary>…</summary>…</details>
+           <div class="lab"><div class="lienzo" id="…"></div><div class="mandos">…</div></div>
+           <ol class="pasos"><li>…</li></ol>  con <span class="hueco" data-bien="X">?</span>
+         Fórmulas: $en línea$ y $$centradas$$ -->
 
-  <h2>Por qué es así</h2>
-  <p>[El porqué, no solo la regla. Si no hay porqué, quita esta sección.]</p>
+    <h2>[La primera idea]</h2>
+    <div class="par">
+      <div><p>[Explícalo como se lo contarías en la cocina. Frases cortas.]</p></div>
+      <div class="caja idea"><h3>[La imagen que lo explica]</h3><p>[La comparación que lo hace obvio.]</p></div>
+    </div>
 
-  <!-- ─── 3. EJEMPLO QUE SE VA VACIANDO ─── -->
-  <h2>Un ejemplo, paso a paso</h2>
-  <ol class="pasos">
-    <li><b>[Paso]</b> […]</li>
-    <li><b>[Paso]</b> […]</li>
-  </ol>
+    <h2>[La regla o el método]</h2>
+    <p>[…]</p>
+    <div class="lab">
+      <div class="lienzo" id="lienzo" style="display:grid;place-items:center;padding:1.2rem;aspect-ratio:auto;min-height:300px">
+        <div style="text-align:center"><div id="salida" style="font-size:2rem"></div></div>
+      </div>
+      <div class="mandos">
+        <div class="mando"><label for="r1">[Qué se mueve]: <b id="v1">1</b></label>
+          <input type="range" id="r1" min="1" max="20" step="1" value="1"></div>
+        <p class="mini">[Sugiere algo concreto que probar.]</p>
+      </div>
+    </div>
 
-  <h3>Ahora el mismo, contigo</h3>
-  <p>[Mismo tipo de ejercicio, con huecos. El atributo data-bien es la respuesta.]</p>
-  <ol class="pasos">
-    <li><b>[Paso]</b> … <span class="hueco" data-bien="RESPUESTA" data-pista="[pista si falla]">x</span></li>
-  </ol>
+    <h2>[El error que todos cometen]</h2>
+    <div class="caja ojo"><p><b>[El error, en negrita.]</b></p><p>[Y el contraejemplo con números que lo demuestra.]</p></div>
 
-  <!-- ─── 4. PARA QUÉ SIRVE ─── -->
-  <h2>Y esto, ¿para qué?</h2>
-  <div class="caja">
-    <p>[Dónde aparece esto en la vida real. Un ejemplo concreto, con números.]</p>
-  </div>
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <ol class="pasos"><li><b>[Paso]</b> […]</li><li><b>[Paso]</b> […]</li></ol>
 
-  <!-- ─── 5. LA PUERTA AL REPASO, no el test en sí ─── -->
-  <div class="caja idea" style="margin-top:2.5rem">
-    <h3>¿Y ahora?</h3>
-    <p>Esto era la teoría. Para que se te quede, hay que <b>ponerse a prueba con el tiempo</b>, no leerlo otra vez.</p>
-    <p style="margin-top:1rem">
-      <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
-      <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
-    <p class="mini" style="margin-top:.8rem">Las preguntas de este tema entran en el repaso diario, mezcladas con las de los demás.</p>
+    <h3>Ahora el mismo tipo, contigo</h3>
+    <ol class="pasos"><li><b>[Paso]</b> … <span class="hueco" data-bien="RESPUESTA" data-pista="[pista]">?</span></li></ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>[Uso 1]</h3><p>[…]</p></div>
+      <div class="caja"><h3>[Uso 2]</h3><p>[…]</p></div>
+      <div class="caja"><h3>[Uso 3]</h3><p>[…]</p></div>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
   </div>
 </div>
 
-<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dímelo y lo reescribimos.</footer>
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
 
 <script src="../../comun/preguntas.js"></script>
 <script src="../../comun/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 
-/* la parábola que se toca: JSXGraph, con el dedo también */
-const tablero = JXG.JSXGraph.initBoard("tablero", {boundingbox:[-8,10,8,-10], axis:true, showCopyright:false,
-  showNavigation:false, keepaspectratio:false, pan:{enabled:false}, zoom:{wheel:false}});
-const A = () => +$("ra").value, B = () => +$("rb").value, C = () => +$("rc").value;
-const f = x => A()*x*x + B()*x + C();
+/* El interactivo del tema. Borra esto y escribe el tuyo. */
+function pinta(){ $("v1").textContent = $("r1").value; $("salida").textContent = $("r1").value; }
+$("r1").addEventListener("input", pinta);
 
-tablero.create("functiongraph", [f, -8, 8], {strokeWidth:3, strokeColor:"#1b5e8a"});
-const vert = tablero.create("point", [() => A() ? -B()/(2*A()) : 0, () => A() ? f(-B()/(2*A())) : C()],
-  {name:"vértice", size:4, fillColor:"#b3402b", strokeColor:"#b3402b", fixed:true, label:{offset:[8,8]}});
-const eje = tablero.create("line", [() => [A() ? -B()/(2*A()) : 0, 0], () => [A() ? -B()/(2*A()) : 0, 1]],
-  {straightFirst:true, strokeColor:"#b3402b", dash:2, strokeWidth:1, fixed:true});
-
-function leer(){
-  const a = A(), b = B(), c = C();
-  $("va").textContent = a; $("vb").textContent = b; $("vc").textContent = c;
-  const d = b*b - 4*a*c;
-  const abre = a > 0 ? "abre hacia arriba" : a < 0 ? "abre hacia abajo" : "ya no es una parábola (a = 0: es una recta)";
-  const cortes = a === 0 ? "" : d > 0 ? " · corta al eje X en 2 puntos" : d === 0 ? " · toca el eje X en 1 punto" : " · no corta al eje X";
-  const xv = a ? (-b/(2*a)).toFixed(2).replace(/\.00$/,"") : "—";
-  $("lectura").textContent = `${abre}${a ? ` · vértice en x = ${xv}` : ""}${cortes}. Δ = ${a ? d.toFixed(1).replace(/\.0$/,"") : "—"}`;
-  tablero.update();
-}
-["ra","rb","rc"].forEach(id => $(id).addEventListener("input", leer));
-leer();
-
-/* la pregunta de antes de empezar */
-const q = BANCO.find(x => x.tema === "ID-DEL-TEMA");
-if (q) pintarPregunta(q, $("pretest"));
+BANCO.filter(x => x.tema === "ID-DEL-TEMA").slice(0, 2).forEach(q => pintarPregunta(q, $("pretest")));
+compruebate("ID-DEL-TEMA", $("ahora"), 6);
 
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+pinta();
+indiceAutomatico();
 
 $("leido").onclick = e => { Progreso.marcarLeido("ID-DEL-TEMA"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("ID-DEL-TEMA")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

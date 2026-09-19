@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radicales — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="barra"><a class="marca" href="../../index.html">📘 Estudio 4º ESO</a><span class="sep"></span>
+  <a href="../../index.html">Temas</a><a href="../../repaso.html">Repaso</a></div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Matemáticas · 4º ESO</span>
+    <h1>Radicales</h1>
+    <p class="mini">Raíces: qué son, cómo simplificarlas, sumarlas, multiplicarlas y quitarlas de los denominadores. Unos 25 minutos, y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Qué es una raíz, en realidad</h2>
+    <div class="par">
+      <div>
+        <p>Una raíz es una pregunta al revés. En vez de «cuánto es 5 al cuadrado», pregunta <b>«qué número al cuadrado da 25»</b>.</p>
+        <p style="text-align:center;font-size:1.3rem">$$\sqrt[n]{a} = b \iff b^n = a$$</p>
+        <p>Cada parte tiene su nombre, y conviene saberlos porque los usa todo el mundo:</p>
+        <ul style="margin-left:1.2rem">
+          <li><b>Índice</b> ($n$): cuántas veces se multiplica. Si no pone nada, es 2.</li>
+          <li><b>Radicando</b> ($a$): lo de dentro.</li>
+          <li><b>Raíz</b> ($b$): el resultado.</li>
+        </ul>
+      </div>
+      <div class="caja idea">
+        <h3>La imagen que lo explica</h3>
+        <p>$\sqrt{25}$ es <b>el lado de un cuadrado de área 25</b>. Por eso se llama raíz «cuadrada».</p>
+        <p>$\sqrt[3]{8}$ es <b>la arista de un cubo de volumen 8</b>: raíz cúbica.</p>
+        <p class="mini">Cuando dudes de un resultado, piensa en el cuadrado: si el área es 50, el lado anda por 7, porque 7×7=49. Y sale $5\sqrt2 \approx 7{,}07$. Cuadra.</p>
+      </div>
+    </div>
+
+    <div class="caja ojo">
+      <h3>Cuidado con los índices pares</h3>
+      <p>$\sqrt{-16}$ <b>no existe</b> entre los números reales: ningún número al cuadrado da negativo, porque menos por menos es más.</p>
+      <p>Pero $\sqrt[3]{-8} = -2$ <b>sí existe</b>, porque $(-2)^3 = -8$. Con índice impar no hay problema.</p>
+    </div>
+
+    <h2>La misma cosa escrita como potencia</h2>
+    <p>Esta es la idea que desatasca el tema entero: <b>toda raíz es una potencia de exponente fraccionario</b>. Y entonces valen todas las reglas de potencias que ya te sabes.</p>
+    <p style="text-align:center;font-size:1.3rem">$$\sqrt[n]{a^m} = a^{m/n}$$</p>
+    <p>El índice baja al denominador. Mira qué fácil se vuelve todo:</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Con raíces</th><th>Con potencias</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>$\sqrt{x}$</td><td>$x^{1/2}$</td><td>—</td></tr>
+        <tr><td>$\sqrt[3]{x^2}$</td><td>$x^{2/3}$</td><td>—</td></tr>
+        <tr><td>$\sqrt{x} \cdot \sqrt[3]{x}$</td><td>$x^{1/2} \cdot x^{1/3} = x^{1/2+1/3}$</td><td>$x^{5/6} = \sqrt[6]{x^5}$</td></tr>
+        <tr><td>$(\sqrt{x})^2$</td><td>$(x^{1/2})^2 = x^{1}$</td><td>$x$</td></tr>
+        <tr><td>$\dfrac{\sqrt[3]{x^2}}{\sqrt{x}}$</td><td>$x^{2/3-1/2}$</td><td>$x^{1/6} = \sqrt[6]{x}$</td></tr>
+      </tbody>
+    </table></div>
+    <p class="mini">Si un ejercicio de radicales se te atasca, pásalo a potencias. Casi siempre se resuelve solo.</p>
+
+    <h2>Simplificar: sacar lo que se pueda</h2>
+    <div class="lab">
+      <div class="lienzo" id="lienzoSimp" style="display:grid;place-items:center;padding:1.2rem;aspect-ratio:auto;min-height:300px">
+        <div style="text-align:center">
+          <div id="original" style="font-size:2rem"></div>
+          <div id="factores" class="mini" style="margin:1rem 0"></div>
+          <div id="proceso" style="font-size:1.2rem;margin:1rem 0"></div>
+          <div id="resultado" style="font-size:2.2rem;color:var(--aprender);font-weight:700"></div>
+          <div id="aprox" class="mini" style="margin-top:.6rem"></div>
+        </div>
+      </div>
+      <div class="mandos">
+        <div class="mando"><label for="rn">Número dentro de la raíz: <b id="vn">72</b></label>
+          <input type="range" id="rn" min="2" max="200" step="1" value="72"></div>
+        <div class="caja" style="margin:0">
+          <p style="margin:0"><b>El método:</b> descompón en factores primos, saca de dos en dos (raíz cuadrada), y lo que sobra se queda dentro.</p>
+        </div>
+        <p class="mini">Mueve el deslizador. Fíjate: 49, 64 o 100 salen enteros porque son cuadrados perfectos. Los primos —7, 13, 29— no sueltan nada.</p>
+      </div>
+    </div>
+
+    <div class="reglas">
+      <div class="regla"><b>Sacar factores</b>$\sqrt{72}=\sqrt{36 \cdot 2}=6\sqrt2$. Sale lo que tenga raíz exacta.</div>
+      <div class="regla"><b>Meter factores</b>$3\sqrt2=\sqrt{3^2 \cdot 2}=\sqrt{18}$. Entra elevado al índice.</div>
+      <div class="regla"><b>Para comparar</b>Mete todo dentro y compara los radicandos: $\sqrt{12}$ contra $\sqrt{18}$.</div>
+      <div class="regla"><b>Con letras</b>$\sqrt{x^5}=x^2\sqrt{x}$: sale una $x$ por cada dos que haya dentro.</div>
+    </div>
+
+    <h2>Sumar y restar: el error más repetido</h2>
+    <div class="caja ojo">
+      <p style="font-size:1.15rem"><b>$\sqrt{a+b}$ NO es $\sqrt{a}+\sqrt{b}$.</b></p>
+      <p>Compruébalo: $\sqrt{9+16}=\sqrt{25}=5$, pero $\sqrt9+\sqrt{16}=3+4=7$. No es lo mismo, y este fallo tira exámenes enteros.</p>
+    </div>
+    <p>Los radicales se suman como las letras en álgebra: <b>solo si son semejantes</b>, o sea, misma raíz y mismo índice.</p>
+    <div class="par">
+      <div class="caja"><h3>Sí se puede</h3>
+        <p>$3\sqrt5 + 2\sqrt5 = 5\sqrt5$</p>
+        <p class="mini">Igual que $3x+2x=5x$. El $\sqrt5$ hace de x.</p>
+        <p>$\sqrt{50}+\sqrt{18} = 5\sqrt2+3\sqrt2 = 8\sqrt2$</p>
+        <p class="mini">Parecían distintos y resultaron semejantes. <b>Simplifica siempre antes de decidir.</b></p>
+      </div>
+      <div class="caja"><h3>No se puede</h3>
+        <p>$\sqrt2+\sqrt3$ se queda así.</p>
+        <p class="mini">No son semejantes. Como $x+y$: no se juntan.</p>
+        <p>$\sqrt5 + \sqrt[3]{5}$ tampoco.</p>
+        <p class="mini">Mismo radicando, distinto índice.</p>
+      </div>
+    </div>
+
+    <h2>Multiplicar y dividir</h2>
+    <p>Aquí es al revés: multiplicar y dividir es <b>fácil</b>. Con el mismo índice, se opera dentro:</p>
+    <p style="text-align:center;font-size:1.2rem">$$\sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b} \qquad \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}$$</p>
+    <p>$\sqrt3 \cdot \sqrt{12} = \sqrt{36} = 6$. Y fíjate: el resultado sale <b>entero</b>, sin raíz. Pasa más de lo que parece.</p>
+    <details>
+      <summary>¿Y si los índices son distintos?</summary>
+      <p>Se igualan con el mínimo común múltiplo. Para $\sqrt2 \cdot \sqrt[3]{2}$, el m.c.m. de 2 y 3 es 6:</p>
+      <p>$\sqrt2 = \sqrt[6]{2^3} = \sqrt[6]{8}$ y $\sqrt[3]{2} = \sqrt[6]{2^2} = \sqrt[6]{4}$, así que el producto es $\sqrt[6]{32}$.</p>
+      <p class="mini">Con potencias sale solo: $2^{1/2} \cdot 2^{1/3} = 2^{5/6}$.</p>
+    </details>
+
+    <h2>Racionalizar: quitar la raíz de abajo</h2>
+    <p>Por convenio, una fracción no se deja con raíz en el denominador. No es que esté «mal»: es que así se comparan mejor y se calculan más fácil a mano.</p>
+    <div class="par">
+      <div class="caja"><h3>Caso 1: solo una raíz abajo</h3>
+        <p>Multiplica arriba y abajo por esa raíz:</p>
+        <p>$$\frac{6}{\sqrt3} = \frac{6}{\sqrt3} \cdot \frac{\sqrt3}{\sqrt3} = \frac{6\sqrt3}{3} = 2\sqrt3$$</p>
+        <p class="mini">Abajo, $\sqrt3 \cdot \sqrt3 = 3$: la raíz desaparece.</p>
+      </div>
+      <div class="caja"><h3>Caso 2: una suma o resta abajo</h3>
+        <p>Multiplica por el <b>conjugado</b>: el mismo, cambiando el signo de en medio.</p>
+        <p>$$\frac{1}{\sqrt5-2} \cdot \frac{\sqrt5+2}{\sqrt5+2} = \frac{\sqrt5+2}{5-4} = \sqrt5+2$$</p>
+        <p class="mini">Funciona por $(a-b)(a+b)=a^2-b^2$: los cuadrados matan las raíces.</p>
+      </div>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Calcula y simplifica: $\sqrt{45} - \sqrt{20} + \dfrac{10}{\sqrt5}$</p>
+    <ol class="pasos">
+      <li><b>Simplifica cada raíz.</b> $\sqrt{45}=\sqrt{9 \cdot 5}=3\sqrt5$ y $\sqrt{20}=\sqrt{4 \cdot 5}=2\sqrt5$.</li>
+      <li><b>Racionaliza la fracción.</b> $\dfrac{10}{\sqrt5}=\dfrac{10\sqrt5}{5}=2\sqrt5$.</li>
+      <li><b>Ahora sí son semejantes.</b> Los tres llevan $\sqrt5$: $3\sqrt5 - 2\sqrt5 + 2\sqrt5$.</li>
+      <li><b>Opera los de delante.</b> $3-2+2=3$: el resultado es $3\sqrt5$.</li>
+      <li><b>Comprueba a ojo.</b> $\sqrt5 \approx 2{,}24$, así que $3\sqrt5 \approx 6{,}7$. Con calculadora: $6{,}71-4{,}47+4{,}47=6{,}71$. Cuadra.</li>
+    </ol>
+
+    <h3>Ahora el mismo tipo, contigo</h3>
+    <p>Calcula $\sqrt{75} + \sqrt{12} - \dfrac{9}{\sqrt3}$. Rellena y pulsa fuera para comprobar.</p>
+    <ol class="pasos">
+      <li><b>Simplifica.</b> $\sqrt{75} = $ <span class="hueco" data-bien="5" data-pista="75 = 25 · 3">?</span>$\sqrt3$ y $\sqrt{12} = $ <span class="hueco" data-bien="2" data-pista="12 = 4 · 3">?</span>$\sqrt3$.</li>
+      <li><b>Racionaliza.</b> $\dfrac{9}{\sqrt3} = $ <span class="hueco" data-bien="3" data-pista="9 por raíz de 3, dividido entre 3">?</span>$\sqrt3$.</li>
+      <li><b>Junta los coeficientes.</b> $5+2-3 = $ <span class="hueco" data-bien="4">?</span>.</li>
+      <li><b>Resultado.</b> <span class="hueco" data-bien="4" data-pista="El coeficiente que acabas de calcular">?</span>$\sqrt3$, que es aproximadamente <span class="hueco" data-bien="6.93" data-pista="4 por 1,732">?</span>.</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>La diagonal de todo</h3>
+        <p>La diagonal de un cuadrado de lado 1 es $\sqrt2$. La de tu televisor, la de un campo, la de un folio: Pitágoras da raíces casi siempre.</p></div>
+      <div class="caja"><h3>La pantalla del móvil</h3>
+        <p>Cuando dicen «6,1 pulgadas» es la diagonal: $\sqrt{ancho^2+alto^2}$. Por eso dos móviles con la misma diagonal pueden tener pantallas distintas.</p></div>
+      <div class="caja"><h3>Velocidad de caída</h3>
+        <p>Algo que cae desde $h$ metros llega al suelo a $v=\sqrt{2gh}$. Por eso caer desde el doble de altura no duele el doble: duele $\sqrt2$ veces más.</p></div>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de radicales entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js"></script>
+<script src="../../comun/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+/* El simplificador: descompone en primos y enseña qué sale y qué se queda dentro */
+function primos(n){ const f = []; let d = 2; while (d * d <= n){ while (n % d === 0){ f.push(d); n /= d; } d++; } if (n > 1) f.push(n); return f; }
+function simplificar(n){
+  const f = primos(n), cuenta = {};
+  f.forEach(p => cuenta[p] = (cuenta[p] || 0) + 1);
+  let fuera = 1, dentro = 1;
+  for (const p in cuenta){ const c = cuenta[p]; fuera *= Math.pow(+p, Math.floor(c / 2)); dentro *= Math.pow(+p, c % 2); }
+  return {fuera, dentro, cuenta};
+}
+function pintaSimp(){
+  const n = +$("rn").value; $("vn").textContent = n;
+  const {fuera, dentro, cuenta} = simplificar(n);
+  const desc = Object.entries(cuenta).map(([p, c]) => c > 1 ? p + "^" + c : p).join(" \\cdot ");
+  $("original").innerHTML = "\\(\\sqrt{" + n + "}\\)";
+  $("factores").innerHTML = "\\(" + n + " = " + desc + "\\)";
+  $("proceso").innerHTML = fuera > 1
+    ? "\\(\\sqrt{" + (fuera * fuera) + " \\cdot " + dentro + "} = " + fuera + "\\sqrt{" + dentro + "}\\)"
+    : "no hay ningún cuadrado dentro: no se puede sacar nada";
+  $("resultado").innerHTML = dentro === 1 ? "\\(" + fuera + "\\)" : fuera === 1 ? "\\(\\sqrt{" + dentro + "}\\)" : "\\(" + fuera + "\\sqrt{" + dentro + "}\\)";
+  $("aprox").textContent = "≈ " + Math.sqrt(n).toFixed(3).replace(".", ",") + (dentro === 1 ? "  ·  cuadrado perfecto" : "");
+  if (window.renderMathInElement) renderMathInElement($("lienzoSimp"), {delimiters:[{left:"\\(",right:"\\)",display:false}]});
+}
+$("rn").addEventListener("input", pintaSimp);
+
+["rad-06","rad-04"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("mates-radicales", $("ahora"), 6);
+
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+pintaSimp();
+indiceAutomatico();
+
+$("leido").onclick = e => { Progreso.marcarLeido("mates-radicales"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("mates-radicales")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

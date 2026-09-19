@@ -86,3 +86,55 @@ input[type=range]{width:100%;height:44px;accent-color:var(--aprender)}
 .mini{color:var(--gris);font-size:.88rem}
 footer{padding:2.5rem var(--margen);color:var(--gris);font-size:.85rem;border-top:1px solid var(--linea);margin-top:3rem}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+
+/* ── APROVECHAR LA PANTALLA ───────────────────────────────────────────
+   En el móvil: una columna, sin índice.
+   En el portátil: índice fijo a la izquierda + contenido ancho.
+   En pantalla grande: además, los bloques de teoría pueden ir en dos columnas. */
+.tema{max-width:1500px;margin:0 auto;padding:0 var(--margen)}
+@media (min-width:1000px){
+  .tema{display:grid;grid-template-columns:230px minmax(0,1fr);gap:3rem;align-items:start}
+  .indice{position:sticky;top:5rem;max-height:calc(100vh - 7rem);overflow:auto;padding:1rem 0;font-size:.92rem}
+  .indice ol{list-style:none;display:grid;gap:.1rem}
+  .indice a{display:block;padding:.45rem .7rem;border-radius:8px;color:var(--gris);text-decoration:none;border-left:3px solid transparent}
+  .indice a:hover{background:#fff;color:var(--tinta)}
+  .indice a.aqui{color:var(--tinta);font-weight:700;border-left-color:var(--aprender);background:#fff}
+  .indice .titulin{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);padding:0 .7rem;margin-bottom:.5rem}
+}
+@media (max-width:999px){.indice{display:none}}
+.cuerpo{min-width:0}
+.cuerpo p{max-width:72ch}
+
+/* dos columnas dentro del contenido, cuando hay sitio */
+.par{display:grid;gap:1.2rem}
+@media (min-width:900px){.par{grid-template-columns:1fr 1fr;align-items:start}}
+@media (min-width:1280px){.par.tres{grid-template-columns:repeat(3,1fr)}}
+
+/* el laboratorio en pantalla ancha: lienzo grande y mandos al lado */
+@media (min-width:1000px){
+  .lab{grid-template-columns:1.15fr .85fr;gap:1.8rem}
+  .lienzo{aspect-ratio:4/3}
+}
+
+/* tabla de propiedades, muy usada en teoría */
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.98rem}
+th,td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--linea);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);font-weight:400}
+tbody tr:hover{background:#fff}
+.desliza{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* bloque compacto para reglas sueltas */
+.reglas{display:grid;gap:.6rem;margin:1rem 0}
+@media (min-width:760px){.reglas{grid-template-columns:1fr 1fr}}
+.regla{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:.9rem 1rem}
+.regla b{display:block;color:var(--aprender);margin-bottom:.2rem;font-size:.95rem}
+
+/* plegable: para lo que no todos necesitan leer */
+details{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:.9rem 1.1rem;margin:.8rem 0}
+details summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+details[open] summary{margin-bottom:.6rem}
+
+/* autoevaluación del tema: rejilla de preguntas, no una sola columna */
+.compruebate{display:grid;gap:1rem}
+@media (min-width:1100px){.compruebate{grid-template-columns:1fr 1fr}}
+.compruebate .pregunta{margin:0}
