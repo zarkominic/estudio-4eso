@@ -1,0 +1,88 @@
+/* base.css — el aspecto de todo el sitio. Un tema nuevo no necesita escribir CSS.
+   Dos prioridades por encima de lo bonito: que se lea (contraste) y que se toque (44 px). */
+:root{
+  --papel:#fbfaf7; --tinta:#17171a; --gris:#5f5f68; --linea:#e3e1dc;
+  --aprender:#1b5e8a;      /* azul: teoría */
+  --repasar:#1f7a4d;       /* verde: ponerse a prueba */
+  --mal:#b3402b; --aviso:#8a6410;
+  --radio:14px; --margen:clamp(1.1rem,5vw,3.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Atkinson Hyperlegible",system-ui,-apple-system,sans-serif;background:var(--papel);color:var(--tinta);
+  line-height:1.6;font-size:clamp(1.05rem,.4vw + .95rem,1.2rem);padding-bottom:5rem;overflow-x:clip}
+*{min-width:0}
+a{color:var(--aprender)}
+h1{font-size:clamp(1.8rem,6vw,2.8rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:.4rem}
+h2{font-size:clamp(1.35rem,4.5vw,1.9rem);margin:2.4rem 0 .8rem;line-height:1.25}
+h3{font-size:1.15rem;margin:1.6rem 0 .5rem}
+p{margin:.7rem 0;max-width:62ch}
+.envoltura{padding:0 var(--margen);max-width:1000px;margin:0 auto}
+
+/* barra */
+.barra{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.8rem;padding:.8rem var(--margen);
+  background:rgba(251,250,247,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.barra .marca{font-weight:700;text-decoration:none;color:var(--tinta)}
+.barra .sep{flex:1}
+.barra a{font-size:.95rem;text-decoration:none;color:var(--gris);padding:.5rem .7rem;border-radius:10px;min-height:44px;display:inline-flex;align-items:center}
+.barra a:hover,.barra a:focus-visible{background:#fff;color:var(--tinta)}
+
+/* botones: 44 px mínimo, y se activan al tocar (no al pasar por encima) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.3rem;
+  border:0;border-radius:2rem;background:var(--tinta);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.aprender{background:var(--aprender)}
+.btn.repasar{background:var(--repasar)}
+.btn.claro{background:#fff;color:var(--tinta);border:1px solid var(--linea);font-weight:500}
+.btn:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+
+/* tarjetas y bloques de teoría */
+.caja{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:1.2rem 1.3rem;margin:1.2rem 0}
+.caja.idea{border-left:5px solid var(--aprender)}
+.caja.ojo{border-left:5px solid var(--aviso);background:#fffdf6}
+.caja h3{margin-top:0}
+.etiqueta{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-bottom:.5rem}
+
+/* el laboratorio: la animación va PEGADA al texto que explica (doble codificación) */
+.lab{display:grid;gap:1.2rem;margin:1.4rem 0}
+@media (min-width:860px){.lab{grid-template-columns:1fr 1fr;align-items:start}}
+.lienzo{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden;aspect-ratio:1;touch-action:none}
+.mandos{display:grid;gap:.9rem}
+.mando{display:grid;gap:.35rem}
+.mando label{font-size:.9rem;color:var(--gris)}
+.mando b{font-variant-numeric:tabular-nums;color:var(--tinta)}
+input[type=range]{width:100%;height:44px;accent-color:var(--aprender)}
+
+/* ejemplo resuelto que se va vaciando */
+.pasos{counter-reset:paso;list-style:none;display:grid;gap:.6rem}
+.pasos li{counter-increment:paso;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:.9rem 1rem .9rem 3rem;position:relative}
+.pasos li::before{content:counter(paso);position:absolute;left:.9rem;top:.9rem;width:1.5rem;height:1.5rem;border-radius:50%;
+  background:var(--aprender);color:#fff;font-size:.85rem;font-weight:700;display:grid;place-items:center}
+.hueco{display:inline-block;min-width:5ch;padding:.15rem .5rem;border:2px dashed var(--aprender);border-radius:8px;
+  background:#fff;font:inherit;text-align:center}
+.hueco.bien{border-style:solid;border-color:var(--repasar);background:#eaf6ef}
+.hueco.mal{border-style:solid;border-color:var(--mal);background:#fdeee9}
+
+/* preguntas */
+.pregunta{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:1.2rem 1.3rem;margin:1rem 0}
+.opciones{display:grid;gap:.6rem;margin-top:.9rem}
+.opcion{display:flex;align-items:center;gap:.7rem;min-height:48px;padding:.7rem .9rem;border:1px solid var(--linea);
+  border-radius:12px;background:var(--papel);cursor:pointer;text-align:left;font:inherit;width:100%}
+.opcion:focus-visible{outline:3px solid var(--aprender);outline-offset:2px}
+.opcion.elegida{border-color:var(--tinta);background:#fff}
+.opcion.bien{border-color:var(--repasar);background:#eaf6ef}
+.opcion.mal{border-color:var(--mal);background:#fdeee9}
+.porque{margin-top:.9rem;padding:.9rem 1rem;border-radius:12px;background:#f4f2ed;font-size:.97rem}
+.porque b{color:var(--tinta)}
+
+/* progreso */
+.progreso{height:8px;border-radius:4px;background:var(--linea);overflow:hidden}
+.progreso i{display:block;height:100%;background:var(--repasar);transition:width .4s}
+.rejilla{display:grid;gap:1rem}
+@media (min-width:700px){.rejilla{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}}
+.tarjeta{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:1.1rem 1.2rem}
+.tarjeta:hover,.tarjeta:focus-visible{border-color:var(--tinta)}
+.tarjeta .asig{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.tarjeta b{display:block;font-size:1.12rem;margin:.2rem 0 .5rem}
+.mini{color:var(--gris);font-size:.88rem}
+footer{padding:2.5rem var(--margen);color:var(--gris);font-size:.85rem;border-top:1px solid var(--linea);margin-top:3rem}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}

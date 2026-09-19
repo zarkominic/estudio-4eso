@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio 4º ESO</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14'>📘</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="comun/base.css">
+<style>
+.portada{padding:5vh var(--margen) 2vh;max-width:1000px;margin:0 auto}
+.puertas{display:grid;gap:1rem;margin:2rem 0 1rem}
+@media (min-width:760px){.puertas{grid-template-columns:1fr 1fr}}
+.puerta{display:block;text-decoration:none;color:#fff;border-radius:18px;padding:1.6rem 1.5rem;min-height:170px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.puerta.a{background:linear-gradient(160deg,var(--aprender),#0d2f47)}
+.puerta.r{background:linear-gradient(160deg,var(--repasar),#0c3a24)}
+.puerta b{font-size:1.5rem;display:block}
+.puerta span{opacity:.9;font-size:.98rem;max-width:34ch;display:block;margin-top:.4rem}
+.puerta .cuantas{font-size:2.6rem;font-weight:700;line-height:1}
+</style>
+</head>
+<body>
+<div class="barra"><a class="marca" href="index.html">📘 Estudio 4º ESO</a><span class="sep"></span>
+  <a href="#temas">Temas</a><a href="repaso.html">Repaso</a></div>
+
+<div class="portada">
+  <h1>Buenas. ¿Qué toca hoy?</h1>
+  <p class="mini">Dos cosas distintas: <b>aprender</b> algo nuevo, o <b>repasar</b> lo que ya diste para que no se te olvide.</p>
+
+  <div class="puertas">
+    <a class="puerta a" href="#temas">
+      <div><b>Aprender</b><span>La teoría explicada, con cosas que puedes mover para ver qué pasa.</span></div>
+      <div><span id="nTemas" class="cuantas">0</span> <span>temas disponibles</span></div>
+    </a>
+    <a class="puerta r" href="repaso.html">
+      <div><b>Repasar</b><span>Preguntas mezcladas de todo lo que llevas. Diez minutos.</span></div>
+      <div><span id="nHoy" class="cuantas">0</span> <span>preguntas te tocan hoy</span></div>
+    </a>
+  </div>
+
+  <h2 id="temas">Temas</h2>
+  <div class="rejilla" id="lista"></div>
+
+  <h2>Cómo va la cosa</h2>
+  <div class="caja">
+    <p class="mini" id="resumen">Todavía no has hecho nada. Empieza por un tema.</p>
+    <div class="progreso" style="margin-top:.8rem"><i id="barra" style="width:0%"></i></div>
+    <p style="margin-top:1rem"><button class="btn claro" id="borrar" type="button">Empezar de cero</button></p>
+  </div>
+</div>
+
+<footer class="envoltura">Hecho en casa para 4º ESO. Tu progreso se guarda solo en este navegador: nadie más lo ve.</footer>
+
+<script src="comun/temas.js"></script>
+<script src="comun/preguntas.js"></script>
+<script src="comun/app.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const listos = TEMAS.filter(t => t.estado === "listo");
+$("nTemas").textContent = listos.length;
+$("nHoy").textContent = repasoDeHoy(BANCO, 10).length;
+
+$("lista").innerHTML = TEMAS.map(t => {
+  const suyas = BANCO.filter(q => q.tema === t.id);
+  const dom = Progreso.dominio(suyas), leido = Progreso.leido(t.id);
+  const disponible = t.estado === "listo";
+  const dentro = `<span class="asig">${t.asignatura}</span><b>${t.titulo}</b>
+      <span class="mini">${t.resumen}</span>
+      <div class="progreso" style="margin-top:.8rem"><i style="width:${dom}%"></i></div>
+      <span class="mini">${disponible ? (leido ? `Leído · dominas ${dom}%` : "Sin empezar") : "Todavía no está"}</span>`;
+  return disponible ? `<a class="tarjeta" href="temas/${t.id}/">${dentro}</a>` : `<div class="tarjeta" style="opacity:.55">${dentro}</div>`;
+}).join("");
+
+const p = Progreso.leer(), respondidas = Object.keys(p).filter(k => !k.startsWith("tema:"));
+if (respondidas.length){
+  const dom = Progreso.dominio(BANCO);
+  $("resumen").innerHTML = `Has contestado <b>${respondidas.length}</b> preguntas distintas de ${BANCO.length}. Dominas el <b>${dom}%</b>.`;
+  $("barra").style.width = dom + "%";
+}
+$("borrar").onclick = () => { if (confirm("¿Borrar todo tu progreso? No se puede deshacer.")){ Progreso.borrarTodo(); location.reload(); } };
+</script>
+</body>
+</html>

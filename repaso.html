@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repaso de hoy — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="comun/base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>.cuenta{display:flex;align-items:center;gap:1rem;margin:1.2rem 0}
+.cuenta .progreso{flex:1}
+.final{text-align:center;padding:3rem 1rem}
+.final .nota{font-size:3.4rem;font-weight:700;line-height:1}</style>
+</head>
+<body>
+<div class="barra"><a class="marca" href="index.html">📘 Estudio 4º ESO</a><span class="sep"></span><a href="index.html">Temas</a></div>
+
+<div class="envoltura">
+  <h1>Repaso de hoy</h1>
+  <p class="mini" id="intro">Preguntas mezcladas de todos los temas que llevas. Mezclar cuesta más que hacer veinte seguidas del mismo tipo, y por eso funciona mejor.</p>
+
+  <div class="cuenta"><span class="mini" id="cuenta">0 / 0</span><div class="progreso"><i id="barra" style="width:0%"></i></div></div>
+  <div id="sitio"></div>
+  <div id="fin" hidden class="final caja">
+    <div class="nota" id="nota">0/0</div>
+    <p id="palabras" class="mini" style="margin-top:.6rem"></p>
+    <p style="margin-top:1.4rem"><a class="btn repasar" href="repaso.html">Otra ronda</a> <a class="btn claro" href="index.html">Volver</a></p>
+  </div>
+</div>
+
+<footer class="envoltura">Las que falles vuelven mañana. Las que aciertes, dentro de unos días.</footer>
+
+<script src="comun/temas.js"></script>
+<script src="comun/preguntas.js"></script>
+<script src="comun/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const tanda = repasoDeHoy(BANCO, 10);
+let i = 0, aciertos = 0;
+
+function siguiente(){
+  if (i >= tanda.length) return terminar();
+  $("cuenta").textContent = `${i + 1} / ${tanda.length}`;
+  $("barra").style.width = (i / tanda.length * 100) + "%";
+  $("sitio").innerHTML = "";
+  const q = tanda[i];
+  const caja = pintarPregunta(q, $("sitio"), acierta => {
+    if (acierta) aciertos++;
+    const b = document.createElement("button"); b.className = "btn repasar"; b.style.marginTop = "1rem";
+    b.textContent = i + 1 < tanda.length ? "Siguiente" : "Ver resultado";
+    b.onclick = () => { i++; siguiente(); window.scrollTo({top:0, behavior:"smooth"}); };
+    caja.appendChild(b); b.focus();
+  });
+  // de qué tema es, por si quiere volver a la teoría
+  const t = TEMAS.find(t => t.id === q.tema);
+  if (t){ const a = document.createElement("p"); a.className = "mini"; a.style.marginTop = ".8rem";
+    a.innerHTML = `¿Dudas? <a href="temas/${t.id}/">Vuelve a ${t.titulo}</a>`; caja.appendChild(a); }
+}
+
+function terminar(){
+  $("sitio").hidden = true; $("fin").hidden = false;
+  $("barra").style.width = "100%"; $("cuenta").textContent = `${tanda.length} / ${tanda.length}`;
+  $("nota").textContent = `${aciertos}/${tanda.length}`;
+  const p = aciertos / Math.max(tanda.length, 1);
+  $("palabras").textContent = p === 1 ? "Todas. Estas tardarán en volver."
+    : p >= .7 ? "Bien. Las que fallaste vuelven mañana."
+    : p >= .4 ? "Vas a medias: repasa la teoría de las que fallaste."
+    : "Toca volver a la teoría antes que al test. No pasa nada.";
+}
+
+if (!tanda.length){
+  $("intro").textContent = "Hoy no te toca nada: ya has repasado todo lo que tocaba. Vuelve mañana, o empieza un tema nuevo.";
+  $("sitio").innerHTML = `<p style="margin-top:1.4rem"><a class="btn aprender" href="index.html">Ver temas</a></p>`;
+  document.querySelector(".cuenta").hidden = true;
+} else siguiente();
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La función cuadrática — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css">
+</head>
+<body>
+<div class="barra"><a class="marca" href="../../index.html">📘 Estudio 4º ESO</a><span class="sep"></span>
+  <a href="../../index.html">Temas</a><a href="../../repaso.html">Repaso</a></div>
+
+<div class="envoltura">
+  <span class="etiqueta">Matemáticas · 4º ESO</span>
+  <h1>La función cuadrática</h1>
+  <p class="mini">Todo lo que hace falta saber de $y = ax^2 + bx + c$. Unos 15 minutos.</p>
+
+  <!-- ─── 1. PREGUNTA ANTES DE EXPLICAR ───
+       Fallar una pregunta antes de ver el tema prepara para aprenderlo: se llama pretest,
+       y está en la lista de lo que funciona. Por eso va primero, no al final. -->
+  <div class="caja ojo">
+    <h3>Antes de nada, una apuesta</h3>
+    <p>No hace falta que lo sepas. Arriesga: al ver la respuesta se te queda mejor que si te lo cuento directamente.</p>
+    <div id="pretest"></div>
+  </div>
+
+  <!-- ─── 2. LA TEORÍA, con la animación PEGADA al texto ─── -->
+  <h2>Qué hace cada número</h2>
+  <p>Una función cuadrática es cualquiera que se pueda escribir así:</p>
+  <p style="text-align:center;font-size:1.25rem">$$y = ax^2 + bx + c$$</p>
+  <p>Su dibujo siempre es una <b>parábola</b>. Los tres números mandan cosas distintas, y la mejor forma de verlo es moverlos:</p>
+
+  <div class="lab">
+    <div class="lienzo" id="tablero"></div>
+    <div class="mandos">
+      <div class="mando"><label for="ra">$a$ = <b id="va">1</b> — abre hacia arriba o abajo, y lo estrecha</label>
+        <input type="range" id="ra" min="-3" max="3" step="0.1" value="1"></div>
+      <div class="mando"><label for="rb">$b$ = <b id="vb">0</b> — mueve el vértice de lado</label>
+        <input type="range" id="rb" min="-6" max="6" step="0.5" value="0"></div>
+      <div class="mando"><label for="rc">$c$ = <b id="vc">0</b> — sube o baja toda la parábola</label>
+        <input type="range" id="rc" min="-6" max="6" step="0.5" value="0"></div>
+      <div class="caja" style="margin:0">
+        <p style="margin:0"><b>Ahora mismo:</b> <span id="lectura"></span></p>
+      </div>
+      <p class="mini">Prueba esto: pon <b>a</b> en negativo y mira las ramas. Luego deja <b>a=1</b>, <b>b=0</b> y mueve solo <b>c</b>: la parábola sube y baja entera.</p>
+    </div>
+  </div>
+
+  <div class="caja idea">
+    <h3>Las tres cosas que hay que saberse</h3>
+    <p><b>1. Hacia dónde abre.</b> Si $a>0$ abre hacia arriba (tiene un mínimo). Si $a<0$, hacia abajo (tiene un máximo).</p>
+    <p><b>2. Dónde está el vértice.</b> Siempre en $x_v = \dfrac{-b}{2a}$. La $y$ se saca sustituyendo esa $x$ en la función.</p>
+    <p><b>3. Si corta al eje X.</b> Lo dice el discriminante $\Delta = b^2-4ac$: positivo, dos cortes; cero, uno; negativo, ninguno.</p>
+  </div>
+
+  <h2>Por qué el vértice está en $-b/2a$</h2>
+  <p>No es magia ni hay que creérselo. La parábola es <b>simétrica</b>: si dos puntos están a la misma altura, el vértice está justo en medio. Los dos cortes con el eje X salen de la fórmula de la ecuación de segundo grado:</p>
+  <p style="text-align:center">$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$</p>
+  <p>El punto medio entre esos dos se saca sumándolos y dividiendo entre dos: las raíces cuadradas se van, una con $+$ y otra con $-$, y queda $\dfrac{-b}{2a}$. Por eso vale <b>siempre</b>, incluso cuando no hay cortes.</p>
+
+  <!-- ─── 3. EJEMPLO QUE SE VA VACIANDO ───
+       El primero entero, el siguiente con huecos. Rellenar obliga a hacer el paso. -->
+  <h2>Un ejemplo, paso a paso</h2>
+  <p>Estudiar $y = x^2 - 6x + 5$: vértice, cortes y dibujo.</p>
+  <ol class="pasos">
+    <li><b>¿Hacia dónde abre?</b> $a = 1 > 0$, así que hacia arriba. Tendrá un mínimo.</li>
+    <li><b>Vértice.</b> $x_v = \dfrac{-b}{2a} = \dfrac{6}{2} = 3$. Sustituyendo: $y_v = 9 - 18 + 5 = -4$. Vértice en $(3,-4)$.</li>
+    <li><b>¿Corta al eje X?</b> $\Delta = 36 - 20 = 16 > 0$: corta en dos puntos.</li>
+    <li><b>Dónde.</b> $x = \dfrac{6 \pm 4}{2}$, o sea $x=5$ y $x=1$. Cortes en $(1,0)$ y $(5,0)$.</li>
+    <li><b>Corte con el eje Y.</b> Siempre en $(0,c)$: aquí $(0,5)$.</li>
+  </ol>
+
+  <h3>Ahora el mismo, contigo</h3>
+  <p>Estudia $y = -x^2 + 4x - 3$. Rellena y pulsa fuera de la casilla para comprobar.</p>
+  <ol class="pasos">
+    <li><b>¿Hacia dónde abre?</b> Como $a = -1$, abre hacia <span class="hueco" data-bien="abajo" data-pista="Fíjate en el signo de a">abajo</span>.</li>
+    <li><b>Vértice.</b> $x_v = \dfrac{-b}{2a} = $ <span class="hueco" data-bien="2" data-pista="-4 dividido entre -2">2</span>, y entonces $y_v = $ <span class="hueco" data-bien="1" data-pista="Sustituye x=2 en la función">1</span>.</li>
+    <li><b>Discriminante.</b> $\Delta = b^2-4ac = $ <span class="hueco" data-bien="4" data-pista="16 menos 12">4</span>, así que corta al eje X en <span class="hueco" data-bien="2" data-pista="Delta positivo">2</span> puntos.</li>
+    <li><b>Los cortes.</b> En $x=$ <span class="hueco" data-bien="1">1</span> y $x=$ <span class="hueco" data-bien="3">3</span>.</li>
+  </ol>
+
+  <!-- ─── 4. PARA QUÉ SIRVE ─── -->
+  <h2>Y esto, ¿para qué?</h2>
+  <div class="caja">
+    <p>Tiras una pelota hacia arriba. Su altura en cada momento es $h(t) = -5t^2 + 20t$. La gráfica es una parábola hacia abajo, y el <b>vértice es el punto más alto que alcanza</b>.</p>
+    <p>$t_v = \dfrac{-20}{-10} = 2$ segundos, y ahí $h = -20 + 40 = 20$ metros. A los 4 segundos vuelve al suelo.</p>
+    <p class="mini">Cualquier cosa que sube y baja —una pelota, un chorro de agua, un puente colgante— es una parábola. También el beneficio de un negocio cuando subes el precio: sube, llega a un máximo y baja.</p>
+  </div>
+
+  <!-- ─── 5. LA PUERTA AL REPASO, no el test en sí ─── -->
+  <div class="caja idea" style="margin-top:2.5rem">
+    <h3>¿Y ahora?</h3>
+    <p>Esto era la teoría. Para que se te quede, hay que <b>ponerse a prueba con el tiempo</b>, no leerlo otra vez.</p>
+    <p style="margin-top:1rem">
+      <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+      <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    <p class="mini" style="margin-top:.8rem">Las preguntas de este tema entran en el repaso diario, mezcladas con las de los demás.</p>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dímelo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js"></script>
+<script src="../../comun/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+/* la parábola que se toca: JSXGraph, con el dedo también */
+const tablero = JXG.JSXGraph.initBoard("tablero", {boundingbox:[-8,10,8,-10], axis:true, showCopyright:false,
+  showNavigation:false, keepaspectratio:false, pan:{enabled:false}, zoom:{wheel:false}});
+const A = () => +$("ra").value, B = () => +$("rb").value, C = () => +$("rc").value;
+const f = x => A()*x*x + B()*x + C();
+
+tablero.create("functiongraph", [f, -8, 8], {strokeWidth:3, strokeColor:"#1b5e8a"});
+const vert = tablero.create("point", [() => A() ? -B()/(2*A()) : 0, () => A() ? f(-B()/(2*A())) : C()],
+  {name:"vértice", size:4, fillColor:"#b3402b", strokeColor:"#b3402b", fixed:true, label:{offset:[8,8]}});
+const eje = tablero.create("line", [() => [A() ? -B()/(2*A()) : 0, 0], () => [A() ? -B()/(2*A()) : 0, 1]],
+  {straightFirst:true, strokeColor:"#b3402b", dash:2, strokeWidth:1, fixed:true});
+
+function leer(){
+  const a = A(), b = B(), c = C();
+  $("va").textContent = a; $("vb").textContent = b; $("vc").textContent = c;
+  const d = b*b - 4*a*c;
+  const abre = a > 0 ? "abre hacia arriba" : a < 0 ? "abre hacia abajo" : "ya no es una parábola (a = 0: es una recta)";
+  const cortes = a === 0 ? "" : d > 0 ? " · corta al eje X en 2 puntos" : d === 0 ? " · toca el eje X en 1 punto" : " · no corta al eje X";
+  const xv = a ? (-b/(2*a)).toFixed(2).replace(/\.00$/,"") : "—";
+  $("lectura").textContent = `${abre}${a ? ` · vértice en x = ${xv}` : ""}${cortes}. Δ = ${a ? d.toFixed(1).replace(/\.0$/,"") : "—"}`;
+  tablero.update();
+}
+["ra","rb","rc"].forEach(id => $(id).addEventListener("input", leer));
+leer();
+
+/* la pregunta de antes de empezar */
+const q = BANCO.find(x => x.id === "cuad-01");
+if (q) pintarPregunta(q, $("pretest"));
+
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+
+$("leido").onclick = e => { Progreso.marcarLeido("mates-funcion-cuadratica"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("mates-funcion-cuadratica")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>
