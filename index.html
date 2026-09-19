@@ -22,11 +22,35 @@
 .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:2rem;border:1px solid var(--linea);background:var(--papel);font-size:.9rem;color:var(--gris);text-decoration:none}
 .chip.hecho{background:var(--aprender);border-color:var(--aprender);color:#fff;font-weight:600}
 .chip code{font-size:.75rem;opacity:.65}
+.menu{display:flex;gap:.25rem;overflow-x:auto;flex:1 1 auto;min-width:0;margin-left:.8rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;flex:0 0 auto;font-size:.88rem;padding:.45rem .7rem;border-radius:8px}
+.menu a.on{color:var(--tinta);font-weight:700;background:#fff}
+.repaso-link{background:var(--repasar);color:#fff !important;font-weight:700;border-radius:2rem;padding:.5rem 1rem !important}
+@media (max-width:860px){
+  .barra{gap:.4rem;padding:.6rem .8rem}
+  .barra .marca{font-size:0}                       /* en el móvil, solo el icono */
+  .barra .marca::before{content:"📘";font-size:1.3rem}
+  .menu{margin-left:.2rem}
+  .menu a{font-size:.85rem;padding:.45rem .6rem}
+  .repaso-link{padding:.45rem .8rem !important;font-size:.85rem}
+}
+.pestanas{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.6rem;margin-bottom:1rem;scrollbar-width:none}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas button{white-space:nowrap;padding:.5rem 1rem;border-radius:2rem;border:1px solid var(--linea);background:#fff;color:var(--gris);font:inherit;font-size:.92rem;cursor:pointer;min-height:44px}
+.pestanas button.on{background:var(--tinta);color:#fff;border-color:var(--tinta);font-weight:700}
+.chip.pedir{cursor:pointer}
+.chip.pedir:hover,.chip.pedir:focus-visible{border-color:var(--aprender);color:var(--tinta)}
+.copiado{position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);background:var(--tinta);color:#fff;padding:.8rem 1.2rem;border-radius:2rem;z-index:30;font-size:.95rem;max-width:92vw;text-align:center}
 </style>
 </head>
 <body>
-<div class="barra"><a class="marca" href="index.html">📘 Estudio 4º ESO</a><span class="sep"></span>
-  <a href="#temas">Temas</a><a href="repaso.html">Repaso</a></div>
+<div class="barra">
+  <a class="marca" href="index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu" id="menu" aria-label="Asignaturas"></nav>
+  <span class="sep"></span>
+  <a href="repaso.html" class="repaso-link">Repaso</a>
+</div>
 
 <div class="portada">
   <h1>Buenas. ¿Qué toca hoy?</h1>
@@ -46,8 +70,9 @@
   <h2 id="temas">Temas</h2>
   <div class="rejilla" id="lista"></div>
 
-  <h2>El curso entero</h2>
+  <h2 id="curso">El curso entero</h2>
   <p class="mini" id="avance"></p>
+  <div class="pestanas" id="pestanas"></div>
   <div id="curriculo"></div>
 
   <h2>Cómo va la cosa</h2>
@@ -90,18 +115,47 @@ if (respondidas.length){
 /* El curso entero: lo hecho y lo que falta. Para pedir un tema basta con su id. */
 {
   const e = estadoCurriculo();
-  $("avance").innerHTML = `<b>${e.hechos}</b> de ${e.total} temas hechos. Los grises todavía no están: para pedir uno, di su <b>id</b>.`;
-  $("curriculo").innerHTML = Object.entries(CURRICULO).map(([asig, temas]) => {
-    const bloques = [...new Set(temas.map(t => t.bloque))];
-    return `<div class="caja" style="margin-bottom:1rem"><h3 style="margin-top:0">${asig}</h3>` +
-      bloques.map(b => `<div style="margin-top:.9rem"><div class="etiqueta" style="margin-bottom:.4rem">${b}</div>
-        <div class="curr">${temas.filter(t => t.bloque === b).map(t => {
-          const hecho = e.hechosIds.includes(t.id);
-          return hecho
-            ? `<a class="chip hecho" href="temas/${t.id}/" title="${t.saber}">${t.titulo}</a>`
-            : `<span class="chip" title="${t.saber}">${t.titulo} <code>${t.id}</code></span>`;
-        }).join("")}</div></div>`).join("") + `</div>`;
-  }).join("");
+  const asigs = Object.keys(CURRICULO);
+  let asigActual = asigs[0];
+
+  /* menú de arriba: salta a la asignatura sin bajar buscando */
+  $("menu").innerHTML = asigs.map(a => `<a href="#curso" data-ir="${a}">${a.replace(" Castellana y Literatura", "")}</a>`).join("");
+  $("menu").onclick = ev => { const a = ev.target.dataset.ir; if (!a) return; asigActual = a; pintaCurriculo(); };
+
+  $("pestanas").innerHTML = asigs.map(a => `<button type="button" data-asig="${a}">${a}</button>`).join("");
+  $("pestanas").onclick = ev => { const a = ev.target.dataset.asig; if (!a) return; asigActual = a; pintaCurriculo(); };
+
+  function pintaCurriculo(){
+    [...$("pestanas").children].forEach(b => b.classList.toggle("on", b.dataset.asig === asigActual));
+    [...$("menu").children].forEach(b => b.classList.toggle("on", b.dataset.ir === asigActual));
+    const temas = CURRICULO[asigActual], bloques = [...new Set(temas.map(t => t.bloque))];
+    $("curriculo").innerHTML = `<div class="caja">` + bloques.map(b => `<div style="margin-bottom:1rem">
+      <div class="etiqueta" style="margin-bottom:.4rem">${b}</div>
+      <div class="curr">${temas.filter(t => t.bloque === b).map(t => {
+        const hecho = e.hechosIds.includes(t.id);
+        return hecho ? `<a class="chip hecho" href="temas/${t.id}/">${t.titulo}</a>`
+                     : `<button class="chip pedir" type="button" data-pedir="${t.id}" title="Pulsa para copiar el encargo">${t.titulo}</button>`;
+      }).join("")}</div></div>`).join("") +
+      `<p class="mini" style="margin-top:.6rem">Los azules están hechos. Pulsa cualquier otro y se copia el encargo listo para pegar.</p></div>`;
+  }
+  pintaCurriculo();
+
+  /* Pulsar un tema copia el encargo entero: así no hay que acordarse de ningún id */
+  document.addEventListener("click", ev => {
+    const id = ev.target.dataset && ev.target.dataset.pedir; if (!id) return;
+    const t = Object.values(CURRICULO).flat().find(x => x.id === id);
+    const asig = Object.entries(CURRICULO).find(([, l]) => l.some(x => x.id === id))[0];
+    const encargo = `Haz el tema ${t.id} de estudio-4eso, siguiendo ESTANDAR.md.\n\n` +
+      `Asignatura: ${asig}\nBloque: ${t.bloque}\nTítulo: ${t.titulo}\n` +
+      `Saber básico: ${t.saber}\n\nQué entra:\n${t.entra.map(x => "- " + x).join("\n")}\n\n` +
+      `Talleres a escribir: ${t.generadores.join(", ")}`;
+    navigator.clipboard.writeText(encargo).then(() => {
+      const aviso = document.createElement("div"); aviso.className = "copiado";
+      aviso.textContent = "Encargo de «" + t.titulo + "» copiado. Pégalo en el chat.";
+      document.body.appendChild(aviso); setTimeout(() => aviso.remove(), 2600);
+    }).catch(() => alert("Encargo:\n\n" + encargo));
+  });
+  $("avance").innerHTML = `<b>${e.hechos}</b> de ${e.total} temas hechos. Elige asignatura y pulsa un tema para pedirlo.`;
 }
 
 $("borrar").onclick = () => { if (confirm("¿Borrar todo tu progreso? No se puede deshacer.")){ Progreso.borrarTodo(); location.reload(); } };

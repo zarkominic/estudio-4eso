@@ -23,7 +23,7 @@ p{margin:.7rem 0;max-width:62ch}
 .barra{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.8rem;padding:.8rem var(--margen);
   background:rgba(251,250,247,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
 .barra .marca{font-weight:700;text-decoration:none;color:var(--tinta)}
-.barra .sep{flex:1}
+.barra .sep{flex:0 1 auto}
 .barra a{font-size:.95rem;text-decoration:none;color:var(--gris);padding:.5rem .7rem;border-radius:10px;min-height:44px;display:inline-flex;align-items:center}
 .barra a:hover,.barra a:focus-visible{background:#fff;color:var(--tinta)}
 
@@ -156,3 +156,18 @@ details[open] summary{margin-bottom:.6rem}
 .ej-pie .btn{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
 .taller{display:grid;gap:1rem}
 @media (min-width:1150px){.taller{grid-template-columns:1fr 1fr}}
+
+/* menú de asignaturas, en todas las páginas */
+.menu{display:flex;gap:.25rem;overflow-x:auto;flex:1 1 auto;min-width:0;margin-left:.8rem;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;flex:0 0 auto;font-size:.88rem;padding:.45rem .7rem;border-radius:8px;color:var(--gris);text-decoration:none}
+.menu a:hover,.menu a.on{color:var(--tinta);background:#fff}
+.repaso-link{flex:0 0 auto;background:var(--repasar);color:#fff !important;font-weight:700;border-radius:2rem;padding:.5rem 1rem !important}
+.barra .marca{flex:0 0 auto;white-space:nowrap}
+@media (max-width:860px){
+  .barra{gap:.4rem;padding:.6rem .8rem}
+  .barra .marca{font-size:0}
+  .barra .marca::before{content:"📘";font-size:1.3rem}
+  .menu a{font-size:.85rem;padding:.45rem .6rem}
+  .repaso-link{padding:.45rem .8rem !important;font-size:.85rem}
+}

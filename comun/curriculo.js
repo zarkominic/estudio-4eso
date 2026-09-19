@@ -161,8 +161,8 @@ const CURRICULO = {
       generadores:["medirVerso","tipoEstrofa","identificarFigura"] },
   ],
 
-  /* ══════════════ INGLÉS (4º ESO, camino a B2) ══════════════ */
-  "Inglés (hacia B2)": [
+  /* ══════════════ INGLÉS (4º ESO, nivel B1+) ══════════════ */
+  "Inglés B1+": [
     { id:"ing-tenses", bloque:"Grammar", titulo:"Tiempos verbales: repaso completo",
       saber:"Uso de los tiempos verbales en contexto.",
       entra:["Present simple vs continuous","Past simple vs continuous","Present perfect vs past simple","Past perfect","Future: will, going to, present continuous","Future perfect y continuous"],
@@ -184,18 +184,18 @@ const CURRICULO = {
       entra:["Who, which, that, whose, where","Defining vs non-defining","Cuándo se puede omitir el pronombre","Preposición + relativo","Reduced relative clauses"],
       generadores:["elegirRelativo","unirFrases","definingONo"] },
     { id:"ing-use-of-english", bloque:"Use of English", titulo:"Word formation y key word transformation",
-      saber:"Transformación léxica y estructural (formato B2).",
+      saber:"Transformación léxica y estructural.",
       entra:["Prefijos y sufijos","De verbo a sustantivo y adjetivo","Negative prefixes","Key word transformation: las 10 más frecuentes","Collocations"],
       generadores:["wordFormation","keyWordTransformation","collocation"] },
     { id:"ing-phrasal", bloque:"Vocabulary", titulo:"Phrasal verbs y preposiciones",
       saber:"Léxico de alta frecuencia.",
-      entra:["Phrasal verbs por partícula","Separables e inseparables","Los 50 más usados en B2","Dependent prepositions","Idioms frecuentes"],
+      entra:["Phrasal verbs por partícula","Separables e inseparables","Los 50 más usados","Dependent prepositions","Idioms frecuentes"],
       generadores:["phrasalHueco","preposicionDependiente","significadoPhrasal"] },
-    { id:"ing-writing", bloque:"Writing", titulo:"Writing B2: essay, email y review",
+    { id:"ing-writing", bloque:"Writing", titulo:"Writing: essay, email y review",
       saber:"Producción escrita formal e informal.",
       entra:["Opinion essay: estructura en 4 párrafos","Conectores formales","Formal email vs informal","Review: film, book, restaurant","Article y report","Qué puntúa el examinador"],
       generadores:["elegirConector","registroFormal","ordenarParrafos"] },
-    { id:"ing-speaking", bloque:"Speaking", titulo:"Speaking B2: cómo se aprueba",
+    { id:"ing-speaking", bloque:"Speaking", titulo:"Speaking: cómo se aprueba",
       saber:"Interacción oral y estrategias.",
       entra:["Las 4 partes del examen","Comparar dos fotos","Dar opinión y matizarla","Estar de acuerdo y discrepar","Ganar tiempo sin callarse","Errores que bajan la nota"],
       generadores:["frasesUtiles","compararFotos"] },
