@@ -1,0 +1,81 @@
+# ESTÁNDAR DE UN TEMA
+
+Esto es el contrato. Con este fichero y `comun/curriculo.js`, para pedir un tema nuevo
+basta con decir su **id**:
+
+> «haz mat-b-trigonometria»
+
+y sale completo, sin más instrucciones. Si algo de aquí no se cumple, el tema no está
+terminado.
+
+---
+
+## 1. Las tres capas, siempre
+
+| capa | dónde | para qué |
+|---|---|---|
+| **Teoría** | `temas/<id>/index.html` | entender |
+| **Taller** | generadores en `comun/ejercicios.js` | practicar hasta dominar |
+| **Repaso** | preguntas en `comun/preguntas.js` | que no se olvide |
+
+## 2. Mínimos que debe cumplir
+
+- **8 a 12 secciones `<h2>`** (el índice lateral se arma solo con ellas).
+- **Al menos un interactivo** pegado a la idea que explica, no de adorno.
+- **6 a 8 generadores de ejercicios**, uno por destreza del tema.
+- **12 a 16 preguntas** en el banco.
+- **Un ejemplo resuelto entero** y **otro con huecos**.
+- **Una sección «Y esto, ¿para qué?»** con tres usos reales, concretos y con números.
+- **Una sección con el error típico** del tema, con el contraejemplo que lo demuestra.
+- Los datos de `curriculo.js` mandan: el campo `entra` es el guion de contenidos y
+  `generadores` la lista de talleres a escribir.
+
+## 3. Reglas pedagógicas, no opcionales
+
+Vienen de los metaanálisis (Dunlosky 2013; Hattie y Donoghue 2021; Rohrer y Taylor 2007).
+
+1. **Pretest**: el tema abre con 2 preguntas *antes* de explicar nada.
+2. **Cada opción mala lleva su `porque`**: el error concreto que la hace parecer buena.
+   Sin eso, el test enseña a repetir el fallo.
+3. **Ejemplos que se vacían**: primero entero, luego con huecos.
+4. **La animación va al lado del texto que explica**, nunca antes ni después.
+5. **El repaso mezcla temas.** No se hace un test solo de este tema al final: eso ya
+   está en «Compruébate», que es práctica inmediata. Lo que consolida es el repaso
+   espaciado de `repaso.html`.
+6. **Nada de decir solo «mal»**: siempre explicación y pista.
+
+## 4. Tono
+
+- Español de España, vocabulario de instituto, tuteando.
+- Frases cortas. Como se lo explicarías a alguien en la cocina.
+- Nada de «es trivial», «basta con ver» ni «simplemente». Si se atasca no es culpa suya.
+- Los errores se nombran sin dramatizar: «este fallo tira exámenes enteros» vale;
+  «es facilísimo» no.
+
+## 5. Reglas técnicas
+
+- **Móvil primero**: botones de 48 px, todo en color desde el principio (sin `hover`
+  para nada esencial), una columna bajo 1000 px.
+- **Sin dependencias que instalar.** Solo KaTeX (fórmulas) y JSXGraph (geometría), por CDN.
+- **El progreso vive en el navegador** (`localStorage`). Sin cuentas ni servidor:
+  lo usan menores.
+- **Ids estables**: `rad-01`, `trig-01`… Si se cambia un id, se pierde el progreso.
+- Las respuestas del taller se admiten en varias formas: `5√3`, `5r3`, `5 raiz 3`.
+
+## 6. Pasos para crear el tema
+
+1. `cp -r plantilla temas/<id>`
+2. Escribir la teoría siguiendo el campo `entra` de `curriculo.js`.
+3. Escribir los generadores en `comun/ejercicios.js` (los de `generadores`) y
+   **probarlos generando 300 de cada uno**: ni un `NaN`, ni una respuesta vacía.
+4. Escribir 12-16 preguntas en `comun/preguntas.js` con `tema: "<id>"`.
+5. Añadir el tema a `comun/temas.js` con `estado: "listo"`.
+6. Comprobar: que la página parsea, que el JS compila, y **verla a 1440 y a 390 px**.
+
+## 7. Lo que NO se hace
+
+- Temas sin taller. Un tema solo con teoría y test no cumple el estándar.
+- Ejercicios fijos: los del taller **se generan**, para que se puedan repetir sin fin.
+- Gamificación por puntos, insignias o rachas competitivas entre amigos. La única
+  racha que hay es contra uno mismo, dentro de un bloque.
+- Pedir datos personales. Nunca, para nada.

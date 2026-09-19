@@ -34,7 +34,22 @@ De ahí las decisiones que verás:
 3. **Repaso** (`repaso.html`): preguntas del banco, mezcladas entre temas y repartidas
    en el tiempo, para que no se olvide.
 
-## Añadir un tema
+## Pedir un tema nuevo
+
+No hace falta explicar nada. Se mira la portada —**El curso entero**—, se copia el
+**id** del tema que se quiere y se dice:
+
+> «haz mat-b-trigonometria»
+
+De ahí sale todo: `comun/curriculo.js` tiene el título, el saber básico oficial del
+que viene, los contenidos que entran y los generadores de ejercicios que hacen falta;
+y `ESTANDAR.md` dice cómo se construye y qué mínimos cumple.
+
+El catálogo son **19 temas** de Matemáticas B y Física y Química, sacados de los
+saberes básicos del RD 217/2022 y del Decreto 65/2022 de Madrid. No existe API ni
+fichero abierto con el currículo: está en los decretos, así que se mantiene a mano.
+
+## Añadir un tema (a mano)
 
 1. `cp -r plantilla temas/mi-tema` y rellena los corchetes.
 2. Añade el tema a `comun/temas.js` (`estado: "listo"` cuando esté).

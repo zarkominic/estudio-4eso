@@ -17,6 +17,10 @@
 .puerta b{font-size:1.5rem;display:block}
 .puerta span{opacity:.9;font-size:.98rem;max-width:34ch;display:block;margin-top:.4rem}
 .puerta .cuantas{font-size:2.6rem;font-weight:700;line-height:1}
+.curr{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:2rem;border:1px solid var(--linea);background:var(--papel);font-size:.9rem;color:var(--gris);text-decoration:none}
+.chip.hecho{background:var(--aprender);border-color:var(--aprender);color:#fff;font-weight:600}
+.chip code{font-size:.75rem;opacity:.65}
 </style>
 </head>
 <body>
@@ -41,6 +45,10 @@
   <h2 id="temas">Temas</h2>
   <div class="rejilla" id="lista"></div>
 
+  <h2>El curso entero</h2>
+  <p class="mini" id="avance"></p>
+  <div id="curriculo"></div>
+
   <h2>Cómo va la cosa</h2>
   <div class="caja">
     <p class="mini" id="resumen">Todavía no has hecho nada. Empieza por un tema.</p>
@@ -52,6 +60,7 @@
 <footer class="envoltura">Hecho en casa para 4º ESO. Tu progreso se guarda solo en este navegador: nadie más lo ve.</footer>
 
 <script src="comun/temas.js"></script>
+<script src="comun/curriculo.js"></script>
 <script src="comun/preguntas.js"></script>
 <script src="comun/app.js"></script>
 <script>
@@ -77,6 +86,23 @@ if (respondidas.length){
   $("resumen").innerHTML = `Has contestado <b>${respondidas.length}</b> preguntas distintas de ${BANCO.length}. Dominas el <b>${dom}%</b>.`;
   $("barra").style.width = dom + "%";
 }
+/* El curso entero: lo hecho y lo que falta. Para pedir un tema basta con su id. */
+{
+  const e = estadoCurriculo();
+  $("avance").innerHTML = `<b>${e.hechos}</b> de ${e.total} temas hechos. Los grises todavía no están: para pedir uno, di su <b>id</b>.`;
+  $("curriculo").innerHTML = Object.entries(CURRICULO).map(([asig, temas]) => {
+    const bloques = [...new Set(temas.map(t => t.bloque))];
+    return `<div class="caja" style="margin-bottom:1rem"><h3 style="margin-top:0">${asig}</h3>` +
+      bloques.map(b => `<div style="margin-top:.9rem"><div class="etiqueta" style="margin-bottom:.4rem">${b}</div>
+        <div class="curr">${temas.filter(t => t.bloque === b).map(t => {
+          const hecho = e.hechosIds.includes(t.id);
+          return hecho
+            ? `<a class="chip hecho" href="temas/${t.id}/" title="${t.saber}">${t.titulo}</a>`
+            : `<span class="chip" title="${t.saber}">${t.titulo} <code>${t.id}</code></span>`;
+        }).join("")}</div></div>`).join("") + `</div>`;
+  }).join("");
+}
+
 $("borrar").onclick = () => { if (confirm("¿Borrar todo tu progreso? No se puede deshacer.")){ Progreso.borrarTodo(); location.reload(); } };
 </script>
 </body>
