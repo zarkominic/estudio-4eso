@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"ing-tenses", asignatura:"Inglés B2+", titulo:"Tiempos verbales",
+    resumen:"Cuándo va cada tiempo, past simple contra present perfect, for y since, y los errores típicos de un español.",
+    estado:"listo" },
   { id:"len-oracion-simple", asignatura:"Lengua", titulo:"Análisis sintáctico: la oración simple",
     resumen:"Sujeto y predicado, CD, CI, circunstanciales, atributo y suplemento, cada uno con su prueba.",
     estado:"listo" },
