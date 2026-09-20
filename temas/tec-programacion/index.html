@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programación — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=20260920">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Tecnología y Digitalización · 4º ESO</span>
+    <h1>Programación</h1>
+    <p class="mini">Variables, condicionales, bucles, funciones y listas en Python, y cómo arreglar lo que falla. Teoría, <b>código infinito que trazar</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Programar es dar órdenes en orden</h2>
+    <div class="par">
+      <div>
+        <p>Un programa es una lista de instrucciones que el ordenador ejecuta <b>de arriba abajo, una a una, sin suponer nada</b>. Esa última parte es la clave: el ordenador no adivina lo que querías decir.</p>
+        <p>Solo hay que dominar cuatro piezas, y con ellas se construye todo:</p>
+        <ul style="margin-left:1.2rem">
+          <li><b>Variables</b>: cajas donde guardar datos.</li>
+          <li><b>Condicionales</b>: hacer una cosa u otra según el caso.</li>
+          <li><b>Bucles</b>: repetir sin copiar y pegar.</li>
+          <li><b>Funciones</b>: escribir algo una vez y usarlo muchas.</li>
+        </ul>
+      </div>
+      <div class="caja idea">
+        <h3>El «=» no es «igual»</h3>
+        <p>En <code>x = 5</code> el igual significa <b>«guarda 5 en x»</b>. Por eso esto tiene sentido:</p>
+        <pre style="background:#17171a;color:#e8e8e8;padding:.7rem .9rem;border-radius:8px;font-size:.9rem">x = 5
+x = x + 3</pre>
+        <p>Primero se calcula la derecha (5+3) y el resultado se mete en x. Al final x vale 8.</p>
+        <p class="mini">Para <b>comparar</b> se usan dos iguales: <code>==</code>.</p>
+      </div>
+    </div>
+
+    <h2>Variables y tipos</h2>
+    <div class="reglas">
+      <div class="regla"><b>Número entero</b><code>edad = 15</code> — sin comillas.</div>
+      <div class="regla"><b>Decimal</b><code>precio = 3.5</code> — con punto, no con coma.</div>
+      <div class="regla"><b>Texto</b><code>nombre = "Ana"</code> — <b>siempre entre comillas</b>.</div>
+      <div class="regla"><b>Verdadero o falso</b><code>aprobado = True</code> — con mayúscula.</div>
+    </div>
+    <div class="caja ojo">
+      <p><b>El error que más se repite al empezar:</b> <code>"5" + 3</code> da error. «5» entre comillas es <b>texto</b>, no número, y no se pueden sumar cosas de distinto tipo.</p>
+      <p>Pasa siempre con lo que escribe el usuario: <code>input()</code> devuelve texto. Hay que convertirlo: <code>int(input())</code>.</p>
+    </div>
+
+    <h2>Condicionales: elegir camino</h2>
+    <pre style="background:#17171a;color:#e8e8e8;padding:1rem;border-radius:10px;overflow-x:auto;line-height:1.55">nota = 7
+
+if nota >= 9:
+    print("Sobresaliente")
+elif nota >= 5:
+    print("Aprobado")
+else:
+    print("Suspenso")</pre>
+    <p>Se leen <b>en orden</b> y en cuanto una se cumple, las demás se saltan. Por eso importa ponerlas de más exigente a menos: si el <code>elif nota >= 5</code> fuera primero, un 9 entraría ahí y nunca se vería «Sobresaliente».</p>
+    <div class="reglas">
+      <div class="regla"><b>Los dos puntos</b>Toda condición acaba en «:». Olvidarlos es el error número uno.</div>
+      <div class="regla"><b>La sangría manda</b>Lo indentado está dentro; lo que no, está fuera. En Python no hay llaves.</div>
+      <div class="regla"><b>Comparaciones</b><code>==</code> igual, <code>!=</code> distinto, <code>&gt;=</code> mayor o igual.</div>
+      <div class="regla"><b>Unir condiciones</b><code>and</code> las dos, <code>or</code> al menos una, <code>not</code> lo contrario.</div>
+    </div>
+
+    <h2>Bucles: repetir sin copiar</h2>
+    <div class="par">
+      <div>
+        <p><b>for</b> se usa cuando sabes cuántas veces:</p>
+        <pre style="background:#17171a;color:#e8e8e8;padding:.9rem;border-radius:10px;line-height:1.5">for i in range(5):
+    print(i)</pre>
+        <p>Imprime <b>0, 1, 2, 3, 4</b>. Cinco vueltas.</p>
+      </div>
+      <div class="caja ojo">
+        <h3>La trampa de range</h3>
+        <p><code>range(5)</code> empieza en <b>0</b> y <b>no llega al 5</b>.</p>
+        <p><code>range(2, 7)</code> da 2, 3, 4, 5, 6: incluye el primero y excluye el último.</p>
+        <p class="mini">Si te piden contar del 1 al 10, es <code>range(1, 11)</code>. Este despiste cuesta medio examen.</p>
+      </div>
+    </div>
+    <p><b>while</b> se usa cuando no sabes cuántas veces, sino hasta cuándo:</p>
+    <pre style="background:#17171a;color:#e8e8e8;padding:1rem;border-radius:10px;line-height:1.55">i = 0
+while i &lt; 5:
+    print(i)
+    i = i + 1     <span style="opacity:.6"># sin esta línea, no acaba nunca</span></pre>
+    <div class="caja ojo">
+      <p><b>El bucle infinito.</b> Si nada hace que la condición se vuelva falsa, el programa se queda dando vueltas para siempre. Siempre que escribas un <code>while</code>, comprueba que algo lo acerca al final.</p>
+    </div>
+
+    <h2>Funciones: escribirlo una vez</h2>
+    <pre style="background:#17171a;color:#e8e8e8;padding:1rem;border-radius:10px;overflow-x:auto;line-height:1.55">def area_rectangulo(base, altura):
+    return base * altura
+
+print(area_rectangulo(3, 4))   <span style="opacity:.6"># 12</span>
+print(area_rectangulo(10, 2))  <span style="opacity:.6"># 20</span></pre>
+    <p>Escribes la fórmula <b>una vez</b> y la usas con los datos que quieras. Y si algún día está mal, se arregla en un solo sitio.</p>
+    <p class="mini"><b>return</b> devuelve el resultado para usarlo; <b>print</b> solo lo enseña por pantalla. No es lo mismo, y confundirlos es muy común.</p>
+
+    <h2>Listas: muchos datos en una caja</h2>
+    <pre style="background:#17171a;color:#e8e8e8;padding:1rem;border-radius:10px;line-height:1.55">notas = [7, 5, 9, 3]
+print(notas[0])        <span style="opacity:.6"># 7, el primero</span>
+print(len(notas))      <span style="opacity:.6"># 4, cuántos hay</span>
+notas.append(10)       <span style="opacity:.6"># añade al final</span>
+
+for n in notas:
+    print(n)</pre>
+    <p><b>Se empieza a contar en 0.</b> El primero es <code>notas[0]</code> y el último de una lista de 4 es <code>notas[3]</code>. Pedir <code>notas[4]</code> da error.</p>
+
+    <h2>Cuando algo falla</h2>
+    <p>Programar es, sobre todo, arreglar lo que no funciona. Y hay un método:</p>
+    <ol class="pasos">
+      <li><b>Lee el mensaje de error.</b> Dice el tipo de fallo y <b>la línea exacta</b>. Casi nadie lo lee, y casi siempre lo dice todo.</li>
+      <li><b>Traza el código a mano.</b> Papel, y anota cuánto vale cada variable en cada línea.</li>
+      <li><b>Imprime por el camino.</b> Mete <code>print()</code> en varios puntos para ver dónde se tuerce.</li>
+      <li><b>Cambia una cosa cada vez.</b> Si cambias tres y funciona, no sabes cuál era.</li>
+    </ol>
+    <div class="desliza"><table>
+      <thead><tr><th>Error</th><th>Qué significa</th></tr></thead>
+      <tbody>
+        <tr><td><code>SyntaxError</code></td><td>Está mal escrito: faltan dos puntos, comillas o un paréntesis.</td></tr>
+        <tr><td><code>IndentationError</code></td><td>La sangría no cuadra.</td></tr>
+        <tr><td><code>NameError</code></td><td>Usas una variable que no existe, o la has escrito mal.</td></tr>
+        <tr><td><code>TypeError</code></td><td>Mezclas tipos: texto con número.</td></tr>
+        <tr><td><code>IndexError</code></td><td>Pides una posición de la lista que no existe.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>¿Qué imprime este programa?</p>
+    <pre style="background:#17171a;color:#e8e8e8;padding:1rem;border-radius:10px;line-height:1.55">total = 0
+for i in range(1, 5):
+    if i % 2 == 0:
+        total = total + i
+print(total)</pre>
+    <ol class="pasos">
+      <li><b>range(1, 5)</b> da 1, 2, 3 y 4. El 5 no entra.</li>
+      <li><b>i % 2 == 0</b> pregunta si el resto de dividir entre 2 es cero, o sea si es par.</li>
+      <li><b>Vuelta a vuelta:</b> con 1 no entra; con 2 sí, total = 2; con 3 no; con 4 sí, total = 6.</li>
+      <li><b>Imprime 6.</b> Y fíjate en que el print está FUERA del bucle: por eso imprime una sola vez, al final.</li>
+      <li><b>Si estuviera dentro</b> (indentado), imprimiría cuatro veces, una por vuelta. La sangría cambia el programa.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <ol class="pasos">
+      <li><code>range(3, 8)</code> genera <span class="hueco" data-bien="5" data-pista="Del 3 al 7: cuéntalos">?</span> números.</li>
+      <li>Si <code>x = 4</code> y luego <code>x = x * 3</code>, x vale <span class="hueco" data-bien="12">?</span>.</li>
+      <li>En <code>lista = [5, 8, 2]</code>, <code>lista[1]</code> vale <span class="hueco" data-bien="8" data-pista="Se empieza a contar en 0">?</span>.</li>
+      <li>Para comparar si dos cosas son iguales se usa <span class="hueco" data-bien="==" data-pista="Dos símbolos">?</span>.</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Para todo lo demás</h3>
+        <p>Robótica, Arduino, hojas de cálculo, análisis de datos: todo son las mismas cuatro piezas con otra sintaxis.</p></div>
+      <div class="caja"><h3>Para pensar ordenado</h3>
+        <p>Partir un problema en pasos que se puedan comprobar uno a uno sirve para programar y para todo lo demás.</p></div>
+      <div class="caja"><h3>Para no tragarte el humo</h3>
+        <p>Saber qué hace un ordenador por dentro es la diferencia entre usar la tecnología y que la tecnología te use.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Aquí está lo que de verdad hace que un tema se domine: <b>repetir</b>. Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe la respuesta como quieras: <b>5√3</b>, <b>5r3</b> o <b>5 raiz 3</b> valen igual. Si sale un número entero, escríbelo a secas.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=20260920"></script>
+<script src="../../comun/preguntas-tec.js?v=20260920"></script>
+<script src="../../comun/app.js?v=20260920"></script>
+<script src="../../comun/ejercicios.js?v=20260920"></script>
+<script src="../../comun/ejercicios-tec.js?v=20260920"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["tec-03","tec-05"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("tec-programacion", $("ahora"), 6);
+["queImprime","trazaBucle","encontrarError","leyOhm"]
+  .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+
+$("leido").onclick = e => { Progreso.marcarLeido("tec-programacion"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("tec-programacion")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

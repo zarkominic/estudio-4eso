@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"tec-programacion", asignatura:"Tecnología", titulo:"Programación",
+    resumen:"Variables, condicionales, bucles, funciones y listas en Python, y cómo encontrar el fallo cuando algo no va.",
+    estado:"listo" },
   { id:"ing-tenses", asignatura:"Inglés B2+", titulo:"Tiempos verbales",
     resumen:"Cuándo va cada tiempo, past simple contra present perfect, for y since, y los errores típicos de un español.",
     estado:"listo" },
