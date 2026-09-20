@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"ing-relatives", asignatura:"Inglés B2+", titulo:"Relative clauses",
+    resumen:"Qué relativo va en cada caso, cuándo se puede omitir y por qué dos comas cambian el significado.",
+    estado:"listo" },
   { id:"ing-modals", asignatura:"Inglés B2+", titulo:"Verbos modales",
     resumen:"Obligación, prohibición, consejo, posibilidad y deducción, con los modal perfects y los pares que más se fallan.",
     estado:"listo" },
