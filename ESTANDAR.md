@@ -69,7 +69,13 @@ que es lo que un chat no puede dar porque no guarda el progreso. Lo que no tiene
 es alguien a quien preguntarle «explícamelo de otra forma» a las once de la noche.
 Cada cosa cubre el hueco de la otra.
 
-Lo añade `tutorDeApoyo(titulo, asignatura, donde)` de `comun/app.js`.
+Lo añade `tutorDeApoyo(titulo, asignatura, donde)` de `comun/app.js`, y la barra
+de arriba usa el mismo motor con `barraTutor()`.
+
+**Cómo se pasa la pregunta, y por qué así**: Gemini **no admite precargar el texto
+por la URL** (ignora `?q=`), y «Learn About», que sí lo haría, solo funciona en
+Estados Unidos y en inglés. Así que la pregunta **se copia al portapapeles** y se
+avisa al alumno de que la pegue. Es lo único que funciona siempre.
 
 ## 4. Tono
 

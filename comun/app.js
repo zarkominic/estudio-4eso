@@ -140,26 +140,52 @@ function compruebate(idTema, donde, cuantas = 6){
   return elegidas.length;
 }
 
+
+/* Abre el tutor con la pregunta. Gemini NO admite precargar el texto por la URL
+   (lo comprobamos: ignora ?q=), y «Learn About» solo funciona en EE.UU. y en inglés.
+   Así que se copia al portapapeles y se avisa de que hay que pegarla: es lo único
+   que funciona siempre. */
+function abrirTutor(pregunta){
+  const abrir = () => window.open("https://gemini.google.com/app", "_blank", "noopener");
+  const aviso = texto => {
+    const a = document.createElement("div");
+    a.style.cssText = "position:fixed;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:50;"
+      + "background:#17171a;color:#fff;padding:.9rem 1.2rem;border-radius:2rem;font-size:.95rem;"
+      + "max-width:92vw;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.3)";
+    a.textContent = texto; document.body.appendChild(a); setTimeout(() => a.remove(), 5000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(pregunta)
+      .then(() => { aviso("Pregunta copiada. Pégala allí con Ctrl+V (o Cmd+V)."); abrir(); })
+      .catch(() => { abrir(); aviso("Escribe tu duda en el chat que se ha abierto."); });
+  } else { abrir(); aviso("Escribe tu duda en el chat que se ha abierto."); }
+}
+
+/* El texto de la pregunta, con el contexto del tema y pidiendo que guíe, no que resuelva. */
+function preguntaTutor(tema, asignatura, duda){
+  const contexto = [tema && `estoy estudiando ${tema}`, asignatura && `de ${asignatura}`].filter(Boolean).join(" ");
+  return `Soy estudiante de 4º de la ESO en España${contexto ? " y " + contexto : ""}. `
+    + (duda ? `Mi duda es: ${duda}. ` : `Explícame el tema. `)
+    + `Explícamelo paso a paso, con un ejemplo sencillo, y hazme preguntas para comprobar si lo entiendo. `
+    + `No me des la respuesta directamente: guíame.`;
+}
+
 /* Enlace a un tutor conversacional para cuando algo no se entiende.
    Nuestro material tiene el temario, el taller y el repaso; lo que no tiene es a alguien
    a quien preguntarle «explícamelo de otra forma». Eso lo cubre esto.
    Abre Gemini en modo de aprendizaje guiado con la pregunta ya escrita. */
 function tutorDeApoyo(titulo, asignatura, donde){
   if (!donde) return;
-  const pregunta = `Soy estudiante de 4º de la ESO en España y estoy estudiando ${titulo} en ${asignatura}. `
-    + `Explícamelo paso a paso, con un ejemplo sencillo, y hazme preguntas para comprobar si lo entiendo. `
-    + `No me des la respuesta directamente: guíame.`;
   const caja = document.createElement("div");
   caja.className = "caja";
   caja.innerHTML = `<h3 style="margin-top:0">¿Sigues sin entenderlo?</h3>
-    <p>No pasa nada: a veces hace falta que te lo cuenten de otra forma. Esto abre un tutor
-    que te lo explica paso a paso y te va preguntando, en vez de darte la respuesta.</p>
-    <p style="margin-top:1rem">
-      <a class="btn claro" target="_blank" rel="noopener"
-         href="https://gemini.google.com/app?q=${encodeURIComponent(pregunta)}">Que me lo expliquen de otra forma ↗</a></p>
-    <p class="mini" style="margin-top:.7rem">Se abre en otra pestaña. Si te pide elegir, busca el modo
-    <b>Aprendizaje guiado</b>. Es gratis.</p>`;
+    <p>No pasa nada: a veces hace falta que te lo cuenten de otra forma. Esto copia la pregunta
+    y abre un tutor que te lo explica paso a paso y te va preguntando, en vez de darte la respuesta.</p>
+    <p style="margin-top:1rem"><button class="btn claro" type="button" id="btnTutor">Que me lo expliquen de otra forma ↗</button></p>
+    <p class="mini" style="margin-top:.7rem">Se abre en otra pestaña: <b>pega la pregunta</b> con Ctrl+V.
+    Y si te lo ofrece, activa el modo <b>Aprendizaje guiado</b>. Es gratis.</p>`;
   donde.appendChild(caja);
+  caja.querySelector("#btnTutor").onclick = () => abrirTutor(preguntaTutor(titulo, asignatura, ""));
 }
 
 /* Barra de consulta rápida: un campo y un botón, en todas las páginas.
@@ -177,12 +203,7 @@ function barraTutor(){
     <button type="submit" title="Abrir el tutor que te lo explica paso a paso">Explícamelo</button>`;
   caja.onsubmit = ev => {
     ev.preventDefault();
-    const duda = caja.querySelector("input").value.trim();
-    const contexto = [tema && `estoy estudiando ${tema}`, asig && `de ${asig}`].filter(Boolean).join(" ");
-    const pregunta = `Soy estudiante de 4º de la ESO en España${contexto ? " y " + contexto : ""}. `
-      + (duda ? `Mi duda es: ${duda}. ` : `Explícame el tema. `)
-      + `Explícamelo paso a paso, con un ejemplo sencillo, y hazme preguntas para comprobar si lo entiendo. No me des la respuesta directamente: guíame.`;
-    window.open("https://gemini.google.com/app?q=" + encodeURIComponent(pregunta), "_blank", "noopener");
+    abrirTutor(preguntaTutor(tema, asig, caja.querySelector("input").value.trim()));
   };
   // justo antes del botón de Repaso, para que quede a su lado
   const repaso = barra.querySelector(".repaso-link");
