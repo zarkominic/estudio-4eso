@@ -6,7 +6,7 @@
 <title>Estudio 4º ESO</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14'>📘</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="comun/base.css?v=202609201353">
+<link rel="stylesheet" href="comun/base.css?v=202609201358">
 <style>
 .portada{padding:5vh var(--margen) 2vh;max-width:1000px;margin:0 auto}
 .puertas{display:grid;gap:1rem;margin:2rem 0 1rem}
@@ -24,7 +24,7 @@
 .chip code{font-size:.75rem;opacity:.65}
 .menu{display:flex;gap:.25rem;overflow-x:auto;flex:1 1 auto;min-width:0;margin-left:.8rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .menu::-webkit-scrollbar{display:none}
-.menu a{white-space:nowrap;flex:0 0 auto;font-size:.88rem;padding:.45rem .7rem;border-radius:8px}
+.menu a{white-space:nowrap;flex:0 0 auto;font-size:.88rem;padding:.45rem .7rem;border-radius:8px;overflow:visible}
 .menu a.on{color:var(--tinta);font-weight:700;background:#fff}
 .repaso-link{background:var(--repasar);color:#fff !important;font-weight:700;border-radius:2rem;padding:.5rem 1rem !important}
 @media (max-width:860px){
@@ -35,9 +35,11 @@
   .menu a{font-size:.85rem;padding:.45rem .6rem}
   .repaso-link{padding:.45rem .8rem !important;font-size:.85rem}
 }
-.pestanas{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.6rem;margin-bottom:1rem;scrollbar-width:none}
+.pestanas{display:flex;flex-wrap:wrap;gap:.45rem;padding-bottom:.6rem;margin-bottom:1rem}
 .pestanas::-webkit-scrollbar{display:none}
-.pestanas button{white-space:nowrap;padding:.5rem 1rem;border-radius:2rem;border:1px solid var(--linea);background:#fff;color:var(--gris);font:inherit;font-size:.92rem;cursor:pointer;min-height:44px}
+.pestanas button{flex:0 0 auto;white-space:nowrap;padding:.5rem 1.1rem;border-radius:2rem;
+  border:1px solid var(--linea);background:#fff;color:var(--gris);font:inherit;font-size:.92rem;
+  cursor:pointer;min-height:44px;line-height:1.2}
 .pestanas button.on{background:var(--tinta);color:#fff;border-color:var(--tinta);font-weight:700}
 .chip.pedir{cursor:pointer}
 .chip.pedir:hover,.chip.pedir:focus-visible{border-color:var(--aprender);color:var(--tinta)}
@@ -85,22 +87,22 @@
 
 <footer class="envoltura">Hecho en casa para 4º ESO. Tu progreso se guarda solo en este navegador: nadie más lo ve.</footer>
 
-<script src="comun/temas.js?v=202609201353"></script>
-<script src="comun/curriculo.js?v=202609201353"></script>
-<script src="comun/preguntas.js?v=202609201353"></script>
-<script src="comun/preguntas-fyq.js?v=202609201353"></script>
-<script src="comun/preguntas-fyq2.js?v=202609201353"></script>
-<script src="comun/preguntas-form.js?v=202609201353"></script>
-<script src="comun/preguntas-pot.js?v=202609201353"></script>
-<script src="comun/preguntas-poli.js?v=202609201353"></script>
-<script src="comun/preguntas-morfo.js?v=202609201353"></script>
-<script src="comun/preguntas-modales.js?v=202609201353"></script>
-<script src="comun/preguntas-relativas.js?v=202609201353"></script>
-<script src="comun/preguntas-log.js?v=202609201353"></script>
-<script src="comun/preguntas-lengua.js?v=202609201353"></script>
-<script src="comun/preguntas-ingles.js?v=202609201353"></script>
-<script src="comun/preguntas-tec.js?v=202609201353"></script>
-<script src="comun/app.js?v=202609201353"></script>
+<script src="comun/temas.js?v=202609201358"></script>
+<script src="comun/curriculo.js?v=202609201358"></script>
+<script src="comun/preguntas.js?v=202609201358"></script>
+<script src="comun/preguntas-fyq.js?v=202609201358"></script>
+<script src="comun/preguntas-fyq2.js?v=202609201358"></script>
+<script src="comun/preguntas-form.js?v=202609201358"></script>
+<script src="comun/preguntas-pot.js?v=202609201358"></script>
+<script src="comun/preguntas-poli.js?v=202609201358"></script>
+<script src="comun/preguntas-morfo.js?v=202609201358"></script>
+<script src="comun/preguntas-modales.js?v=202609201358"></script>
+<script src="comun/preguntas-relativas.js?v=202609201358"></script>
+<script src="comun/preguntas-log.js?v=202609201358"></script>
+<script src="comun/preguntas-lengua.js?v=202609201358"></script>
+<script src="comun/preguntas-ingles.js?v=202609201358"></script>
+<script src="comun/preguntas-tec.js?v=202609201358"></script>
+<script src="comun/app.js?v=202609201358"></script>
 <script>
 const $ = id => document.getElementById(id);
 const listos = TEMAS.filter(t => t.estado === "listo");
@@ -130,11 +132,15 @@ if (respondidas.length){
   const asigs = Object.keys(CURRICULO);
   let asigActual = asigs[0];
 
+  /* Nombre corto en pestañas y menú, completo en el title: «Lengua Castellana y
+     Literatura» no cabe en una pastilla y se veía cortado. */
+  const corto = a => a.replace(" Castellana y Literatura", "").replace(" y Digitalización", "").replace("Geografía e Historia", "Historia");
+
   /* menú de arriba: salta a la asignatura sin bajar buscando */
-  $("menu").innerHTML = asigs.map(a => `<a href="#curso" data-ir="${a}">${a.replace(" Castellana y Literatura", "")}</a>`).join("");
+  $("menu").innerHTML = asigs.map(a => `<a href="#curso" data-ir="${a}" title="${a}">${corto(a)}</a>`).join("");
   $("menu").onclick = ev => { const a = ev.target.dataset.ir; if (!a) return; asigActual = a; pintaCurriculo(); };
 
-  $("pestanas").innerHTML = asigs.map(a => `<button type="button" data-asig="${a}">${a}</button>`).join("");
+    $("pestanas").innerHTML = asigs.map(a => `<button type="button" data-asig="${a}" title="${a}">${corto(a)}</button>`).join("");
   $("pestanas").onclick = ev => { const a = ev.target.dataset.asig; if (!a) return; asigActual = a; pintaCurriculo(); };
 
   function pintaCurriculo(){
