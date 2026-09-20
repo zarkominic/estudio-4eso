@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circuitos y electrónica — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202609201407">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Tecnología y Digitalización · 4º ESO</span>
+    <h1>Circuitos y electrónica</h1>
+    <p class="mini">Ley de Ohm con la analogía del agua, serie y paralelo, potencia y lo que pagas de luz, código de colores y los componentes básicos. Teoría, <b>ejercicios infinitos</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Tres magnitudes y una analogía que lo resuelve todo</h2>
+    <div class="par">
+      <div>
+        <p>La electricidad no se ve, y por eso cuesta. La forma más rápida de entenderla es <b>pensar en agua por una tubería</b>:</p>
+        <ul style="margin-left:1.2rem">
+          <li><b>Voltaje (V)</b>, en voltios → la <b>presión</b> que empuja.</li>
+          <li><b>Intensidad (I)</b>, en amperios → el <b>caudal</b>: cuánta carga pasa por segundo.</li>
+          <li><b>Resistencia (R)</b>, en ohmios → lo <b>estrecha</b> que es la tubería.</li>
+        </ul>
+        <p>Con esa imagen, la ley de Ohm deja de ser una fórmula que memorizar: más presión, más caudal; tubería más estrecha, menos caudal.</p>
+      </div>
+      <div class="caja idea">
+        <h3>La ley de Ohm</h3>
+        <p style="font-size:1.35rem;text-align:center">$$V = I \cdot R$$</p>
+        <p>Y despejando: $I = \dfrac{V}{R}$ · $R = \dfrac{V}{I}$</p>
+        <p class="mini">Truco del triángulo: tapa con el dedo la que buscas, y lo que queda es la operación.</p>
+      </div>
+    </div>
+
+    <h2>Serie y paralelo: la diferencia que importa</h2>
+    <div class="par">
+      <div class="caja"><h3>En serie</h3>
+        <p>Un solo camino. La corriente pasa por todos, uno detrás de otro.</p>
+        <p><b>$R_{eq} = R_1 + R_2$</b> — se suman.</p>
+        <p>Si se funde uno, <b>se apagan todos</b>: el camino se corta.</p>
+        <p class="mini">La equivalente siempre es <b>mayor</b> que la mayor.</p>
+      </div>
+      <div class="caja"><h3>En paralelo</h3>
+        <p>Varios caminos. Cada rama es independiente.</p>
+        <p><b>$R_{eq} = \dfrac{R_1 \cdot R_2}{R_1 + R_2}$</b> (para dos).</p>
+        <p>Si se funde uno, <b>los demás siguen</b>.</p>
+        <p class="mini">La equivalente siempre es <b>menor</b> que la más pequeña.</p>
+      </div>
+    </div>
+    <div class="caja idea">
+      <p><b>La comprobación más rápida que existe:</b> si calculas un paralelo y te sale un valor mayor que cualquiera de las resistencias, <b>te has equivocado</b>. En paralelo siempre baja, sin excepciones.</p>
+    </div>
+    <p>Y esto explica tu casa: <b>las bombillas van en paralelo</b>. Así cada una recibe los 230 V completos y, si una se funde, las demás siguen encendidas. En serie, con que fallara una, te quedabas a oscuras.</p>
+
+    <h2>Potencia: lo que de verdad pagas</h2>
+    <p>La potencia dice <b>a qué ritmo</b> se consume energía:</p>
+    <p style="text-align:center;font-size:1.2rem">$$P = V \cdot I \qquad \text{(vatios)}$$</p>
+    <p>Pero en la factura no pagas vatios, pagas <b>kilovatios-hora</b>, que es potencia por tiempo:</p>
+    <ol class="pasos">
+      <li><b>Pasa a kilovatios:</b> un aparato de 2.000 W son 2 kW.</li>
+      <li><b>Multiplica por las horas:</b> 2 kW × 3 h = <b>6 kWh</b>.</li>
+      <li><b>Multiplica por el precio:</b> a 0,15 €/kWh, son <b>0,90 €</b>.</li>
+    </ol>
+    <p class="mini">Con esto puedes calcular lo que te cuesta cualquier cosa. Una estufa de 2.000 W cuatro horas al día, un mes: 240 kWh, unos 36 €. Una bombilla LED de 9 W las mismas horas: 1,08 kWh, dieciséis céntimos.</p>
+
+    <h2>El código de colores</h2>
+    <p>Las resistencias son diminutas, así que su valor va en anillos de colores. Se leen desde el extremo donde los anillos están <b>más juntos</b>:</p>
+    <div class="reglas">
+      <div class="regla"><b>1.ª banda</b>Primera cifra.</div>
+      <div class="regla"><b>2.ª banda</b>Segunda cifra.</div>
+      <div class="regla"><b>3.ª banda</b>Multiplicador: cuántos <b>ceros</b> se añaden.</div>
+      <div class="regla"><b>4.ª banda</b>Tolerancia: el margen de error. Es la que va separada.</div>
+    </div>
+    <div class="desliza"><table>
+      <thead><tr><th>Color</th><th>Cifra</th><th>Color</th><th>Cifra</th></tr></thead>
+      <tbody>
+        <tr><td>Negro</td><td>0</td><td>Verde</td><td>5</td></tr>
+        <tr><td>Marrón</td><td>1</td><td>Azul</td><td>6</td></tr>
+        <tr><td>Rojo</td><td>2</td><td>Violeta</td><td>7</td></tr>
+        <tr><td>Naranja</td><td>3</td><td>Gris</td><td>8</td></tr>
+        <tr><td>Amarillo</td><td>4</td><td>Blanco</td><td>9</td></tr>
+      </tbody>
+    </table></div>
+    <p>Ejemplo: <b>marrón · negro · rojo</b> → cifras 1 y 0, más dos ceros → <b>1.000 Ω</b>, o sea 1 kΩ.</p>
+
+    <h2>Los componentes que hay que conocer</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Resistencia</h3>
+        <p>Limita la corriente. Sin ella, muchos componentes se queman.</p></div>
+      <div class="caja"><h3>Diodo y LED</h3>
+        <p>Dejan pasar la corriente <b>en un solo sentido</b>. El LED además da luz.</p>
+        <p class="mini">Si lo pones al revés, simplemente no funciona.</p></div>
+      <div class="caja"><h3>Condensador</h3>
+        <p>Almacena carga y la suelta cuando hace falta. Sirve para estabilizar.</p></div>
+    </div>
+    <div class="caja ojo">
+      <p><b>El error número uno al montar un circuito:</b> conectar un LED directamente a la pila. El LED casi no ofrece resistencia, así que la corriente se dispara y lo quema en segundos. <b>Siempre una resistencia en serie con él.</b></p>
+    </div>
+
+    <h2>Medir y no romper nada</h2>
+    <div class="par">
+      <div>
+        <p><b>Amperímetro</b>: mide caudal, así que hay que <b>ponerse en el camino</b>. Va <b>en serie</b>, intercalado en el circuito.</p>
+        <p><b>Voltímetro</b>: mide diferencia entre dos puntos, así que va <b>en paralelo</b>, tocando los dos extremos del componente.</p>
+      </div>
+      <div class="caja ojo">
+        <h3>Cortocircuito</h3>
+        <p>Si la corriente encuentra un camino <b>sin resistencia</b>, $I = V/R$ se dispara hacia arriba.</p>
+        <p>Resultado: calor, humo y, a veces, fuego. Para eso están los fusibles y el diferencial del cuadro de tu casa.</p>
+      </div>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Una pila de 12 V alimenta dos resistencias en serie de 20 Ω y 40 Ω. Calcula la intensidad y la potencia total.</p>
+    <ol class="pasos">
+      <li><b>Resistencia equivalente.</b> En serie se suman: $20 + 40 = 60$ Ω.</li>
+      <li><b>Intensidad.</b> $I = \dfrac{V}{R} = \dfrac{12}{60} = 0{,}2$ A.</li>
+      <li><b>Comprobación de sentido:</b> 0,2 A es poca corriente, lógico con 60 Ω de resistencia.</li>
+      <li><b>Potencia total.</b> $P = V \cdot I = 12 \cdot 0{,}2 = 2{,}4$ W.</li>
+      <li><b>Y en cada resistencia:</b> como están en serie, por las dos pasa <b>la misma</b> intensidad. La caída de tensión sí cambia: $V_1 = 0{,}2 \cdot 20 = 4$ V y $V_2 = 0{,}2 \cdot 40 = 8$ V.</li>
+      <li><b>Comprueba:</b> $4 + 8 = 12$ V, la tensión de la pila. Cuadra.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <ol class="pasos">
+      <li>Con V = 10 V y R = 5 Ω, la intensidad es <span class="hueco" data-bien="2" data-pista="I = V/R">?</span> A.</li>
+      <li>Dos resistencias de 30 Ω en paralelo equivalen a <span class="hueco" data-bien="15" data-pista="Dos iguales en paralelo dan la mitad">?</span> Ω.</li>
+      <li>Un aparato de 1.000 W durante 5 horas consume <span class="hueco" data-bien="5" data-pista="Pasa a kW y multiplica">?</span> kWh.</li>
+      <li>Marrón · negro · marrón son <span class="hueco" data-bien="100" data-pista="Cifras 1 y 0, más un cero">?</span> Ω.</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Para entender tu factura</h3>
+        <p>Saber qué es un kWh te dice qué aparatos te están costando dinero de verdad y cuáles no.</p></div>
+      <div class="caja"><h3>Para montar cosas</h3>
+        <p>Arduino, robótica, tiras de LED: todo empieza con Ohm y con saber poner una resistencia.</p></div>
+      <div class="caja"><h3>Para no llevarte un susto</h3>
+        <p>Entender qué es un cortocircuito y para qué sirve el diferencial no es teoría: es seguridad en casa.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Aquí está lo que de verdad hace que un tema se domine: <b>repetir</b>. Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe la respuesta como quieras: <b>5√3</b>, <b>5r3</b> o <b>5 raiz 3</b> valen igual. Si sale un número entero, escríbelo a secas.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202609201407"></script>
+<script src="../../comun/preguntas-elec.js?v=202609201407"></script>
+<script src="../../comun/app.js?v=202609201407"></script>
+<script src="../../comun/ejercicios.js?v=202609201407"></script>
+<script src="../../comun/ejercicios-tec.js?v=202609201407"></script>
+<script src="../../comun/ejercicios-elec.js?v=202609201407"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["elec-05","elec-10"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("tec-electronica", $("ahora"), 6);
+["leyOhm","serieParalelo","potenciaConsumo","codigoColores"]
+  .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+tutorDeApoyo("Circuitos y electrónica", "Tecnología y Digitalización", $("tutor"));
+barraTutor();
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+
+$("leido").onclick = e => { Progreso.marcarLeido("tec-electronica"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("tec-electronica")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

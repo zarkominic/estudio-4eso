@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"tec-electronica", asignatura:"Tecnología", titulo:"Circuitos y electrónica",
+    resumen:"Ley de Ohm con la analogía del agua, serie y paralelo, potencia y consumo, código de colores y componentes.",
+    estado:"listo" },
   { id:"his-xix", asignatura:"Historia", titulo:"El siglo XIX: revoluciones e industria",
     resumen:"Del Antiguo Régimen al mundo actual: revolución, industria, clases sociales, nacionalismos e imperialismo.",
     estado:"listo" },
