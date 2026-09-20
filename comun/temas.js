@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"fyq-formulacion-inorganica", asignatura:"Física y Química", titulo:"Formulación inorgánica",
+    resumen:"Números de oxidación, cruzar fórmulas, las cinco familias y las dos nomenclaturas. Puro entrenamiento.",
+    estado:"listo" },
   { id:"fyq-enlace", asignatura:"Física y Química", titulo:"El enlace químico",
     resumen:"Iónico, covalente y metálico: por qué se unen los átomos y cómo reconocer cada enlace por las propiedades.",
     estado:"listo" },

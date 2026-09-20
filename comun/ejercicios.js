@@ -342,7 +342,10 @@ function bloqueEjercicios(tipo, donde){
   }
   function comprueba(){
     const v = $$("input").value; if (!v.trim()) return;
-    const bien = igual(v, actual.respuesta);
+    // algunos ejercicios admiten más de una respuesta correcta (por ejemplo, dos
+    // nomenclaturas válidas para el mismo compuesto)
+    const validas = [actual.respuesta].concat(actual.respuestaAlt || []);
+    const bien = validas.some(x => igual(v, x));
     $$("input").className = bien ? "bien" : "mal";
     const ver = $$(".ej-veredicto"); ver.hidden = false;
     racha = bien ? racha + 1 : 0;
