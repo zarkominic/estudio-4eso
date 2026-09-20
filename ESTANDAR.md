@@ -75,6 +75,14 @@ Vienen de los metaanálisis (Dunlosky 2013; Hattie y Donoghue 2021; Rohrer y Tay
   lo usan menores.
 - **Ids estables**: `rad-01`, `trig-01`… Si se cambia un id, se pierde el progreso.
 - Las respuestas del taller se admiten en varias formas: `5√3`, `5r3`, `5 raiz 3`.
+- **Enunciados de letras**: en Lengua, Historia o Inglés el generador marca
+  `textoPlano: true` y el enunciado va en HTML. Si se pasa por el motor de fórmulas,
+  sale el código a la vista.
+- **Versión en los ficheros comunes**: todos los `<script src="comun/...js?v=FECHA">`
+  llevan versión. Sin eso, el navegador sirve la versión vieja y los cambios no se ven
+  (pasó el 20/09 y costó media hora encontrarlo).
+- **Concordancia en Lengua**: si el generador arma oraciones, el verbo tiene que
+  concordar con el sujeto. Probar con sujetos en plural.
 
 ## 6. Pasos para crear el tema
 

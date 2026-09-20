@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"len-oracion-simple", asignatura:"Lengua", titulo:"Análisis sintáctico: la oración simple",
+    resumen:"Sujeto y predicado, CD, CI, circunstanciales, atributo y suplemento, cada uno con su prueba.",
+    estado:"listo" },
   { id:"mat-b-logaritmos", asignatura:"Matemáticas", titulo:"Logaritmos",
     resumen:"La potencia al revés: propiedades, cambio de base, ecuaciones exponenciales y las escalas de pH, decibelios y terremotos.",
     estado:"listo" },

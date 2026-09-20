@@ -325,7 +325,8 @@ function bloqueEjercicios(tipo, donde){
   const $$ = s => caja.querySelector(s);
   function nuevo(){
     actual = def.genera();
-    $$(".ej-enunciado").innerHTML = `\\[${actual.enunciado}\\]`;
+    // los temas de letras traen el enunciado en texto: no pasa por el motor de fórmulas
+    $$(".ej-enunciado").innerHTML = actual.textoPlano ? actual.enunciado : `\\[${actual.enunciado}\\]`;
     $$("input").value = ""; $$("input").className = "";
     $$(".ej-veredicto").hidden = true;
     $$(".ej-solucion").open = false;
