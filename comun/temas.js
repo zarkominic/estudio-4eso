@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"mat-b-polinomios", asignatura:"Matemáticas", titulo:"Polinomios y factorización",
+    resumen:"Teorema del resto, Ruffini, identidades notables al revés y el orden para factorizar cualquier polinomio.",
+    estado:"listo" },
   { id:"mat-b-potencias", asignatura:"Matemáticas", titulo:"Potencias y notación científica",
     resumen:"Las reglas y de dónde salen, exponente cero y negativo, notación científica y orden de magnitud.",
     estado:"listo" },

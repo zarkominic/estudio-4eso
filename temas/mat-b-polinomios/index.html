@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polinomios y factorización — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=20260920">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Matemáticas · 4º ESO</span>
+    <h1>Polinomios y factorización</h1>
+    <p class="mini">Teorema del resto, Ruffini, identidades notables al revés, el orden para factorizar cualquier cosa y las fracciones algebraicas. Teoría, <b>ejercicios infinitos</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Qué es factorizar y por qué importa</h2>
+    <div class="par">
+      <div>
+        <p><b>Factorizar es convertir sumas en multiplicaciones.</b> Y eso, que parece un capricho, resuelve media asignatura.</p>
+        <p>¿Por qué? Porque con una multiplicación puedes usar una regla poderosa: <b>si un producto vale cero, alguno de sus factores vale cero</b>.</p>
+        <p>Con $x^2 - 7x + 12 = 0$ no sabes por dónde empezar. Con $(x-3)(x-4) = 0$ sí: o $x=3$ o $x=4$. Ya está resuelto.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Para qué se usa</h3>
+        <p><b>Resolver ecuaciones</b> de grado mayor que 2.</p>
+        <p><b>Simplificar fracciones</b> algebraicas.</p>
+        <p><b>Encontrar el dominio</b> de una función: dónde se anula el denominador.</p>
+        <p class="mini">Todo lo que viene en el curso pasa por aquí.</p>
+      </div>
+    </div>
+
+    <h2>El teorema del resto: un atajo que ahorra tiempo</h2>
+    <p>Para saber el resto de dividir $P(x)$ entre $(x-a)$, <b>no hace falta dividir</b>:</p>
+    <p style="text-align:center;font-size:1.25rem">$$\text{Resto} = P(a)$$</p>
+    <p>Con $P(x) = x^3 - 4x - 5$ dividido entre $(x-2)$: $P(2) = 8 - 8 - 5 = -5$. Ese es el resto, en un cálculo.</p>
+    <div class="caja ojo">
+      <p><b>Cuidado con el signo.</b> Para $(x-3)$ se evalúa en $+3$. Para $(x+3)$ se evalúa en $-3$, porque $(x+3)$ es lo mismo que $(x-(-3))$.</p>
+    </div>
+    <p>Y de ahí sale lo importante, el <b>teorema del factor</b>: si $P(a) = 0$, entonces $(x-a)$ es un factor del polinomio. Encontrar una raíz es encontrar un factor.</p>
+
+    <h2>Ruffini: dividir sin dividir</h2>
+    <p>Ruffini es un método rápido para dividir entre $(x-a)$. Solo se trabaja con los coeficientes.</p>
+    <ol class="pasos">
+      <li><b>Escribe los coeficientes</b> en orden, de mayor grado a menor. <b>Si falta algún grado, pon un 0.</b> Ese es el fallo más común.</li>
+      <li><b>Pon $a$ a la izquierda</b>, con el signo cambiado respecto al paréntesis.</li>
+      <li><b>Baja el primer coeficiente</b> tal cual.</li>
+      <li><b>Multiplícalo por $a$</b> y suma el resultado al siguiente coeficiente.</li>
+      <li><b>Repite</b> hasta el final. Lo último que sale es el <b>resto</b>; lo demás es el cociente, con un grado menos.</li>
+    </ol>
+    <div class="caja idea">
+      <p><b>Ejemplo:</b> $(x^3 + 3x^2 - 6x - 8) \div (x - 2)$. Coeficientes: 1, 3, −6, −8, y $a = 2$.</p>
+      <p>Bajo el 1. → $1 \cdot 2 = 2$, y $3 + 2 = 5$. → $5 \cdot 2 = 10$, y $-6 + 10 = 4$. → $4 \cdot 2 = 8$, y $-8 + 8 = \mathbf{0}$.</p>
+      <p>Cociente: $x^2 + 5x + 4$. Resto: <b>0</b>, así que la división es exacta y 2 es raíz.</p>
+    </div>
+
+    <h2>Cómo encontrar raíces sin probar a lo loco</h2>
+    <p>Hay un atajo que reduce muchísimo la búsqueda: <b>una raíz entera tiene que dividir al término independiente</b>.</p>
+    <p>En $x^3 - 2x^2 - 5x + 6$, el término independiente es 6. Así que las únicas raíces enteras posibles son $\pm1, \pm2, \pm3, \pm6$. Seis candidatos en vez de infinitos.</p>
+    <p class="mini">Empieza siempre probando 1 y −1: son los que más veces salen.</p>
+
+    <h2>Las identidades notables, al revés</h2>
+    <p>Ya las conoces para multiplicar. Para factorizar se usan <b>de derecha a izquierda</b>:</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Si ves esto…</th><th>…escribe esto</th><th>Cómo reconocerlo</th></tr></thead>
+      <tbody>
+        <tr><td>$a^2 - b^2$</td><td>$(a+b)(a-b)$</td><td>Dos cuadrados <b>restándose</b></td></tr>
+        <tr><td>$a^2 + 2ab + b^2$</td><td>$(a+b)^2$</td><td>Dos cuadrados y el <b>doble producto</b> en medio</td></tr>
+        <tr><td>$a^2 - 2ab + b^2$</td><td>$(a-b)^2$</td><td>Igual, pero con el medio negativo</td></tr>
+      </tbody>
+    </table></div>
+    <div class="caja ojo">
+      <p><b>$a^2 + b^2$ NO se factoriza</b> con números reales. Solo la resta. Si ves $x^2 + 25$, déjalo estar: no hay ningún número real que lo anule.</p>
+    </div>
+
+    <h2>El orden para factorizar cualquier cosa</h2>
+    <ol class="pasos">
+      <li><b>Factor común primero.</b> Siempre. $3x^3 - 12x = 3x(x^2 - 4)$.</li>
+      <li><b>¿Es una identidad notable?</b> Mira si son cuadrados. $x^2-4 = (x+2)(x-2)$.</li>
+      <li><b>¿Es de grado 2?</b> Busca dos números que sumen el del medio y multipliquen el último. O usa la fórmula.</li>
+      <li><b>¿Grado 3 o más?</b> Busca una raíz entre los divisores del término independiente y aplica Ruffini.</li>
+      <li><b>Repite</b> con lo que quede, hasta que no se pueda más.</li>
+    </ol>
+    <p class="mini">El ejemplo completo: $3x^3 - 12x$ → factor común $3x(x^2-4)$ → identidad notable $3x(x+2)(x-2)$. <b>Tres factores, y ahí sí está terminado.</b></p>
+
+    <h2>Fracciones algebraicas: el error que más cuesta</h2>
+    <div class="par">
+      <div class="caja"><h3>Bien</h3>
+        <p>$\dfrac{x^2-9}{x-3} = \dfrac{(x+3)(x-3)}{x-3} = x+3$</p>
+        <p class="mini">Se cancela un <b>factor</b> entero, que multiplica a todo.</p>
+      </div>
+      <div class="caja ojo"><h3>Mal</h3>
+        <p>$\dfrac{x+5}{x} \ne 5$</p>
+        <p>La $x$ de arriba está <b>sumando</b>, no multiplicando: no se puede tachar.</p>
+        <p class="mini">Compruébalo con $x=5$: la fracción vale 2, no 5 ni 6.</p>
+      </div>
+    </div>
+    <p><b>La regla, en una frase:</b> solo se cancela lo que multiplica a todo el numerador y a todo el denominador. Por eso hay que factorizar <b>antes</b> de simplificar.</p>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Factoriza del todo $P(x) = x^3 - 2x^2 - 5x + 6$.</p>
+    <ol class="pasos">
+      <li><b>¿Factor común?</b> No hay nada que se repita en los cuatro términos.</li>
+      <li><b>Busca raíces</b> entre los divisores de 6: ±1, ±2, ±3, ±6.</li>
+      <li><b>Prueba con 1:</b> $1 - 2 - 5 + 6 = 0$. ¡Raíz! Así que $(x-1)$ es factor.</li>
+      <li><b>Ruffini con 1:</b> coeficientes 1, −2, −5, 6 → cociente $x^2 - x - 6$, resto 0.</li>
+      <li><b>Factoriza el de grado 2:</b> dos números que sumen −1 y multipliquen −6: el 2 y el −3. Queda $(x+2)(x-3)$.</li>
+      <li><b>Resultado:</b> $P(x) = (x-1)(x+2)(x-3)$. Y sus raíces son 1, −2 y 3: tres raíces para grado 3.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <ol class="pasos">
+      <li><b>Factor común de</b> $6x^2 + 9x$: <span class="hueco" data-bien="3x" data-pista="Lo que se repite: número y letra">?</span>$(2x+3)$.</li>
+      <li><b>$x^2 - 36$</b> es $(x+6)(x$<span class="hueco" data-bien="-6" data-pista="Diferencia de cuadrados">?</span>$)$.</li>
+      <li><b>El resto</b> de dividir $x^2 + 3x - 4$ entre $(x-1)$ es <span class="hueco" data-bien="0" data-pista="Sustituye x por 1">?</span>.</li>
+      <li><b>$x^2 - 5x + 6$</b> es $(x-2)(x-$<span class="hueco" data-bien="3" data-pista="Dos números que sumen 5 y multipliquen 6">?</span>$)$.</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Para resolver ecuaciones</h3>
+        <p>Una ecuación de grado 3 o 4 solo se resuelve factorizando. Sin esto, te quedas parado.</p></div>
+      <div class="caja"><h3>Para las funciones</h3>
+        <p>Los cortes con el eje X son las raíces, y el dominio depende de dónde se anula el denominador. Las dos cosas son factorizar.</p></div>
+      <div class="caja"><h3>Para bachillerato</h3>
+        <p>Límites, derivadas e integrales empiezan casi siempre por factorizar y simplificar. Lo que se aprende aquí no se suelta más.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Aquí está lo que de verdad hace que un tema se domine: <b>repetir</b>. Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe la respuesta como quieras: <b>5√3</b>, <b>5r3</b> o <b>5 raiz 3</b> valen igual. Si sale un número entero, escríbelo a secas.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=20260920"></script>
+<script src="../../comun/preguntas-poli.js?v=20260920"></script>
+<script src="../../comun/app.js?v=20260920"></script>
+<script src="../../comun/ejercicios.js?v=20260920"></script>
+<script src="../../comun/ejercicios-poli.js?v=20260920"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["poli-03","poli-12"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("mat-b-polinomios", $("ahora"), 6);
+["teoremaResto","ruffini","factorizar","raicesPolinomio"]
+  .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+
+$("leido").onclick = e => { Progreso.marcarLeido("mat-b-polinomios"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("mat-b-polinomios")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>
