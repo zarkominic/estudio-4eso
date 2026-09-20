@@ -221,6 +221,7 @@ tutorDeApoyo("Programación", "Tecnología y Digitalización", $("tutor"));
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("tec-programacion"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("tec-programacion")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

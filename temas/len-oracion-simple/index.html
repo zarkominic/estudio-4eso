@@ -186,6 +186,7 @@ tutorDeApoyo("Análisis sintáctico: la oración simple", "Lengua Castellana", $
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("len-oracion-simple"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("len-oracion-simple")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

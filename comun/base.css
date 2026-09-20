@@ -171,3 +171,27 @@ details[open] summary{margin-bottom:.6rem}
   .menu a{font-size:.85rem;padding:.45rem .6rem}
   .repaso-link{padding:.45rem .8rem !important;font-size:.85rem}
 }
+
+/* ── Consulta rápida en la barra ── */
+.consulta{display:flex;gap:.4rem;flex:0 1 auto;margin-left:auto;align-items:center}
+.consulta input{min-height:40px;padding:.45rem .8rem;border:1px solid var(--linea);border-radius:2rem;
+  font:inherit;font-size:.9rem;background:#fff;width:min(230px,32vw)}
+.consulta input:focus{outline:2px solid var(--aprender);outline-offset:1px}
+.consulta button{min-height:40px;padding:.45rem 1rem;border:0;border-radius:2rem;background:var(--aprender);
+  color:#fff;font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;white-space:nowrap}
+@media (max-width:860px){
+  /* en el móvil caben: icono + campo + bombilla + Repaso. El menú de asignaturas
+     se va, porque desde la portada ya se llega a todas. */
+  .barra{gap:.35rem;padding:.55rem .7rem}
+  .consulta{flex:1 1 auto;margin-left:.3rem;min-width:0;gap:.3rem}
+  .consulta input{width:100%;min-width:0;font-size:.85rem;padding:.4rem .7rem}
+  .consulta button{font-size:0;padding:.4rem .6rem;flex:0 0 auto}
+  .consulta button::before{content:"💡";font-size:1.05rem}
+  .repaso-link{padding:.4rem .7rem !important;font-size:.8rem}
+  .menu{display:none}
+}
+@media (max-width:420px){
+  .consulta input::placeholder{font-size:.8rem}
+  .repaso-link{font-size:0;padding:.4rem .6rem !important}
+  .repaso-link::before{content:"↻";font-size:1.05rem}
+}

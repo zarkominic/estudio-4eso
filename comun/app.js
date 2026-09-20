@@ -161,3 +161,30 @@ function tutorDeApoyo(titulo, asignatura, donde){
     <b>Aprendizaje guiado</b>. Es gratis.</p>`;
   donde.appendChild(caja);
 }
+
+/* Barra de consulta rápida: un campo y un botón, en todas las páginas.
+   Escribes la duda y se abre el tutor con ella, sin tener que bajar al final del tema.
+   Si el campo está vacío, usa el tema de la página. */
+function barraTutor(){
+  const barra = document.querySelector(".barra"); if (!barra || barra.querySelector(".consulta")) return;
+  const h1 = document.querySelector("h1"), eti = document.querySelector(".etiqueta");
+  const tema = h1 ? h1.textContent.trim() : "";
+  const asig = eti ? eti.textContent.replace(" · 4º ESO", "").trim() : "";
+
+  const caja = document.createElement("form");
+  caja.className = "consulta";
+  caja.innerHTML = `<input type="text" placeholder="¿Qué no entiendes?" aria-label="Escribe tu duda">
+    <button type="submit" title="Abrir el tutor que te lo explica paso a paso">Explícamelo</button>`;
+  caja.onsubmit = ev => {
+    ev.preventDefault();
+    const duda = caja.querySelector("input").value.trim();
+    const contexto = [tema && `estoy estudiando ${tema}`, asig && `de ${asig}`].filter(Boolean).join(" ");
+    const pregunta = `Soy estudiante de 4º de la ESO en España${contexto ? " y " + contexto : ""}. `
+      + (duda ? `Mi duda es: ${duda}. ` : `Explícame el tema. `)
+      + `Explícamelo paso a paso, con un ejemplo sencillo, y hazme preguntas para comprobar si lo entiendo. No me des la respuesta directamente: guíame.`;
+    window.open("https://gemini.google.com/app?q=" + encodeURIComponent(pregunta), "_blank", "noopener");
+  };
+  // justo antes del botón de Repaso, para que quede a su lado
+  const repaso = barra.querySelector(".repaso-link");
+  repaso ? barra.insertBefore(caja, repaso) : barra.appendChild(caja);
+}

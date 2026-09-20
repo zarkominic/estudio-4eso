@@ -213,6 +213,7 @@ tutorDeApoyo("Tiempos verbales", "Inglés B2+", $("tutor"));
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("ing-tenses"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("ing-tenses")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

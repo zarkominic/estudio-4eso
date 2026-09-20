@@ -245,6 +245,7 @@ tutorDeApoyo("Estructura atómica y sistema periódico", "Física y Química", $
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("fyq-atomo"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("fyq-atomo")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

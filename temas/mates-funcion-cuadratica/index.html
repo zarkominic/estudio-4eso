@@ -147,6 +147,7 @@ const q = BANCO.find(x => x.id === "cuad-01");
 if (q) pintarPregunta(q, $("pretest"));
 
 tutorDeApoyo("La función cuadrática", "Matemáticas", $("tutor"));
+barraTutor();
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 

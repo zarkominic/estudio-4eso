@@ -119,6 +119,7 @@ activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 pinta();
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("ID-DEL-TEMA"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("ID-DEL-TEMA")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }

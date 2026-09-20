@@ -187,6 +187,7 @@ tutorDeApoyo("Polinomios y factorización", "Matemáticas", $("tutor"));
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();
+barraTutor();
 
 $("leido").onclick = e => { Progreso.marcarLeido("mat-b-polinomios"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
 if (Progreso.leido("mat-b-polinomios")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
