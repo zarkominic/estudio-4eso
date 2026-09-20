@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"ing-modals", asignatura:"Inglés B2+", titulo:"Verbos modales",
+    resumen:"Obligación, prohibición, consejo, posibilidad y deducción, con los modal perfects y los pares que más se fallan.",
+    estado:"listo" },
   { id:"len-morfologia", asignatura:"Lengua", titulo:"Categorías gramaticales",
     resumen:"Las nueve clases de palabras con la prueba de cada una, determinante o pronombre, y cómo se forman palabras nuevas.",
     estado:"listo" },
