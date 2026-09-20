@@ -95,6 +95,8 @@
   </div>
 
   <!-- ─── 5. LA PUERTA AL REPASO, no el test en sí ─── -->
+  <div id="tutor"></div>
+
   <div class="caja idea" style="margin-top:2.5rem">
     <h3>¿Y ahora?</h3>
     <p>Esto era la teoría. Para que se te quede, hay que <b>ponerse a prueba con el tiempo</b>, no leerlo otra vez.</p>
@@ -144,6 +146,7 @@ leer();
 const q = BANCO.find(x => x.id === "cuad-01");
 if (q) pintarPregunta(q, $("pretest"));
 
+tutorDeApoyo("La función cuadrática", "Matemáticas", $("tutor"));
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 

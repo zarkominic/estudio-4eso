@@ -58,6 +58,19 @@ Vienen de los metaanálisis (Dunlosky 2013; Hattie y Donoghue 2021; Rohrer y Tay
    espaciado de `repaso.html`.
 6. **Nada de decir solo «mal»**: siempre explicación y pista.
 
+## 3 bis. El tutor de apoyo
+
+Cada tema acaba con un bloque **«¿Sigues sin entenderlo?»** que abre un tutor
+conversacional (Gemini en modo Aprendizaje guiado, gratis) con la pregunta ya
+escrita y pidiendo explicación paso a paso, no la respuesta.
+
+Es deliberado: nuestro material tiene el temario, el taller y el repaso espaciado,
+que es lo que un chat no puede dar porque no guarda el progreso. Lo que no tiene
+es alguien a quien preguntarle «explícamelo de otra forma» a las once de la noche.
+Cada cosa cubre el hueco de la otra.
+
+Lo añade `tutorDeApoyo(titulo, asignatura, donde)` de `comun/app.js`.
+
 ## 4. Tono
 
 - Español de España, vocabulario de instituto, tuteando.

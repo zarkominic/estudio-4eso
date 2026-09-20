@@ -166,6 +166,8 @@
     <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
     <div class="compruebate" id="ahora"></div>
 
+    <div id="tutor"></div>
+
     <div class="caja idea" style="margin-top:2.5rem">
       <h3>¿Y ahora?</h3>
       <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
@@ -191,6 +193,7 @@ compruebate("mat-b-reales", $("ahora"), 6);
 ["clasificarNumero","fraccionGeneratriz","intervalos","errorAbsolutoRelativo"]
   .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
 
+tutorDeApoyo("Números reales e intervalos", "Matemáticas", $("tutor"));
 activarHuecos();
 renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 indiceAutomatico();

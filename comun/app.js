@@ -139,3 +139,25 @@ function compruebate(idTema, donde, cuantas = 6){
   elegidas.forEach(q => pintarPregunta(q, donde));
   return elegidas.length;
 }
+
+/* Enlace a un tutor conversacional para cuando algo no se entiende.
+   Nuestro material tiene el temario, el taller y el repaso; lo que no tiene es a alguien
+   a quien preguntarle «explícamelo de otra forma». Eso lo cubre esto.
+   Abre Gemini en modo de aprendizaje guiado con la pregunta ya escrita. */
+function tutorDeApoyo(titulo, asignatura, donde){
+  if (!donde) return;
+  const pregunta = `Soy estudiante de 4º de la ESO en España y estoy estudiando ${titulo} en ${asignatura}. `
+    + `Explícamelo paso a paso, con un ejemplo sencillo, y hazme preguntas para comprobar si lo entiendo. `
+    + `No me des la respuesta directamente: guíame.`;
+  const caja = document.createElement("div");
+  caja.className = "caja";
+  caja.innerHTML = `<h3 style="margin-top:0">¿Sigues sin entenderlo?</h3>
+    <p>No pasa nada: a veces hace falta que te lo cuenten de otra forma. Esto abre un tutor
+    que te lo explica paso a paso y te va preguntando, en vez de darte la respuesta.</p>
+    <p style="margin-top:1rem">
+      <a class="btn claro" target="_blank" rel="noopener"
+         href="https://gemini.google.com/app?q=${encodeURIComponent(pregunta)}">Que me lo expliquen de otra forma ↗</a></p>
+    <p class="mini" style="margin-top:.7rem">Se abre en otra pestaña. Si te pide elegir, busca el modo
+    <b>Aprendizaje guiado</b>. Es gratis.</p>`;
+  donde.appendChild(caja);
+}
