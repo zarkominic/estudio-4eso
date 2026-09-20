@@ -89,6 +89,10 @@ avisa al alumno de que la pegue. Es lo único que funciona siempre.
 
 - **Móvil primero**: botones de 48 px, todo en color desde el principio (sin `hover`
   para nada esencial), una columna bajo 1000 px.
+- **Anchos**: la columna de texto se queda en **72 caracteres** a propósito —más
+  ancha cansa la vista—; lo que se ensancha en pantallas grandes es todo lo demás
+  (tablas, talleres, rejillas). El índice lateral solo aparece **a partir de 1150 px**:
+  por debajo dejaba el texto en 617 px, que es peor que no tenerlo.
 - **Sin dependencias que instalar.** Solo KaTeX (fórmulas) y JSXGraph (geometría), por CDN.
 - **El progreso vive en el navegador** (`localStorage`). Sin cuentas ni servidor:
   lo usan menores.
