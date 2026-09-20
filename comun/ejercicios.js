@@ -19,6 +19,7 @@ const raizTex = (n, base, m) => n === 2 ? `\\sqrt{${base}^{${m}}}` : `\\sqrt[${n
 /* Normaliza lo que escribe el alumno: 5√3, 5raiz3, 5 raiz 3, 5*sqrt(3), 5r3 → "5r3" */
 function normaliza(txt){
   return (txt || "").toLowerCase().trim()
+    .normalize("NFD").replace(/[\u0300-\u0304\u0308]/g, "")  // quita tildes: iónico = ionico
     .replace(/\u2019/g, "'")                    // apóstrofo tipográfico → recto
     .replace(/\bdo not\b/g, "don't").replace(/\bdoes not\b/g, "doesn't")
     .replace(/\bdid not\b/g, "didn't").replace(/\bhas not\b/g, "hasn't")
