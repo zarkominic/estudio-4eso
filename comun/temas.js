@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"len-textos", asignatura:"Lengua", titulo:"Tipos de texto y comentario",
+    resumen:"Los seis tipos, tema y tesis, estructuras, tipos de argumento y el orden para comentar un texto.",
+    estado:"listo" },
   { id:"ing-relatives", asignatura:"Inglés B2+", titulo:"Relative clauses",
     resumen:"Qué relativo va en cada caso, cuándo se omite y por qué dos comas cambian el significado de la frase.",
     estado:"listo" },
