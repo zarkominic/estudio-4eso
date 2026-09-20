@@ -2,6 +2,9 @@
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
   { id:"ing-relatives", asignatura:"Inglés B2+", titulo:"Relative clauses",
+    resumen:"Qué relativo va en cada caso, cuándo se omite y por qué dos comas cambian el significado de la frase.",
+    estado:"listo" },
+  { id:"ing-relatives", asignatura:"Inglés B2+", titulo:"Relative clauses",
     resumen:"Qué relativo va en cada caso, cuándo se puede omitir y por qué dos comas cambian el significado.",
     estado:"listo" },
   { id:"ing-modals", asignatura:"Inglés B2+", titulo:"Verbos modales",
