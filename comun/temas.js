@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"fyq-atomo", asignatura:"Física y Química", titulo:"Estructura atómica y sistema periódico",
+    resumen:"Protones, neutrones y electrones; iones e isótopos; los modelos; y por qué la tabla está ordenada así.",
+    estado:"listo" },
   { id:"mat-b-reales", asignatura:"Matemáticas", titulo:"Números reales e intervalos",
     resumen:"Qué tipo de número es cada cosa, fracción generatriz, intervalos, valor absoluto y errores.",
     estado:"listo" },
