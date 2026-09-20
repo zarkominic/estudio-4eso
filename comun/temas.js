@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"mat-b-logaritmos", asignatura:"Matemáticas", titulo:"Logaritmos",
+    resumen:"La potencia al revés: propiedades, cambio de base, ecuaciones exponenciales y las escalas de pH, decibelios y terremotos.",
+    estado:"listo" },
   { id:"fyq-atomo", asignatura:"Física y Química", titulo:"Estructura atómica y sistema periódico",
     resumen:"Protones, neutrones y electrones; iones e isótopos; los modelos; y por qué la tabla está ordenada así.",
     estado:"listo" },

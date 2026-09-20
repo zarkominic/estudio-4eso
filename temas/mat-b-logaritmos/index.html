@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logaritmos — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Matemáticas · 4º ESO</span>
+    <h1>Logaritmos</h1>
+    <p class="mini">Qué es un logaritmo, sus tres propiedades, cambio de base, ecuaciones exponenciales y dónde aparecen: pH, decibelios, terremotos. Teoría, <b>ejercicios infinitos</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Qué es un logaritmo, sin rodeos</h2>
+    <div class="par">
+      <div>
+        <p>Un logaritmo es <b>una potencia preguntada al revés</b>. Nada más.</p>
+        <p>La potencia pregunta: «¿cuánto es $2^5$?» → 32.<br>
+           El logaritmo pregunta: «¿<b>a qué</b> hay que elevar 2 para que salga 32?» → 5.</p>
+        <p style="text-align:center;font-size:1.25rem">$$\log_a b = c \iff a^c = b$$</p>
+        <p>Se lee «logaritmo en base $a$ de $b$». Y la respuesta <b>siempre es un exponente</b>. Si alguna vez te sale un número enorme, te has equivocado: los logaritmos suelen ser números pequeños.</p>
+      </div>
+      <div class="caja idea">
+        <h3>La frase que lo resuelve todo</h3>
+        <p style="font-size:1.1rem"><b>«El logaritmo es el exponente.»</b></p>
+        <p>Cuando te atasques, escribe la potencia debajo:</p>
+        <p>$\log_3 81 = ?$ &nbsp;→&nbsp; $3^{?} = 81$ &nbsp;→&nbsp; $? = 4$.</p>
+        <p class="mini">Con eso se resuelve más de la mitad de los ejercicios del tema.</p>
+      </div>
+    </div>
+
+    <h2>Los dos que hay que reconocer</h2>
+    <div class="reglas">
+      <div class="regla"><b>Logaritmo decimal</b>Base 10, y no se escribe: $\log 100 = 2$. Es el de la calculadora, tecla <code>log</code>.</div>
+      <div class="regla"><b>Logaritmo neperiano</b>Base $e \approx 2{,}718$, se escribe $\ln$. Tecla <code>ln</code>. Sale en crecimiento de poblaciones e intereses.</div>
+      <div class="regla"><b>$\log_a 1 = 0$</b>Siempre, en cualquier base: todo elevado a 0 da 1.</div>
+      <div class="regla"><b>$\log_a a = 1$</b>Siempre: todo elevado a 1 se queda igual.</div>
+    </div>
+
+    <div class="caja ojo">
+      <h3>El argumento no puede ser cero ni negativo</h3>
+      <p>$\log(-8)$ <b>no existe</b>: no hay ningún exponente que haga que 10 dé un número negativo. Las potencias de base positiva siempre salen positivas.</p>
+      <p>Pero ojo: <b>el resultado sí puede ser negativo</b>. $\log 0{,}01 = -2$, porque $10^{-2} = 0{,}01$. Lo que no puede ser negativo es lo de dentro.</p>
+    </div>
+
+    <h2>Las tres propiedades, y de dónde salen</h2>
+    <p>No hay que memorizarlas: son las de las potencias, vistas del revés.</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Propiedad</th><th>Se lee</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>$\log(a \cdot b) = \log a + \log b$</td><td>El producto se convierte en suma</td><td>$\log 20 + \log 5 = \log 100 = 2$</td></tr>
+        <tr><td>$\log\dfrac{a}{b} = \log a - \log b$</td><td>El cociente, en resta</td><td>$\log 200 - \log 2 = \log 100 = 2$</td></tr>
+        <tr><td>$\log a^{n} = n \cdot \log a$</td><td>El exponente sale fuera</td><td>$\log 10^5 = 5 \cdot 1 = 5$</td></tr>
+      </tbody>
+    </table></div>
+    <details>
+      <summary>¿Por qué el producto se convierte en suma?</summary>
+      <p>Porque al multiplicar potencias de la misma base, los exponentes <b>se suman</b>: $10^2 \cdot 10^3 = 10^5$.</p>
+      <p>Y como el logaritmo <i>es</i> el exponente, multiplicar por dentro es sumar por fuera. La propiedad no es un truco: es la misma regla de siempre, mirada desde el otro lado.</p>
+      <p class="mini">Esta propiedad hizo posibles las reglas de cálculo, con las que se diseñaron los aviones antes de que existieran los ordenadores: convertían multiplicaciones difíciles en sumas fáciles.</p>
+    </details>
+
+    <div class="caja ojo">
+      <h3>El error que más puntos cuesta</h3>
+      <p style="font-size:1.1rem"><b>$\log(a + b)$ NO es $\log a + \log b$.</b></p>
+      <p>Compruébalo: $\log(10 + 10) = \log 20 \approx 1{,}30$, pero $\log 10 + \log 10 = 1 + 1 = 2$. No son iguales.</p>
+      <p>Las propiedades sirven para <b>productos y cocientes</b>, nunca para sumas dentro del logaritmo. Si ves una suma ahí dentro, no se puede tocar.</p>
+    </div>
+
+    <h2>Cambio de base</h2>
+    <p>La calculadora solo tiene $\log$ (base 10) y $\ln$ (base $e$). Si te piden $\log_3 50$, se pasa así:</p>
+    <p style="text-align:center;font-size:1.2rem">$$\log_a b = \frac{\log b}{\log a}$$</p>
+    <p>Arriba el argumento, abajo la base. Así que $\log_3 50 = \dfrac{\log 50}{\log 3} \approx \dfrac{1{,}699}{0{,}477} \approx 3{,}56$.</p>
+    <p class="mini">Comprueba que tiene sentido: $3^3 = 27$ y $3^4 = 81$. Como 50 está entre medias, el resultado tiene que estar entre 3 y 4. Cuadra.</p>
+
+    <h2>Para qué sirven de verdad: escalas que no caben</h2>
+    <p>Los logaritmos se inventaron para hacer cuentas, pero hoy se usan sobre todo para <b>medir cosas que van de muy pequeño a enorme</b>. Cuando una escala sube de 10 en 10, es logarítmica.</p>
+    <div class="par tres">
+      <div class="caja"><h3>pH</h3>
+        <p>$\text{pH} = -\log[\text{H}^+]$. Un pH de 3 es <b>diez veces</b> más ácido que uno de 4, y cien veces más que uno de 5.</p>
+        <p class="mini">Por eso el zumo de limón (pH 2) pica tanto más que el café (pH 5).</p></div>
+      <div class="caja"><h3>Decibelios</h3>
+        <p>$10 \cdot \log$ de la relación de intensidades. De 60 a 80 dB no es «un poco más»: es <b>100 veces</b> más intenso.</p>
+        <p class="mini">Por eso los cascos a tope hacen daño aunque «solo» marquen 100.</p></div>
+      <div class="caja"><h3>Terremotos</h3>
+        <p>Escala Richter. Un 7 no es «un poco peor» que un 5: en amplitud es <b>100 veces</b> mayor.</p>
+        <p class="mini">Y en energía liberada, más de 1.000 veces.</p></div>
+    </div>
+
+    <h2>Ecuaciones exponenciales</h2>
+    <p>Son las que llevan la $x$ <b>en el exponente</b>. Hay dos casos y conviene distinguirlos rápido:</p>
+    <div class="par">
+      <div class="caja"><h3>Si se puede igualar la base</h3>
+        <p>$2^x = 32$. Como $32 = 2^5$, queda $2^x = 2^5$, y entonces $x = 5$.</p>
+        <p>Con la misma base, los exponentes son iguales. <b>No hace falta logaritmo.</b></p>
+        <p class="mini">También vale con desplazamiento: $3^{x+1} = 27$ → $x + 1 = 3$ → $x = 2$.</p>
+      </div>
+      <div class="caja"><h3>Si no se puede</h3>
+        <p>$2^x = 10$. El 10 no es potencia exacta de 2, así que hay que bajar la $x$:</p>
+        <p>$x = \log_2 10 = \dfrac{\log 10}{\log 2} = \dfrac{1}{0{,}301} \approx 3{,}32$.</p>
+        <p class="mini">Comprueba: $2^3 = 8$ y $2^4 = 16$. Entre 3 y 4. Cuadra.</p>
+      </div>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Inviertes 1.000 € al 5 % de interés compuesto. ¿Cuántos años tardan en duplicarse?</p>
+    <ol class="pasos">
+      <li><b>Plantea.</b> Cada año el dinero se multiplica por $1{,}05$, así que a los $t$ años hay $1000 \cdot 1{,}05^{\,t}$.</li>
+      <li><b>Pon la condición.</b> Queremos el doble: $1000 \cdot 1{,}05^{\,t} = 2000$.</li>
+      <li><b>Simplifica.</b> Divide entre 1000: $1{,}05^{\,t} = 2$. Fíjate en que el capital inicial <b>da igual</b>: tarda lo mismo doblar 1.000 € que un millón.</li>
+      <li><b>La incógnita está en el exponente:</b> toca logaritmo. $t = \log_{1{,}05} 2 = \dfrac{\log 2}{\log 1{,}05}$.</li>
+      <li><b>Calcula.</b> $\dfrac{0{,}301}{0{,}0212} \approx 14{,}2$ años.</li>
+      <li><b>Comprueba que tiene sentido.</b> Hay una regla que usan los banqueros: 72 dividido entre el tanto por ciento. $72 / 5 = 14{,}4$. Casi igual: cuadra.</li>
+    </ol>
+
+    <h3>Ahora el mismo tipo, contigo</h3>
+    <p>Una población de bacterias se duplica cada hora. Empiezas con 100. Rellena y pulsa fuera.</p>
+    <ol class="pasos">
+      <li><b>A las $t$ horas hay</b> $100 \cdot 2^{\,t}$. A las 3 horas: <span class="hueco" data-bien="800" data-pista="100 por 2 elevado a 3">?</span> bacterias.</li>
+      <li><b>¿Cuándo hay 1600?</b> Plantea $100 \cdot 2^{\,t} = 1600$, o sea $2^{\,t} = $ <span class="hueco" data-bien="16">?</span>.</li>
+      <li><b>Como 16 es potencia de 2</b>, no hace falta logaritmo: $t = $ <span class="hueco" data-bien="4" data-pista="2 elevado a qué da 16">?</span> horas.</li>
+      <li><b>Y para 1000 bacterias</b>, $2^{\,t} = 10$: ahí sí hace falta. $t = \log_2 10 \approx$ <span class="hueco" data-bien="3.32" data-pista="log 10 entre log 2, con dos decimales">?</span> horas.</li>
+    </ol>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Aquí está lo que de verdad hace que un tema se domine: <b>repetir</b>. Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe la respuesta como quieras: <b>5√3</b>, <b>5r3</b> o <b>5 raiz 3</b> valen igual. Si sale un número entero, escríbelo a secas.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js"></script>
+<script src="../../comun/preguntas-log.js"></script>
+<script src="../../comun/app.js"></script>
+<script src="../../comun/ejercicios.js"></script>
+<script src="../../comun/ejercicios-log.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["log-01","log-06"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("mat-b-logaritmos", $("ahora"), 6);
+["calcularLog","propiedadesLog","ecuacionExponencial","aplicacionLog"]
+  .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+
+$("leido").onclick = e => { Progreso.marcarLeido("mat-b-logaritmos"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("mat-b-logaritmos")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>
