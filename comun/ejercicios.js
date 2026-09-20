@@ -40,6 +40,106 @@ function descompone(n){   // {fuera, dentro}
 
 const EJERCICIOS = {
 
+
+  /* ══════════ NÚMEROS REALES E INTERVALOS (mat-b-reales) ══════════ */
+
+  clasificarNumero: {
+    titulo: "¿Qué tipo de número es?",
+    genera(){
+      const casos = [
+        {n:"\\dfrac{7}{4}", r:"racional", pista:"¿Se puede escribir como fracción de enteros?"},
+        {n:"\\sqrt{25}", r:"natural", pista:"Calcúlalo antes de decidir: ¿cuánto vale?"},
+        {n:"\\sqrt{7}", r:"irracional", pista:"7 no es un cuadrado perfecto: sale decimal infinito no periódico."},
+        {n:"-\\dfrac{12}{4}", r:"entero", pista:"Haz la división primero."},
+        {n:"3{,}25", r:"racional", pista:"Decimal exacto: siempre se puede poner en fracción."},
+        {n:"0{,}\\overline{6}", r:"racional", pista:"Periódico: tiene fracción generatriz."},
+        {n:"\\pi", r:"irracional", pista:"Decimales infinitos que no se repiten."},
+        {n:"\\sqrt{-4}", r:"no real", pista:"Raíz de índice par de un número negativo."},
+        {n:"\\sqrt[3]{-8}", r:"entero", pista:"Índice impar: sí existe. Calcúlalo."},
+        {n:"1{,}232332333\\ldots", r:"irracional", pista:"No hay periodo: los grupos crecen."},
+      ];
+      const c = elige(casos);
+      return {enunciado: `\\text{¿Qué es } ${c.n}\\text{? (natural, entero, racional, irracional, no real)}`,
+        respuesta: c.r, pista: c.pista,
+        pasos: [`Es un número <b>${c.r}</b>.`, c.pista,
+          `Recuerda el orden: naturales ⊂ enteros ⊂ racionales ⊂ reales. Un número está en todos los conjuntos que lo contienen; se nombra por el más pequeño.`]};
+    }},
+
+  fraccionGeneratriz: {
+    titulo: "Fracción generatriz",
+    genera(){
+      const tipo = elige(["exacto", "periodicoPuro", "periodicoMixto"]);
+      if (tipo === "exacto"){
+        const d = al(1, 3), num = al(11, 99) * (d === 3 ? 10 : 1), den = Math.pow(10, d);
+        const g = mcd(num, den), dec = (num / den).toFixed(d).replace(".", ",");
+        return {enunciado: `\\text{Pasa a fracción: } ${dec}`,
+          respuesta: `${num / g}/${den / g}`, pista: "Decimal exacto: pon debajo tantos ceros como decimales.",
+          pasos: [`Tiene ${d} decimales, así que la fracción es $\\dfrac{${num}}{${den}}$.`,
+            g > 1 ? `Simplifica dividiendo entre ${g}: $\\dfrac{${num / g}}{${den / g}}$.` : `Ya está simplificada.`]};
+      }
+      if (tipo === "periodicoPuro"){
+        const p = al(1, 8), num = p, den = 9, g = mcd(num, den);
+        return {enunciado: `\\text{Pasa a fracción: } 0{,}\\overline{${p}}`,
+          respuesta: `${num / g}/${den / g}`, pista: "Periódico puro: el periodo arriba, tantos nueves como cifras tenga.",
+          pasos: [`Llama $x = 0{,}\\overline{${p}}$. Entonces $10x = ${p}{,}\\overline{${p}}$.`,
+            `Resta: $10x - x = ${p}$, o sea $9x = ${p}$.`,
+            `$x = \\dfrac{${p}}{9}${g > 1 ? ` = \\dfrac{${num / g}}{${den / g}}` : ""}$.`]};
+      }
+      const a = al(1, 8), p = al(1, 8), num = a * 10 + p - a, den = 90, g = mcd(num, den);
+      return {enunciado: `\\text{Pasa a fracción: } 0{,}${a}\\overline{${p}}`,
+        respuesta: `${num / g}/${den / g}`, pista: "Mixto: (todo sin coma) menos (la parte no periódica), y abajo nueves y ceros.",
+        pasos: [`Arriba: $${a}${p} - ${a} = ${num}$.`,
+          `Abajo: un 9 por la cifra del periodo y un 0 por la que no se repite: $90$.`,
+          `$\\dfrac{${num}}{90}${g > 1 ? ` = \\dfrac{${num / g}}{${den / g}}` : ""}$.`]};
+    }},
+
+  intervalos: {
+    titulo: "Escribe el intervalo",
+    genera(){
+      const a = al(-6, 3), b = a + al(2, 7);
+      const casos = [
+        {t:`x > ${a}`, r:`(${a},inf)`, d:`$(${a}, +\\infty)$`, ex:"Estrictamente mayor: paréntesis, y el infinito siempre abierto."},
+        {t:`x \\ge ${a}`, r:`[${a},inf)`, d:`$[${a}, +\\infty)$`, ex:"Mayor o igual: corchete en el número."},
+        {t:`${a} < x < ${b}`, r:`(${a},${b})`, d:`$(${a}, ${b})$`, ex:"Los dos abiertos."},
+        {t:`${a} \\le x < ${b}`, r:`[${a},${b})`, d:`$[${a}, ${b})$`, ex:"Cerrado a la izquierda, abierto a la derecha."},
+        {t:`x \\le ${b}`, r:`(-inf,${b}]`, d:`$(-\\infty, ${b}]$`, ex:"Menor o igual: corchete en el número."},
+        {t:`|x| < ${Math.abs(b)}`, r:`(${-Math.abs(b)},${Math.abs(b)})`, d:`$(${-Math.abs(b)}, ${Math.abs(b)})$`, ex:"Valor absoluto menor que k: entre −k y k."},
+      ];
+      const c = elige(casos);
+      return {enunciado: `\\text{Escribe como intervalo: } ${c.t}`,
+        respuesta: c.r, pista: "Paréntesis si NO entra el número, corchete si entra. El infinito, siempre paréntesis.",
+        pasos: [`Queda ${c.d}.`, c.ex, `Escríbelo así: <code>${c.r}</code> (usa <code>inf</code> para el infinito).`]};
+    }},
+
+  errorAbsolutoRelativo: {
+    titulo: "Error y redondeo",
+    genera(){
+      // El real lleva 3 decimales y se redondea a 1 o 2, forzando que la cifra que se
+      // quita no sea 0: si no, el error saldría 0 y el ejercicio no tendría sentido.
+      const dec = elige([1, 2]);
+      const entero = al(1, 9), milesimas = al(1, 999);
+      let real = +(entero + milesimas / 1000).toFixed(3);
+      let aprox = +real.toFixed(dec);
+      if (real === aprox){ real = +(real + (dec === 1 ? 0.04 : 0.004)).toFixed(3); aprox = +real.toFixed(dec); }
+      const abs = +Math.abs(real - aprox).toFixed(4);
+      const rel = +(abs / real * 100).toFixed(2);
+      const que = elige(["redondear", "absoluto", "relativo"]);
+      if (que === "redondear")
+        return {enunciado: `\\text{Redondea } ${String(real).replace(".", ",")} \\text{ a } ${dec} \\text{ decimal${dec > 1 ? "es" : ""}}`,
+          respuesta: String(aprox).replace(".", ","), pista: "Mira la cifra siguiente: si es 5 o más, sube.",
+          pasos: [`Queda $${String(aprox).replace(".", ",")}$.`, `Se mira la primera cifra que se quita: 5 o más sube, menos de 5 se queda.`]};
+      if (que === "absoluto")
+        return {enunciado: `\\text{Valor real } ${String(real).replace(".", ",")}\\text{, aproximado } ${String(aprox).replace(".", ",")}. \\text{ Error absoluto:}`,
+          respuesta: String(abs).replace(".", ","), pista: "Error absoluto = |real − aproximado|.",
+          pasos: [`$|${String(real).replace(".", ",")} - ${String(aprox).replace(".", ",")}| = ${String(abs).replace(".", ",")}$.`,
+            `Se pone en valor absoluto: el error nunca es negativo.`]};
+      return {enunciado: `\\text{Real } ${String(real).replace(".", ",")}\\text{, aproximado } ${String(aprox).replace(".", ",")}. \\text{ Error relativo en }\\%\\text{ (2 decimales):}`,
+        respuesta: String(rel).replace(".", ","), pista: "Relativo = absoluto ÷ real, y por 100 para el porcentaje.",
+        pasos: [`Absoluto: $${String(abs).replace(".", ",")}$.`,
+          `Relativo: $\\dfrac{${String(abs).replace(".", ",")}}{${String(real).replace(".", ",")}} \\cdot 100 = ${String(rel).replace(".", ",")}\\%$.`,
+          `El relativo es el que dice si el error es grande o pequeño: 0,1 cm de error en 1 m es poco; en 1 cm es mucho.`]};
+    }},
+
   /* ── 1. Simplificar una raíz ── */
   simplificar: {
     titulo: "Simplifica la raíz",

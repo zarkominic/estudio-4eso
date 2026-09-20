@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"mat-b-reales", asignatura:"Matemáticas", titulo:"Números reales e intervalos",
+    resumen:"Qué tipo de número es cada cosa, fracción generatriz, intervalos, valor absoluto y errores.",
+    estado:"listo" },
   { id:"mates-radicales", asignatura:"Matemáticas", titulo:"Radicales",
     resumen:"Qué es una raíz, cómo simplificarla, sumarlas, multiplicarlas y quitar raíces de los denominadores.",
     estado:"listo" },
