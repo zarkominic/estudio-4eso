@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"fyq-enlace", asignatura:"Física y Química", titulo:"El enlace químico",
+    resumen:"Iónico, covalente y metálico: por qué se unen los átomos y cómo reconocer cada enlace por las propiedades.",
+    estado:"listo" },
   { id:"tec-programacion", asignatura:"Tecnología", titulo:"Programación",
     resumen:"Variables, condicionales, bucles, funciones y listas en Python, y cómo encontrar el fallo cuando algo no va.",
     estado:"listo" },
