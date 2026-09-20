@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"his-xix", asignatura:"Historia", titulo:"El siglo XIX: revoluciones e industria",
+    resumen:"Del Antiguo Régimen al mundo actual: revolución, industria, clases sociales, nacionalismos e imperialismo.",
+    estado:"listo" },
   { id:"len-textos", asignatura:"Lengua", titulo:"Tipos de texto y comentario",
     resumen:"Los seis tipos, tema y tesis, estructuras, tipos de argumento y el orden para comentar un texto.",
     estado:"listo" },
