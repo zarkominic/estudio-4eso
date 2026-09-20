@@ -1,6 +1,9 @@
 /* temas.js — la lista de temas del curso. Añadir un tema = una línea más aquí
    y una carpeta en temas/ copiada de plantilla/. Nada más. */
 const TEMAS = [
+  { id:"mat-b-potencias", asignatura:"Matemáticas", titulo:"Potencias y notación científica",
+    resumen:"Las reglas y de dónde salen, exponente cero y negativo, notación científica y orden de magnitud.",
+    estado:"listo" },
   { id:"fyq-formulacion-inorganica", asignatura:"Física y Química", titulo:"Formulación inorgánica",
     resumen:"Números de oxidación, cruzar fórmulas, las cinco familias y las dos nomenclaturas. Puro entrenamiento.",
     estado:"listo" },
