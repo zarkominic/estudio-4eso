@@ -85,7 +85,7 @@ const CURRICULO = {
 
   /* ══════════════ FÍSICA Y QUÍMICA ══════════════ */
   "Física y Química": [
-    { id:"fyq-cinematica", trimestre:3, bloque:"Movimiento", titulo:"Cinemática",
+    { id:"fyq-cinematica", trimestre:1, bloque:"Movimiento", titulo:"Cinemática",
       saber:"Descripción del movimiento: MRU y MRUA.",
       entra:["Sistema de referencia y trayectoria","MRU: ecuación y gráficas","MRUA: ecuaciones","Caída libre y lanzamiento","Leer gráficas x-t y v-t","Movimiento circular"],
       generadores:["mru","mrua","caidaLibre","leerGrafica","circular"] },

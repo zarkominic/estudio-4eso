@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinemática — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202609242009">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+  .lab{display:grid;gap:.8rem}
+  .lab label{display:grid;gap:.2rem;font-size:.95rem}
+  .lab input[type=range]{width:100%;height:32px}
+  .pista-coche{position:relative;height:46px;border-bottom:3px solid currentColor;margin:.4rem 0 .2rem;overflow:hidden}
+  .pista-coche span{position:absolute;left:0;bottom:2px;font-size:30px;line-height:1;transform:scaleX(-1)}
+  .graficas{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .graficas svg{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}
+  @media (max-width:600px){.graficas{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Física y Química · 4º ESO</span>
+    <h1>Cinemática</h1>
+    <p class="mini">Cómo se describe un movimiento: posición, velocidad y aceleración; el MRU, el MRUA, la caída libre, las gráficas y el movimiento circular. Teoría, <b>ejercicios infinitos</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+    <h2>Moverse, ¿respecto a qué?</h2>
+    <div class="par">
+      <div>
+        <p>La cinemática <b>describe</b> el movimiento: dónde está algo, a qué velocidad va y cómo cambia esa velocidad. No pregunta por qué se mueve; eso es el tema siguiente, la dinámica.</p>
+        <p>Y lo primero es darse cuenta de que <b>moverse siempre es respecto a algo</b>. Ese «algo» es el <b>sistema de referencia</b>: un punto de partida y una dirección donde los números son positivos.</p>
+        <p>Vas en el autobús leyendo: respecto al asiento estás quieto; respecto a la acera vas a 50 km/h. Las dos cosas son verdad.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Tres palabras que no son lo mismo</h3>
+        <p><b>Trayectoria:</b> el camino que dibuja. Recta, curva, circular.</p>
+        <p><b>Distancia recorrida:</b> lo que mide ese camino.</p>
+        <p><b>Desplazamiento:</b> la línea recta de donde sales a donde llegas.</p>
+        <p class="mini">Una vuelta a la pista de atletismo: 400 m recorridos, desplazamiento cero.</p>
+      </div>
+    </div>
+
+    <h2>La velocidad, y cómo no liarse con las unidades</h2>
+    <p>La velocidad dice <b>cuánto cambia la posición en cada segundo</b>:</p>
+    <p style="text-align:center">$$v = \frac{\Delta x}{\Delta t}$$</p>
+    <p>En física se usa el <b>m/s</b>. En la calle, el <b>km/h</b>. Y la mitad de los fallos del tema son pasar mal de uno a otro:</p>
+    <div class="par">
+      <div class="caja"><h3>De km/h a m/s: entre 3,6</h3>
+        <p>72 km/h ÷ 3,6 = <b>20 m/s</b></p>
+        <p class="mini">Porque 1 km/h = 1.000 m / 3.600 s.</p></div>
+      <div class="caja"><h3>De m/s a km/h: por 3,6</h3>
+        <p>10 m/s × 3,6 = <b>36 km/h</b></p>
+        <p class="mini">Comprobación rápida: el número en km/h siempre es <b>más grande</b>.</p></div>
+    </div>
+
+    <h2>MRU: velocidad constante</h2>
+    <p>El <b>movimiento rectilíneo uniforme</b> es el más sencillo: en línea recta y siempre a la misma velocidad. Ni acelera ni frena.</p>
+    <p style="text-align:center">$$x = x_0 + v\cdot t$$</p>
+    <p>Se lee así: <b>donde estás</b> = donde empezaste + lo que avanzas cada segundo × los segundos que pasan.</p>
+    <div class="caja ojo">
+      <p><b>Ejemplo:</b> sales del kilómetro 10 de la autovía (x₀ = 10.000 m) a 30 m/s. A los 60 s estás en x = 10.000 + 30·60 = <b>11.800 m</b>, el km 11,8.</p>
+    </div>
+
+    <h2>MRUA: cuando la velocidad cambia</h2>
+    <p>En el <b>movimiento rectilíneo uniformemente acelerado</b> lo que se mantiene constante no es la velocidad, sino la <b>aceleración</b>: cuánto cambia la velocidad cada segundo.</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Ecuación</th><th>Para qué</th></tr></thead>
+      <tbody>
+        <tr><td>$v = v_0 + a\cdot t$</td><td>Velocidad en un instante</td></tr>
+        <tr><td>$x = x_0 + v_0\cdot t + \tfrac{1}{2}\,a\,t^2$</td><td>Posición en un instante</td></tr>
+        <tr><td>$v^2 = v_0^2 + 2\,a\,\Delta x$</td><td>Cuando <b>no te dan el tiempo</b>: frenadas, sobre todo</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>El signo lo es todo.</b> Si la velocidad es positiva y el coche frena, la aceleración es <b>negativa</b>. Una aceleración de −5 m/s² quita 5 m/s cada segundo.</p>
+    <details>
+      <summary>¿Por qué el tiempo va al cuadrado?</summary>
+      <p>Porque acelerando no solo pasa más tiempo: además cada segundo vas más rápido que el anterior. Las dos cosas se multiplican.</p>
+      <p>Consecuencia práctica: si aceleras el doble de tiempo, recorres <b>cuatro veces</b> más. Y al revés en la frenada: ir al doble de velocidad necesita <b>cuatro veces</b> más metros para pararse.</p>
+    </details>
+
+    <h2>Las gráficas, moviendo tú el coche</h2>
+    <div class="par">
+      <div>
+        <p>Casi todos los exámenes traen una gráfica. Hay dos, y se leen distinto:</p>
+        <p><b>Posición–tiempo (x–t).</b> La <b>pendiente</b> es la velocidad. Recta inclinada = MRU. Curva = está acelerando. Horizontal = <b>parado</b>.</p>
+        <p><b>Velocidad–tiempo (v–t).</b> La <b>pendiente</b> es la aceleración y el <b>área</b> bajo la línea es la distancia. Horizontal = velocidad constante, <b>no parado</b>.</p>
+        <p class="mini">Mueve los deslizadores y mira cómo cambian las dos a la vez. Pon la aceleración a cero: la v–t se aplana y la x–t se vuelve recta.</p>
+      </div>
+      <div class="caja lab" id="lab">
+        <label>Velocidad inicial: <b><span id="vV0">5</span> m/s</b>
+          <input type="range" id="sV0" min="0" max="15" step="1" value="5"></label>
+        <label>Aceleración: <b><span id="vA">1</span> m/s²</b>
+          <input type="range" id="sA" min="-2" max="3" step="0.5" value="1"></label>
+        <div class="pista-coche" aria-hidden="true"><span id="coche">🚗</span></div>
+        <button class="btn" type="button" id="arranca">Arrancar 10 s</button>
+        <div class="graficas">
+          <svg id="gx" viewBox="0 0 200 130" role="img" aria-label="Gráfica posición-tiempo"></svg>
+          <svg id="gv" viewBox="0 0 200 130" role="img" aria-label="Gráfica velocidad-tiempo"></svg>
+        </div>
+        <p class="mini" id="labTxt"></p>
+      </div>
+    </div>
+
+    <h2>Caída libre y lanzamiento hacia arriba</h2>
+    <p>Todo lo que cae sin rozamiento es un MRUA con una aceleración que siempre es la misma: <b>g = 9,8 m/s²</b>, hacia abajo.</p>
+    <div class="par">
+      <div class="caja"><h3>Si lo sueltas (v₀ = 0)</h3>
+        <p>$h = \tfrac{1}{2}\,g\,t^2$ y $v = g\cdot t$</p>
+        <p class="mini">Un móvil que se te cae desde 1,5 m llega al suelo en 0,55 s. Tu tiempo de reacción ronda 0,2 s: por eso a veces lo coges y a veces no.</p></div>
+      <div class="caja"><h3>Si lo lanzas hacia arriba</h3>
+        <p>Sube frenando, se para <b>un instante</b> arriba y baja acelerando.</p>
+        <p class="mini">Arriba la velocidad es 0, pero la aceleración sigue siendo g. Si la gravedad se apagara ahí, se quedaría flotando.</p></div>
+    </div>
+    <div class="caja idea">
+      <p><b>Lo que choca con la intuición:</b> sin aire, una bola de hierro y una pluma caen a la vez. En 1971 un astronauta lo hizo en la Luna con un martillo y una pluma de halcón, y llegaron juntos. En la Tierra la pluma va más lenta por el aire, no por pesar menos.</p>
+    </div>
+
+    <h2>Movimiento circular uniforme</h2>
+    <p>Dar vueltas a ritmo constante: una noria, un disco, un satélite. Se describe con magnitudes que se sacan unas de otras:</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Magnitud</th><th>Qué es</th><th>Cómo se calcula</th></tr></thead>
+      <tbody>
+        <tr><td><b>Periodo (T)</b></td><td>Lo que tarda en dar una vuelta</td><td>tiempo / nº de vueltas, en s</td></tr>
+        <tr><td><b>Frecuencia (f)</b></td><td>Vueltas por segundo</td><td>$f = 1/T$, en Hz</td></tr>
+        <tr><td><b>Velocidad angular (ω)</b></td><td>Ángulo que gira por segundo</td><td>$\omega = 2\pi/T$, en rad/s</td></tr>
+        <tr><td><b>Velocidad lineal (v)</b></td><td>Lo rápido que va un punto del borde</td><td>$v = \omega\cdot r$, en m/s</td></tr>
+      </tbody>
+    </table></div>
+    <p class="mini"><b>Ojo:</b> aunque la rapidez no cambie, <b>hay aceleración</b>, porque la dirección de la velocidad cambia a cada instante. Apunta al centro y se llama centrípeta.</p>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Leer una gráfica v–t como si fuera x–t</h3>
+      <p>Una línea <b>horizontal</b> significa cosas opuestas según la gráfica:</p>
+      <p>En la <b>x–t</b>: la posición no cambia → <b>está parado</b>.</p>
+      <p>En la <b>v–t</b>: la velocidad no cambia → <b>se mueve a velocidad constante</b>.</p>
+      <p><b>El contraejemplo que lo demuestra:</b> un coche a 20 m/s durante 10 s da una v–t horizontal a la altura 20. Si «estuviera parado», no habría recorrido nada; pero el área bajo esa línea es 20 × 10 = <b>200 m</b>. Antes de contestar, mira siempre <b>qué pone en el eje vertical</b>.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Un coche va a 72 km/h. El conductor ve un obstáculo, tarda <b>1 s en reaccionar</b> y después frena con una deceleración de <b>5 m/s²</b>. ¿Cuántos metros recorre hasta pararse?</p>
+    <ol class="pasos">
+      <li><b>Unidades.</b> 72 km/h ÷ 3,6 = <b>20 m/s</b>.</li>
+      <li><b>Mientras reacciona</b> todavía no frena: es un MRU. Δx₁ = v·t = 20·1 = <b>20 m</b>.</li>
+      <li><b>Frenando</b> es un MRUA con a = −5 m/s² y velocidad final 0. No sabemos el tiempo, así que: v² = v₀² + 2·a·Δx.</li>
+      <li>0 = 20² − 2·5·Δx₂ → Δx₂ = 400 / 10 = <b>40 m</b>.</li>
+      <li><b>Total:</b> 20 + 40 = <b>60 m</b>. Un tercio se ha ido antes de pisar el freno.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Una moto va a 54 km/h, el conductor reacciona en 1 s y frena a 5 m/s².</p>
+    <ol class="pasos">
+      <li><b>Velocidad en m/s:</b> <span class="hueco" data-bien="15" data-pista="54 entre 3,6">?</span>.</li>
+      <li><b>Metros mientras reacciona:</b> <span class="hueco" data-bien="15" data-pista="velocidad por 1 segundo">?</span>.</li>
+      <li><b>Metros frenando:</b> <span class="hueco" data-bien="22,5" data-pista="15 al cuadrado entre 2·5">?</span>.</li>
+      <li><b>Total hasta pararse:</b> <span class="hueco" data-bien="37,5" data-pista="suma los dos tramos">?</span> m.</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>La distancia de seguridad</h3>
+        <p>A 120 km/h (33,3 m/s), con 1 s de reacción y un buen frenazo de 7 m/s²: 33 m reaccionando + 79 m frenando ≈ <b>112 m</b>. Por eso se dejan dos segundos con el de delante.</p></div>
+      <div class="caja"><h3>El radar de tramo</h3>
+        <p>No mide la velocidad en un punto: mide la <b>velocidad media</b>. Si haces 10 km en 5 min, vas a 120 km/h aunque ninguna cámara te vea correr.</p></div>
+      <div class="caja"><h3>La noria y el disco</h3>
+        <p>Todos los puntos giran igual en ω, pero el borde va mucho más deprisa en v = ω·r. Por eso las cabinas de fuera van más rápido que el eje, aunque den las vueltas a la vez.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe el número como quieras: <b>12,5</b>, <b>12.5</b> o <b>12,5 m/s</b> valen igual. Si piden redondear, redondea.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202609242009"></script>
+<script src="../../comun/preguntas-cin.js?v=202609242009"></script>
+<script src="../../comun/app.js?v=202609242009"></script>
+<script src="../../comun/ejercicios.js?v=202609242009"></script>
+<script src="../../comun/ejercicios-cin.js?v=202609242009"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["cin-02","cin-09"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("fyq-cinematica", $("ahora"), 6);
+["unidadesVelocidad","mru","mrua","caidaLibre","leerGrafica","circular"]
+  .forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+/* ── Laboratorio: v0 y a mueven el coche y las dos gráficas a la vez ── */
+(function(){
+  const T = 10, W = 200, H = 130, px = 24;
+  const X = t => px + t / T * (W - px - 6);
+  const eje = etiqY => `<line x1="${px}" y1="${H - 18}" x2="${W - 4}" y2="${H - 18}" stroke="currentColor"/>
+      <line x1="${px}" y1="6" x2="${px}" y2="${H - 18}" stroke="currentColor"/>
+      <text x="${px + 3}" y="14" font-size="10" fill="currentColor">${etiqY}</text>
+      <text x="${W - 6}" y="${H - 5}" font-size="10" text-anchor="end" fill="currentColor">t (s)</text>`;
+  const escala = arr => { const lo = Math.min(0, ...arr), hi = Math.max(1, ...arr); return y => (H - 18) - (y - lo) / (hi - lo) * (H - 30); };
+  let xs = [];
+  function pinta(){
+    const v0 = +$("sV0").value, a = +$("sA").value;
+    $("vV0").textContent = v0; $("vA").textContent = String(a).replace(".", ",");
+    const pts = [...Array(51)].map((_, i) => { const t = i * T / 50; return {t, x: v0 * t + a * t * t / 2, v: v0 + a * t}; });
+    xs = pts.map(p => p.x); const vs = pts.map(p => p.v);
+    const ex = escala(xs), ev = escala(vs);
+    $("gx").innerHTML = eje("x (m)") + `<polyline fill="none" stroke="#2563eb" stroke-width="2.5" points="${pts.map(p => X(p.t) + "," + ex(p.x)).join(" ")}"/>`;
+    $("gv").innerHTML = eje("v (m/s)") + `<polyline fill="none" stroke="#dc2626" stroke-width="2.5" points="${pts.map(p => X(p.t) + "," + ev(p.v)).join(" ")}"/>`;
+    const xf = xs[50], vf = vs[50];
+    $("labTxt").innerHTML = `A los 10 s: <b>x = ${Math.round(xf)} m</b> y <b>v = ${String(Math.round(vf * 10) / 10).replace(".", ",")} m/s</b>. ` +
+      (a === 0 ? "Aceleración cero: MRU. La v–t es horizontal y la x–t, recta." :
+       a < 0 ? "Aceleración negativa: frena. La v–t baja." + (vf < 0 ? " Al final la velocidad es negativa: ha dado la vuelta." : "") :
+       "Aceleración positiva: la v–t sube y la x–t se curva hacia arriba.");
+  }
+  let anim = null;
+  $("arranca").onclick = () => {
+    pinta();
+    const max = Math.max(...xs.map(Math.abs), 1), coche = $("coche"), t0 = performance.now();
+    cancelAnimationFrame(anim);
+    const paso = ahora => {
+      const f = Math.min(1, (ahora - t0) / 4000), i = Math.round(f * 50);
+      coche.style.left = (Math.max(0, xs[i]) / max * 88) + "%";
+      if (f < 1) anim = requestAnimationFrame(paso);
+    };
+    anim = requestAnimationFrame(paso);
+  };
+  $("sV0").oninput = $("sA").oninput = () => { pinta(); $("coche").style.left = "0"; };
+  pinta();
+})();
+
+tutorDeApoyo("Cinemática", "Física y Química", $("tutor"));
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+barraTutor();
+
+$("leido").onclick = e => { Progreso.marcarLeido("fyq-cinematica"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("fyq-cinematica")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

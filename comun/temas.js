@@ -59,6 +59,6 @@ const TEMAS = [
     resumen:"Sustitución, igualación y reducción, y qué significa que no haya solución.",
     estado:"en camino" },
   { id:"fyq-cinematica", asignatura:"Física y Química", titulo:"Cinemática",
-    resumen:"MRU y MRUA: posición, velocidad y aceleración, y cómo se leen las gráficas.",
-    estado:"en camino" },
+    resumen:"MRU y MRUA, caída libre, cómo leer las gráficas x–t y v–t, el movimiento circular y la distancia de frenada.",
+    estado:"listo" },
 ];

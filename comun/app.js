@@ -107,8 +107,11 @@ function activarHuecos(raiz = document){
       const v = input.value.trim().replace(",", ".").replace(/\s+/g, "");
       if (!v) return;
       const bien = h.dataset.bien.replace(",", ".").replace(/\s+/g, "");
-      input.classList.toggle("bien", v === bien); input.classList.toggle("mal", v !== bien);
-      if (v !== bien && h.dataset.pista) input.title = h.dataset.pista;
+      // misma comparación que el taller: sin distinguir tildes ni mayúsculas.
+      // Antes «iónico» contra «ionico» daba mal, y «k2s» contra «K2S» también.
+      const ok = typeof igual === "function" ? igual(v, bien) : v.toLowerCase() === bien.toLowerCase();
+      input.classList.toggle("bien", ok); input.classList.toggle("mal", !ok);
+      if (!ok && h.dataset.pista) input.title = h.dataset.pista;
     };
     h.replaceWith(input);
   });

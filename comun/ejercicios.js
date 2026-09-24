@@ -345,7 +345,14 @@ function bloqueEjercicios(tipo, donde){
     // algunos ejercicios admiten más de una respuesta correcta (por ejemplo, dos
     // nomenclaturas válidas para el mismo compuesto)
     const validas = [actual.respuesta].concat(actual.respuestaAlt || []);
-    const bien = validas.some(x => igual(v, x));
+    let bien = validas.some(x => igual(v, x));
+    // Física y tecnología: si el ejercicio declara tolerancia, se acepta el número
+    // aunque lleve unidades, coma o más decimales («12,50 m/s» = 12.5).
+    if (!bien && actual.tolerancia !== undefined){
+      const num = s => parseFloat(String(s).replace(",", ".").replace(/[^0-9.+\-eE]/g, " ").trim().split(/\s+/)[0]);
+      const a = num(v), r = num(actual.respuesta);
+      if (isFinite(a) && isFinite(r)) bien = Math.abs(a - r) <= actual.tolerancia * Math.max(1, Math.abs(r));
+    }
     $$("input").className = bien ? "bien" : "mal";
     const ver = $$(".ej-veredicto"); ver.hidden = false;
     racha = bien ? racha + 1 : 0;
