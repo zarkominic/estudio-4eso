@@ -6,7 +6,7 @@
 <title>Estudio 4º ESO</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14'>📘</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="comun/base.css?v=202609201407">
+<link rel="stylesheet" href="comun/base.css?v=202609241959">
 <style>
 .portada{padding:5vh var(--margen) 2vh;max-width:1000px;margin:0 auto}
 .puertas{display:grid;gap:1rem;margin:2rem 0 1rem}
@@ -87,32 +87,57 @@
 
 <footer class="envoltura">Hecho en casa para 4º ESO. Tu progreso se guarda solo en este navegador: nadie más lo ve.</footer>
 
-<script src="comun/temas.js?v=202609201407"></script>
-<script src="comun/curriculo.js?v=202609201407"></script>
-<script src="comun/preguntas.js?v=202609201407"></script>
-<script src="comun/preguntas-fyq.js?v=202609201407"></script>
-<script src="comun/preguntas-fyq2.js?v=202609201407"></script>
-<script src="comun/preguntas-form.js?v=202609201407"></script>
-<script src="comun/preguntas-pot.js?v=202609201407"></script>
-<script src="comun/preguntas-poli.js?v=202609201407"></script>
-<script src="comun/preguntas-morfo.js?v=202609201407"></script>
-<script src="comun/preguntas-modales.js?v=202609201407"></script>
-<script src="comun/preguntas-relativas.js?v=202609201407"></script>
-<script src="comun/preguntas-textos.js?v=202609201407"></script>
-<script src="comun/preguntas-historia.js?v=202609201407"></script>
-<script src="comun/preguntas-elec.js?v=202609201407"></script>
-<script src="comun/preguntas-log.js?v=202609201407"></script>
-<script src="comun/preguntas-lengua.js?v=202609201407"></script>
-<script src="comun/preguntas-ingles.js?v=202609201407"></script>
-<script src="comun/preguntas-tec.js?v=202609201407"></script>
-<script src="comun/app.js?v=202609201407"></script>
+<script src="comun/temas.js?v=202609241959"></script>
+<script src="comun/curriculo.js?v=202609241959"></script>
+<script src="comun/preguntas.js?v=202609241959"></script>
+<script src="comun/preguntas-fyq.js?v=202609241959"></script>
+<script src="comun/preguntas-fyq2.js?v=202609241959"></script>
+<script src="comun/preguntas-form.js?v=202609241959"></script>
+<script src="comun/preguntas-pot.js?v=202609241959"></script>
+<script src="comun/preguntas-poli.js?v=202609241959"></script>
+<script src="comun/preguntas-morfo.js?v=202609241959"></script>
+<script src="comun/preguntas-modales.js?v=202609241959"></script>
+<script src="comun/preguntas-relativas.js?v=202609241959"></script>
+<script src="comun/preguntas-textos.js?v=202609241959"></script>
+<script src="comun/preguntas-historia.js?v=202609241959"></script>
+<script src="comun/preguntas-elec.js?v=202609241959"></script>
+<script src="comun/preguntas-log.js?v=202609241959"></script>
+<script src="comun/preguntas-lengua.js?v=202609241959"></script>
+<script src="comun/preguntas-ingles.js?v=202609241959"></script>
+<script src="comun/preguntas-tec.js?v=202609241959"></script>
+<script src="comun/app.js?v=202609241959"></script>
 <script>
 const $ = id => document.getElementById(id);
 const listos = TEMAS.filter(t => t.estado === "listo");
 $("nTemas").textContent = listos.length;
 $("nHoy").textContent = repasoDeHoy(BANCO, 10).length;
 
-$("lista").innerHTML = TEMAS.map(t => {
+/* Orden: primero el trimestre en curso, luego el resto. El trimestre sale de
+   curriculo.js —única fuente—, así un tema nuevo cae solo en su sitio. */
+const trimestreDe = id => (Object.values(CURRICULO).flat().find(x => x.id === id) || {}).trimestre || 9;
+const mes = new Date().getMonth();                       // 0 = enero
+const trimActual = mes >= 8 ? 1 : mes <= 2 ? 2 : 3;      // sep-dic · ene-mar · abr-jun
+const ordenAsig = Object.keys(CURRICULO);
+const ordenados = [...new Map(TEMAS.map(t => [t.id, t])).values()]   // sin duplicados
+  .sort((a, b) => {
+    const ta = trimestreDe(a.id), tb = trimestreDe(b.id);
+    const pa = ta === trimActual ? 0 : ta, pb = tb === trimActual ? 0 : tb;
+    if (pa !== pb) return pa - pb;
+    const ia = ordenAsig.findIndex(k => CURRICULO[k].some(x => x.id === a.id));
+    const ib = ordenAsig.findIndex(k => CURRICULO[k].some(x => x.id === b.id));
+    if (ia !== ib) return ia - ib;
+    // dentro de la asignatura, el orden del temario (reales antes que polinomios)
+    const lista = CURRICULO[ordenAsig[ia]] || [];
+    return lista.findIndex(x => x.id === a.id) - lista.findIndex(x => x.id === b.id);
+  });
+const NOMBRE_TRIM = {1:"Primer trimestre", 2:"Segundo trimestre", 3:"Tercer trimestre", 9:"Otros"};
+let trimPintado = null;
+$("lista").innerHTML = ordenados.map(t => {
+  const tr = trimestreDe(t.id);
+  const cabecera = tr !== trimPintado
+    ? `<h3 class="sep-trim" style="grid-column:1/-1;margin:1.4rem 0 .2rem">${NOMBRE_TRIM[tr]}${tr === trimActual ? " · ahora" : ""}</h3>` : "";
+  trimPintado = tr;
+  return cabecera + (() => {
   const suyas = BANCO.filter(q => q.tema === t.id);
   const dom = Progreso.dominio(suyas), leido = Progreso.leido(t.id);
   const disponible = t.estado === "listo";
@@ -121,6 +146,7 @@ $("lista").innerHTML = TEMAS.map(t => {
       <div class="progreso" style="margin-top:.8rem"><i style="width:${dom}%"></i></div>
       <span class="mini">${disponible ? (leido ? `Leído · dominas ${dom}%` : "Sin empezar") : "Todavía no está"}</span>`;
   return disponible ? `<a class="tarjeta" href="temas/${t.id}/">${dentro}</a>` : `<div class="tarjeta" style="opacity:.55">${dentro}</div>`;
+  })();
 }).join("");
 
 const p = Progreso.leer(), respondidas = Object.keys(p).filter(k => !k.startsWith("tema:"));
