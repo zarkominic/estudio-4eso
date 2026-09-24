@@ -348,6 +348,21 @@ function bloqueEjercicios(tipo, donde){
     let bien = validas.some(x => igual(v, x));
     // Física y tecnología: si el ejercicio declara tolerancia, se acepta el número
     // aunque lleve unidades, coma o más decimales («12,50 m/s» = 12.5).
+    // Ecuaciones con varias soluciones: da igual el orden y cómo se separen.
+    // «2 y -3», «x = -3, x = 2», «-3; 2» y «2 -3» valen lo mismo.
+    if (!bien && actual.conjunto){
+      const lista = s => {
+        const txt = String(s).toLowerCase();
+        if (/sin sol|no tiene|ninguna|no hay/.test(txt)) return ["ninguna"];
+        return txt.replace(/x\s*[₁₂₃₄0-9]?\s*=/g, " ").replace(/(?:±|\+-|\+\/-)\s*([0-9][0-9.,/]*)/g, " $1 -$1 ").replace(/\by\b|;|\|/g, " ")
+          .replace(/,\s+/g, " ").replace(/,/g, ".").replace(/−/g, "-")
+          .split(/\s+/).filter(Boolean).map(v => v.includes("/") ? v.split("/").reduce((a, b) => a / b) : parseFloat(v))
+          .filter(isFinite).map(v => Math.round(v * 1000) / 1000).sort((a, b) => a - b);
+      };
+      const a = lista(v), r = lista(actual.respuesta);
+      const unicos = arr => [...new Set(arr)];
+      bien = JSON.stringify(unicos(a)) === JSON.stringify(unicos(r)) && a.length > 0;
+    }
     if (!bien && actual.tolerancia !== undefined){
       const num = s => parseFloat(String(s).replace(",", ".").replace(/[^0-9.+\-eE]/g, " ").trim().split(/\s+/)[0]);
       const a = num(v), r = num(actual.respuesta);

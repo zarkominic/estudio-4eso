@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robótica y sistemas de control — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202609242024">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>.lab{display:grid;gap:.6rem}.lab input[type=range]{width:100%;height:30px}
+#gTemp{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Tecnología · 4º ESO</span>
+    <h1>Robótica y sistemas de control</h1>
+    <p class="mini">Entrada, proceso y salida; sensores y actuadores; lazo abierto y cerrado; y cómo se programa una placa Arduino. Teoría, <b>ejercicios infinitos</b> y 12 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+<h2>Qué es un sistema de control</h2>
+    <div class="par">
+      <div>
+        <p>Cualquier aparato que decide algo solo tiene tres partes. Siempre las mismas:</p>
+        <p><b>Entrada</b> → recoge información (sensores).<br><b>Proceso</b> → decide qué hacer (el controlador, la placa).<br><b>Salida</b> → actúa sobre el mundo (actuadores).</p>
+        <p>Un robot no es más que eso con un programa dentro: <b>percibe, decide y actúa</b>.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Ejemplo: el riego automático</h3>
+        <p><b>Entrada:</b> un sensor de humedad en la tierra.</p>
+        <p><b>Proceso:</b> la placa compara con el mínimo.</p>
+        <p><b>Salida:</b> una electroválvula abre el agua.</p>
+      </div>
+    </div>
+
+    <h2>Sensores: los sentidos</h2>
+    <div class="desliza"><table>
+      <thead><tr><th>Sensor</th><th>Mide</th><th>Tipo de señal</th></tr></thead>
+      <tbody>
+        <tr><td><b>LDR</b></td><td>Luz</td><td>Analógica (va variando)</td></tr>
+        <tr><td><b>Termistor NTC</b></td><td>Temperatura</td><td>Analógica</td></tr>
+        <tr><td><b>Ultrasonidos</b></td><td>Distancia, por eco</td><td>Pulso de tiempo</td></tr>
+        <tr><td><b>Infrarrojos</b></td><td>Línea negra o blanca, obstáculos</td><td>Digital (sí/no)</td></tr>
+        <tr><td><b>Pulsador</b></td><td>Si está pulsado</td><td>Digital</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Actuadores: los músculos</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Motor DC</h3><p>Gira sin parar mientras recibe corriente. Ruedas, ventiladores.</p></div>
+      <div class="caja"><h3>Servomotor</h3><p>Gira a un <b>ángulo exacto</b>, de 0° a 180°. Barreras, brazos, timones.</p></div>
+      <div class="caja"><h3>LED, zumbador, relé</h3><p>Luz, sonido, y encender otro circuito más potente.</p></div>
+    </div>
+
+    <h2>Lazo abierto y lazo cerrado</h2>
+    <div class="par">
+      <div>
+        <p><b>Lazo abierto:</b> hace lo programado y no mira el resultado. Una tostadora con temporizador.</p>
+        <p><b>Lazo cerrado:</b> mide lo que ha conseguido y corrige. A eso se le llama <b>realimentación</b>. Un termostato.</p>
+        <p class="mini">Prueba el simulador: la calefacción de una casa en invierno. Con lazo abierto se enciende a potencia fija; con lazo cerrado, un termostato la enciende y apaga para mantener 21 °C. Cambia el frío de fuera.</p>
+      </div>
+      <div class="caja lab">
+        <label><b>Temperatura de fuera: <span id="vFuera">5</span> °C</b>
+          <input type="range" id="sFuera" min="-5" max="15" value="5"></label>
+        <label style="display:flex;gap:.5rem;align-items:center"><input type="checkbox" id="cCerrado" checked style="width:24px;height:24px"> Con termostato (lazo cerrado)</label>
+        <svg id="gTemp" viewBox="0 0 260 150" role="img" aria-label="Temperatura de la casa"></svg>
+        <p id="tTxt" class="mini"></p>
+      </div>
+    </div>
+
+    <h2>La placa Arduino</h2>
+    <p>Es el «proceso»: un pequeño ordenador que lee sensores y mueve actuadores. Tiene:</p>
+    <p><b>14 pines digitales</b> (0 a 13): solo entienden encendido o apagado, HIGH (5 V) o LOW (0 V).<br>
+       <b>6 pines analógicos</b> (A0 a A5): leen tensiones que varían, y dan un número de <b>0 a 1023</b>.</p>
+    <pre style="white-space:pre-wrap;background:rgba(127,127,127,.08);padding:1rem;border-radius:8px;font-size:.95rem">void setup() {          // se ejecuta UNA vez al encender
+  pinMode(13, OUTPUT);  // el pin 13 será una salida
+}
+
+void loop() {           // se repite sin parar
+  digitalWrite(13, HIGH);  // enciende
+  delay(1000);             // espera 1000 ms = 1 s
+  digitalWrite(13, LOW);   // apaga
+  delay(1000);
+}</pre>
+    <p class="mini">Este es el «hola mundo» de Arduino: hace parpadear un LED cada segundo.</p>
+
+    <h2>Programar un robot: leer, decidir, actuar</h2>
+    <p>Cualquier programa de robot tiene esta forma dentro de <code>loop()</code>:</p>
+    <pre style="white-space:pre-wrap;background:rgba(127,127,127,.08);padding:1rem;border-radius:8px;font-size:.95rem">int luz = analogRead(A0);     // 1. LEER el sensor
+if (luz &lt; 300) {              // 2. DECIDIR
+  digitalWrite(13, HIGH);     // 3. ACTUAR: poca luz → enciende
+} else {
+  digitalWrite(13, LOW);
+}</pre>
+    <p class="mini">Así funciona una farola automática. El número 300 es el <b>umbral</b>: se ajusta probando.</p>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Pensar que delay cuenta en segundos</h3>
+      <p><code>delay(2)</code> no espera dos segundos: espera <b>dos milésimas</b>. El LED parpadearía tan rápido que parecería siempre encendido.</p>
+      <p><b>El contraejemplo:</b> para esperar 2 segundos hace falta <code>delay(2000)</code>. Si en un examen te sale un parpadeo «que no se ve», casi seguro es esto.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Diseña una alarma: si el sensor de ultrasonidos detecta algo a menos de 20 cm, suena el zumbador.</p>
+    <ol class="pasos">
+      <li><b>Entrada:</b> sensor de ultrasonidos. <b>Salida:</b> zumbador en el pin 8.</li>
+      <li><b>setup:</b> <code>pinMode(8, OUTPUT);</code></li>
+      <li><b>loop, leer:</b> calcular la distancia a partir del eco.</li>
+      <li><b>Decidir:</b> <code>if (distancia &lt; 20)</code>.</li>
+      <li><b>Actuar:</b> <code>digitalWrite(8, HIGH)</code>; si no, <code>LOW</code>.</li>
+      <li><b>¿Lazo?</b> Cerrado: mide continuamente y responde a lo que mide.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Un LED en el pin 9 que se enciende 3 segundos y se apaga.</p>
+    <ol class="pasos">
+      <li><code>pinMode(9, <span class="hueco" data-bien="OUTPUT" data-pista="el LED recibe corriente">?</span>);</code></li>
+      <li><code>digitalWrite(9, <span class="hueco" data-bien="HIGH" data-pista="encender = 5 V">?</span>);</code></li>
+      <li><code>delay(<span class="hueco" data-bien="3000" data-pista="3 segundos en milisegundos">?</span>);</code></li>
+      <li><code>digitalWrite(9, <span class="hueco" data-bien="LOW" data-pista="apagar = 0 V">?</span>);</code></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Tu casa</h3><p>El termostato, la nevera, la cisterna del váter: todo lazo cerrado. La calefacción se lleva casi la mitad de la energía que gasta un hogar en España.</p></div>
+      <div class="caja"><h3>Los coches</h3><p>Un coche actual lleva decenas de sensores. El ABS vigila la velocidad de cada rueda continuamente para que no se bloquee al frenar.</p></div>
+      <div class="caja"><h3>Tu primer proyecto</h3><p>Una placa compatible con Arduino cuesta menos de 10 € y con una LDR, un LED y cinco líneas de código tienes una farola automática.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">En el código, mayúsculas y minúsculas dan igual aquí (en Arduino no: <b>OUTPUT</b> va en mayúsculas).</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 12 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202609242024"></script>
+<script src="../../comun/preguntas-robot.js?v=202609242024"></script>
+<script src="../../comun/app.js?v=202609242024"></script>
+<script src="../../comun/ejercicios.js?v=202609242024"></script>
+<script src="../../comun/ejercicios-robot.js?v=202609242024"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["rob-03", "rob-06"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("tec-robotica", $("ahora"), 6);
+["sensorOActuador", "lazoControl", "entradaProcesoSalida", "codigoArduino"].forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+(function(){
+  const W = 260, H = 150, P = 26;
+  function simula(){
+    const fuera = +$("sFuera").value, cerrado = $("cCerrado").checked;
+    $("vFuera").textContent = fuera;
+    let T = 15, on = true; const pts = [];
+    for (let m = 0; m <= 180; m++){               // 3 horas, minuto a minuto
+      if (cerrado){ if (T < 20.5) on = true; else if (T > 21.5) on = false; }
+      // lazo cerrado: caldera potente que el termostato enciende y apaga.
+      // lazo abierto: potencia fija calculada para 5 °C fuera; con otro tiempo falla.
+      const potencia = cerrado ? (on ? 0.6 : 0) : 0.32;
+      T += potencia - 0.02 * (T - fuera);         // calefacción menos pérdidas
+      pts.push(T);
+    }
+    const X = i => P + i / 180 * (W - P - 6), Y = t => H - 18 - t / 40 * (H - 30);
+    $("gTemp").innerHTML = `<line x1="${P}" y1="${H - 18}" x2="${W}" y2="${H - 18}" stroke="currentColor"/>
+      <line x1="${P}" y1="6" x2="${P}" y2="${H - 18}" stroke="currentColor"/>
+      <line x1="${P}" y1="${Y(21)}" x2="${W}" y2="${Y(21)}" stroke="#16a34a" stroke-dasharray="4 3"/>
+      <text x="${W - 4}" y="${Y(21) - 4}" font-size="10" text-anchor="end" fill="#16a34a">21 °C deseado</text>
+      <text x="${P + 3}" y="14" font-size="10" fill="currentColor">°C</text>
+      <text x="${W - 4}" y="${H - 5}" font-size="10" text-anchor="end" fill="currentColor">3 horas</text>
+      <polyline fill="none" stroke="#dc2626" stroke-width="2.5" points="${pts.map((t, i) => X(i).toFixed(1) + "," + Y(t).toFixed(1)).join(" ")}"/>`;
+    const fin = pts[pts.length - 1];
+    $("tTxt").innerHTML = `A las 3 horas: <b>${fin.toFixed(1).replace(".", ",")} °C</b>. ` + (cerrado
+      ? "El termostato mide y corrige: se queda alrededor de 21 °C haga el frío que haga fuera."
+      : `Sin medir, la casa acaba donde la lleven la potencia y el frío. ${fin > 23 ? "Se pasa: derrocha energía." : fin < 19 ? "No llega: pasas frío." : "Esta vez ha acertado, pero por casualidad."}`);
+  }
+  $("sFuera").oninput = simula; $("cCerrado").onchange = simula; simula();
+})();
+
+tutorDeApoyo("Robótica y sistemas de control", "Tecnología", $("tutor"));
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+barraTutor();
+
+$("leido").onclick = e => { Progreso.marcarLeido("tec-robotica"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("tec-robotica")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+---
+id: tec-robotica
+titulo: Robótica y sistemas de control
+asignatura: Tecnología
+intro: Entrada, proceso y salida; sensores y actuadores; lazo abierto y cerrado; y cómo se programa una placa Arduino.
+pretest: rob-03, rob-06
+generadores: sensorOActuador, lazoControl, entradaProcesoSalida, codigoArduino
+preguntas: preguntas-robot.js
+ejercicios: ejercicios-robot.js
+n: 12
+nota_taller: En el código, mayúsculas y minúsculas dan igual aquí (en Arduino no: <b>OUTPUT</b> va en mayúsculas).
+---
+    <h2>Qué es un sistema de control</h2>
+    <div class="par">
+      <div>
+        <p>Cualquier aparato que decide algo solo tiene tres partes. Siempre las mismas:</p>
+        <p><b>Entrada</b> → recoge información (sensores).<br><b>Proceso</b> → decide qué hacer (el controlador, la placa).<br><b>Salida</b> → actúa sobre el mundo (actuadores).</p>
+        <p>Un robot no es más que eso con un programa dentro: <b>percibe, decide y actúa</b>.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Ejemplo: el riego automático</h3>
+        <p><b>Entrada:</b> un sensor de humedad en la tierra.</p>
+        <p><b>Proceso:</b> la placa compara con el mínimo.</p>
+        <p><b>Salida:</b> una electroválvula abre el agua.</p>
+      </div>
+    </div>
+
+    <h2>Sensores: los sentidos</h2>
+    <div class="desliza"><table>
+      <thead><tr><th>Sensor</th><th>Mide</th><th>Tipo de señal</th></tr></thead>
+      <tbody>
+        <tr><td><b>LDR</b></td><td>Luz</td><td>Analógica (va variando)</td></tr>
+        <tr><td><b>Termistor NTC</b></td><td>Temperatura</td><td>Analógica</td></tr>
+        <tr><td><b>Ultrasonidos</b></td><td>Distancia, por eco</td><td>Pulso de tiempo</td></tr>
+        <tr><td><b>Infrarrojos</b></td><td>Línea negra o blanca, obstáculos</td><td>Digital (sí/no)</td></tr>
+        <tr><td><b>Pulsador</b></td><td>Si está pulsado</td><td>Digital</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Actuadores: los músculos</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Motor DC</h3><p>Gira sin parar mientras recibe corriente. Ruedas, ventiladores.</p></div>
+      <div class="caja"><h3>Servomotor</h3><p>Gira a un <b>ángulo exacto</b>, de 0° a 180°. Barreras, brazos, timones.</p></div>
+      <div class="caja"><h3>LED, zumbador, relé</h3><p>Luz, sonido, y encender otro circuito más potente.</p></div>
+    </div>
+
+    <h2>Lazo abierto y lazo cerrado</h2>
+    <div class="par">
+      <div>
+        <p><b>Lazo abierto:</b> hace lo programado y no mira el resultado. Una tostadora con temporizador.</p>
+        <p><b>Lazo cerrado:</b> mide lo que ha conseguido y corrige. A eso se le llama <b>realimentación</b>. Un termostato.</p>
+        <p class="mini">Prueba el simulador: la calefacción de una casa en invierno. Con lazo abierto se enciende a potencia fija; con lazo cerrado, un termostato la enciende y apaga para mantener 21 °C. Cambia el frío de fuera.</p>
+      </div>
+      <div class="caja lab">
+        <label><b>Temperatura de fuera: <span id="vFuera">5</span> °C</b>
+          <input type="range" id="sFuera" min="-5" max="15" value="5"></label>
+        <label style="display:flex;gap:.5rem;align-items:center"><input type="checkbox" id="cCerrado" checked style="width:24px;height:24px"> Con termostato (lazo cerrado)</label>
+        <svg id="gTemp" viewBox="0 0 260 150" role="img" aria-label="Temperatura de la casa"></svg>
+        <p id="tTxt" class="mini"></p>
+      </div>
+    </div>
+
+    <h2>La placa Arduino</h2>
+    <p>Es el «proceso»: un pequeño ordenador que lee sensores y mueve actuadores. Tiene:</p>
+    <p><b>14 pines digitales</b> (0 a 13): solo entienden encendido o apagado, HIGH (5 V) o LOW (0 V).<br>
+       <b>6 pines analógicos</b> (A0 a A5): leen tensiones que varían, y dan un número de <b>0 a 1023</b>.</p>
+    <pre style="white-space:pre-wrap;background:rgba(127,127,127,.08);padding:1rem;border-radius:8px;font-size:.95rem">void setup() {          // se ejecuta UNA vez al encender
+  pinMode(13, OUTPUT);  // el pin 13 será una salida
+}
+
+void loop() {           // se repite sin parar
+  digitalWrite(13, HIGH);  // enciende
+  delay(1000);             // espera 1000 ms = 1 s
+  digitalWrite(13, LOW);   // apaga
+  delay(1000);
+}</pre>
+    <p class="mini">Este es el «hola mundo» de Arduino: hace parpadear un LED cada segundo.</p>
+
+    <h2>Programar un robot: leer, decidir, actuar</h2>
+    <p>Cualquier programa de robot tiene esta forma dentro de <code>loop()</code>:</p>
+    <pre style="white-space:pre-wrap;background:rgba(127,127,127,.08);padding:1rem;border-radius:8px;font-size:.95rem">int luz = analogRead(A0);     // 1. LEER el sensor
+if (luz &lt; 300) {              // 2. DECIDIR
+  digitalWrite(13, HIGH);     // 3. ACTUAR: poca luz → enciende
+} else {
+  digitalWrite(13, LOW);
+}</pre>
+    <p class="mini">Así funciona una farola automática. El número 300 es el <b>umbral</b>: se ajusta probando.</p>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Pensar que delay cuenta en segundos</h3>
+      <p><code>delay(2)</code> no espera dos segundos: espera <b>dos milésimas</b>. El LED parpadearía tan rápido que parecería siempre encendido.</p>
+      <p><b>El contraejemplo:</b> para esperar 2 segundos hace falta <code>delay(2000)</code>. Si en un examen te sale un parpadeo «que no se ve», casi seguro es esto.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Diseña una alarma: si el sensor de ultrasonidos detecta algo a menos de 20 cm, suena el zumbador.</p>
+    <ol class="pasos">
+      <li><b>Entrada:</b> sensor de ultrasonidos. <b>Salida:</b> zumbador en el pin 8.</li>
+      <li><b>setup:</b> <code>pinMode(8, OUTPUT);</code></li>
+      <li><b>loop, leer:</b> calcular la distancia a partir del eco.</li>
+      <li><b>Decidir:</b> <code>if (distancia &lt; 20)</code>.</li>
+      <li><b>Actuar:</b> <code>digitalWrite(8, HIGH)</code>; si no, <code>LOW</code>.</li>
+      <li><b>¿Lazo?</b> Cerrado: mide continuamente y responde a lo que mide.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Un LED en el pin 9 que se enciende 3 segundos y se apaga.</p>
+    <ol class="pasos">
+      <li><code>pinMode(9, <span class="hueco" data-bien="OUTPUT" data-pista="el LED recibe corriente">?</span>);</code></li>
+      <li><code>digitalWrite(9, <span class="hueco" data-bien="HIGH" data-pista="encender = 5 V">?</span>);</code></li>
+      <li><code>delay(<span class="hueco" data-bien="3000" data-pista="3 segundos en milisegundos">?</span>);</code></li>
+      <li><code>digitalWrite(9, <span class="hueco" data-bien="LOW" data-pista="apagar = 0 V">?</span>);</code></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Tu casa</h3><p>El termostato, la nevera, la cisterna del váter: todo lazo cerrado. La calefacción se lleva casi la mitad de la energía que gasta un hogar en España.</p></div>
+      <div class="caja"><h3>Los coches</h3><p>Un coche actual lleva decenas de sensores. El ABS vigila la velocidad de cada rueda continuamente para que no se bloquee al frenar.</p></div>
+      <div class="caja"><h3>Tu primer proyecto</h3><p>Una placa compatible con Arduino cuesta menos de 10 € y con una LDR, un LED y cinco líneas de código tienes una farola automática.</p></div>
+    </div>
+<!--ESTILO-->
+.lab{display:grid;gap:.6rem}.lab input[type=range]{width:100%;height:30px}
+#gTemp{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}
+<!--SCRIPT-->
+(function(){
+  const W = 260, H = 150, P = 26;
+  function simula(){
+    const fuera = +$("sFuera").value, cerrado = $("cCerrado").checked;
+    $("vFuera").textContent = fuera;
+    let T = 15, on = true; const pts = [];
+    for (let m = 0; m <= 180; m++){               // 3 horas, minuto a minuto
+      if (cerrado){ if (T < 20.5) on = true; else if (T > 21.5) on = false; }
+      // lazo cerrado: caldera potente que el termostato enciende y apaga.
+      // lazo abierto: potencia fija calculada para 5 °C fuera; con otro tiempo falla.
+      const potencia = cerrado ? (on ? 0.6 : 0) : 0.32;
+      T += potencia - 0.02 * (T - fuera);         // calefacción menos pérdidas
+      pts.push(T);
+    }
+    const X = i => P + i / 180 * (W - P - 6), Y = t => H - 18 - t / 40 * (H - 30);
+    $("gTemp").innerHTML = `<line x1="${P}" y1="${H - 18}" x2="${W}" y2="${H - 18}" stroke="currentColor"/>
+      <line x1="${P}" y1="6" x2="${P}" y2="${H - 18}" stroke="currentColor"/>
+      <line x1="${P}" y1="${Y(21)}" x2="${W}" y2="${Y(21)}" stroke="#16a34a" stroke-dasharray="4 3"/>
+      <text x="${W - 4}" y="${Y(21) - 4}" font-size="10" text-anchor="end" fill="#16a34a">21 °C deseado</text>
+      <text x="${P + 3}" y="14" font-size="10" fill="currentColor">°C</text>
+      <text x="${W - 4}" y="${H - 5}" font-size="10" text-anchor="end" fill="currentColor">3 horas</text>
+      <polyline fill="none" stroke="#dc2626" stroke-width="2.5" points="${pts.map((t, i) => X(i).toFixed(1) + "," + Y(t).toFixed(1)).join(" ")}"/>`;
+    const fin = pts[pts.length - 1];
+    $("tTxt").innerHTML = `A las 3 horas: <b>${fin.toFixed(1).replace(".", ",")} °C</b>. ` + (cerrado
+      ? "El termostato mide y corrige: se queda alrededor de 21 °C haga el frío que haga fuera."
+      : `Sin medir, la casa acaba donde la lleven la potencia y el frío. ${fin > 23 ? "Se pasa: derrocha energía." : fin < 19 ? "No llega: pasas frío." : "Esta vez ha acertado, pero por casualidad."}`);
+  }
+  $("sFuera").oninput = simula; $("cCerrado").onchange = simula; simula();
+})();

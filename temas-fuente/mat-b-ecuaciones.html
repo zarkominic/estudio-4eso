@@ -1,0 +1,143 @@
+---
+id: mat-b-ecuaciones
+titulo: Ecuaciones de segundo grado y otras
+asignatura: Matemáticas
+intro: La fórmula y el discriminante, las incompletas sin fórmula, bicuadradas, con radicales, con fracciones y problemas.
+pretest: ecu-02, ecu-09
+generadores: discriminante, segundoGrado, incompleta, bicuadrada, conRadicales, conFracciones, problemaEcuacion
+preguntas: preguntas-ecu.js
+ejercicios: ejercicios-ecu.js
+n: 12
+nota_taller: Escribe las soluciones como quieras: <b>2 y -3</b>, <b>x = -3, x = 2</b> o <b>±5</b> valen. Si no tiene solución, escribe <b>sin solución</b>.
+---
+    <h2>Qué es una ecuación de segundo grado</h2>
+    <div class="par">
+      <div>
+        <p>Es una ecuación donde la incógnita aparece <b>al cuadrado</b>, y se puede escribir así:</p>
+        <p style="text-align:center">$$ax^2 + bx + c = 0 \qquad (a \neq 0)$$</p>
+        <p>Antes de hacer nada, <b>pásalo todo a un lado</b> hasta que quede igualado a cero. Luego lee a, b y c <b>con su signo</b>.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Leer a, b y c</h3>
+        <p>$2x^2 - 3x - 5 = 0$</p>
+        <p>a = <b>2</b> · b = <b>−3</b> · c = <b>−5</b></p>
+        <p class="mini">El signo va pegado al número. Olvidarlo es el fallo que más ejercicios tira.</p>
+      </div>
+    </div>
+
+    <h2>La fórmula y el discriminante</h2>
+    <div class="par">
+      <div>
+        <p>Sirve para todas:</p>
+        <p style="text-align:center">$$x = \frac{-b \pm \sqrt{\Delta}}{2a} \qquad \Delta = b^2 - 4ac$$</p>
+        <p>El <b>discriminante Δ</b> te dice cuántas soluciones hay <b>antes de calcularlas</b>:</p>
+        <p><b>Δ &gt; 0</b> → dos soluciones. <b>Δ = 0</b> → una (doble). <b>Δ &lt; 0</b> → ninguna real, porque habría que hacer la raíz de un negativo.</p>
+        <p class="mini">Mueve a, b y c: la parábola corta el eje horizontal justo en las soluciones. Si no lo toca, Δ es negativo.</p>
+      </div>
+      <div class="caja lab">
+        <label>a = <b id="va">1</b><input type="range" id="sa" min="-3" max="3" step="1" value="1"></label>
+        <label>b = <b id="vb">-2</b><input type="range" id="sb" min="-8" max="8" step="1" value="-2"></label>
+        <label>c = <b id="vc">-3</b><input type="range" id="sc" min="-9" max="9" step="1" value="-3"></label>
+        <svg id="par" viewBox="0 0 240 180" role="img" aria-label="Parábola"></svg>
+        <p id="parTxt"></p>
+      </div>
+    </div>
+
+    <h2>Incompletas: más rápido sin fórmula</h2>
+    <div class="par">
+      <div class="caja"><h3>Si falta c: factor común</h3>
+        <p>$x^2 - 5x = 0 \Rightarrow x(x-5) = 0$</p>
+        <p>Un producto es cero si lo es alguno de los factores: <b>x = 0</b> o <b>x = 5</b>.</p></div>
+      <div class="caja"><h3>Si falta b: despeja y haz la raíz</h3>
+        <p>$x^2 - 49 = 0 \Rightarrow x^2 = 49$</p>
+        <p>$x = \pm 7$. <b>Los dos signos</b>: el −7 también vale.</p></div>
+    </div>
+
+    <h2>Bicuadradas: un cambio y listo</h2>
+    <p>Tienen x⁴ y x², pero ni x³ ni x. El truco es llamar <b>t = x²</b>:</p>
+    <ol class="pasos">
+      <li>$x^4 - 13x^2 + 36 = 0$ → con t = x²: $t^2 - 13t + 36 = 0$.</li>
+      <li>Resuelves en t: <b>t = 4</b> y <b>t = 9</b>.</li>
+      <li>Deshaces el cambio: x² = 4 → x = ±2; x² = 9 → x = ±3.</li>
+      <li>Cuatro soluciones: <b>−3, −2, 2 y 3</b>.</li>
+    </ol>
+    <p class="mini">Si alguna t sale <b>negativa</b>, esa no da soluciones: ningún número al cuadrado es negativo.</p>
+
+    <h2>Con radicales: aísla, eleva y comprueba</h2>
+    <p>Se deja la raíz sola en un lado, se elevan los dos lados al cuadrado y se resuelve. Pero hay un paso que no se puede saltar:</p>
+    <div class="caja ojo">
+      <p><b>Hay que comprobar cada solución en la ecuación de partida.</b> Al elevar al cuadrado pueden aparecer soluciones que no lo son.</p>
+      <p>$\sqrt{x+2} = x$ → $x + 2 = x^2$ → x = 2 y x = −1. Pero con x = −1: √1 = 1 y el otro lado da −1. <b>No vale.</b> La raíz cuadrada nunca da negativo.</p>
+    </div>
+
+    <h2>Con fracciones: fuera los denominadores</h2>
+    <p>Se multiplica todo por el denominador común, se resuelve y se descarta la solución que haga cero algún denominador.</p>
+    <p>$x + \dfrac{6}{x} = 5$ → multiplico por x → $x^2 + 6 = 5x$ → $x^2 - 5x + 6 = 0$ → <b>x = 2 y x = 3</b>. Ninguna es 0, así que valen las dos.</p>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Dividir entre x</h3>
+      <p>En $x^2 = 5x$ es tentador dividir entre x y dejar x = 5. <b>Se pierde una solución.</b></p>
+      <p><b>El contraejemplo:</b> sustituye x = 0 → 0² = 5·0 → 0 = 0. Cumple. Dividir entre x solo es legal si x ≠ 0, y justo el 0 era solución.</p>
+      <p><b>Qué hacer:</b> pasar todo a un lado y sacar factor común. Nunca dividir entre algo que pueda valer cero.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>La suma de un número positivo y su cuadrado es 42. ¿Cuál es?</p>
+    <ol class="pasos">
+      <li><b>Planteo:</b> x + x² = 42 → x² + x − 42 = 0.</li>
+      <li><b>a, b, c:</b> 1, 1 y −42.</li>
+      <li><b>Δ</b> = 1 − 4·1·(−42) = 1 + 168 = 169; √Δ = 13.</li>
+      <li><b>x</b> = (−1 ± 13)/2 → x = 6 y x = −7.</li>
+      <li><b>Vuelvo al enunciado:</b> pide un número positivo → <b>6</b>. Comprobación: 6 + 36 = 42 ✓.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Resuelve x² − x − 12 = 0.</p>
+    <ol class="pasos">
+      <li><b>Δ =</b> <span class="hueco" data-bien="49" data-pista="(−1)² − 4·1·(−12)">?</span></li>
+      <li><b>√Δ =</b> <span class="hueco" data-bien="7" data-pista="raíz de 49">?</span></li>
+      <li><b>Solución positiva:</b> <span class="hueco" data-bien="4" data-pista="(1 + 7)/2">?</span></li>
+      <li><b>Solución negativa:</b> <span class="hueco" data-bien="-3" data-pista="(1 − 7)/2">?</span></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>El lanzamiento de un balón</h3>
+        <p>La altura de un balón chutado sigue una parábola. Resolver «altura = 0» te dice dónde cae: a 20 m/s con 45°, unos 41 m.</p></div>
+      <div class="caja"><h3>El tamaño de una pantalla</h3>
+        <p>Una pantalla 16:9 de 55 pulgadas de diagonal: plantear ancho y alto con Pitágoras da una de segundo grado. Sale unos 122 × 68 cm.</p></div>
+      <div class="caja"><h3>El precio que más vende</h3>
+        <p>Si subir 1 € el precio pierde 10 clientes, los ingresos son una parábola. El máximo está en su vértice: ahí se decide el precio.</p></div>
+    </div>
+<!--ESTILO-->
+.lab{display:grid;gap:.6rem}.lab label{display:grid;gap:.1rem}.lab input[type=range]{width:100%;height:30px}
+#par{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}
+<!--SCRIPT-->
+(function(){
+  const W = 240, H = 180, esc = 12;
+  const X = x => W / 2 + x * esc, Y = y => H / 2 - y * esc;
+  function pinta(){
+    let a = +$("sa").value; if (a === 0){ a = 1; $("sa").value = 1; }
+    const b = +$("sb").value, c = +$("sc").value;
+    $("va").textContent = a; $("vb").textContent = b; $("vc").textContent = c;
+    const D = b * b - 4 * a * c, pts = [];
+    for (let x = -10; x <= 10; x += 0.1){ const y = a * x * x + b * x + c; if (Math.abs(y) < 20) pts.push(X(x).toFixed(1) + "," + Y(y).toFixed(1)); }
+    let cortes = "";
+    if (D >= 0){
+      const r = [(-b + Math.sqrt(D)) / (2 * a), (-b - Math.sqrt(D)) / (2 * a)];
+      cortes = [...new Set(r.map(v => Math.round(v * 100) / 100))].map(v => `<circle cx="${X(v)}" cy="${Y(0)}" r="4.5" fill="#dc2626"/>`).join("");
+    }
+    $("par").innerHTML = `<line x1="0" y1="${Y(0)}" x2="${W}" y2="${Y(0)}" stroke="currentColor" opacity=".5"/>
+      <line x1="${X(0)}" y1="0" x2="${X(0)}" y2="${H}" stroke="currentColor" opacity=".5"/>
+      <polyline fill="none" stroke="#2563eb" stroke-width="2.5" points="${pts.join(" ")}"/>${cortes}`;
+    const fmt = v => String(Math.round(v * 100) / 100).replace(".", ",");
+    const par = n => n < 0 ? `(${String(n).replace("-", "−")})` : n;   // (−2)², no −2²
+    $("parTxt").innerHTML = `Δ = ${par(b)}² − 4·${par(a)}·${par(c)} = <b>${String(D).replace("-", "−")}</b>. ` + (D > 0
+      ? `Dos soluciones: <b>x = ${fmt((-b + Math.sqrt(D)) / (2 * a))}</b> y <b>x = ${fmt((-b - Math.sqrt(D)) / (2 * a))}</b>.`
+      : D === 0 ? `Una solución doble: <b>x = ${fmt(-b / (2 * a))}</b>. La parábola solo toca el eje.`
+      : `Sin solución real: la parábola no llega a tocar el eje.`);
+  }
+  ["sa", "sb", "sc"].forEach(id => $(id).oninput = pinta);
+  pinta();
+})();

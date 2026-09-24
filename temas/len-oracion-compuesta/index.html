@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La oración compuesta — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202609242024">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>.nx{cursor:pointer;padding:.15rem .25rem;border-radius:5px;display:inline-block;min-height:44px;line-height:2.4}
+.nx:focus-visible{outline:2px solid currentColor}
+.nx.bien{background:#bbf7d0;color:#14532d}.nx.mal{background:#fecaca;color:#7f1d1d}</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Lengua · 4º ESO</span>
+    <h1>La oración compuesta</h1>
+    <p class="mini">Yuxtapuestas, coordinadas y subordinadas: cómo se reconoce cada una, qué nexo lleva y qué función hace. Teoría, <b>ejercicios infinitos</b> y 12 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+<h2>Simple o compuesta: cuenta los verbos</h2>
+    <div class="par">
+      <div>
+        <p>Una oración <b>simple</b> tiene un solo verbo conjugado. Una <b>compuesta</b> tiene dos o más, y por tanto dos o más oraciones dentro.</p>
+        <p>«Marta estudia» → un verbo, simple. «Marta estudia y Pablo trabaja» → dos verbos, compuesta.</p>
+        <p class="mini">Ojo con las perífrasis: «voy a estudiar», «tengo que salir» cuentan como un solo verbo.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Las tres formas de juntar oraciones</h3>
+        <p><b>Yuxtaposición:</b> sin nexo, solo con coma, punto y coma o dos puntos.</p>
+        <p><b>Coordinación:</b> con nexo, y las dos al mismo nivel.</p>
+        <p><b>Subordinación:</b> una va <b>dentro</b> de la otra y hace una función.</p>
+      </div>
+    </div>
+
+    <h2>Yuxtapuestas: sin nexo</h2>
+    <p>«Hacía frío; nadie salió.» Hay relación de sentido —se entiende que nadie salió <i>por</i> el frío—, pero ninguna palabra la marca. Solo la puntuación.</p>
+    <p class="mini">En los exámenes caen como trampa precisamente por eso: parece causal, pero sintácticamente es yuxtapuesta.</p>
+
+    <h2>Coordinadas: al mismo nivel</h2>
+    <p>Las dos oraciones podrían ir solas y ninguna depende de la otra. Lo que decide el tipo es el nexo:</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Tipo</th><th>Qué hace</th><th>Nexos</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><b>Copulativa</b></td><td>Suma</td><td>y, e, ni</td><td>Canta <b>y</b> baila.</td></tr>
+        <tr><td><b>Adversativa</b></td><td>Opone</td><td>pero, sino (que), sin embargo, mas</td><td>Quiere, <b>pero</b> no puede.</td></tr>
+        <tr><td><b>Disyuntiva</b></td><td>Da a elegir</td><td>o, u</td><td>¿Vienes <b>o</b> te quedas?</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Subordinadas: una dentro de otra</h2>
+    <p>La subordinada hace de <b>sustantivo</b>, de <b>adjetivo</b> o de <b>adverbio</b> dentro de la principal. Y el truco para saber cuál es sustituirla:</p>
+    <div class="par tres">
+      <div class="caja"><h3>Sustantiva → «eso»</h3>
+        <p>«Me alegra <b>que hayas venido</b>» → «Me alegra <b>eso</b>».</p>
+        <p class="mini">Hace de sujeto, complemento directo, de régimen…</p></div>
+      <div class="caja"><h3>Adjetiva → un adjetivo</h3>
+        <p>«El libro <b>que me prestaste</b>» → «el libro <b>prestado</b>».</p>
+        <p class="mini">Complementa a un sustantivo, el antecedente.</p></div>
+      <div class="caja"><h3>Adverbial → un adverbio</h3>
+        <p>«Iré <b>cuando pueda</b>» → «Iré <b>entonces</b>».</p>
+        <p class="mini">Tiempo, causa, condición, finalidad…</p></div>
+    </div>
+
+    <h2>Busca el nexo: ponte a prueba</h2>
+    <div class="par">
+      <div>
+        <p>El nexo es la palabra que engancha las dos oraciones, y casi siempre te dice el tipo. Pulsa en él.</p>
+        <p class="mini">Puede ser más de una palabra («para que», «sin embargo»): pulsa en la primera.</p>
+      </div>
+      <div class="caja" id="juegoNexo">
+        <p id="jnFrase" style="font-size:1.15rem;line-height:2"></p>
+        <p id="jnRes" class="mini"></p>
+        <button class="btn claro" type="button" id="jnOtra">Otra frase →</button>
+      </div>
+    </div>
+
+    <h2>Las adverbiales, por su pregunta</h2>
+    <div class="desliza"><table>
+      <thead><tr><th>Tipo</th><th>Responde a…</th><th>Nexos típicos</th></tr></thead>
+      <tbody>
+        <tr><td><b>Temporal</b></td><td>¿Cuándo?</td><td>cuando, mientras, en cuanto</td></tr>
+        <tr><td><b>Causal</b></td><td>¿Por qué?</td><td>porque, ya que, puesto que</td></tr>
+        <tr><td><b>Condicional</b></td><td>¿Con qué condición?</td><td>si, siempre que, con tal de que</td></tr>
+        <tr><td><b>Final</b></td><td>¿Para qué?</td><td>para que, a fin de que</td></tr>
+        <tr><td><b>Concesiva</b></td><td>¿A pesar de qué?</td><td>aunque, a pesar de que</td></tr>
+        <tr><td><b>Consecutiva</b></td><td>¿Con qué resultado?</td><td>tanto… que, así que</td></tr>
+        <tr><td><b>Modal</b></td><td>¿Cómo?</td><td>como, según</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Creer que todo «que» introduce una sustantiva</h3>
+      <p>«que» puede ser <b>conjunción</b> o <b>pronombre relativo</b>, y cambia todo el análisis.</p>
+      <p><b>El contraejemplo:</b> «Dijo <b>que</b> vendría» → conjunción: no sustituye a nada; la subordinada es «lo dicho» (sustantiva, CD). «El chico <b>que</b> vino» → relativo: se refiere a «chico» y la subordinada es adjetiva.</p>
+      <p><b>La prueba:</b> ¿tiene un sustantivo justo delante al que se refiera? Si sí, es relativo y la oración es adjetiva.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Analiza: «Me dijeron que el examen que puso ayer era difícil».</p>
+    <ol class="pasos">
+      <li><b>Verbos:</b> dijeron, puso, era → tres oraciones.</li>
+      <li><b>Principal:</b> «Me dijeron…».</li>
+      <li><b>«que el examen… era difícil»</b> se sustituye por «lo»: «Me lo dijeron» → <b>sustantiva de CD</b>.</li>
+      <li><b>Dentro de ella</b>, «que puso ayer» complementa a «el examen» → <b>adjetiva</b>, con «que» relativo.</li>
+      <li><b>Resultado:</b> una subordinada adjetiva dentro de una sustantiva, dentro de la principal. Como muñecas rusas.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>«Iremos al parque si deja de llover.»</p>
+    <ol class="pasos">
+      <li><b>Número de oraciones:</b> <span class="hueco" data-bien="2" data-pista="cuenta los verbos conjugados">?</span></li>
+      <li><b>Nexo:</b> <span class="hueco" data-bien="si" data-pista="la palabra que une las dos">?</span></li>
+      <li><b>¿Coordinada o subordinada?</b> <span class="hueco" data-bien="subordinada" data-pista="una pone la condición de la otra">?</span></li>
+      <li><b>Tipo:</b> <span class="hueco" data-bien="condicional" data-pista="¿con qué condición?">?</span></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Escribir sin frases eternas</h3>
+        <p>Un texto con tres subordinadas encadenadas se entiende peor. Saber cortarlas es lo que separa un 6 de un 8 en una redacción.</p></div>
+      <div class="caja"><h3>Poner bien las comas</h3>
+        <p>«Los alumnos, que aprobaron, irán» y «Los alumnos que aprobaron irán» dicen cosas distintas: en la primera van todos; en la segunda, solo los aprobados.</p></div>
+      <div class="caja"><h3>Entender la letra pequeña</h3>
+        <p>Un contrato vive de condicionales y concesivas: «si no se paga en 30 días…», «aunque se cancele…». Leerlas bien cuesta o ahorra dinero.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe sin miedo a las tildes ni a las mayúsculas: «copulativa», «Copulativa» y «CD» valen.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 12 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202609242024"></script>
+<script src="../../comun/preguntas-compuesta.js?v=202609242024"></script>
+<script src="../../comun/app.js?v=202609242024"></script>
+<script src="../../comun/ejercicios.js?v=202609242024"></script>
+<script src="../../comun/ejercicios-compuesta.js?v=202609242024"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["comp-02", "comp-08"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("len-oracion-compuesta", $("ahora"), 6);
+["coordinadaOSubordinada", "clasificarCompuesta", "identificarNexo", "funcionSubordinada"].forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+(function(){
+  const FRASES = [
+    ["Quería ir, pero no quedaban entradas.", "pero", "adversativa: opone"],
+    ["Cuando llegues, llámame.", "Cuando", "adverbial temporal: ¿cuándo?"],
+    ["El libro que me prestaste es buenísimo.", "que", "adjetiva: «que» se refiere a «libro»"],
+    ["No fui porque estaba enfermo.", "porque", "adverbial causal: ¿por qué?"],
+    ["¿Vienes o te quedas?", "o", "coordinada disyuntiva: da a elegir"],
+    ["Estudia para que te vaya bien.", "para", "adverbial final: ¿para qué? (el nexo es «para que»)"],
+    ["Aunque llueva, iremos.", "Aunque", "adverbial concesiva: a pesar de"],
+    ["Dijo que llegaría tarde.", "que", "sustantiva de CD: «lo dijo»"],
+  ];
+  let i = -1;
+  function otra(){
+    i = (i + 1 + Math.floor(Math.random() * (FRASES.length - 1))) % FRASES.length;
+    const [f, nexo, expl] = FRASES[i];
+    $("jnRes").textContent = "";
+    $("jnFrase").innerHTML = f.split(" ").map((p, k) => `<span class="nx" tabindex="0" role="button" data-k="${k}">${p}</span>`).join(" ");
+    $("jnFrase").querySelectorAll(".nx").forEach(s => {
+      const limpio = s.textContent.replace(/[¿?¡!.,;:«»]/g, "");
+      const pulsa = () => {
+        const ok = limpio === nexo;
+        s.classList.add(ok ? "bien" : "mal");
+        $("jnRes").innerHTML = ok ? `<b>Eso es.</b> ${expl}.` : `«${limpio}» no une las dos oraciones. Busca la palabra que hace de puente.`;
+      };
+      s.onclick = pulsa; s.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pulsa(); } };
+    });
+  }
+  $("jnOtra").onclick = otra;
+  otra();
+})();
+
+tutorDeApoyo("La oración compuesta", "Lengua", $("tutor"));
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+barraTutor();
+
+$("leido").onclick = e => { Progreso.marcarLeido("len-oracion-compuesta"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("len-oracion-compuesta")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>
