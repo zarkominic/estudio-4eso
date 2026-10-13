@@ -1,0 +1,202 @@
+---
+id: len-lexico
+titulo: Léxico y semántica
+asignatura: Lengua
+intro: Sinónimos y antónimos, polisemia y homonimia, campos semánticos, connotación, préstamos y las variedades del español.
+pretest: lex-05, lex-07
+generadores: relacionSemantica, polisemiaHomonimia, denotacion, intrusoCampo, nombreCampo, prestamoOrigen, variedadLengua
+preguntas: preguntas-lex.js
+ejercicios: ejercicios-lex.js
+n: 16
+nota_taller: Escribe sin miedo a las tildes ni a las mayúsculas: «sinonimo», «Sinónimo» y «sinónimos» valen.
+---
+    <h2>Sinonimia y antonimia</h2>
+    <div class="par">
+      <div>
+        <p>Dos palabras son <b>sinónimas</b> si significan lo mismo, o casi: «empezar» y «comenzar». Casi nunca valen en todas las frases: «un amigo <b>viejo</b>» no es lo mismo que «un amigo <b>antiguo</b>».</p>
+        <p>Son <b>antónimas</b> si significan lo contrario. Y no todas se oponen igual:</p>
+      </div>
+      <div class="caja idea">
+        <h3>Tres clases de antónimos</h3>
+        <p><b>Graduales:</b> hay puntos en medio. frío → templado → caliente.</p>
+        <p><b>Complementarios:</b> o uno o el otro. vivo / muerto, aprobado / suspenso.</p>
+        <p><b>Recíprocos:</b> uno implica al otro. comprar / vender, padre / hijo.</p>
+        <p class="mini">Y se pueden formar con prefijo: visible / <b>in</b>visible, hacer / <b>des</b>hacer.</p>
+      </div>
+    </div>
+
+    <h2>Hiperónimos e hipónimos</h2>
+    <p>El <b>hiperónimo</b> es la palabra general; los <b>hipónimos</b>, los tipos concretos que caben dentro. «Flor» es hiperónimo de «rosa», «clavel» y «tulipán»; cada una de ellas es hipónimo de «flor». Y las tres entre sí son <b>cohipónimos</b>.</p>
+    <p class="mini">El truco: «una rosa es un tipo de flor». La palabra que va detrás de «un tipo de» es el hiperónimo.</p>
+    <p>Sirve para no repetir: «Compré <b>tulipanes</b>. Las <b>flores</b> duraron una semana.» El hiperónimo retoma lo dicho sin repetir la palabra.</p>
+
+    <h2>Polisemia y homonimia</h2>
+    <div class="par">
+      <div>
+        <p><b>Polisemia:</b> una palabra con varios sentidos <b>emparentados</b>. La hoja del árbol y la hoja de papel: la segunda se llama así por parecerse a la primera.</p>
+        <p><b>Homonimia:</b> dos palabras distintas que coinciden en la forma <b>por casualidad</b>. «Llama» (fuego, del latín <i>flamma</i>) y «llama» (animal, del quechua).</p>
+        <p>Las homónimas pueden ser <b>homógrafas</b> (se escriben igual: vino / vino) u <b>homófonas</b> (solo suenan igual: vaca / baca, tubo / tuvo).</p>
+      </div>
+      <div class="caja" id="juegoPoli">
+        <h3>Una palabra, muchas frases</h3>
+        <p class="mini">Elige qué significa la palabra en esta frase.</p>
+        <p id="jpFrase" style="font-size:1.15rem"></p>
+        <div id="jpOpc" class="jp-opc"></div>
+        <p id="jpRes" class="mini"></p>
+        <button class="btn claro" type="button" id="jpOtra">Otra frase →</button>
+      </div>
+    </div>
+
+    <h2>Campo semántico</h2>
+    <div class="par">
+      <div>
+        <p>Un <b>campo semántico</b> es un grupo de palabras de la <b>misma categoría</b> que comparten un rasgo de significado: «silla, mesa, armario, sofá» son muebles.</p>
+        <p>No lo confundas con:</p>
+        <p><b>Familia léxica:</b> palabras con la misma raíz (pan, panadero, empanada). Lo que las une es la forma.</p>
+        <p><b>Campo asociativo:</b> todo lo que te viene a la cabeza con un tema, de cualquier categoría (playa: arena, bañarse, caluroso).</p>
+      </div>
+      <div class="caja" id="juegoCampo">
+        <h3>Clasifica</h3>
+        <p>Pulsa solo las palabras del campo <b id="jcNombre"></b>.</p>
+        <div id="jcPal" class="jc-pal"></div>
+        <p id="jcRes" class="mini"></p>
+        <button class="btn claro" type="button" id="jcOtra">Otro campo →</button>
+      </div>
+    </div>
+
+    <h2>Denotación y connotación</h2>
+    <p>La <b>denotación</b> es el significado objetivo, el del diccionario: «zorro» es un animal. La <b>connotación</b> son los valores que se le añaden según la cultura o la intención: «es un zorro» = es astuto.</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Palabra</th><th>Denota</th><th>Connota</th></tr></thead>
+      <tbody>
+        <tr><td>serpiente</td><td>reptil sin patas</td><td>traición, peligro</td></tr>
+        <tr><td>corazón</td><td>órgano que bombea sangre</td><td>bondad, amor</td></tr>
+        <tr><td>negro</td><td>color</td><td>desgracia, mala suerte</td></tr>
+        <tr><td>casa</td><td>edificio para vivir</td><td>refugio, familia</td></tr>
+      </tbody>
+    </table></div>
+    <p class="mini">La publicidad y la poesía viven de la connotación. Un informe médico intenta evitarla.</p>
+
+    <h2>Préstamos y neologismos</h2>
+    <p>Un <b>neologismo</b> es una palabra nueva. Puede crearse con recursos propios («tuitear», «videollamada») o tomarse de otra lengua: eso es un <b>préstamo</b>.</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Tipo</th><th>De dónde</th><th>Ejemplos</th></tr></thead>
+      <tbody>
+        <tr><td><b>Arabismos</b></td><td>árabe (Edad Media)</td><td>almohada, aceite, alcalde, ojalá</td></tr>
+        <tr><td><b>Americanismos</b></td><td>náhuatl, taíno, quechua</td><td>tomate, chocolate, patata, canoa</td></tr>
+        <tr><td><b>Italianismos</b></td><td>italiano (Renacimiento)</td><td>soneto, piano, balcón, novela</td></tr>
+        <tr><td><b>Galicismos</b></td><td>francés</td><td>garaje, chófer, menú, bulevar</td></tr>
+        <tr><td><b>Anglicismos</b></td><td>inglés</td><td>fútbol, líder, chat, estrés</td></tr>
+      </tbody>
+    </table></div>
+    <p>Un préstamo puede llegar <b>crudo</b> (<i>e-mail</i>, en cursiva), <b>adaptado</b> a nuestra ortografía (fútbol, escáner) o como <b>calco</b>, traducido pieza a pieza (rascacielos, de <i>skyscraper</i>).</p>
+
+    <h2>Variedades del español</h2>
+    <p>Lo hablan unos 500 millones de personas, y no todas igual. Hay tres ejes de variación:</p>
+    <div class="par tres">
+      <div class="caja"><h3>Diatópica → el lugar</h3>
+        <p>Dialectos: andaluz, canario, rioplatense, mexicano… «Vos tenés», «coger / tomar el autobús».</p></div>
+      <div class="caja"><h3>Diastrática → el grupo social</h3>
+        <p>Nivel culto, medio y vulgar; jergas de edad o profesión. «Haiga» es un vulgarismo.</p></div>
+      <div class="caja"><h3>Diafásica → la situación</h3>
+        <p>Registros: formal, coloquial, familiar. Tú mismo cambias de registro del recreo al examen oral.</p></div>
+    </div>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Creer que si se escribe igual, es polisemia</h3>
+      <p>La forma no decide. Lo que decide es si los sentidos <b>están emparentados</b>.</p>
+      <p><b>El contraejemplo:</b> «vino» (bebida) y «vino» (de venir) se escriben exactamente igual y <b>no</b> son polisemia: uno es sustantivo y otro verbo, y no tienen nada que ver. Son <b>homónimas</b>. En cambio, «banco» (asiento) y «banco» (entidad) sí son polisemia: los primeros banqueros atendían sentados en un banco.</p>
+      <p><b>La prueba:</b> ¿son de la misma categoría y uno sale del otro? Mira el diccionario: una entrada con varias acepciones es polisemia; entradas distintas (llama¹, llama²), homonimia.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Comenta el léxico de: «Mi abuela, que es un sol, me regaló un jersey; la prenda abriga muchísimo».</p>
+    <ol class="pasos">
+      <li><b>«sol»:</b> no habla de la estrella → uso <b>connotativo</b> (persona encantadora).</li>
+      <li><b>«jersey»:</b> viene del inglés → <b>préstamo adaptado</b>, un anglicismo.</li>
+      <li><b>«prenda»</b> respecto de «jersey» → <b>hiperónimo</b>: retoma lo dicho sin repetir.</li>
+      <li><b>«regaló»</b> → sinónimo de «obsequió»; antónimo recíproco: «recibí».</li>
+      <li><b>Registro:</b> familiar y cariñoso → variación <b>diafásica</b> propia de una conversación cercana.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>«El zorro de mi primo se compró un sándwich y un refresco; la comida le costó cinco euros.»</p>
+    <ol class="pasos">
+      <li><b>«zorro», ¿denotativo o connotativo?</b> <span class="hueco" data-bien="connotativo" data-pista="¿habla del animal?">?</span></li>
+      <li><b>«sándwich» es un…</b> <span class="hueco" data-bien="anglicismo" data-pista="¿de qué lengua viene?">?</span></li>
+      <li><b>«comida» respecto de «sándwich» es su…</b> <span class="hueco" data-bien="hiperónimo" data-pista="¿cuál es la palabra general?">?</span></li>
+      <li><b>Un sinónimo de «costó»:</b> <span class="hueco" data-bien="valió" data-pista="«me ___ cinco euros»">?</span></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Subir nota en la redacción</h3>
+        <p>Repetir «cosa» o «hacer» cinco veces en 200 palabras resta. Cambiar dos repeticiones por sinónimos o hiperónimos es de lo que más mejora la nota de expresión en la EvAU, donde la corrección lingüística pesa hasta 1 punto de 10.</p></div>
+      <div class="caja"><h3>Leer la publicidad con lupa</h3>
+        <p>Un yogur «natural» y uno «casero» pueden llevar la misma etiqueta nutricional. Lo que cambia es la connotación, y por eso uno cuesta 30 céntimos más.</p></div>
+      <div class="caja"><h3>Entender a 500 millones</h3>
+        <p>Si en México pides «coger el camión» o en Argentina oyes «¿vos querés?», saber que es variación diatópica evita malentendidos. Netflix dobla muchas series dos veces al español por eso mismo.</p></div>
+    </div>
+<!--ESTILO-->
+.jp-opc,.jc-pal{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.jp-opc button,.jc-pal button{min-height:48px;padding:.4rem .8rem;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.jp-opc button.bien,.jc-pal button.bien{background:#bbf7d0;color:#14532d}
+.jp-opc button.mal,.jc-pal button.mal{background:#fecaca;color:#7f1d1d}
+<!--SCRIPT-->
+(function(){
+  const baraja = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(x => x[1]);
+  // Polisemia: la misma palabra cambia de sentido con la frase
+  const POLI = [
+    {p:"banco", s:["asiento","entidad financiera","grupo de peces"], f:[["Me senté en un <b>banco</b> del parque.",0],["Abrí una cuenta en el <b>banco</b>.",1],["Vimos un <b>banco</b> de sardinas.",2]]},
+    {p:"hoja", s:["de una planta","de papel","de un cuchillo"], f:[["En otoño cae la <b>hoja</b> del plátano.",0],["Escribe tu nombre en la <b>hoja</b>.",1],["La <b>hoja</b> de la navaja está afilada.",2]]},
+    {p:"pie", s:["parte del cuerpo","parte baja de algo","texto bajo una foto"], f:[["Me he torcido el <b>pie</b>.",0],["Acampamos al <b>pie</b> de la montaña.",1],["Lee el <b>pie</b> de foto.",2]]},
+    {p:"red", s:["malla para pescar","internet","organización conectada"], f:[["El pescador remendaba la <b>red</b>.",0],["Lo vi en la <b>red</b>.",1],["Trabaja en la <b>red</b> de hospitales públicos.",2]]},
+    {p:"cabeza", s:["parte del cuerpo","quien dirige","primer puesto"], f:[["Me duele la <b>cabeza</b>.",0],["Ella es la <b>cabeza</b> del proyecto.",1],["El Madrid va en <b>cabeza</b> de la liga.",2]]},
+  ];
+  function otraPoli(){
+    const w = POLI[Math.floor(Math.random() * POLI.length)];
+    const [frase, bien] = w.f[Math.floor(Math.random() * w.f.length)];
+    $("jpFrase").innerHTML = frase; $("jpRes").textContent = "";
+    $("jpOpc").innerHTML = "";
+    w.s.forEach((s, i) => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = s;
+      b.onclick = () => {
+        b.classList.add(i === bien ? "bien" : "mal");
+        $("jpRes").innerHTML = i === bien
+          ? `<b>Eso es.</b> Es la misma palabra, «${w.p}», con otro sentido emparentado: <b>polisemia</b>. Lo decide la frase.`
+          : `En esta frase no. Fíjate en las palabras de alrededor: ellas eligen el sentido de «${w.p}».`;
+      };
+      $("jpOpc").appendChild(b);
+    });
+  }
+  $("jpOtra").onclick = otraPoli; otraPoli();
+
+  // Campo semántico: pulsar solo las que pertenecen
+  const CAMPOS = [
+    ["muebles", ["silla","armario","sofá","estantería"], ["madera","sentarse","cocina","cómodo"]],
+    ["frutas", ["pera","cereza","kiwi","ciruela"], ["frutero","dulce","merendar","árbol"]],
+    ["deportes", ["tenis","natación","rugby","pádel"], ["balón","correr","estadio","sudar"]],
+    ["prendas de vestir", ["falda","jersey","bufanda","abrigo"], ["armario","lana","frío","percha"]],
+    ["fenómenos meteorológicos", ["granizo","niebla","tormenta","escarcha"], ["paraguas","mojado","nube","invierno"]],
+  ];
+  let ic = -1;
+  function otroCampo(){
+    ic = (ic + 1) % CAMPOS.length;
+    const [nombre, si, no] = CAMPOS[ic];
+    $("jcNombre").textContent = nombre; $("jcRes").textContent = ""; $("jcPal").innerHTML = "";
+    let quedan = si.length;
+    baraja(si.concat(no)).forEach(p => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = p;
+      b.onclick = () => {
+        if (b.classList.length) return;
+        const ok = si.includes(p);
+        b.classList.add(ok ? "bien" : "mal");
+        if (ok && --quedan === 0) $("jcRes").innerHTML = "<b>Completo.</b> Todas son sustantivos y todas son un tipo de " + nombre + ": eso es un campo semántico.";
+        else if (!ok) $("jcRes").innerHTML = `«${p}» tiene que ver con el tema, pero no es un tipo de ${nombre}: sería un campo <b>asociativo</b>, no semántico.`;
+      };
+      $("jcPal").appendChild(b);
+    });
+  }
+  $("jcOtra").onclick = otroCampo; otroCampo();
+})();

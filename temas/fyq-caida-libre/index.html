@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caída libre y lanzamiento vertical — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202610131926">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>.lab{display:grid;gap:.6rem}.lab label{display:grid;gap:.1rem}.lab input[type=range]{width:100%;height:30px}
+#clSim{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Física y Química · 4º ESO</span>
+    <h1>Caída libre y lanzamiento vertical</h1>
+    <p class="mini">Por qué todo cae igual sin aire, las tres ecuaciones con su criterio de signos, soltar, lanzar hacia arriba y hacia abajo, las gráficas y qué cambia cuando hay aire. Teoría, <b>ejercicios infinitos</b> y 15 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+<h2>Qué es la caída libre</h2>
+    <div class="par">
+      <div>
+        <p>Un objeto está en <b>caída libre</b> cuando la única fuerza que actúa sobre él es su peso. Da igual que suba, que baje o que esté quieto un instante: si solo le afecta la gravedad, está en caída libre.</p>
+        <p>Por eso lanzar una pelota hacia arriba también es caída libre. Sube frenando, se para y baja acelerando, y todo con la misma aceleración.</p>
+        <p>Lo que más choca: <b>sin aire, todo cae igual de rápido</b>, pese lo que pese. Una bola de hierro y una pluma, soltadas a la vez, llegan juntas.</p>
+        <p>Aristóteles pensaba lo contrario, y durante casi dos mil años nadie lo comprobó. Galileo vio que la diferencia la pone el aire, no el peso.</p>
+      </div>
+      <div class="caja idea">
+        <h3>El martillo y la pluma</h3>
+        <p>En 1971, en la misión <b>Apolo 15</b>, el astronauta David Scott soltó en la Luna un martillo y una pluma de halcón a la vez. Sin aire que frenara la pluma, <b>tocaron el suelo juntos</b>.</p>
+        <p class="mini">¿Por qué? El martillo pesa más, pero también cuesta más ponerlo en marcha (tiene más masa). Las dos cosas se compensan exactamente y la aceleración sale la misma para todo.</p>
+      </div>
+    </div>
+
+    <h2>La aceleración g y las tres ecuaciones</h2>
+    <p>Cerca de la superficie de la Tierra, todo lo que cae libremente acelera <b>g = 9,8 m/s²</b> hacia abajo. Quiere decir que su velocidad cambia 9,8 m/s cada segundo: a 1 s, 9,8 m/s; a 2 s, 19,6 m/s; a 3 s, 29,4 m/s.</p>
+    <p class="mini">g no es exactamente igual en todas partes: 9,78 en el ecuador, 9,83 en los polos, 1,6 en la Luna. En 4º se usa 9,8 (a veces 10 para cuentas rápidas; mira qué te pide tu profe).</p>
+    <div class="par">
+      <div>
+        <p>Es un MRUA, así que valen las ecuaciones de cinemática. Antes de usarlas hay que decidir <b>hacia dónde es positivo</b>. En todo este tema:</p>
+        <p><b>Criterio de signos:</b> eje y <b>hacia arriba</b>, con el <b>origen en el suelo</b>. Hacia arriba es +, hacia abajo es −. Por tanto la aceleración es siempre <b>a = −g = −9,8 m/s²</b>.</p>
+        <p style="text-align:center">$$y = y_0 + v_0\,t - \tfrac{1}{2}\,g\,t^2$$</p>
+        <p style="text-align:center">$$v = v_0 - g\,t$$</p>
+        <p style="text-align:center">$$v^2 = v_0^2 - 2\,g\,(y - y_0)$$</p>
+      </div>
+      <div class="caja">
+        <h3>Qué es cada letra</h3>
+        <p><b>y</b>: posición (altura sobre el suelo) en el instante t.</p>
+        <p><b>y₀</b>: posición de salida.</p>
+        <p><b>v₀</b>: velocidad de salida, <b>con signo</b>: + si la lanzas hacia arriba, − si hacia abajo, 0 si la sueltas.</p>
+        <p><b>v</b>: velocidad en el instante t, con signo.</p>
+        <p class="mini">La tercera es la de cuando <b>no te dan el tiempo ni te lo piden</b>. Ahorra un paso.</p>
+      </div>
+    </div>
+
+    <h2>Soltar desde una altura</h2>
+    <p>Lo sueltas: <b>v₀ = 0</b>. Sale de y₀ = h y llega al suelo cuando <b>y = 0</b>.</p>
+    <div class="par">
+      <div class="caja"><h3>Tiempo de caída</h3>
+        <p>$0 = h - \tfrac{1}{2}g\,t^2 \;\Rightarrow\; t = \sqrt{\dfrac{2h}{g}}$</p>
+        <p class="mini">Desde 20 m: t = √(40/9,8) ≈ 2,02 s. Desde 80 m (cuatro veces más alto) tarda 4,04 s: solo el doble. El tiempo crece con la raíz de la altura.</p></div>
+      <div class="caja"><h3>Velocidad al llegar</h3>
+        <p>$v^2 = 0 - 2g(0 - h) = 2gh \;\Rightarrow\; |v| = \sqrt{2gh}$</p>
+        <p class="mini">Desde 20 m llega a 19,8 m/s ≈ 71 km/h. La velocidad sale negativa (va hacia abajo); la <b>rapidez</b> es el número sin signo.</p></div>
+    </div>
+    <div class="desliza"><table>
+      <thead><tr><th>Altura</th><th>Tiempo de caída</th><th>Llega a</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td>1,5 m</td><td>0,55 s</td><td>5,4 m/s (20 km/h)</td><td>Se te cae el móvil</td></tr>
+        <tr><td>5 m</td><td>1,01 s</td><td>9,9 m/s (36 km/h)</td><td>Un segundo piso</td></tr>
+        <tr><td>20 m</td><td>2,02 s</td><td>19,8 m/s (71 km/h)</td><td>Un séptimo piso</td></tr>
+        <tr><td>45 m</td><td>3,03 s</td><td>29,7 m/s (107 km/h)</td><td>Un acantilado</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Lanzar hacia arriba</h2>
+    <div class="par">
+      <div>
+        <p>Ahora <b>v₀ es positiva</b>. La pelota sube perdiendo 9,8 m/s cada segundo, se para un instante y vuelve a bajar.</p>
+        <p><b>Tiempo de subida.</b> Arriba v = 0: $0 = v_0 - g\,t \Rightarrow t_s = \dfrac{v_0}{g}$.</p>
+        <p><b>Altura máxima.</b> Con la tercera ecuación y v = 0: $h_{máx} = \dfrac{v_0^2}{2g}$ (por encima del punto de salida).</p>
+        <p><b>Tiempo total</b> (si vuelve a la misma altura): $t_{total} = \dfrac{2v_0}{g}$.</p>
+        <p><b>Simetría.</b> Tarda lo mismo en subir que en bajar, y en cada altura pasa con la <b>misma rapidez</b> al subir que al bajar, solo que con el signo cambiado. Vuelve a tu mano con la velocidad con la que salió.</p>
+        <p class="mini">Prueba el simulador: elige la altura de salida y la velocidad (negativa = la lanzas hacia abajo) y mira a la vez la bola y sus dos gráficas. Fíjate en que la v–t corta el eje justo cuando la bola está arriba del todo.</p>
+      </div>
+      <div class="caja lab">
+        <label>Altura de salida y₀ = <b id="vy0">0</b> m<input type="range" id="sy0" min="0" max="50" step="5" value="0"></label>
+        <label>Velocidad de salida v₀ = <b id="vv0">15</b> m/s<input type="range" id="sv0" min="-15" max="25" step="1" value="15"></label>
+        <p style="margin:0"><button class="btn aprender" id="clLanza" type="button">Lanzar</button></p>
+        <svg id="clSim" viewBox="0 0 320 200" role="img" aria-label="Simulador: bola, gráfica altura-tiempo y gráfica velocidad-tiempo"></svg>
+        <p id="clTxt" class="mini"></p>
+      </div>
+    </div>
+
+    <h2>Lanzar hacia abajo</h2>
+    <p>Si la lanzas hacia abajo, con el eje hacia arriba <b>v₀ es negativa</b>. Las ecuaciones son las mismas; solo cambia ese signo.</p>
+    <div class="caja">
+      <p>Desde 20 m lanzas una piedra hacia abajo a 5 m/s: v₀ = −5 m/s.</p>
+      <p>$v^2 = (-5)^2 - 2\cdot 9{,}8\cdot(0 - 20) = 25 + 392 = 417 \Rightarrow |v| \approx 20{,}4$ m/s.</p>
+      <p class="mini">Soltándola llegaba a 19,8 m/s. Lanzarla a 5 m/s no suma 5 al final: suma menos, porque al ir más rápida pasa menos tiempo acelerando. Lo que se suma son los cuadrados.</p>
+    </div>
+
+    <h2>Las gráficas y–t y v–t</h2>
+    <div class="par">
+      <div class="caja"><h3>Posición–tiempo (y–t)</h3>
+        <p>Es una <b>parábola boca abajo</b>, porque la t va al cuadrado con signo menos.</p>
+        <p>Su pendiente es la velocidad: muy inclinada al salir, <b>horizontal en el vértice</b> (v = 0) y cada vez más inclinada al bajar.</p>
+        <p class="mini">Ojo: la parábola no es la trayectoria. La bola solo sube y baja en vertical; lo que se curva es la gráfica.</p></div>
+      <div class="caja"><h3>Velocidad–tiempo (v–t)</h3>
+        <p>Es una <b>recta que baja</b> con pendiente −9,8: la aceleración.</p>
+        <p>Positiva mientras sube, <b>cruza el eje</b> en el punto más alto y negativa mientras baja.</p>
+        <p class="mini">El área entre la recta y el eje es el desplazamiento: el triángulo de arriba (subida) y el de abajo (bajada) son iguales si vuelve a la misma altura.</p></div>
+    </div>
+
+    <h2>El error típico: el signo de g y la altura</h2>
+    <div class="caja ojo">
+      <h3>Fallo 1: poner g positiva «porque sube»</h3>
+      <p>Lanzas a 10 m/s hacia arriba y alguien escribe v = 10 + 9,8·t.</p>
+      <p><b>El contraejemplo:</b> a los 2 s daría v = 29,6 m/s, cada vez más rápida hacia arriba. La pelota nunca bajaría. Con el signo bien, v = 10 − 9,8·2 = −9,6 m/s: ya está bajando, que es lo que ves pasar.</p>
+      <p><b>Qué hacer:</b> la gravedad apunta hacia abajo <b>siempre</b>, suba o baje el objeto. Con el eje hacia arriba, el término de g lleva un menos en todas las ecuaciones.</p>
+    </div>
+    <div class="caja ojo">
+      <h3>Fallo 2: confundir la altura con la posición</h3>
+      <p>Sueltas una piedra desde 30 m y escribes y = 30 al llegar al suelo.</p>
+      <p><b>El contraejemplo:</b> 30 = 30 − 4,9·t² da t = 0. Según eso, la piedra llega al suelo en el mismo instante en que la sueltas. Imposible.</p>
+      <p><b>Qué hacer:</b> y es <b>dónde está</b>, no cuánto ha caído. Al llegar al suelo, <b>y = 0</b>; los 30 m son y₀. Lo que ha bajado es Δy = y − y₀ = −30 m.</p>
+    </div>
+
+    <h2>Cuando hay aire: la velocidad límite</h2>
+    <div class="par">
+      <div>
+        <p>En la vida real el aire frena, y frena <b>más cuanto más rápido vas</b>. Al principio casi no se nota y el objeto acelera como en caída libre. Pero cada vez el freno es mayor.</p>
+        <p>Llega un momento en que el freno del aire <b>iguala al peso</b>. Entonces la fuerza total es cero y la velocidad <b>deja de aumentar</b>: es la <b>velocidad límite</b>.</p>
+        <p>Depende de la forma y de la superficie que pone contra el aire, no solo del peso. Por eso una hoja abierta cae despacio y la misma hoja hecha una bola cae rápido.</p>
+      </div>
+      <div class="caja idea"><h3>El paracaidista</h3>
+        <p>Saltando desde 4.000 m, sin aire llegaría al suelo a unos 280 m/s (1.000 km/h).</p>
+        <p>Con aire, en postura de estrella se estabiliza a unos <b>55 m/s (200 km/h)</b> tras unos 12 s. En picado, con menos superficie, pasa de 80 m/s.</p>
+        <p>Al abrir el paracaídas la superficie se multiplica y la velocidad límite baja a unos <b>5 m/s</b>: como saltar desde algo más de un metro.</p></div>
+    </div>
+    <p class="mini">En los ejercicios de este tema el aire no se tiene en cuenta salvo que lo diga el enunciado. Con objetos compactos y caídas cortas, el error es pequeño.</p>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Desde una azotea de 25 m lanzas una pelota hacia arriba a 10 m/s. Cae a la calle. ¿Qué altura máxima alcanza, cuánto tarda en llegar al suelo y con qué velocidad llega?</p>
+    <ol class="pasos">
+      <li><b>Criterio:</b> eje hacia arriba, suelo en y = 0. Datos: y₀ = 25 m, v₀ = +10 m/s, a = −9,8 m/s².</li>
+      <li><b>Altura máxima:</b> v = 0 → 0 = 10² − 2·9,8·(y − 25) → y − 25 = 100/19,6 ≈ 5,1 m. Está a <b>30,1 m</b> del suelo.</li>
+      <li><b>Tiempo hasta el suelo:</b> y = 0 → 0 = 25 + 10·t − 4,9·t² → 4,9·t² − 10·t − 25 = 0.</li>
+      <li>t = (10 ± √(100 + 490)) / 9,8 = (10 ± 24,3) / 9,8 → t ≈ 3,50 s o t ≈ −1,46 s. La negativa no vale: sería antes de lanzarla. <b>t ≈ 3,50 s</b>.</li>
+      <li><b>Velocidad al llegar:</b> v = 10 − 9,8·3,50 ≈ <b>−24,3 m/s</b>. Negativa: va hacia abajo.</li>
+      <li><b>Comprobación</b> con la tercera ecuación: v² = 100 − 2·9,8·(0 − 25) = 590 → |v| ≈ 24,3 ✓.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Lanzas una pelota hacia arriba desde el suelo a 19,6 m/s y la recoges a la misma altura.</p>
+    <ol class="pasos">
+      <li><b>Tiempo de subida (s):</b> <span class="hueco" data-bien="2" data-pista="v₀ / g = 19,6 / 9,8">?</span></li>
+      <li><b>Altura máxima (m):</b> <span class="hueco" data-bien="19,6" data-pista="v₀² / (2g) = 384,16 / 19,6">?</span></li>
+      <li><b>Tiempo total en el aire (s):</b> <span class="hueco" data-bien="4" data-pista="el doble de la subida">?</span></li>
+      <li><b>Velocidad al volver a tu mano (m/s, con signo):</b> <span class="hueco" data-bien="-19,6" data-pista="la misma rapidez, pero hacia abajo">?</span></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Medir tu tiempo de reacción</h3>
+        <p>Un amigo suelta una regla entre tus dedos y la pillas. Si ha caído 20 cm: t = √(2·0,2/9,8) ≈ <b>0,20 s</b>. Esa es tu reacción, y por eso al volante a 90 km/h recorres 5 m antes de tocar el freno.</p></div>
+      <div class="caja"><h3>Saber lo hondo que es un pozo</h3>
+        <p>Sueltas una piedra y oyes el golpe a los 2 s: h ≈ ½·9,8·2² ≈ <b>19,6 m</b>. El sonido tarda unos 0,06 s en subir, así que el pozo es algo menos hondo: unos 18,5 m.</p></div>
+      <div class="caja"><h3>El salto de un jugador de baloncesto</h3>
+        <p>Un buen salto vertical sube 0,6 m. Despega a v₀ = √(2·9,8·0,6) ≈ <b>3,4 m/s</b> y está en el aire 2·3,4/9,8 ≈ <b>0,7 s</b>. Parece que «flota» porque pasa la mitad de ese tiempo en los últimos 15 cm.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Usa g = 9,8 m/s². Puedes escribir <b>2,02</b>, <b>2.02</b> o <b>2,02 s</b>: se admite un pequeño margen por redondeo. Si te piden la velocidad con su signo, pon el <b>-</b> delante cuando baje.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 15 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202610131926"></script>
+<script src="../../comun/preguntas-cl.js?v=202610131926"></script>
+<script src="../../comun/app.js?v=202610131926"></script>
+<script src="../../comun/ejercicios.js?v=202610131926"></script>
+<script src="../../comun/ejercicios-cl.js?v=202610131926"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["cl-01", "cl-03"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("fyq-caida-libre", $("ahora"), 6);
+["clSoltar", "clAlturaMax", "clTiempoVuelo", "clLanzaAbajo", "clPosicion", "clVelocidadAltura", "clDesdeEdificio"].forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+(function(){
+  const G = 9.8, W = 320, H = 200;
+  const fmt = v => String(Math.round(v * 100) / 100).replace(".", ",").replace("-", "−");
+  let anim = null;
+  function datos(){
+    const y0 = +$("sy0").value, v0 = +$("sv0").value;
+    if (y0 === 0 && v0 <= 0){ $("sv0").value = 1; return datos(); }   // desde el suelo hacia abajo no hay vuelo
+    const tf = (v0 + Math.sqrt(v0 * v0 + 2 * G * y0)) / G;
+    const yMax = v0 > 0 ? y0 + v0 * v0 / (2 * G) : y0;
+    const vMax = Math.max(Math.abs(v0), Math.abs(v0 - G * tf));
+    return {y0, v0, tf, yMax, vMax};
+  }
+  // columna de la bola: x 10–50; gráfica y–t: x 70–185; gráfica v–t: x 205–315
+  function pinta(t){
+    const d = datos(); $("vy0").textContent = d.y0; $("vv0").textContent = fmt(d.v0);
+    if (t === undefined) t = d.tf;
+    const top = 14, bot = H - 22, esY = y => bot - (y / (d.yMax * 1.08 || 1)) * (bot - top);
+    const gx = (x0, x1) => tt => x0 + (tt / d.tf) * (x1 - x0);
+    const tx1 = gx(72, 185), tx2 = gx(207, 315);
+    const midV = (top + bot) / 2, esV = v => midV - (v / (d.vMax * 1.1)) * (bot - top) / 2;
+    const yAt = tt => d.y0 + d.v0 * tt - G * tt * tt / 2, vAt = tt => d.v0 - G * tt;
+    const ptsY = [], ptsV = [];
+    for (let i = 0; i <= 60; i++){ const tt = d.tf * i / 60; if (tt > t) break; ptsY.push(tx1(tt).toFixed(1) + "," + esY(yAt(tt)).toFixed(1)); ptsV.push(tx2(tt).toFixed(1) + "," + esV(vAt(tt)).toFixed(1)); }
+    ptsY.push(tx1(t).toFixed(1) + "," + esY(yAt(t)).toFixed(1)); ptsV.push(tx2(t).toFixed(1) + "," + esV(vAt(t)).toFixed(1));
+    const ts = d.v0 > 0 ? d.v0 / G : null;
+    $("clSim").innerHTML = `
+      <line x1="6" y1="${bot}" x2="54" y2="${bot}" stroke="currentColor" stroke-width="2"/>
+      ${d.y0 > 0 ? `<rect x="6" y="${esY(d.y0)}" width="14" height="${bot - esY(d.y0)}" fill="currentColor" opacity=".18"/>` : ""}
+      <line x1="30" y1="${esY(d.yMax)}" x2="54" y2="${esY(d.yMax)}" stroke="#dc2626" stroke-dasharray="3 3"/>
+      <circle cx="34" cy="${esY(yAt(t)) - 6}" r="6" fill="#2563eb"/>
+      <text x="6" y="10" font-size="10" fill="currentColor">bola</text>
+      <line x1="72" y1="${bot}" x2="188" y2="${bot}" stroke="currentColor" opacity=".6"/><line x1="72" y1="${top}" x2="72" y2="${bot}" stroke="currentColor" opacity=".6"/>
+      <text x="74" y="10" font-size="10" fill="currentColor">y (m)</text><text x="186" y="${bot + 14}" font-size="10" text-anchor="end" fill="currentColor">t (s)</text>
+      <polyline fill="none" stroke="#2563eb" stroke-width="2.5" points="${ptsY.join(" ")}"/>
+      <line x1="207" y1="${midV}" x2="318" y2="${midV}" stroke="currentColor" opacity=".6"/><line x1="207" y1="${top}" x2="207" y2="${bot}" stroke="currentColor" opacity=".6"/>
+      <text x="209" y="10" font-size="10" fill="currentColor">v (m/s)</text><text x="316" y="${midV + 13}" font-size="10" text-anchor="end" fill="currentColor">t</text>
+      <polyline fill="none" stroke="#16a34a" stroke-width="2.5" points="${ptsV.join(" ")}"/>
+      ${ts !== null && t >= ts ? `<circle cx="${tx2(ts)}" cy="${midV}" r="4" fill="#dc2626"/><circle cx="${tx1(ts)}" cy="${esY(d.yMax)}" r="4" fill="#dc2626"/>` : ""}
+      <text x="${tx1(d.tf)}" y="${bot + 14}" font-size="10" text-anchor="middle" fill="currentColor">${fmt(d.tf)}</text>`;
+    $("clTxt").innerHTML = `t = <b>${fmt(t)} s</b> · y = <b>${fmt(Math.max(0, yAt(t)))} m</b> · v = <b>${fmt(vAt(t))} m/s</b>` +
+      (t >= d.tf - 1e-9 ? `<br>Llega al suelo a los <b>${fmt(d.tf)} s</b> con v = <b>${fmt(vAt(d.tf))} m/s</b>.` +
+        (ts !== null ? ` Arriba del todo (punto rojo) a los ${fmt(ts)} s, a <b>${fmt(d.yMax)} m</b> del suelo: ahí v = 0.` : ` Va hacia abajo desde el principio: no hay punto más alto.`) : "");
+  }
+  function lanza(){
+    if (anim) cancelAnimationFrame(anim);
+    const d = datos(), t0 = performance.now();
+    const paso = ahora => {
+      const t = Math.min(d.tf, (ahora - t0) / 1000);   // tiempo real: 1 s de simulación = 1 s de reloj
+      pinta(t);
+      if (t < d.tf) anim = requestAnimationFrame(paso); else anim = null;
+    };
+    anim = requestAnimationFrame(paso);
+  }
+  ["sy0", "sv0"].forEach(id => $(id).oninput = () => { if (anim){ cancelAnimationFrame(anim); anim = null; } pinta(); });
+  $("clLanza").onclick = lanza;
+  pinta();
+})();
+
+tutorDeApoyo("Caída libre y lanzamiento vertical", "Física y Química", $("tutor"));
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+barraTutor();
+
+$("leido").onclick = e => { Progreso.marcarLeido("fyq-caida-libre"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("fyq-caida-libre")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

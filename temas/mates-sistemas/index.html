@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistemas de ecuaciones — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202610131926">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>.lab{display:grid;gap:.6rem}.lab label{display:grid;gap:.1rem}.lab input[type=range]{width:100%;height:30px}
+#rectas{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}
+.sis{display:inline-block;line-height:1.6;font-weight:700}</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Matemáticas · 4º ESO</span>
+    <h1>Sistemas de ecuaciones</h1>
+    <p class="mini">Sustitución, igualación y reducción, qué pinta tiene un sistema en el dibujo, cuándo no tiene solución, los no lineales y los problemas. Teoría, <b>ejercicios infinitos</b> y 14 preguntas.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer nada, dos apuestas</h3>
+      <p>No hace falta saberlo. Arriesga: equivocarte ahora hace que luego se te quede mejor.</p>
+      <div class="compruebate" id="pretest"></div>
+    </div>
+
+<h2>Qué es un sistema y qué es su solución</h2>
+    <div class="par">
+      <div>
+        <p>Un sistema son <b>varias ecuaciones que se tienen que cumplir a la vez</b>. En 4º lo normal son dos ecuaciones con dos incógnitas:</p>
+        <p style="text-align:center">$$\begin{cases} x + y = 5 \\ x - y = 1 \end{cases}$$</p>
+        <p>La solución no es un número: es un <b>par (x, y)</b> que cumple las dos. Aquí, x = 3 e y = 2.</p>
+        <p>Hay muchos pares que cumplen la primera (0 y 5, 1 y 4…) y muchos que cumplen la segunda. Solo uno está en las dos listas.</p>
+      </div>
+      <div class="caja idea">
+        <h3>Comprobar es gratis</h3>
+        <p>Con (3, 2): 3 + 2 = 5 ✓ · 3 − 2 = 1 ✓.</p>
+        <p class="mini">Antes de dar una solución por buena, sustitúyela en <b>las dos</b>. Son diez segundos y salvan el ejercicio.</p>
+      </div>
+    </div>
+
+    <h2>Sustitución, igualación y reducción</h2>
+    <p>Los tres hacen lo mismo: <b>quitar una incógnita</b> para quedarte con una ecuación normal de primer grado. Cambia el camino.</p>
+    <div class="par tres">
+      <div class="caja"><h3>Sustitución</h3>
+        <p>Despejas una incógnita en una ecuación y la <b>metes</b> en la otra.</p>
+        <p>$x + 2y = 7 \Rightarrow x = 7 - 2y$<br>$3(7 - 2y) - y = 7$<br>$21 - 7y = 7 \Rightarrow y = 2,\ x = 3$</p>
+        <p class="mini">Cuándo: si alguna incógnita lleva coeficiente 1.</p></div>
+      <div class="caja"><h3>Igualación</h3>
+        <p>Despejas <b>la misma</b> incógnita en las dos e igualas.</p>
+        <p>$y = 2x + 1$, $y = -x + 7$<br>$2x + 1 = -x + 7$<br>$3x = 6 \Rightarrow x = 2,\ y = 5$</p>
+        <p class="mini">Cuándo: si ya vienen despejadas (rectas en forma y = mx + n).</p></div>
+      <div class="caja"><h3>Reducción</h3>
+        <p>Multiplicas para que una incógnita tenga coeficientes <b>opuestos</b> y sumas.</p>
+        <p>$2x + 3y = 12$ (·2), $5x - 2y = 11$ (·3)<br>$4x + 6y = 24$, $15x - 6y = 33$<br>Sumo: $19x = 57 \Rightarrow x = 3,\ y = 2$</p>
+        <p class="mini">Cuándo: si no hay ningún 1 y despejar daría fracciones.</p></div>
+    </div>
+
+    <h2>Lo que se ve en el dibujo</h2>
+    <div class="par">
+      <div>
+        <p>Cada ecuación lineal con dos incógnitas es una <b>recta</b>: todos sus puntos son pares que la cumplen.</p>
+        <p>La solución del sistema cumple las dos, así que está en las dos rectas: es <b>su punto de corte</b>.</p>
+        <p>Y dos rectas solo pueden hacer tres cosas:</p>
+        <ul>
+          <li><b>Cortarse en un punto</b> → una solución.</li>
+          <li><b>Ser paralelas</b> → ninguna.</li>
+          <li><b>Ser la misma</b> → infinitas.</li>
+        </ul>
+        <p class="mini">Mueve la pendiente <b>m</b> y la altura <b>n</b> de cada recta. Pon la misma pendiente a las dos y verás que el punto desaparece; iguala también la n y se montan una encima de otra.</p>
+      </div>
+      <div class="caja lab">
+        <p style="margin:0"><b style="color:#2563eb">Recta 1:</b> y = m₁x + n₁</p>
+        <label>m₁ = <b id="vm1">1</b><input type="range" id="sm1" min="-3" max="3" step="0.5" value="1"></label>
+        <label>n₁ = <b id="vn1">1</b><input type="range" id="sn1" min="-5" max="5" step="1" value="1"></label>
+        <p style="margin:0"><b style="color:#dc2626">Recta 2:</b> y = m₂x + n₂</p>
+        <label>m₂ = <b id="vm2">-1</b><input type="range" id="sm2" min="-3" max="3" step="0.5" value="-1"></label>
+        <label>n₂ = <b id="vn2">3</b><input type="range" id="sn2" min="-5" max="5" step="1" value="3"></label>
+        <svg id="rectas" viewBox="0 0 240 240" role="img" aria-label="Dos rectas y su punto de corte"></svg>
+        <p id="rectasTxt" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <h2>Compatible o incompatible, sin dibujar</h2>
+    <p>Mira los números de $\begin{cases} ax + by = c \\ a'x + b'y = c' \end{cases}$:</p>
+    <table>
+      <thead><tr><th>Si…</th><th>Las rectas</th><th>El sistema es</th></tr></thead>
+      <tbody>
+        <tr><td>a/a′ ≠ b/b′</td><td>se cortan</td><td><b>compatible determinado</b>: una solución</td></tr>
+        <tr><td>a/a′ = b/b′ = c/c′</td><td>coinciden</td><td><b>compatible indeterminado</b>: infinitas</td></tr>
+        <tr><td>a/a′ = b/b′ ≠ c/c′</td><td>son paralelas</td><td><b>incompatible</b>: ninguna</td></tr>
+      </tbody>
+    </table>
+    <p>Ejemplo: $x - y = 2$ y $3x - 3y = 5$. La segunda tiene x e y por 3, pero 2·3 = 6, no 5. Te pide que la misma cosa valga 6 y 5: <b>incompatible</b>.</p>
+    <p class="mini">Al resolver uno incompatible por reducción llegas a algo como 0 = 1. Uno indeterminado, a 0 = 0. No es que te hayas equivocado: es la respuesta.</p>
+
+    <h2>Sistemas no lineales</h2>
+    <p>Si alguna ecuación tiene x², x·y o similar, ya no son dos rectas. El método casi siempre es <b>sustitución</b>, y al final sale una de segundo grado.</p>
+    <ol class="pasos">
+      <li>$\begin{cases} x + y = 5 \\ x \cdot y = 6 \end{cases}$ → de la primera, y = 5 − x.</li>
+      <li>En la segunda: x(5 − x) = 6 → x² − 5x + 6 = 0.</li>
+      <li>x = 2 o x = 3.</li>
+      <li><b>Cada x con su y</b>: si x = 2, y = 3; si x = 3, y = 2.</li>
+      <li>Dos soluciones: <b>(2, 3) y (3, 2)</b>.</li>
+    </ol>
+    <p class="mini">En el dibujo, una recta y una parábola (o una hipérbola) se pueden cortar en 0, 1 o 2 puntos. Por eso pueden salir dos pares.</p>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Restar sin cambiar todos los signos</h3>
+      <p>En $\begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases}$, un compañero resta la segunda a la primera y escribe: 2x − x = x, y − y = 0, 5 − 1 = 4 → <b>x = 4</b>.</p>
+      <p><b>El contraejemplo:</b> con x = 4, la primera da y = 5 − 8 = −3. En la segunda: 4 − (−3) = 7, y tenía que dar 1. <b>No cumple.</b></p>
+      <p>El fallo: y − (−y) = <b>2y</b>, no 0. Al restar, cambia el signo de <b>todo</b> lo de la segunda.</p>
+      <p><b>Qué hacer:</b> si los coeficientes ya son opuestos (y y −y), <b>suma</b>. 3x = 6 → x = 2, y = 1. Y siempre, comprueba en las dos.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>En un cine se venden 50 entradas y se recaudan 390 €. La de adulto cuesta 9 € y la infantil 5 €. ¿Cuántas de cada?</p>
+    <ol class="pasos">
+      <li><b>Incógnitas:</b> x = adultos, y = niños.</li>
+      <li><b>Planteo:</b> contando entradas, x + y = 50; contando euros, 9x + 5y = 390.</li>
+      <li><b>Despejo</b> (sustitución, porque la x de la primera va sola): y = 50 − x.</li>
+      <li><b>Sustituyo:</b> 9x + 5(50 − x) = 390 → 9x + 250 − 5x = 390 → 4x = 140 → <b>x = 35</b>.</li>
+      <li><b>Vuelvo a la y:</b> y = 50 − 35 = <b>15</b>.</li>
+      <li><b>¿Tiene sentido y cumple?</b> Personas enteras y positivas ✓. 35 + 15 = 50 ✓ y 9·35 + 5·15 = 315 + 75 = 390 ✓. <b>35 adultos y 15 niños.</b></li>
+    </ol>
+    <p class="mini">El último paso no se salta: si te salen 32,5 personas, hay un fallo en el planteamiento o en las cuentas.</p>
+
+    <h3>Ahora contigo</h3>
+    <p>En un corral hay 12 cabezas y 34 patas, entre gallinas (x) y conejos (y).</p>
+    <ol class="pasos">
+      <li><b>Ecuación de cabezas:</b> x + y = <span class="hueco" data-bien="12" data-pista="una cabeza por animal">?</span></li>
+      <li><b>Ecuación de patas:</b> 2x + 4y = <span class="hueco" data-bien="34" data-pista="las patas del enunciado">?</span></li>
+      <li><b>Reduzco:</b> resto a la 2.ª la 1.ª por 2 → 2y = <span class="hueco" data-bien="10" data-pista="34 − 2·12">?</span></li>
+      <li><b>Conejos:</b> y = <span class="hueco" data-bien="5" data-pista="10 / 2">?</span></li>
+      <li><b>Gallinas:</b> x = <span class="hueco" data-bien="7" data-pista="12 − 5">?</span></li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Elegir tarifa de móvil</h3>
+        <p>Tarifa A: 5 € al mes + 0,10 € el minuto. Tarifa B: 15 € fijos. Igualando y = 5 + 0,1x con y = 15 sale x = 100: a partir de <b>100 minutos</b> al mes compensa la B.</p></div>
+      <div class="caja"><h3>Mezclar en la cocina o el taller</h3>
+        <p>Quieres 10 L de zumo al 30 % mezclando uno al 20 % y otro al 50 %: x + y = 10 y 0,2x + 0,5y = 3. Salen <b>6,67 L y 3,33 L</b>.</p></div>
+      <div class="caja"><h3>El punto de equilibrio de un negocio</h3>
+        <p>Una camiseta cuesta 4 € fabricarla, el taller 600 € al mes, y se vende a 10 €. Ingresos 10x, gastos 600 + 4x: se igualan en <b>x = 100 camisetas</b>. Por debajo, se pierde dinero.</p></div>
+    </div>
+
+    <h2>Taller: ejercicios sin fin</h2>
+    <p>Cada bloque genera un ejercicio nuevo cada vez que pulsas «otro», con su solución paso a paso si te atascas.</p>
+    <p class="mini">Escribe la solución como par ordenado, primero x y luego y: <b>(2, -1)</b>. También valen <b>x = 2, y = -1</b>, <b>x=2 y y=-1</b> o <b>y = -1, x = 2</b>; lo que no vale es cambiar el orden sin poner las letras. Si hay dos soluciones: <b>(2, 3) y (3, 2)</b>. En los de clasificar, escribe <b>compatible determinado</b>, <b>compatible indeterminado</b> o <b>incompatible</b>.</p>
+    <div class="taller" id="taller"></div>
+    <div class="caja idea" style="margin-top:1rem">
+      <p style="margin:0"><b>Cómo usar esto:</b> haz cinco seguidos de cada bloque sin mirar la solución. Si encadenas cinco, ese tipo lo tienes. Si fallas dos veces lo mismo, vuelve a la teoría de arriba antes de seguir.</p>
+    </div>
+
+    <h2>Compruébate</h2>
+    <p>Seis preguntas de este tema, ahora mismo. Recordar recién leído consolida; recordar dentro de unos días es lo que hace que dure, y de eso se encarga el repaso.</p>
+    <div class="compruebate" id="ahora"></div>
+
+    <div id="tutor"></div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Y ahora?</h3>
+      <p>Las 14 preguntas de este tema entran en el repaso diario, mezcladas con las de los demás temas.</p>
+      <p style="margin-top:1rem">
+        <button class="btn aprender" id="leido" type="button">Marcar como leído</button>
+        <a class="btn repasar" href="../../repaso.html">Ir al repaso</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="envoltura">Si algo no se entiende, no es culpa tuya: dilo y lo reescribimos.</footer>
+
+<script src="../../comun/preguntas.js?v=202610131926"></script>
+<script src="../../comun/preguntas-sis.js?v=202610131926"></script>
+<script src="../../comun/app.js?v=202610131926"></script>
+<script src="../../comun/ejercicios.js?v=202610131926"></script>
+<script src="../../comun/ejercicios-sis.js?v=202610131926"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+["sis-02", "sis-05"].forEach(id => { const q = BANCO.find(x => x.id === id); if (q) pintarPregunta(q, $("pretest")); });
+compruebate("mates-sistemas", $("ahora"), 6);
+["sistemaSustitucion", "sistemaReduccion", "sistemaLineal", "corteRectas", "clasificarSistema", "sistemaNoLineal", "problemaSistema"].forEach(tipo => bloqueEjercicios(tipo, $("taller")));
+
+(function(){
+  const W = 240, esc = 20, X = x => W / 2 + x * esc, Y = y => W / 2 - y * esc;
+  const fmt = v => String(Math.round(v * 100) / 100).replace(".", ",").replace("-", "−");
+  const ec = (m, n) => `y = ${m === 0 ? "" : m === 1 ? "x" : m === -1 ? "−x" : fmt(m) + "x"}${n === 0 ? (m === 0 ? "0" : "") : (m === 0 ? fmt(n) : (n < 0 ? " − " + fmt(-n) : " + " + fmt(n)))}`;
+  function linea(m, n, color, ancho){
+    return `<line x1="${X(-7)}" y1="${Y(m * -7 + n)}" x2="${X(7)}" y2="${Y(m * 7 + n)}" stroke="${color}" stroke-width="${ancho}" stroke-linecap="round"/>`;
+  }
+  function pinta(){
+    const m1 = +$("sm1").value, n1 = +$("sn1").value, m2 = +$("sm2").value, n2 = +$("sn2").value;
+    $("vm1").textContent = fmt(m1); $("vn1").textContent = fmt(n1); $("vm2").textContent = fmt(m2); $("vn2").textContent = fmt(n2);
+    let rejilla = "";
+    for (let k = -5; k <= 5; k++) rejilla += `<line x1="${X(k)}" y1="0" x2="${X(k)}" y2="${W}" stroke="currentColor" opacity=".08"/><line x1="0" y1="${Y(k)}" x2="${W}" y2="${Y(k)}" stroke="currentColor" opacity=".08"/>`;
+    let punto = "", txt;
+    if (m1 !== m2){
+      const x = (n2 - n1) / (m1 - m2), y = m1 * x + n1;
+      if (Math.abs(x) < 6.5 && Math.abs(y) < 6.5) punto = `<circle cx="${X(x)}" cy="${Y(y)}" r="5" fill="#16a34a" stroke="white" stroke-width="1.5"/>`;
+      txt = `Pendientes distintas: se cortan en <b>(${fmt(x)}, ${fmt(y)})</b>. Sistema <b>compatible determinado</b>, una solución.` +
+        (punto ? "" : " <span class=\"mini\">(El corte cae fuera del dibujo.)</span>");
+    } else if (n1 !== n2){
+      txt = `Misma pendiente y distinta altura: <b>paralelas</b>, nunca se tocan. Sistema <b>incompatible</b>, ninguna solución.`;
+    } else {
+      txt = `Misma pendiente y misma altura: <b>la misma recta</b>. Todos sus puntos valen. Sistema <b>compatible indeterminado</b>, infinitas soluciones.`;
+    }
+    const iguales = m1 === m2 && n1 === n2;
+    $("rectas").innerHTML = rejilla +
+      `<line x1="0" y1="${Y(0)}" x2="${W}" y2="${Y(0)}" stroke="currentColor" opacity=".5"/>
+       <line x1="${X(0)}" y1="0" x2="${X(0)}" y2="${W}" stroke="currentColor" opacity=".5"/>` +
+      linea(m1, n1, "#2563eb", iguales ? 7 : 3) + linea(m2, n2, "#dc2626", 3) + punto;
+    $("rectasTxt").innerHTML = `<span style="color:#2563eb">${ec(m1, n1)}</span> · <span style="color:#dc2626">${ec(m2, n2)}</span><br>` + txt;
+  }
+  ["sm1", "sn1", "sm2", "sn2"].forEach(id => $(id).oninput = pinta);
+  pinta();
+})();
+
+tutorDeApoyo("Sistemas de ecuaciones", "Matemáticas", $("tutor"));
+activarHuecos();
+renderMathInElement(document.body, {delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+indiceAutomatico();
+barraTutor();
+
+$("leido").onclick = e => { Progreso.marcarLeido("mates-sistemas"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("mates-sistemas")){ $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+</script>
+</body>
+</html>

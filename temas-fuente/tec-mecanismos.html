@@ -1,0 +1,186 @@
+---
+id: tec-mecanismos
+titulo: Mecanismos y máquinas
+asignatura: Tecnología
+intro: Palanca y sus géneros, poleas y polipastos, engranajes y relación de transmisión, piñón-cremallera, tornillo sin fin, leva y biela-manivela.
+pretest: mec-06, mec-03
+generadores: palanca, generoPalanca, polipasto, relacionTransmision, rpmSalida, trenEngranajes, cremalleraSinFin, tipoMecanismo
+preguntas: preguntas-mec.js
+ejercicios: ejercicios-mec.js
+n: 14
+nota_taller: En los numéricos vale escribir la unidad («40 N», «150 rpm») y la coma o el punto decimal. En los de palabras, las tildes dan igual.
+---
+    <h2>Qué es un mecanismo</h2>
+    <div class="par">
+      <div>
+        <p>Un mecanismo coge un movimiento o una fuerza que entra (tu mano, un motor) y lo entrega <b>cambiado</b> a la salida.</p>
+        <p>Hay dos familias, y casi todo el tema es saber en cuál estás:</p>
+        <p><b>Transmiten</b> el movimiento: entra un giro y sale un giro (o entra un empuje y sale un empuje). Palancas, poleas, engranajes, cadena.<br>
+           <b>Transforman</b> el movimiento: entra un giro y sale otra cosa (recto, o un vaivén). Piñón-cremallera, leva, biela-manivela.</p>
+      </div>
+      <div class="caja idea">
+        <h3>La regla de oro</h3>
+        <p>Ningún mecanismo regala energía. Si ganas fuerza, pierdes recorrido o velocidad. Si ganas velocidad, pierdes fuerza.</p>
+        <p>Por eso con un gato levantas un coche: haces poca fuerza, pero das muchas vueltas a la manivela.</p>
+      </div>
+    </div>
+
+    <h2>La palanca</h2>
+    <div class="par">
+      <div>
+        <p>Una barra rígida que gira sobre un punto de apoyo (el <b>fulcro</b>). Tiene tres cosas: la <b>fuerza</b> F que haces, la <b>resistencia</b> R que quieres vencer y el <b>apoyo</b>.</p>
+        <p>Cada fuerza tiene su <b>brazo</b>: la distancia al apoyo. La ley es:</p>
+        <p style="font-size:1.2rem;text-align:center">$F \cdot b_F = R \cdot b_R$</p>
+        <p>Cuanto más lejos del apoyo empujes, menos fuerza necesitas. Arquímedes: «dadme un punto de apoyo y moveré el mundo».</p>
+        <p class="mini">Mueve el apoyo y mira cuánta fuerza hace falta para levantar 600 N.</p>
+      </div>
+      <div class="caja lab">
+        <label><b>Posición del apoyo: <span id="vApoyo">25</span> cm desde la carga</b>
+          <input type="range" id="sApoyo" min="10" max="90" value="25"></label>
+        <svg id="gPal" viewBox="0 0 260 110" role="img" aria-label="Palanca con apoyo móvil"></svg>
+        <p id="tPal" class="mini"></p>
+      </div>
+    </div>
+
+    <h2>Los tres géneros de palanca</h2>
+    <p>El género lo decide <b>qué queda en medio</b>. Un truco: «A-R-F», 1-2-3: en la de 1.º el Apoyo en medio, en la de 2.º la Resistencia, en la de 3.º la Fuerza.</p>
+    <div class="desliza"><table>
+      <thead><tr><th>Género</th><th>En medio</th><th>¿Ahorra fuerza?</th><th>Ejemplos</th></tr></thead>
+      <tbody>
+        <tr><td><b>1.º</b></td><td>Apoyo</td><td>Depende de los brazos</td><td>Tijeras, balancín, alicates</td></tr>
+        <tr><td><b>2.º</b></td><td>Resistencia</td><td>Siempre (bF &gt; bR)</td><td>Carretilla, cascanueces, abrebotellas</td></tr>
+        <tr><td><b>3.º</b></td><td>Fuerza</td><td>Nunca (bF &lt; bR), gana precisión</td><td>Pinzas, caña de pescar, tu antebrazo</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Poleas y polipastos</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Polea fija</h3><p>Solo cambia la dirección: $F = R$. Tiras hacia abajo para subir el cubo del pozo.</p></div>
+      <div class="caja"><h3>Polea móvil</h3><p>Sube con la carga, que cuelga de dos tramos de cuerda: $F = R/2$.</p></div>
+      <div class="caja"><h3>Polipasto</h3><p>Varias móviles juntas. Con $n$ móviles: $F = \dfrac{R}{2n}$. A cambio, tiras de $2n$ metros de cuerda por cada metro que sube.</p></div>
+    </div>
+    <p>Dos poleas unidas por una <b>correa</b> transmiten giro entre ejes lejanos, como los engranajes. La cuenta es la misma cambiando dientes por diámetros: $n_1 \cdot d_1 = n_2 \cdot d_2$.</p>
+
+    <h2>Engranajes y relación de transmisión</h2>
+    <div class="par">
+      <div>
+        <p>Dos ruedas dentadas que encajan. Por el punto de contacto pasan <b>los mismos dientes por minuto</b> en las dos, así que:</p>
+        <p style="font-size:1.2rem;text-align:center">$n_1 \cdot Z_1 = n_2 \cdot Z_2$</p>
+        <p>$n$ son las rpm (vueltas por minuto) y $Z$ los dientes. La <b>relación de transmisión</b> es</p>
+        <p style="font-size:1.2rem;text-align:center">$i = \dfrac{n_2}{n_1} = \dfrac{Z_1}{Z_2}$</p>
+        <p>$i &lt; 1$: <b>reductor</b> (sale más lento y con más fuerza). $i &gt; 1$: <b>multiplicador</b>.</p>
+        <p>Engranando directamente, giran en <b>sentidos contrarios</b>. Si pones dos etapas seguidas (un <b>tren</b>), las relaciones se <b>multiplican</b>.</p>
+        <p class="mini">Cambia los dientes y las rpm del motor. El punto rojo marca una vuelta de cada rueda: cuenta cuántas da cada una.</p>
+      </div>
+      <div class="caja lab">
+        <label><b>Motor (izquierda): Z₁ = <span id="vZ1">12</span> dientes</b>
+          <input type="range" id="sZ1" min="8" max="40" value="12"></label>
+        <label><b>Conducido (derecha): Z₂ = <span id="vZ2">24</span> dientes</b>
+          <input type="range" id="sZ2" min="8" max="40" value="24"></label>
+        <label><b>Motor a n₁ = <span id="vN1">30</span> rpm</b>
+          <input type="range" id="sN1" min="6" max="60" step="6" value="30"></label>
+        <svg id="gEng" viewBox="0 0 260 150" role="img" aria-label="Dos engranajes girando"></svg>
+        <p id="tEng" class="mini"></p>
+      </div>
+    </div>
+
+    <h2>Transformar el movimiento</h2>
+    <div class="par">
+      <div class="caja"><h3>Piñón-cremallera</h3><p>Un engranaje y una barra dentada recta. Giro ↔ recto. Por vuelta, la cremallera avanza $Z \cdot p$ (dientes por paso). Dirección del coche, puertas correderas.</p></div>
+      <div class="caja"><h3>Tornillo sin fin y corona</h3><p>Cada vuelta del tornillo avanza <b>un diente</b> la corona: $n_2 = n_1 / Z$. Reduce muchísimo y es <b>irreversible</b>: la corona no puede mover al tornillo. Clavijas de guitarra.</p></div>
+      <div class="caja"><h3>Leva y seguidor</h3><p>Una pieza de forma irregular que gira y empuja a un seguidor arriba y abajo. Giro → vaivén, solo en ese sentido. Árbol de levas de un motor.</p></div>
+      <div class="caja"><h3>Biela-manivela</h3><p>La manivela gira, la biela la une a una pieza que va y viene. Funciona <b>en los dos sentidos</b>: el pistón del motor hace girar el cigüeñal.</p></div>
+    </div>
+
+    <h2>El error que más puntos cuesta</h2>
+    <div class="caja ojo">
+      <h3>Pensar que la rueda grande gira más deprisa</h3>
+      <p>Mucha gente pone $n_2 = n_1 \cdot Z_2 / Z_1$: «la grande tiene más dientes, así que más vueltas». Es justo al revés.</p>
+      <p><b>El contraejemplo:</b> piñón de 10 dientes a 400 rpm, rueda de 40. Con la cuenta mal saldría 1.600 rpm. Pero mira el contacto: por él pasan 400 · 10 = 4.000 dientes por minuto, y la rueda grande necesita 40 dientes para dar una vuelta: 4.000 / 40 = <b>100 rpm</b>. La grande va <b>más lenta</b>. Compruébalo en el simulador de arriba.</p>
+      <p>Comprobación rápida en el examen: si el conducido es más grande, tu resultado tiene que salir <b>menor</b> que n₁.</p>
+    </div>
+
+    <h2>Un ejemplo entero, paso a paso</h2>
+    <p>Un motor a 1.200 rpm lleva un piñón de 15 dientes que mueve una rueda de 45. En el eje de esa rueda va un piñón de 12 que mueve una rueda de 48. ¿A cuántas rpm gira la salida?</p>
+    <ol class="pasos">
+      <li><b>Etapa 1:</b> $i_1 = 15/45 = 1/3$. El eje intermedio gira a $1.200 \cdot 1/3 = 400$ rpm.</li>
+      <li>La rueda de 45 y el piñón de 12 van <b>en el mismo eje</b>: los dos a 400 rpm.</li>
+      <li><b>Etapa 2:</b> $i_2 = 12/48 = 1/4$. Salida: $400 \cdot 1/4 = 100$ rpm.</li>
+      <li><b>Comprobación:</b> $i_{total} = 1/3 \cdot 1/4 = 1/12$ y $1.200/12 = 100$ rpm. Reductor: tiene sentido.</li>
+    </ol>
+
+    <h3>Ahora contigo</h3>
+    <p>Una carretilla: la carga de 600 N está a 40 cm de la rueda y tú levantas a 120 cm de la rueda.</p>
+    <ol class="pasos">
+      <li>¿Qué género es? (número) <span class="hueco" data-bien="2" data-pista="la carga queda en medio">?</span></li>
+      <li>$F \cdot 120 = 600 \cdot$ <span class="hueco" data-bien="40" data-pista="el brazo de la resistencia">?</span></li>
+      <li>$F \cdot 120 =$ <span class="hueco" data-bien="24000" data-pista="600 por 40">?</span></li>
+      <li>$F =$ <span class="hueco" data-bien="200" data-pista="divide entre 120">?</span> N</li>
+    </ol>
+
+    <h2>Y esto, ¿para qué?</h2>
+    <div class="par tres">
+      <div class="caja"><h3>Tu bici</h3><p>Plato de 48 y piñón de 12: $i = 4$, cada pedalada son 4 vueltas de rueda (unos 8,4 m con rueda de 700 mm). Para una cuesta, plato de 34 y piñón de 28: $i \approx 1{,}2$, solo 2,5 m por pedalada, pero con mucha menos fuerza.</p></div>
+      <div class="caja"><h3>La grúa del taller</h3><p>Un polipasto de 3 poleas móviles te deja subir un motor de 180 kg (1.800 N) tirando con 300 N, lo que pesa una mochila de 30 kg. Eso sí: 6 m de cadena por cada metro de subida.</p></div>
+      <div class="caja"><h3>El motor del coche</h3><p>Un motor gira a unas 3.000 rpm y la rueda de un coche a 100 km/h solo a unas 850 rpm. La caja de cambios y el diferencial son trenes de engranajes que reducen alrededor de 3,5 veces en la marcha larga.</p></div>
+    </div>
+<!--ESTILO-->
+.lab{display:grid;gap:.6rem}.lab input[type=range]{width:100%;height:30px}
+#gEng,#gPal{width:100%;height:auto;background:rgba(127,127,127,.06);border-radius:8px}
+<!--SCRIPT-->
+(function(){
+  /* --- palanca --- */
+  function palanca(){
+    const bR = +$("sApoyo").value, bF = 100 - bR, R = 600, F = R * bR / bF;
+    $("vApoyo").textContent = bR;
+    const X = cm => 20 + cm * 2.2, ap = X(bR);
+    $("gPal").innerHTML = `<line x1="${X(0)}" y1="60" x2="${X(100)}" y2="60" stroke="currentColor" stroke-width="4"/>
+      <polygon points="${ap},62 ${ap - 10},88 ${ap + 10},88" fill="#16a34a"/>
+      <rect x="${X(0) - 12}" y="34" width="24" height="24" fill="#2563eb"/><text x="${X(0)}" y="28" font-size="10" text-anchor="middle" fill="currentColor">R = 600 N</text>
+      <line x1="${X(100)}" y1="20" x2="${X(100)}" y2="56" stroke="#dc2626" stroke-width="${2 + Math.min(F, 3000) / 300}" marker-end="url(#fl)"/>
+      <defs><marker id="fl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0L10,5L0,10z" fill="#dc2626"/></marker></defs>
+      <text x="${X(100) - 4}" y="14" font-size="10" text-anchor="end" fill="#dc2626">F</text>
+      <text x="${(X(0) + ap) / 2}" y="104" font-size="10" text-anchor="middle" fill="currentColor">bR ${bR} cm</text>
+      <text x="${(ap + X(100)) / 2}" y="104" font-size="10" text-anchor="middle" fill="currentColor">bF ${bF} cm</text>`;
+    $("tPal").innerHTML = `F · ${bF} = 600 · ${bR} → <b>F = ${(Math.round(F * 10) / 10).toString().replace(".", ",")} N</b>. ` +
+      (F < R ? "Ahorras fuerza: tu brazo es más largo." : F > R ? "Gastas más fuerza que la carga: tu brazo es más corto." : "Brazos iguales: ni ganas ni pierdes.");
+  }
+  $("sApoyo").oninput = palanca; palanca();
+
+  /* --- engranajes --- */
+  const K = 2.6;                                       // radio por diente (módulo)
+  function rueda(Z, color){
+    const r = Z * K, ra = r + 4, rf = r - 4, pts = [];
+    for (let k = 0; k < Z; k++){
+      const a = k / Z * 2 * Math.PI, d = Math.PI / Z;
+      [[rf, a - d * .5], [ra, a - d * .25], [ra, a + d * .25], [rf, a + d * .5], [rf, a + d * 1.5]]
+        .forEach(([rr, aa]) => pts.push((rr * Math.cos(aa)).toFixed(1) + "," + (rr * Math.sin(aa)).toFixed(1)));
+    }
+    return `<polygon points="${pts.join(" ")}" fill="${color}" fill-opacity=".35" stroke="${color}" stroke-width="1.5"/>
+      <circle r="3" fill="currentColor"/><circle cx="${(r - 9).toFixed(1)}" r="3.5" fill="#dc2626"/>`;
+  }
+  let Z1, Z2, n1, a1 = 0, ultimo = null;
+  function montaEng(){
+    Z1 = +$("sZ1").value; Z2 = +$("sZ2").value; n1 = +$("sN1").value;
+    $("vZ1").textContent = Z1; $("vZ2").textContent = Z2; $("vN1").textContent = n1;
+    const r1 = Z1 * K, r2 = Z2 * K, s = Math.min(1, 240 / (r1 + r2 + 16) , 130 / (2 * Math.max(r1, r2) + 10));
+    const c1 = 130 - (r1 + r2) * s / 2, c2 = c1 + (r1 + r2) * s;
+    $("gEng").innerHTML = `<g transform="translate(${c1.toFixed(1)},75) scale(${s.toFixed(3)})"><g id="e1">${rueda(Z1, "#2563eb")}</g></g>
+      <g transform="translate(${c2.toFixed(1)},75) scale(${s.toFixed(3)})"><g id="e2">${rueda(Z2, "#f59e0b")}</g></g>`;
+    const i = Z1 / Z2, n2 = n1 * i, fx = x => (Math.round(x * 100) / 100).toString().replace(".", ",");
+    $("tEng").innerHTML = `$i = ${Z1}/${Z2} = ${fx(i)}$ → <b>${i < 1 ? "reductor" : i > 1 ? "multiplicador" : "ni reduce ni multiplica"}</b>.<br>
+      n₂ = ${n1} · ${Z1} / ${Z2} = <b>${fx(n2)} rpm</b>, en sentido contrario. (Animación a ritmo real.)`;
+    if (window.renderMathInElement) renderMathInElement($("tEng"), {delimiters:[{left:"$",right:"$",display:false}]});
+  }
+  function anima(t){
+    if (ultimo !== null) a1 += n1 * 6 * (t - ultimo) / 1000;        // rpm → grados/s
+    ultimo = t;
+    const a2 = -a1 * Z1 / Z2 + 180 + 180 / Z2;       // hueco de la 2.ª frente al diente de la 1.ª
+    const e1 = $("e1"), e2 = $("e2");
+    if (e1) e1.setAttribute("transform", `rotate(${a1.toFixed(2)})`);
+    if (e2) e2.setAttribute("transform", `rotate(${a2.toFixed(2)})`);
+    requestAnimationFrame(anima);
+  }
+  ["sZ1", "sZ2", "sN1"].forEach(id => $(id).oninput = montaEng);
+  montaEng(); requestAnimationFrame(anima);
+})();
