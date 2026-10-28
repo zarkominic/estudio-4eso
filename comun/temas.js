@@ -81,7 +81,7 @@ const TEMAS = [
     estado:"listo" },
   { id:"len-lectura-quiroga", asignatura:"Lengua", titulo:"Lectura: Cuentos de amor de locura y de muerte (Quiroga)",
     resumen:"200 preguntas tipo test: autor, El almohadón de plumas, A la deriva, La gallina degollada y el resto del libro.",
-    estado:"en camino" },
+    estado:"listo" },
   { id:"mat-b-ecuaciones", asignatura:"Matemáticas", titulo:"Ecuaciones de segundo grado y otras",
     resumen:"La fórmula y el discriminante, incompletas sin fórmula, bicuadradas, con radicales, con fracciones y problemas.",
     estado:"listo" },

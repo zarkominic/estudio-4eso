@@ -1,0 +1,2602 @@
+[
+ {
+  "id": "q001",
+  "cat": "Autor y contexto",
+  "q": "¿En qué ciudad nació Horacio Quiroga?",
+  "o": [
+   "Salto (Uruguay)",
+   "Montevideo (Uruguay)",
+   "Buenos Aires (Argentina)",
+   "Posadas (Argentina)"
+  ],
+  "a": 0,
+  "w": "Nació el 31 de diciembre de 1878 en Salto, ciudad uruguaya a orillas del río Uruguay."
+ },
+ {
+  "id": "q002",
+  "cat": "Autor y contexto",
+  "q": "¿En qué año nació Horacio Quiroga?",
+  "o": [
+   "1878",
+   "1868",
+   "1888",
+   "1898"
+  ],
+  "a": 0,
+  "w": "Quiroga nació el 31 de diciembre de 1878."
+ },
+ {
+  "id": "q003",
+  "cat": "Autor y contexto",
+  "q": "¿Qué le ocurrió al padre de Quiroga cuando el escritor tenía unos dos meses?",
+  "o": [
+   "Murió ahogado mientras cruzaba el río Uruguay",
+   "Murió al dispararse su escopeta por accidente",
+   "Abandonó a la familia y se marchó a Europa",
+   "Murió de una enfermedad contagiosa en Salto"
+  ],
+  "a": 1,
+  "w": "Su padre, Prudencio Facundo Quiroga, murió por un disparo accidental de su escopeta delante de la familia."
+ },
+ {
+  "id": "q004",
+  "cat": "Autor y contexto",
+  "q": "¿Qué tragedia vivió Quiroga con su padrastro, Ascencio Barcos?",
+  "o": [
+   "Se suicidó con una escopeta en presencia de Horacio",
+   "Murió en un naufragio en el Paraná",
+   "Fue asesinado en una disputa por tierras",
+   "Murió en la selva por la mordedura de una serpiente"
+  ],
+  "a": 0,
+  "w": "Barcos, semiparalizado tras un derrame, se disparó con una escopeta delante del joven Horacio."
+ },
+ {
+  "id": "q005",
+  "cat": "Autor y contexto",
+  "q": "¿Cómo murió la primera esposa de Quiroga, Ana María Cires?",
+  "o": [
+   "Murió de fiebre amarilla durante un viaje a Misiones",
+   "Se suicidó con una sustancia de revelado fotográfico",
+   "Murió en un accidente de caza en la selva",
+   "Murió ahogada cuando cruzaba el río Paraná"
+  ],
+  "a": 1,
+  "w": "Ana María Cires se suicidó con sublimado, una sustancia empleada en el revelado fotográfico."
+ },
+ {
+  "id": "q006",
+  "cat": "Autor y contexto",
+  "q": "¿Qué le pasó a Quiroga con su amigo Federico Ferrando en 1902?",
+  "o": [
+   "Se batió en duelo con él y lo hirió de gravedad",
+   "Lo abandonó herido en la selva",
+   "Lo mató accidentalmente al limpiar un revólver",
+   "Se enfadó con él y no volvió a verlo"
+  ],
+  "a": 2,
+  "w": "Mientras limpiaba un revólver destinado a un duelo de Ferrando, el arma se disparó y lo mató por accidente."
+ },
+ {
+  "id": "q007",
+  "cat": "Autor y contexto",
+  "q": "¿Qué región del norte de Argentina, de gran selva, eligió Quiroga para vivir y dio escenario a muchos de sus cuentos?",
+  "o": [
+   "Misiones",
+   "La Patagonia",
+   "La Pampa",
+   "Tierra del Fuego"
+  ],
+  "a": 0,
+  "w": "Quiroga se instaló en Misiones, cerca del Alto Paraná, y su selva es el escenario de gran parte de su obra."
+ },
+ {
+  "id": "q008",
+  "cat": "Autor y contexto",
+  "q": "¿Qué cargo desempeñó Quiroga en San Ignacio (Misiones) en 1911?",
+  "o": [
+   "Médico de los colonos de todo el pueblo",
+   "Juez de paz del registro civil del pueblo",
+   "Director de la escuela rural de la zona",
+   "Capataz de un obraje de yerba de la zona"
+  ],
+  "a": 1,
+  "w": "En 1911 fue nombrado juez de paz del registro civil de San Ignacio."
+ },
+ {
+  "id": "q009",
+  "cat": "Autor y contexto",
+  "q": "¿Con qué escritor argentino viajó Quiroga en 1903 a Misiones, como fotógrafo, para estudiar las ruinas jesuíticas?",
+  "o": [
+   "Jorge Luis Borges",
+   "Leopoldo Lugones",
+   "Julio Cortázar",
+   "Rubén Darío"
+  ],
+  "a": 1,
+  "w": "Acompañó a Leopoldo Lugones en una expedición a las ruinas jesuíticas de Misiones."
+ },
+ {
+  "id": "q010",
+  "cat": "Autor y contexto",
+  "q": "¿Qué escritor estadounidense llamó Quiroga su primer y principal maestro?",
+  "o": [
+   "Edgar Allan Poe",
+   "Mark Twain",
+   "Ernest Hemingway",
+   "Herman Melville"
+  ],
+  "a": 0,
+  "w": "Quiroga reconoció a Poe como su maestro principal en el cuento de misterio y terror."
+ },
+ {
+  "id": "q011",
+  "cat": "Autor y contexto",
+  "q": "¿Cuál de estos escritores NO aparece citado como maestro en el primer mandamiento del «Decálogo del perfecto cuentista»?",
+  "o": [
+   "Maupassant",
+   "Cervantes",
+   "Kipling",
+   "Chéjov"
+  ],
+  "a": 1,
+  "w": "El primer mandamiento cita a Poe, Maupassant, Kipling y Chéjov, no a Cervantes."
+ },
+ {
+  "id": "q012",
+  "cat": "Autor y contexto",
+  "q": "¿Qué consejo da el «Decálogo del perfecto cuentista» sobre los adjetivos?",
+  "o": [
+   "Usar muchos para dar colorido",
+   "Usar siempre dos por sustantivo",
+   "No adjetivar sin necesidad",
+   "Evitar los sustantivos y usar solo adjetivos"
+  ],
+  "a": 2,
+  "w": "El séptimo mandamiento aconseja no adjetivar sin necesidad."
+ },
+ {
+  "id": "q013",
+  "cat": "Autor y contexto",
+  "q": "Según el «Decálogo del perfecto cuentista», ¿cuándo se debe escribir un cuento?",
+  "o": [
+   "Siempre en el momento de mayor emoción, sin esperar",
+   "Solo de madrugada, cuando nadie moleste al autor",
+   "Sin emoción fuerte: hay que dejarla pasar y evocarla luego",
+   "Solo después de leérselo a los amigos para pedirles opinión"
+  ],
+  "a": 2,
+  "w": "El noveno mandamiento dice que no se escriba bajo el imperio de la emoción, sino evocándola después."
+ },
+ {
+  "id": "q014",
+  "cat": "Autor y contexto",
+  "q": "¿Qué corriente literaria, de Rubén Darío, influyó en Quiroga en sus comienzos?",
+  "o": [
+   "El romanticismo",
+   "El barroco",
+   "El surrealismo",
+   "El modernismo"
+  ],
+  "a": 3,
+  "w": "Quiroga siguió el modernismo de Rubén Darío, con un fuerte componente naturalista."
+ },
+ {
+  "id": "q015",
+  "cat": "Autor y contexto",
+  "q": "¿Qué visión de la naturaleza es frecuente en los cuentos de Quiroga, por su vena naturalista?",
+  "o": [
+   "Una naturaleza amable que protege a los personajes",
+   "Una naturaleza decorativa sin importancia",
+   "Una naturaleza que siempre es domesticada por el hombre",
+   "Una naturaleza hostil que suele vencer al ser humano"
+  ],
+  "a": 3,
+  "w": "En sus cuentos la naturaleza suele ser hostil y acaba imponiéndose al ser humano."
+ },
+ {
+  "id": "q016",
+  "cat": "Autor y contexto",
+  "q": "¿En qué año se publicó «Cuentos de amor de locura y de muerte»?",
+  "o": [
+   "1900",
+   "1926",
+   "1937",
+   "1917"
+  ],
+  "a": 3,
+  "w": "El libro se publicó en 1917."
+ },
+ {
+  "id": "q017",
+  "cat": "Autor y contexto",
+  "q": "¿Qué tres temas anuncia el título del libro?",
+  "o": [
+   "Amor, guerra y exilio",
+   "Selva, río y soledad",
+   "Amor, locura y muerte",
+   "Familia, dinero y honor"
+  ],
+  "a": 2,
+  "w": "Los tres temas del título son el amor, la locura y la muerte."
+ },
+ {
+  "id": "q018",
+  "cat": "Autor y contexto",
+  "q": "¿Cuál de estas obras de Quiroga es un libro de cuentos para niños con animales de la selva?",
+  "o": [
+   "Las sacrificadas",
+   "Cuentos de la selva",
+   "El crimen del otro",
+   "Los desterrados"
+  ],
+  "a": 1,
+  "w": "«Cuentos de la selva» (1918) está protagonizado por animales y suele leerse en la infancia."
+ },
+ {
+  "id": "q019",
+  "cat": "Autor y contexto",
+  "q": "¿En qué año se publicó «Anaconda», libro de cuentos de Quiroga?",
+  "o": [
+   "1901",
+   "1921",
+   "1910",
+   "1935"
+  ],
+  "a": 1,
+  "w": "«Anaconda» se publicó en 1921."
+ },
+ {
+  "id": "q020",
+  "cat": "Autor y contexto",
+  "q": "¿Qué libro de Quiroga, publicado en 1926, reúne cuentos de personajes desarraigados en la selva y es considerado por muchos su obra más lograda?",
+  "o": [
+   "Los desterrados",
+   "Los arrecifes de coral",
+   "Pasado amor",
+   "Más allá"
+  ],
+  "a": 0,
+  "w": "«Los desterrados» (1926) es considerado muchas veces su colección más lograda."
+ },
+ {
+  "id": "q021",
+  "cat": "Autor y contexto",
+  "q": "¿Cuál fue el primer libro publicado por Quiroga, en 1901?",
+  "o": [
+   "El crimen del otro",
+   "Cuentos de la selva",
+   "Los arrecifes de coral",
+   "Las sacrificadas"
+  ],
+  "a": 2,
+  "w": "«Los arrecifes de coral» (1901) fue su primer libro."
+ },
+ {
+  "id": "q022",
+  "cat": "Autor y contexto",
+  "q": "¿Dónde y cómo murió Quiroga en 1937?",
+  "o": [
+   "En Misiones, por la mordedura de una serpiente venenosa",
+   "En Buenos Aires, tomando cianuro por una grave enfermedad",
+   "En Salto, de vejez, rodeado de toda su familia",
+   "En Montevideo, en un accidente de tranvía urbano"
+  ],
+  "a": 1,
+  "w": "Murió en Buenos Aires el 19 de febrero de 1937, tomando cianuro, enfermo de cáncer de próstata."
+ },
+ {
+  "id": "q023",
+  "cat": "Autor y contexto",
+  "q": "¿Qué ciudad argentina fue el lugar de residencia de Quiroga a partir de 1902, donde trabajó como profesor y funcionario consular?",
+  "o": [
+   "Buenos Aires",
+   "Mar del Plata",
+   "Bahía Blanca",
+   "Santa Fe"
+  ],
+  "a": 0,
+  "w": "Se trasladó a Buenos Aires en 1902 y allí trabajó como profesor y funcionario."
+ },
+ {
+  "id": "q024",
+  "cat": "Autor y contexto",
+  "q": "¿Cómo se llama el grupo literario que Quiroga fundó en Montevideo?",
+  "o": [
+   "Grupo del Centenario",
+   "Consistorio del Gay Saber",
+   "Grupo literario de Boedo",
+   "Tertulia del Café Cairo"
+  ],
+  "a": 1,
+  "w": "Fundó en Montevideo el Consistorio del Gay Saber (1900-1902)."
+ },
+ {
+  "id": "q025",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cuántos cuentos componen la edición original de 1917 de «Cuentos de amor de locura y de muerte»?",
+  "o": [
+   "12",
+   "18",
+   "20",
+   "25"
+  ],
+  "a": 1,
+  "w": "La primera edición reunía 18 cuentos."
+ },
+ {
+  "id": "q026",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Con qué cuento se abre la edición original de 1917?",
+  "o": [
+   "A la deriva",
+   "El almohadón de plumas",
+   "Una estación de amor",
+   "La gallina degollada"
+  ],
+  "a": 2,
+  "w": "El primer cuento de la edición de 1917 es «Una estación de amor»."
+ },
+ {
+  "id": "q027",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Qué cuento cierra la edición original de 1917?",
+  "o": [
+   "La meningitis y su sombra",
+   "Los pescadores de vigas",
+   "Nuestro primer cigarro",
+   "Una estación de amor"
+  ],
+  "a": 0,
+  "w": "El último de los 18 cuentos es «La meningitis y su sombra»."
+ },
+ {
+  "id": "q028",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cuál es el tema que más se repite en los cuentos del libro?",
+  "o": [
+   "La vida cortesana",
+   "Los viajes espaciales",
+   "Las fiestas populares",
+   "La muerte"
+  ],
+  "a": 3,
+  "w": "La muerte aparece en la mayoría de los cuentos, con frecuencia como final."
+ },
+ {
+  "id": "q029",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cómo suelen terminar muchos de los cuentos del libro?",
+  "o": [
+   "Con una boda feliz",
+   "Con una moraleja explícita en verso",
+   "Con un final sorpresivo y trágico",
+   "Con un final abierto y optimista"
+  ],
+  "a": 2,
+  "w": "Muchos cuentos cierran con un desenlace inesperado y trágico, como «El almohadón de plumas» o «El solitario»."
+ },
+ {
+  "id": "q030",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cuál de estos cuentos del libro se ambienta en la llanura del Chaco?",
+  "o": [
+   "A la deriva",
+   "La miel silvestre",
+   "La insolación",
+   "El solitario"
+  ],
+  "a": 2,
+  "w": "El Chaco, con su campo y su monte, es el escenario de «La insolación»; los otros se sitúan en el Paraná y Misiones."
+ },
+ {
+  "id": "q031",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Qué papel tiene la naturaleza en cuentos como «A la deriva» o «La miel silvestre»?",
+  "o": [
+   "Es un refugio amable que salva a los protagonistas",
+   "Es una fuerza hostil que acaba causando la muerte",
+   "Es solo un decorado que no influye en nada",
+   "Es un personaje cómico que anima el relato"
+  ],
+  "a": 1,
+  "w": "En ambos cuentos la naturaleza (veneno, selva, hormigas) acaba con el protagonista."
+ },
+ {
+  "id": "q032",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cuál de estos cuentos tiene como protagonistas a animales que hablan entre sí?",
+  "o": [
+   "A la deriva",
+   "La insolación",
+   "El solitario",
+   "Los ojos sombríos"
+  ],
+  "a": 1,
+  "w": "En «La insolación» los fox-terriers conversan y ven llegar la muerte de su amo."
+ },
+ {
+  "id": "q033",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Qué ocurre con lo fantástico en un cuento como «El almohadón de plumas»?",
+  "o": [
+   "Se explica del todo por la magia y por los fantasmas de la casa",
+   "Se muestra al final como un sueño de la protagonista",
+   "Parece sobrenatural, pero se aclara con un parásito real",
+   "No tiene explicación alguna ni pistas para el lector"
+  ],
+  "a": 2,
+  "w": "Lo aparentemente inexplicable acaba aclarándose con una causa real: un parásito gigante."
+ },
+ {
+  "id": "q034",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Cuál de estos cuentos está narrado en primera persona por el propio protagonista, en forma de diario?",
+  "o": [
+   "El perro rabioso",
+   "El solitario",
+   "A la deriva",
+   "La gallina degollada"
+  ],
+  "a": 0,
+  "w": "«El perro rabioso» es el diario de Federico, que se vuelve loco por la rabia."
+ },
+ {
+  "id": "q035",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿En qué región se ambientan «A la deriva», «Los mensú» y «Yaguaí»?",
+  "o": [
+   "En los hielos de la Patagonia austral",
+   "En las cumbres nevadas de los Andes",
+   "En las calles de una gran ciudad europea",
+   "En la selva del Alto Paraná, en Misiones"
+  ],
+  "a": 3,
+  "w": "Estos cuentos transcurren en el entorno del Paraná y Misiones."
+ },
+ {
+  "id": "q036",
+  "cat": "Estructura y rasgos del libro",
+  "q": "¿Qué recurso narrativo usa «Los buques suicidantes»?",
+  "o": [
+   "Un pasajero cuenta su aventura a otros viajeros a bordo de un barco",
+   "Un diario íntimo escrito por el capitán durante su último viaje a Europa",
+   "Una carta enviada por un náufrago desde una isla del Pacífico",
+   "Un monólogo de un fantasma que vaga por el mar buscando su barco"
+  ],
+  "a": 0,
+  "w": "El cuento se enmarca en una charla a bordo: el capitán y un pasajero relatan sucesos de buques abandonados."
+ },
+ {
+  "id": "q037",
+  "cat": "El almohadón de plumas",
+  "q": "¿Cómo se llama la protagonista de «El almohadón de plumas»?",
+  "o": [
+   "Isolda",
+   "Dorotea",
+   "Berta",
+   "Alicia"
+  ],
+  "a": 3,
+  "w": "La joven recién casada que enferma se llama Alicia."
+ },
+ {
+  "id": "q038",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿cómo se llama el marido de Alicia?",
+  "o": [
+   "Mazzini",
+   "Kassim",
+   "Jordán",
+   "Nébel"
+  ],
+  "a": 2,
+  "w": "El esposo, de carácter duro y semblante impasible, es Jordán."
+ },
+ {
+  "id": "q039",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿cómo describe el cuento la luna de miel de Alicia?",
+  "o": [
+   "Como un largo escalofrío",
+   "Como un viaje feliz por Europa",
+   "Como una fiesta sin fin",
+   "Como una aventura peligrosa en la selva"
+  ],
+  "a": 0,
+  "w": "El cuento dice que su luna de miel fue «un largo escalofrío», por la severidad de Jordán."
+ },
+ {
+  "id": "q040",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿cómo es el carácter de Jordán con su esposa?",
+  "o": [
+   "Alegre y bromista",
+   "Celoso y violento",
+   "Tímido y muy miedoso",
+   "Duro y poco expresivo"
+  ],
+  "a": 3,
+  "w": "Jordán es de carácter duro y rígido; aunque la amaba, no lo daba a conocer."
+ },
+ {
+  "id": "q041",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿cómo es la casa en que viven Alicia y Jordán?",
+  "o": [
+   "Es una cabaña de madera junto al río, llena de ruidos",
+   "Es blanca y fría, de mármol y estuco, y todo resuena",
+   "Es una granja con corrales y mucha vida animal",
+   "Es una casa oscura, cargada de tapices y cortinas"
+  ],
+  "a": 1,
+  "w": "La casa recuerda a un palacio helado: patio de mármol, estuco brillante y eco en las habitaciones."
+ },
+ {
+  "id": "q042",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué estación del año pasa Alicia en esa casa antes de caer enferma?",
+  "o": [
+   "El verano",
+   "La primavera",
+   "El otoño",
+   "El invierno"
+  ],
+  "a": 2,
+  "w": "El narrador dice que pasó allí todo el otoño."
+ },
+ {
+  "id": "q043",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué enfermedad tiene Alicia al principio, antes de agravarse?",
+  "o": [
+   "Un ligero ataque de influenza",
+   "Una picadura de víbora grave",
+   "Una infección grave del pie",
+   "Una fiebre tropical fuerte"
+  ],
+  "a": 0,
+  "w": "La enfermedad empieza con una influenza que se arrastra días y días."
+ },
+ {
+  "id": "q044",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué hace Alicia el último día en que se levanta de la cama?",
+  "o": [
+   "Viaja a la ciudad con su marido para ver al médico",
+   "Baila en el salón con unos invitados de la casa",
+   "Discute con el médico sobre su enfermedad grave",
+   "Sale al jardín del brazo de Jordán y rompe a llorar"
+  ],
+  "a": 3,
+  "w": "Sale al jardín y rompe a sollozar, abrazada a Jordán; fue el último día que estuvo levantada."
+ },
+ {
+  "id": "q045",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué diagnóstico hacen finalmente los médicos?",
+  "o": [
+   "Una intoxicación lenta por un veneno",
+   "Una depresión nerviosa sin ninguna importancia",
+   "Una anemia muy grave que no logran explicar",
+   "Una enfermedad cardíaca de nacimiento"
+  ],
+  "a": 2,
+  "w": "Constataron una anemia de marcha agudísima, «completamente inexplicable»."
+ },
+ {
+  "id": "q046",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué hace Jordán mientras Alicia empeora?",
+  "o": [
+   "Viaja a otra ciudad para buscar a un famoso especialista francés",
+   "Pasea sin parar por la sala y el dormitorio con las luces encendidas",
+   "Duerme todo el día en su despacho para no ver sufrir a su mujer",
+   "Se marcha a la ciudad varios días y deja a Alicia con la sirvienta"
+  ],
+  "a": 1,
+  "w": "Camina incansable de un extremo a otro, con las luces encendidas y en silencio."
+ },
+ {
+  "id": "q047",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué ve Alicia en sus alucinaciones, apoyado en la alfombra?",
+  "o": [
+   "Un perro negro que gruñe a los pies de la cama",
+   "Una serpiente enroscada bajo la cama de Jordán",
+   "Un hombre con un cuchillo que entra por la puerta",
+   "Un antropoide que la mira fijamente desde el suelo"
+  ],
+  "a": 3,
+  "w": "Entre sus alucinaciones más persistentes hay un antropoide apoyado en la alfombra sobre los dedos."
+ },
+ {
+  "id": "q048",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué se niega a permitir Alicia en sus últimos días?",
+  "o": [
+   "Que su marido entre en el dormitorio por las noches",
+   "Que se abran las ventanas para ventilar la habitación",
+   "Que los médicos le den cualquier tipo de medicina",
+   "Que le toquen la cama o le arreglen el almohadón"
+  ],
+  "a": 3,
+  "w": "Pidió que no le tocaran la cama ni le arreglaran el almohadón, y eso favoreció al parásito."
+ },
+ {
+  "id": "q049",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿quién descubre las manchas de sangre en el almohadón tras la muerte de Alicia?",
+  "o": [
+   "La sirvienta",
+   "El médico",
+   "El jardinero",
+   "Una enfermera"
+  ],
+  "a": 0,
+  "w": "La criada, al deshacer la cama, ve manchas oscuras en la funda."
+ },
+ {
+  "id": "q050",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué le extraña a la sirvienta cuando levanta el almohadón?",
+  "o": [
+   "Que está mojado",
+   "Que está muy frío",
+   "Que pesa mucho",
+   "Que huele mal"
+  ],
+  "a": 2,
+  "w": "Dice «pesa mucho» y lo deja caer, temblando."
+ },
+ {
+  "id": "q051",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué hay dentro del almohadón cuando Jordán lo corta?",
+  "o": [
+   "Una serpiente venenosa y negra enroscada entre las plumas",
+   "Un puñado de monedas de oro que la sirvienta escondió",
+   "Un ratón muerto y lleno de gusanos entre las plumas",
+   "Un animal monstruoso, viscoso e hinchado, de patas velludas"
+  ],
+  "a": 3,
+  "w": "Entre las plumas hay un enorme parásito hinchado de sangre, de patas velludas."
+ },
+ {
+  "id": "q052",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué hacía el animal del almohadón durante la noche?",
+  "o": [
+   "Le mordía las manos mientras ella dormía",
+   "Le chupaba la sangre de las sienes con su trompa",
+   "Le aspiraba el aliento mientras estaba inconsciente",
+   "Le inyectaba un veneno lento en el cuello"
+  ],
+  "a": 1,
+  "w": "Desde que Alicia cayó en cama, el parásito le chupaba la sangre por las sienes."
+ },
+ {
+  "id": "q053",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿en cuánto tiempo el animal «vació» a Alicia, según el narrador?",
+  "o": [
+   "En todo un año de picaduras",
+   "En un solo día de feroz ataque",
+   "En los tres meses del otoño",
+   "En cinco días con sus noches"
+  ],
+  "a": 3,
+  "w": "El cuento dice que en cinco días, en cinco noches, la vació."
+ },
+ {
+  "id": "q054",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué explicación final da el narrador sobre estos parásitos?",
+  "o": [
+   "Son insectos que Jordán trajo de la selva hace años",
+   "Son parásitos de las aves que pueden crecer muchísimo",
+   "Son una maldición antigua que pesa sobre la casa",
+   "Son fantasmas de los antiguos habitantes del palacio"
+  ],
+  "a": 1,
+  "w": "Se explica que son parásitos de aves y que pueden alcanzar un tamaño enorme en ciertas condiciones."
+ },
+ {
+  "id": "q055",
+  "cat": "El almohadón de plumas",
+  "q": "En «El almohadón de plumas», ¿qué dice el médico de Jordán al examinar a Alicia por primera vez después del desmayo?",
+  "o": [
+   "Que tiene una debilidad que no se explica, sin vómitos",
+   "Que está esperando un hijo y necesita reposo total",
+   "Que ha sido envenenada con un producto de la casa",
+   "Que solo necesita un largo viaje y cambiar de aires"
+  ],
+  "a": 0,
+  "w": "Dice a Jordán en la puerta que hay una debilidad que no se explica y sin vómitos."
+ },
+ {
+  "id": "q056",
+  "cat": "A la deriva",
+  "q": "¿Qué animal muerde al protagonista de «A la deriva»?",
+  "o": [
+   "Un yacaré",
+   "Una araña",
+   "Un perro rabioso",
+   "Una yararacusú"
+  ],
+  "a": 3,
+  "w": "Al pisarla, la serpiente le muerde el pie."
+ },
+ {
+  "id": "q057",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cómo se llama el hombre mordido por la víbora?",
+  "o": [
+   "Alves",
+   "Gaona",
+   "Paulino",
+   "Cubilla"
+  ],
+  "a": 2,
+  "w": "Su mujer lo llama Paulino."
+ },
+ {
+  "id": "q058",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cómo se llama la mujer del protagonista?",
+  "o": [
+   "Dorotea",
+   "Alicia",
+   "Teresa",
+   "Carmen"
+  ],
+  "a": 0,
+  "w": "El hombre llama «¡Dorotea!» a su mujer pidiéndole caña."
+ },
+ {
+  "id": "q059",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿con qué mata el hombre a la víbora?",
+  "o": [
+   "Con una escopeta",
+   "Con una piedra",
+   "Con un palo",
+   "Con el machete"
+  ],
+  "a": 3,
+  "w": "Saca el machete de la cintura y le disloca las vértebras."
+ },
+ {
+  "id": "q060",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué hace el hombre para intentar frenar el veneno nada más ser mordido?",
+  "o": [
+   "Chupa con fuerza la herida del pie",
+   "Se baña el pie en las aguas del río",
+   "Se liga el tobillo con su pañuelo",
+   "Se aplica barro húmedo en la herida"
+  ],
+  "a": 2,
+  "w": "Se ata fuertemente el tobillo con un pañuelo."
+ },
+ {
+  "id": "q061",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué bebida pide el protagonista al llegar al rancho, aunque ya no nota su sabor?",
+  "o": [
+   "Leche",
+   "Agua con limón",
+   "Café",
+   "Caña"
+  ],
+  "a": 3,
+  "w": "Pide caña, pero el veneno le quita el gusto; cree que le dan agua."
+ },
+ {
+  "id": "q062",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué decide hacer el hombre para salvarse?",
+  "o": [
+   "Esperar en su casa a que llegue un curandero",
+   "Ir caminando por la selva hasta el pueblo vecino",
+   "Bajar en canoa por el Paraná hasta Tacurú-Pucú",
+   "Pedir a un vecino que lo lleve a caballo al pueblo"
+  ],
+  "a": 2,
+  "w": "Quiere llegar en canoa a Tacurú-Pucú, donde cree encontrar ayuda."
+ },
+ {
+  "id": "q063",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿a quién pide ayuda en la orilla brasileña?",
+  "o": [
+   "A su hermano, que vivía en la orilla paraguaya",
+   "A su compadre Alves, con quien estaba enemistado",
+   "A mister Dougald, su antiguo patrón del obraje",
+   "A un médico que atendía en un pueblo brasileño"
+  ],
+  "a": 1,
+  "w": "Se acerca a pedir ayuda a Alves, con quien llevaba tiempo enemistado, pero nadie responde."
+ },
+ {
+  "id": "q064",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué respuesta recibe cuando llama a Alves?",
+  "o": [
+   "Una negativa a ayudarlo",
+   "Un disparo de aviso",
+   "Que Alves ya había muerto",
+   "Solo silencio en la selva"
+  ],
+  "a": 3,
+  "w": "No se oye un solo rumor, y el hombre vuelve a la canoa."
+ },
+ {
+  "id": "q065",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cómo es el paisaje del Paraná donde deriva la canoa?",
+  "o": [
+   "Una llanura abierta y soleada, sin un solo árbol a la vista",
+   "Un ancho delta lleno de islas, con casas en las orillas",
+   "Un río tranquilo de aguas cristalinas, con playas de arena",
+   "Un río encajonado entre altas paredes de bosque negro y basalto"
+  ],
+  "a": 3,
+  "w": "El Paraná corre en una gran hoya de paredes altas y oscuras, con bloques de basalto."
+ },
+ {
+  "id": "q066",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cómo se siente el hombre al caer la tarde, ya en la canoa?",
+  "o": [
+   "Peor: delira de dolor y de sed",
+   "Con mucha hambre, tras el esfuerzo del día",
+   "Lleno de rabia contra su compadre Alves",
+   "Mejor: el dolor y la sed disminuyen"
+  ],
+  "a": 3,
+  "w": "Tiene un escalofrío y luego cree que el veneno se va; es una falsa mejoría."
+ },
+ {
+  "id": "q067",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué cree el hombre que hará la caída del rocío?",
+  "o": [
+   "Que lo despertará a tiempo",
+   "Que lo hará dormir un rato",
+   "Que le bajará la fiebre",
+   "Que lo repondrá del todo"
+  ],
+  "a": 3,
+  "w": "Cuenta con que el rocío lo ayude a recuperarse."
+ },
+ {
+  "id": "q068",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿quién era mister Dougald para el protagonista?",
+  "o": [
+   "Su compadre",
+   "Su médico",
+   "Su ex patrón",
+   "Un vecino de la orilla"
+  ],
+  "a": 2,
+  "w": "Piensa en su ex patrón mister Dougald y calcula cuánto tiempo hace que no lo ve."
+ },
+ {
+  "id": "q069",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué recuerdo ocupa la mente del hombre en sus últimos momentos?",
+  "o": [
+   "Divaga calculando el tiempo sin ver a su ex patrón",
+   "Recuerda con ternura la cara de su esposa y de su casa",
+   "Piensa en sus hijos pequeños, que lo esperan en casa",
+   "Revive una pelea ocurrida en un obraje del Alto Paraná"
+  ],
+  "a": 0,
+  "w": "Divaga calculando fechas: el tiempo sin ver a Dougald y el día en que conoció a Cubilla."
+ },
+ {
+  "id": "q070",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿qué sensación nota el hombre justo antes de morir?",
+  "o": [
+   "Siente que le arde la garganta y le falta saliva",
+   "Le sale sangre por la nariz y por la boca, sin parar",
+   "Siente frío hasta el pecho y dificultad para respirar",
+   "Cree ver llegar a su mujer corriendo por la orilla"
+  ],
+  "a": 2,
+  "w": "Siente que está helado hasta el pecho y la respiración falla."
+ },
+ {
+  "id": "q071",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cuáles son las últimas palabras del protagonista?",
+  "o": [
+   "¡Dorotea, ven!",
+   "Ya llego, Alves",
+   "Un jueves...",
+   "Dame más caña"
+  ],
+  "a": 2,
+  "w": "Murmura «Un jueves...» y deja de respirar."
+ },
+ {
+  "id": "q072",
+  "cat": "A la deriva",
+  "q": "En «A la deriva», ¿cuál es la causa de la muerte del protagonista?",
+  "o": [
+   "Un ahogamiento en el río",
+   "Un disparo de su compadre",
+   "Una caída de la canoa al río",
+   "El veneno de la yararacusú"
+  ],
+  "a": 3,
+  "w": "Muere por el veneno, tras una falsa mejoría."
+ },
+ {
+  "id": "q073",
+  "cat": "A la deriva",
+  "q": "¿Qué tipo de final tiene «A la deriva»?",
+  "o": [
+   "Feliz: el hombre llega a Tacurú-Pucú y se cura",
+   "Trágico: el hombre muere a manos de la naturaleza",
+   "Abierto: no se sabe si el hombre sigue vivo",
+   "Cómico: el hombre se salva y todo queda en un susto"
+  ],
+  "a": 1,
+  "w": "El hombre muere solo, dejado a la deriva por una naturaleza indiferente."
+ },
+ {
+  "id": "q074",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cuántos hijos con grave discapacidad intelectual tienen Mazzini y Berta?",
+  "o": [
+   "Cuatro",
+   "Dos",
+   "Tres",
+   "Cinco"
+  ],
+  "a": 0,
+  "w": "El cuento empieza con los cuatro hijos «idiotas» sentados en el patio; los dos últimos son mellizos."
+ },
+ {
+  "id": "q075",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cómo se apellida el matrimonio protagonista?",
+  "o": [
+   "Benincasa-Arrizabalaga",
+   "Zapiola-Vezzera",
+   "Cooper-Fragoso",
+   "Mazzini-Ferraz"
+  ],
+  "a": 3,
+  "w": "El cuento habla del matrimonio Mazzini-Ferraz, con Mazzini y Berta como nombres propios."
+ },
+ {
+  "id": "q076",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué hacen los hijos casi todo el día?",
+  "o": [
+   "Jugar con su hermana pequeña en el jardín",
+   "Ayudar a la sirvienta en las tareas de la cocina",
+   "Pasear con sus padres por las quintas del barrio",
+   "Sentarse en un banco del patio frente al cerco"
+  ],
+  "a": 3,
+  "w": "Pasan todo el día en el banco, mirando fijamente los ladrillos del cerco."
+ },
+ {
+  "id": "q077",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué imitan a veces los hijos con su zumbido?",
+  "o": [
+   "El canto del gallo",
+   "El viento del sur",
+   "Un tren de vapor",
+   "Un tranvía eléctrico"
+  ],
+  "a": 3,
+  "w": "Alineados en el banco, zumbaban horas imitando al tranvía eléctrico."
+ },
+ {
+  "id": "q078",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué edades tienen el mayor y el menor de los cuatro hijos?",
+  "o": [
+   "Quince y diez años",
+   "Doce y ocho años",
+   "Diez y cuatro años",
+   "Veinte y quince años"
+  ],
+  "a": 1,
+  "w": "Se dice que el mayor tenía doce años y el menor ocho."
+ },
+ {
+  "id": "q079",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿a qué edad cae enfermo con convulsiones el primer hijo, tras un desarrollo normal?",
+  "o": [
+   "A los dos años y medio",
+   "A los seis meses",
+   "Hacia los veinte meses",
+   "A los cinco años"
+  ],
+  "a": 2,
+  "w": "En el vigésimo mes lo sacudieron convulsiones terribles y quedó idiota."
+ },
+ {
+  "id": "q080",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cómo se explica en el cuento, desde la mirada de los padres, la enfermedad de los hijos?",
+  "o": [
+   "Se atribuye a un hechizo hecho a la familia",
+   "Cada uno culpa a la herencia del otro",
+   "Se atribuye a la mala alimentación de los niños",
+   "Se atribuye a la humedad del patio de la casa"
+  ],
+  "a": 1,
+  "w": "El médico apunta a la herencia: los excesos del padre de Mazzini y el pulmón enfermo de Berta."
+ },
+ {
+  "id": "q081",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué sucede con el segundo hijo?",
+  "o": [
+   "Crece sano y fuerte, y ayuda a su madre en casa",
+   "Muere al poco tiempo de nacer, de una fiebre alta",
+   "Es adoptado por unos vecinos sin hijos del pueblo",
+   "Repite el proceso del primero: convulsiones y deterioro"
+  ],
+  "a": 3,
+  "w": "A los dieciocho meses sufre las mismas convulsiones y amanece idiota."
+ },
+ {
+  "id": "q082",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cómo llegan al mundo los dos hijos siguientes?",
+  "o": [
+   "Uno tras otro, con diez años de diferencia",
+   "Adoptados",
+   "Como mellizos",
+   "Por separado, en casas distintas"
+  ],
+  "a": 2,
+  "w": "Sobrevinieron mellizos, que repitieron el mismo proceso."
+ },
+ {
+  "id": "q083",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cómo se llama la hija sana del matrimonio?",
+  "o": [
+   "Alicia",
+   "Dorotea",
+   "Bertita",
+   "Isolda"
+  ],
+  "a": 2,
+  "w": "La hija pequeña lleva el nombre de su madre, Bertita."
+ },
+ {
+  "id": "q084",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué edad tiene Bertita el día en que ocurre la tragedia?",
+  "o": [
+   "Quince meses",
+   "Cuatro años",
+   "Diez años",
+   "Siete años"
+  ],
+  "a": 1,
+  "w": "El cuento dice que ese día Bertita cumplió cuatro años."
+ },
+ {
+  "id": "q085",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué cambia en la relación de Mazzini y Berta cuando se ponen a culparse mutuamente?",
+  "o": [
+   "Dicen «tus hijos» en lugar de «nuestros hijos»",
+   "Se mudan a otra ciudad para empezar de nuevo",
+   "Deciden separarse y repartirse a los hijos",
+   "Se reconcilian para siempre tras una charla"
+  ],
+  "a": 0,
+  "w": "El cambio de pronombre —«tus hijos»— marca el comienzo de sus riñas."
+ },
+ {
+  "id": "q086",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué ordenan los padres a la sirvienta antes de salir de paseo?",
+  "o": [
+   "Que lave a los niños y los vista",
+   "Que mate una gallina para el almuerzo",
+   "Que cierre con llave el patio trasero",
+   "Que compre carne en la carnicería"
+  ],
+  "a": 1,
+  "w": "Como tenían poco tiempo, mandaron a la sirvienta degollar una gallina."
+ },
+ {
+  "id": "q087",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué palabra repite el narrador al describir lo que ven los cuatro hermanos cuando se desangra la gallina?",
+  "o": [
+   "Rojo",
+   "Frío",
+   "Luz",
+   "Hambre"
+  ],
+  "a": 0,
+  "w": "Los idiotas miran estupefactos la operación: «Rojo... rojo...»."
+ },
+ {
+  "id": "q088",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué hace Berta al ver a los cuatro hijos en la cocina mientras sacrifican la gallina?",
+  "o": [
+   "Los abraza y los lleva a pasear",
+   "Los baña",
+   "Los deja mirar",
+   "Ordena que los echen"
+  ],
+  "a": 3,
+  "w": "Se enfada y manda que los echen; los empujan a su banco."
+ },
+ {
+  "id": "q089",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué hace Bertita mientras sus padres están en la casa de enfrente?",
+  "o": [
+   "Se queda dormida en una silla del salón",
+   "Sale a la calle a jugar con otros niños",
+   "Entra en la cocina a ver a la sirvienta",
+   "Intenta trepar al cerco del patio"
+  ],
+  "a": 3,
+  "w": "Coloca un cajón de kerosene en vertical y se sube a él para trepar al cerco del patio."
+ },
+ {
+  "id": "q090",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué hacen los cuatro hermanos al ver a su hermana al pie del cerco?",
+  "o": [
+   "La ayudan amablemente a subir por el cerco a la calle",
+   "Se alejan asustados y se esconden en la casa vecina",
+   "Llaman a gritos a la sirvienta para que acuda",
+   "Le sujetan la pierna y la arrastran hasta la cocina"
+  ],
+  "a": 3,
+  "w": "La agarran de una pierna, la bajan y la arrastran hasta la cocina, donde se había sacrificado la gallina."
+ },
+ {
+  "id": "q091",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿qué ve Mazzini cuando llega a la cocina?",
+  "o": [
+   "A sus hijos jugando afuera",
+   "Un mar de sangre en el suelo",
+   "La cocina vacía y limpia",
+   "A la sirvienta cocinando"
+  ],
+  "a": 1,
+  "w": "Al empujar la puerta, ve el piso inundado de sangre y grita de horror."
+ },
+ {
+  "id": "q092",
+  "cat": "La gallina degollada",
+  "q": "En «La gallina degollada», ¿cómo reacciona Berta al llegar a la cocina?",
+  "o": [
+   "Ve la sangre y cae al suelo con un ronco suspiro",
+   "Entra en la cocina y abraza fuertemente a su hija",
+   "Corre a la calle a pedir ayuda a los vecinos",
+   "Se enfrenta a gritos a los cuatro hijos"
+  ],
+  "a": 0,
+  "w": "Alcanza a ver el piso inundado de sangre y se hunde con un ronco suspiro, mientras Mazzini intenta impedirle entrar."
+ },
+ {
+  "id": "q093",
+  "cat": "El solitario",
+  "q": "¿Cuál es la profesión de Kassim, protagonista de «El solitario»?",
+  "o": [
+   "Médico de pueblo, con consulta propia en casa",
+   "Joyero, especialista en montar piedras preciosas",
+   "Capitán de un barco de carga en el Plata",
+   "Maestro de una escuela en un barrio humilde"
+  ],
+  "a": 1,
+  "w": "Era joyero, sin tienda establecida, y trabajaba para grandes casas montando piedras preciosas."
+ },
+ {
+  "id": "q094",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿cómo se llama la mujer de Kassim?",
+  "o": [
+   "María",
+   "Alicia",
+   "Berta",
+   "Lidia"
+  ],
+  "a": 0,
+  "w": "La mujer de Kassim, hermosa y apasionada, se llama María."
+ },
+ {
+  "id": "q095",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿cómo es físicamente y de carácter Kassim?",
+  "o": [
+   "Fuerte y violento, de muy mal genio",
+   "Gordo y alegre, hablador y bromista",
+   "Enfermizo, de cuerpo mezquino y callado",
+   "Alto y autoritario, de voz potente"
+  ],
+  "a": 2,
+  "w": "Se lo describe como enfermizo, de cuerpo mezquino, rostro exangüe, indeciso y callado."
+ },
+ {
+  "id": "q096",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué pasión domina a María?",
+  "o": [
+   "Las joyas y los grandes brillantes",
+   "Los viajes a lugares lejanos y exóticos",
+   "La música y los bailes de moda",
+   "La política y los asuntos de su ciudad"
+  ],
+  "a": 0,
+  "w": "Su pasión eran las voluminosas piedras que Kassim montaba."
+ },
+ {
+  "id": "q097",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué hace Kassim por dar gusto a su mujer, aun estando enfermo?",
+  "o": [
+   "Trabaja de noche y en domingo para ganar más",
+   "Pide dinero prestado a sus vecinos ricos",
+   "Vende la casa y el taller para comprar joyas",
+   "Abre una joyería grande en el centro"
+  ],
+  "a": 0,
+  "w": "Trabajaba en domingo y de noche para ofrecerle un suplemento, aun con tos y puntadas al costado."
+ },
+ {
+  "id": "q098",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué reproche repite María a su marido?",
+  "o": [
+   "Que trabaja demasiado poco y gana menos que otros",
+   "Que es demasiado celoso y la encierra en casa",
+   "Que es un pobre hombre sin carácter para hacer fortuna",
+   "Que no se ocupa de la casa ni de ella desde la boda"
+  ],
+  "a": 2,
+  "w": "Le reprocha su falta de carácter para hacer fortuna y su pobreza."
+ },
+ {
+  "id": "q099",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué hace María un día con un prendedor de dos solitarios que Kassim había guardado?",
+  "o": [
+   "Lo vende en secreto en otra joyería",
+   "Se lo pone y dice que irá con él al teatro",
+   "Lo esconde en el jardín para luego recogerlo",
+   "Se lo regala a una amiga que la visita"
+  ],
+  "a": 1,
+  "w": "Aparece con el prendedor puesto y dice que irá al teatro con él, para disgusto de Kassim."
+ },
+ {
+  "id": "q100",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿por qué Kassim le dice que no debe usar el prendedor?",
+  "o": [
+   "Porque el prendedor se estropearía con el uso",
+   "Porque podrían verla y dejar de confiar en él",
+   "Porque pertenecía a otra mujer de la casa",
+   "Porque el prendedor valía muy poco dinero"
+  ],
+  "a": 1,
+  "w": "Teme que la vean y los clientes pierdan confianza en él."
+ },
+ {
+  "id": "q101",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué ocurre cuando Kassim guarda la joya bajo llave?",
+  "o": [
+   "María lo acusa de creerla una ladrona",
+   "María se alegra y le da las gracias",
+   "María devuelve la joya al cliente",
+   "María se marcha de casa con su madre"
+  ],
+  "a": 0,
+  "w": "Ella grita que piensa que es una ladrona y llora."
+ },
+ {
+  "id": "q102",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué tipo de piedra le encargan montar, que enciende la obsesión de María?",
+  "o": [
+   "Un brillante solitario, para montar como alfiler de hombre",
+   "Una esmeralda enorme y muy pura, para montar en un collar",
+   "Un rubí antiguo, para montar en una corona de reina",
+   "Una perla muy fina, para montar en un anillo de bodas"
+  ],
+  "a": 0,
+  "w": "Es un solitario admirable que debe montarse como alfiler de hombre."
+ },
+ {
+  "id": "q103",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué hace María con el solitario mientras Kassim lo monta?",
+  "o": [
+   "Lo arranca y lo arroja al suelo; luego sufre una crisis de nervios",
+   "Lo traga a escondidas para que Kassim no pueda acabar la joya",
+   "Lo empeña en una casa de empeños y huye con el dinero a Rosario",
+   "Lo regala a un vecino a cambio de dinero y se marcha con él"
+  ],
+  "a": 0,
+  "w": "Lo arroja violentamente y cae al piso; luego sufre una fuerte crisis de nervios exigiendo el brillante."
+ },
+ {
+  "id": "q104",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿qué grita María durante su crisis para conseguir el brillante?",
+  "o": [
+   "Que lo perdonará todo si deja de trabajar de noche",
+   "Que irá a la policía a denunciar el maltrato",
+   "Que se escaparán juntos y que él le ha robado la vida",
+   "Que se vuelve a la casa de sus padres y no regresará"
+  ],
+  "a": 2,
+  "w": "Pide el brillante para escaparse y llama ladrón a Kassim, diciendo que le ha robado la vida."
+ },
+ {
+  "id": "q105",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿cómo termina Kassim su trabajo con el solitario?",
+  "o": [
+   "Con manos seguras, a las dos de la madrugada",
+   "A medias, interrumpido por un ataque de tos",
+   "Rompiendo la piedra, por desesperación",
+   "Dándoselo a María a mediodía, como regalo"
+  ],
+  "a": 0,
+  "w": "El brillante quedó terminado a las dos de la mañana, firme y varonil en su engarce."
+ },
+ {
+  "id": "q106",
+  "cat": "El solitario",
+  "q": "En «El solitario», ¿cómo mata Kassim a su mujer?",
+  "o": [
+   "Le clava el alfiler en el corazón mientras duerme",
+   "La apuñala con un cuchillo de monte en la cocina",
+   "La envenena con un frasco echado en la cena",
+   "La empuja desde el balcón de su cuarto de arriba"
+  ],
+  "a": 0,
+  "w": "Hundió el alfiler entero en el corazón de María dormida."
+ },
+ {
+  "id": "q107",
+  "cat": "Los buques suicidantes",
+  "q": "¿De qué trata el relato que abre «Los buques suicidantes»?",
+  "o": [
+   "De un naufragio en el que hubo supervivientes",
+   "De una batalla naval entre dos flotas enemigas",
+   "De un viaje de placer por el Mediterráneo en yate",
+   "De barcos hallados en el mar sin tripulación a bordo"
+  ],
+  "a": 3,
+  "w": "Empieza con la inquietud de encontrar buques abandonados, como el María Margarita."
+ },
+ {
+  "id": "q108",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué hallaron a bordo del «María Margarita»?",
+  "o": [
+   "Los cuerpos de varios marineros ahogados",
+   "Todo en perfecto orden, pero sin una sola persona",
+   "Señales de una pelea sangrienta en cubierta",
+   "Un cargamento robado y las bodegas casi vacías"
+  ],
+  "a": 1,
+  "w": "No había nadie, sin señal de lucha ni pánico: la cocina encendida, ropa tendida, una máquina de coser con la aguja suspendida."
+ },
+ {
+  "id": "q109",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué objeto con la aguja suspendida sobre la costura aparece en el barco abandonado?",
+  "o": [
+   "Una brújula de bronce",
+   "Un reloj de pared parado",
+   "Un mapa de navegación",
+   "Una máquina de coser"
+  ],
+  "a": 3,
+  "w": "La máquina de coser parecía dejada un momento antes."
+ },
+ {
+  "id": "q110",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿dónde se cuenta la historia de los buques en el cuento?",
+  "o": [
+   "En una taberna del puerto, entre marineros",
+   "En el puente de un barco que viaja hacia Europa",
+   "En una escuela de navegación de Nueva York",
+   "En una isla desierta, tras un gran naufragio"
+  ],
+  "a": 1,
+  "w": "El narrador estaba reunido con otros pasajeros, camino de Europa, oyendo al capitán."
+ },
+ {
+  "id": "q111",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué sugiere una señora recién casada como explicación del misterio?",
+  "o": [
+   "Que una epidemia haya matado a los marineros",
+   "Que unos piratas hayan secuestrado a los hombres",
+   "Que unas águilas se hayan llevado a la tripulación",
+   "Que los fantasmas del barco los hayan raptado"
+  ],
+  "a": 2,
+  "w": "La joven pregunta: «¿No serán águilas...?», y todos ríen."
+ },
+ {
+  "id": "q112",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿quién cuenta la verdadera explicación según su experiencia?",
+  "o": [
+   "El capitán, que conocía muchas historias de mar",
+   "Un pasajero discreto que había visto algo parecido",
+   "Una señora joven, recién casada, con su marido",
+   "Un marinero enfermo que iba en cubierta, febril"
+  ],
+  "a": 1,
+  "w": "Un pasajero poco hablador cuenta su experiencia en un barco a vela."
+ },
+ {
+  "id": "q113",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué hicieron los marineros del buque abandonado, uno tras otro?",
+  "o": [
+   "Se escondieron en la bodega del barco con la carga",
+   "Se arrojaron al agua uno tras otro, sin saber por qué",
+   "Atacaron al narrador con cuchillos y arpones",
+   "Huyeron en una chalupa hacia la costa más cercana"
+  ],
+  "a": 1,
+  "w": "Uno tras otro, como en una especie de sonambulismo, se tiraron al mar."
+ },
+ {
+  "id": "q114",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué motivo presume el pasajero para no haber sentido nada más que desgano?",
+  "o": [
+   "Se encerró en un camarote hasta que pasó la tormenta del mar",
+   "Aceptó esa muerte hipnótica y no gastó sus fuerzas en resistir",
+   "Pidió ayuda por radio a un barco que pasaba cerca de allí",
+   "Se tiró al agua como los demás y nadó hasta salvarse"
+  ],
+  "a": 1,
+  "w": "Explica que aceptó esa muerte hipnótica en lugar de luchar angustiosamente contra ella."
+ },
+ {
+  "id": "q115",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿qué murmura el capitán cuando el narrador se retira a su camarote?",
+  "o": [
+   "«Qué historia tan bonita»",
+   "«Me ha convencido»",
+   "«Tiene razón»",
+   "«¡Farsante!»"
+  ],
+  "a": 3,
+  "w": "El capitán lo llama farsante, pero el pasajero enfermo lo contradice."
+ },
+ {
+  "id": "q116",
+  "cat": "Los buques suicidantes",
+  "q": "En «Los buques suicidantes», ¿por qué defiende el pasajero enfermo la historia del narrador?",
+  "o": [
+   "Porque ya conocía la historia del barco por haberla leído antes",
+   "Porque él también había vivido una experiencia así años atrás",
+   "Porque el capitán solía equivocarse con los pasajeros del barco",
+   "Porque un farsante no habría dejado de pensar en eso y se habría tirado"
+  ],
+  "a": 3,
+  "w": "Argumenta que, si fuera farsante, no habría dejado de pensar en eso y se habría tirado al agua."
+ },
+ {
+  "id": "q117",
+  "cat": "Los ojos sombríos",
+  "q": "¿Cómo se llama el hombre que cuenta su historia al narrador de «Los ojos sombríos»?",
+  "o": [
+   "Antenor Vezzera",
+   "Octavio Nébel",
+   "Federico Cooper",
+   "Julio Zapiola"
+  ],
+  "a": 3,
+  "w": "Zapiola, un viejo conocido recién vuelto de Europa, relata su «novela» al narrador."
+ },
+ {
+  "id": "q118",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿dónde se encuentran el narrador y Zapiola?",
+  "o": [
+   "En un baile",
+   "En un barco",
+   "En un hospital",
+   "En un cementerio"
+  ],
+  "a": 0,
+  "w": "El narrador asiste a un baile tras romper con Elena y allí lo saluda Zapiola."
+ },
+ {
+  "id": "q119",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿qué le había pasado recientemente al narrador antes del baile?",
+  "o": [
+   "Había perdido su empleo hacía un mes",
+   "Había roto con su novia Elena",
+   "Se había casado con una prima suya",
+   "Había vuelto de un viaje a Europa"
+  ],
+  "a": 1,
+  "w": "Cuenta que llevaba unas semanas desde la ruptura con Elena."
+ },
+ {
+  "id": "q120",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿cómo se llama el amigo de Zapiola, enfermizo y celoso, que está enamorado de María?",
+  "o": [
+   "Kassim",
+   "Vezzera",
+   "Mazzini",
+   "Jordán"
+  ],
+  "a": 1,
+  "w": "Vezzera es un amigo de colegio, inconstante, apasionado y tuberculoso."
+ },
+ {
+  "id": "q121",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿cómo se llama la novia de Vezzera?",
+  "o": [
+   "Elena",
+   "María",
+   "Lidia",
+   "Berta"
+  ],
+  "a": 1,
+  "w": "La novia de Vezzera se llama María y es la de los ojos sombríos."
+ },
+ {
+  "id": "q122",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿por qué Zapiola deja de visitar a María?",
+  "o": [
+   "Porque se fue a Europa",
+   "Porque Vezzera se lo prohibió por carta",
+   "Porque temía enamorarse de ella",
+   "Porque su madre se lo impidió"
+  ],
+  "a": 2,
+  "w": "Zapiola siente atracción por María y se aleja; Vezzera cree que lo hace por eso."
+ },
+ {
+  "id": "q123",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿qué hace Vezzera para humillar a Zapiola delante de María?",
+  "o": [
+   "Lo insulta a gritos delante de toda la familia",
+   "Lo echa de la casa en presencia de María y su madre",
+   "Pregunta ante María por qué Zapiola dejó de visitarlos",
+   "Lo reta a un duelo en plena sala, ante la familia"
+  ],
+  "a": 2,
+  "w": "Con «perversa y cobarde» intención, plantea el motivo de su ausencia ante María."
+ },
+ {
+  "id": "q124",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿cómo termina la relación entre Vezzera y María?",
+  "o": [
+   "Vezzera muere de tuberculosis, rodeado de sus amigos",
+   "Vezzera se suicida y deja una carta que los deja libres",
+   "Vezzera se marcha a Europa a curarse de su enfermedad",
+   "Vezzera se casa con María tras un noviazgo de años"
+  ],
+  "a": 1,
+  "w": "Se mata dejando una carta en la que dice que los deja libres a ambos."
+ },
+ {
+  "id": "q125",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿qué ocurre cuando Zapiola va a ver a María pasados quince días?",
+  "o": [
+   "Se casan ese mismo día sin avisar a nadie, en la capilla",
+   "Ella lo echa de la casa con rabia y desprecio, sin hablar",
+   "Ella no lo reconoce, se asusta y llama a gritos a su madre",
+   "Ambos lloran y ella rechaza la posibilidad de ser felices juntos"
+  ],
+  "a": 3,
+  "w": "María llora y se niega a ser feliz con él en ese momento."
+ },
+ {
+  "id": "q126",
+  "cat": "Los ojos sombríos",
+  "q": "En «Los ojos sombríos», ¿cómo acaba la historia de Zapiola y María?",
+  "o": [
+   "Ella se casa con otro joven rico del pueblo",
+   "Zapiola se suicida como su amigo, meses después",
+   "Se casan y Zapiola presenta su mujer al narrador",
+   "María desaparece del pueblo sin dejar rastro"
+  ],
+  "a": 2,
+  "w": "Al final, el narrador conoce a la mujer de Zapiola: María, de ojos sombríos."
+ },
+ {
+  "id": "q127",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿en qué ciudad conoce Nébel a Lidia?",
+  "o": [
+   "Montevideo",
+   "Madrid",
+   "Asunción",
+   "Concordia"
+  ],
+  "a": 3,
+  "w": "Se conocen durante el carnaval en Concordia."
+ },
+ {
+  "id": "q128",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿cuántos años tiene Nébel al empezar el cuento y cuántos Lidia?",
+  "o": [
+   "Nébel 25 y Lidia de 18",
+   "Nébel 14 y Lidia de 18",
+   "Nébel 30 y Lidia de 20",
+   "Nébel 18 y Lidia unos 14"
+  ],
+  "a": 3,
+  "w": "Nébel acaba su bachillerato a los 18 y Lidia ronda los 14."
+ },
+ {
+  "id": "q129",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿con qué recurso está organizado el cuento?",
+  "o": [
+   "En capítulos numerados que contienen muchas cartas",
+   "En los días de una semana de carnaval en Concordia",
+   "En cuatro partes tituladas con las estaciones del año",
+   "En los doce meses de un año, uno por capítulo"
+  ],
+  "a": 2,
+  "w": "Se divide en Primavera, Verano, Otoño e Invierno."
+ },
+ {
+  "id": "q130",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿qué problema de salud o hábito tiene la madre de Lidia?",
+  "o": [
+   "Es ciega",
+   "Es sordomuda",
+   "Abusa de la morfina",
+   "Bebe alcohol en exceso"
+  ],
+  "a": 2,
+  "w": "Es histérica y abusa de la morfina por necesidad y elegancia."
+ },
+ {
+  "id": "q131",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿por qué se opone el padre de Nébel al matrimonio con Lidia?",
+  "o": [
+   "Por la mala fama de la madre y su relación con Arrizabalaga",
+   "Porque Lidia era demasiado rica y orgullosa para ellos",
+   "Porque Lidia se había criado lejos, en Buenos Aires",
+   "Porque Lidia era mucho mayor que Nébel y no tenía estudios"
+  ],
+  "a": 0,
+  "w": "El padre acusa a la madre de Lidia de haber sido amante de Arrizabalaga."
+ },
+ {
+  "id": "q132",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿qué le impide a Nébel suicidarse tras recibir la tarjeta de Lidia?",
+  "o": [
+   "El miedo que le daba la idea de la muerte",
+   "La orden severa que le dio su padre por carta",
+   "Una promesa hecha a un amigo dibujante alemán",
+   "Un sueño que tuvo esa misma noche con Lidia"
+  ],
+  "a": 2,
+  "w": "Había prometido a un amigo dibujante ir a verlo antes de matarse."
+ },
+ {
+  "id": "q133",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿dónde vuelve Nébel a encontrarse con la madre de Lidia, once años después?",
+  "o": [
+   "En una iglesia grande de Concordia",
+   "En un tranvía de Buenos Aires",
+   "En un baile de carnaval en Salto",
+   "En el patio de su ingenio, de noche"
+  ],
+  "a": 1,
+  "w": "La reconoce en un tranvía en Buenos Aires, ya envejecida por la morfina."
+ },
+ {
+  "id": "q134",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿qué le ocurre a la madre de Lidia en el ingenio de Nébel?",
+  "o": [
+   "Se cura del todo con el aire del campo",
+   "Huye con un amante a otra provincia",
+   "Se queda a vivir allí para siempre",
+   "Muere por una sobredosis de morfina"
+  ],
+  "a": 3,
+  "w": "Aparece casi vacío el frasco de morfina y muere."
+ },
+ {
+  "id": "q135",
+  "cat": "Una estación de amor",
+  "q": "En «Una estación de amor», ¿qué entrega Nébel a Lidia tras el entierro de su madre?",
+  "o": [
+   "Un cheque de diez mil pesos",
+   "Un anillo de compromiso de oro",
+   "Una carta de amor de despedida",
+   "Su viejo revólver de recuerdo"
+  ],
+  "a": 0,
+  "w": "Le tiende un cheque de diez mil pesos y le pide perdón."
+ },
+ {
+  "id": "q136",
+  "cat": "Una estación de amor",
+  "q": "¿Cómo acaba «Una estación de amor»?",
+  "o": [
+   "Lidia se va en el tren sin asomarse a la ventanilla",
+   "Lidia y Nébel se casan por fin en Concordia",
+   "Nébel se suicida tras despedirse de Lidia en casa",
+   "Lidia denuncia a Nébel ante la policía local"
+  ],
+  "a": 0,
+  "w": "Cuando el tren parte, Lidia no se asoma."
+ },
+ {
+  "id": "q137",
+  "cat": "El infierno artificial",
+  "q": "¿Qué personaje abre el cuento «El infierno artificial»?",
+  "o": [
+   "Un sepulturero que abusa del cloroformo",
+   "Un médico que cura a un enfermo grave",
+   "Un marinero que regresa a su barco",
+   "Un joyero que monta una piedra en un anillo"
+  ],
+  "a": 0,
+  "w": "Pasea de noche por el cementerio borracho de cloroformo."
+ },
+ {
+  "id": "q138",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿dónde se esconde el hombrecillo que habla desde una calavera?",
+  "o": [
+   "En el interior de un ataúd cerrado",
+   "Detrás de una lápida de mármol",
+   "En la copa de un árbol del cementerio",
+   "Dentro del cráneo de un esqueleto"
+  ],
+  "a": 3,
+  "w": "Aparece acurrucado en un hueco del cráneo de un esqueleto, y pide cocaína."
+ },
+ {
+  "id": "q139",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿qué droga suplica el hombrecillo?",
+  "o": [
+   "Cocaína",
+   "Morfina",
+   "Alcohol",
+   "Tabaco"
+  ],
+  "a": 0,
+  "w": "Gritaba: «¡Cocaína! ¡Por favor, un poco de cocaína!»."
+ },
+ {
+  "id": "q140",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿cómo hace llegar el sepulturero la cocaína al hombrecillo?",
+  "o": [
+   "Entregándole un frasco con el líquido",
+   "Inyectándola por las fisuras del cráneo",
+   "Echándola sobre un pañuelo para que la huela",
+   "Abriendo el ataúd y vertiéndola dentro"
+  ],
+  "a": 1,
+  "w": "Inyecta el contenido de la jeringuilla por las fisuras craneanas."
+ },
+ {
+  "id": "q141",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿qué perdió el hombre en dos días, empujándole a las drogas?",
+  "o": [
+   "A sus tres hijos por difteria, y luego a su mujer",
+   "Su fortuna, perdida en el juego y en negocios",
+   "Su casa y sus libros, destruidos en un incendio",
+   "Su trabajo, su buena posición y a sus amigos"
+  ],
+  "a": 0,
+  "w": "La difteria se llevó a los tres hijos en pocas horas y su mujer murió después."
+ },
+ {
+  "id": "q142",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿qué perfume favorito usa la joven de dieciocho años que ama?",
+  "o": [
+   "Chanel",
+   "Lavanda",
+   "Rosa",
+   "Jicky"
+  ],
+  "a": 3,
+  "w": "Ella respiraba Jicky, su perfume favorito, como él la cocaína."
+ },
+ {
+  "id": "q143",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿cómo acaba la historia del hombre del cráneo?",
+  "o": [
+   "Se mata, pero su obsesión sigue más allá de la muerte",
+   "Se cura en un sanatorio y rehace su vida en el campo",
+   "Se casa con la joven y viven felices en una quinta",
+   "Escapa en un barco hacia otro país y no vuelve"
+  ],
+  "a": 0,
+  "w": "Se mata, pero se ve a sí mismo y a su amada volver a su infierno; luego grita por cocaína."
+ },
+ {
+  "id": "q144",
+  "cat": "El infierno artificial",
+  "q": "En «El infierno artificial», ¿qué hizo el hombre cuando entró en un sanatorio para desintoxicarse?",
+  "o": [
+   "Se curó rápidamente y salió sano y salvo del lugar",
+   "Trató de escapar a pie por el jardín de noche",
+   "Llevaba escondido en el bolsillo un frasquito de cocaína",
+   "Se hizo muy amigo del médico y le confesó sus males"
+  ],
+  "a": 2,
+  "w": "Entró en el sanatorio con un frasquito de cocaína escondido en el bolsillo."
+ },
+ {
+  "id": "q145",
+  "cat": "El perro rabioso",
+  "q": "¿Cómo está escrito «El perro rabioso»?",
+  "o": [
+   "Como un diario con fechas de marzo, escrito por el protagonista",
+   "Como una carta larga enviada por el protagonista a un amigo",
+   "Como un poema largo sobre la lluvia y la selva misionera",
+   "Como un informe médico escrito por un veterinario rural"
+  ],
+  "a": 0,
+  "w": "El cuento va de «Marzo 9» a «Marzo 20», en primera persona."
+ },
+ {
+  "id": "q146",
+  "cat": "El perro rabioso",
+  "q": "En «El perro rabioso», ¿cómo se llama el narrador, a quien muerde el perro?",
+  "o": [
+   "Federico",
+   "Leopoldo",
+   "Gregorio",
+   "Eduardo"
+  ],
+  "a": 0,
+  "w": "Su madre lo llama Federico durante la noche del ataque."
+ },
+ {
+  "id": "q147",
+  "cat": "El perro rabioso",
+  "q": "¿Qué aspecto tenía el perro rabioso que entra en el cuarto del narrador?",
+  "o": [
+   "Negro, grande, con las orejas cortadas",
+   "Blanco y pequeño, de pelo largo y sucio",
+   "Barcino y flaco, con una pata coja",
+   "Marrón con una mancha blanca en un ojo"
+  ],
+  "a": 0,
+  "w": "Era un perro negro, grande, con las orejas cortadas."
+ },
+ {
+  "id": "q148",
+  "cat": "El perro rabioso",
+  "q": "En «El perro rabioso», ¿por qué pudo entrar el perro en el cuarto del narrador?",
+  "o": [
+   "Porque la puerta era una arpillera",
+   "Porque la ventana estaba rota",
+   "Porque la puerta estaba abierta de par en par",
+   "Porque el narrador lo dejó entrar"
+  ],
+  "a": 0,
+  "w": "El cuarto del matrimonio tenía puertas de arpillera, no de madera."
+ },
+ {
+  "id": "q149",
+  "cat": "El perro rabioso",
+  "q": "En «El perro rabioso», ¿cuánto tiempo, según la creencia que se menciona, debían pasar sin síntomas para considerar que no había rabia?",
+  "o": [
+   "Tres semanas",
+   "Seis meses",
+   "Quince días",
+   "Cuarenta días"
+  ],
+  "a": 3,
+  "w": "Madre y esposa cuentan los «clásicos cuarenta días» tras la mordedura."
+ },
+ {
+  "id": "q150",
+  "cat": "El perro rabioso",
+  "q": "En «El perro rabioso», ¿qué ocurre con el narrador después de los cuarenta días?",
+  "o": [
+   "Delira con víboras y arañas y cree que lo persiguen",
+   "Se recupera del todo y vive en paz con su familia",
+   "Huye a Buenos Aires con su mujer y sus dos hijos",
+   "Se dedica a cazar perros callejeros por el monte"
+  ],
+  "a": 0,
+  "w": "Aunque pasan los cuarenta días, el diario muestra un delirio persecutorio con víboras y arañas."
+ },
+ {
+  "id": "q151",
+  "cat": "La insolación",
+  "q": "¿Qué animales son los protagonistas de «La insolación»?",
+  "o": [
+   "Cinco fox-terriers",
+   "Dos caballos",
+   "Un toro y vacas",
+   "Un perro y un gato"
+  ],
+  "a": 0,
+  "w": "Los perros de míster Jones son cinco fox-terriers."
+ },
+ {
+  "id": "q152",
+  "cat": "La insolación",
+  "q": "En «La insolación», ¿cómo se llama el dueño de los perros?",
+  "o": [
+   "Míster Jones",
+   "Míster Hall",
+   "Míster Dougald",
+   "Don Zaninski"
+  ],
+  "a": 0,
+  "w": "El dueño es míster Jones."
+ },
+ {
+  "id": "q153",
+  "cat": "La insolación",
+  "q": "En «La insolación», ¿cuál de los perros es el cachorro?",
+  "o": [
+   "Prince",
+   "Dick",
+   "Old",
+   "Milk"
+  ],
+  "a": 2,
+  "w": "Old es el cachorro y Milk es su padre."
+ },
+ {
+  "id": "q154",
+  "cat": "La insolación",
+  "q": "En «La insolación», ¿qué ven los perros que les anuncia la muerte de su amo?",
+  "o": [
+   "Un buitre que vuela en círculos sobre la casa del patrón",
+   "Un pájaro negro y enorme posado en el tejado de la casa",
+   "Una figura igual a míster Jones, que ellos llaman la Muerte",
+   "Una niebla roja y espesa que sube del arroyo hacia la casa"
+  ],
+  "a": 2,
+  "w": "Ven a otro «míster Jones» que, según los perros más viejos, es la Muerte."
+ },
+ {
+  "id": "q155",
+  "cat": "La insolación",
+  "q": "¿En qué región se ambienta «La insolación»?",
+  "o": [
+   "En el mar",
+   "En Buenos Aires",
+   "En los Andes",
+   "En el Chaco"
+  ],
+  "a": 3,
+  "w": "El cuento transcurre en la llanura del Chaco, en una chacra algodonera."
+ },
+ {
+  "id": "q156",
+  "cat": "La insolación",
+  "q": "En «La insolación», ¿cómo muere finalmente míster Jones?",
+  "o": [
+   "Mordido por una víbora en el monte cuando salió a cazar",
+   "Ahogado al cruzar un río crecido con su caballo",
+   "Por una insolación al cruzar un pajonal a pleno sol",
+   "Por un accidente con la carpidora de mulas en el cañaveral"
+  ],
+  "a": 2,
+  "w": "Cae desplomado tras caminar en pleno calor por el pajonal y encontrarse con la Muerte."
+ },
+ {
+  "id": "q157",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿cómo se llama el toro que traspasa alambrados?",
+  "o": [
+   "Alazán",
+   "Malacara",
+   "Barigüí",
+   "Zaninski"
+  ],
+  "a": 2,
+  "w": "Las vacas confían en el toro Barigüí para pasar los alambrados."
+ },
+ {
+  "id": "q158",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿qué animales son el alazán y el malacara?",
+  "o": [
+   "Dos terneros",
+   "Dos bueyes",
+   "Dos caballos",
+   "Dos novillos"
+  ],
+  "a": 2,
+  "w": "Son los dos caballos que se escapan del potrero."
+ },
+ {
+  "id": "q159",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿qué hay tras la tranquera cerrada que atrae a los caballos y a las vacas?",
+  "o": [
+   "Un río de aguas claras y profundas",
+   "Un maizal seco por la helada del invierno",
+   "Un pasto verde: una plantación de avena",
+   "Un corral con terneros recién nacidos"
+  ],
+  "a": 2,
+  "w": "Más allá de la tranquera hay un verde inusitado en pleno invierno: la avena de un chacarero."
+ },
+ {
+  "id": "q160",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿quién es don Zaninski?",
+  "o": [
+   "El polaco dueño del toro Barigüí",
+   "El chacarero dueño del campo de avena",
+   "El dueño de los dos caballos",
+   "El capataz de un obraje cercano"
+  ],
+  "a": 0,
+  "w": "El chacarero se queja ante él por los destrozos de su toro."
+ },
+ {
+  "id": "q161",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿qué hace el chacarero para impedir que el toro pase?",
+  "o": [
+   "Mata al toro de un tiro con una vieja escopeta",
+   "Construye una pared de piedra muy alta en el campo",
+   "Echa de la zona al polaco con sus vacas y sus caballos",
+   "Pone un alambrado de dos hilos de púa muy estirados"
+  ],
+  "a": 3,
+  "w": "Instala un alambrado de púa de solo dos hilos, muy tenso."
+ },
+ {
+  "id": "q162",
+  "cat": "El alambre de púa",
+  "q": "En «El alambre de púa», ¿cómo acaba Barigüí?",
+  "o": [
+   "Cruza el alambre de púa sin sufrir ningún daño",
+   "Escapa a la selva con otros toros y no vuelve",
+   "Se desangra al pasar el alambre y su dueño lo carnea",
+   "Embiste al chacarero y lo hiere de gravedad"
+  ],
+  "a": 2,
+  "w": "Se abre el lomo y el vientre con la púa, y el polaco lo carnea esa tarde."
+ },
+ {
+  "id": "q163",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿cómo se llaman los dos mensú protagonistas?",
+  "o": [
+   "Cubilla y Alves",
+   "Kassim y Nébel",
+   "Cayé y Podeley",
+   "Fragoso y Cooper"
+  ],
+  "a": 2,
+  "w": "Los dos peones se llaman Cayé y Podeley."
+ },
+ {
+  "id": "q164",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿qué son los «mensú» en el cuento?",
+  "o": [
+   "Dueños de grandes plantaciones de yerba mate",
+   "Marineros de los vapores que suben por el Paraná",
+   "Peones de obraje contratados con adelantos de dinero",
+   "Médicos que recorren la selva atendiendo a peones"
+  ],
+  "a": 2,
+  "w": "Son trabajadores de los obrajes que firman contratas con anticipo."
+ },
+ {
+  "id": "q165",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿qué hacen Cayé y Podeley al llegar a Posadas con el dinero del anticipo?",
+  "o": [
+   "Compran una chacra con lo ahorrado",
+   "Se casan y viven felices en Posadas mismo",
+   "Regresan al obraje sin gastar nada",
+   "Beben, gastan y firman otra contrata"
+  ],
+  "a": 3,
+  "w": "Se emborrachan, derrochan el dinero y firman una nueva contrata."
+ },
+ {
+  "id": "q166",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿qué hacen los dos mensú ante la injusticia del mayordomo con Podeley?",
+  "o": [
+   "Se escapan del obraje",
+   "Matan al mayordomo",
+   "Piden perdón y siguen trabajando",
+   "Compran su libertad"
+  ],
+  "a": 0,
+  "w": "Deciden huir y son perseguidos por el capataz."
+ },
+ {
+  "id": "q167",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿cómo acaba Podeley?",
+  "o": [
+   "Llega sano a Posadas y se emborracha con caña",
+   "Es asesinado por el capataz del obraje",
+   "Se ahoga al cruzar un riacho crecido, de noche",
+   "Muere de fiebre y de frío en un pajonal"
+  ],
+  "a": 3,
+  "w": "Muere a la intemperie, helado y con fiebre, junto a su compañero."
+ },
+ {
+  "id": "q168",
+  "cat": "Los mensú",
+  "q": "En «Los mensú», ¿cómo termina el cuento para Cayé?",
+  "o": [
+   "De regreso con su familia, sano y a salvo",
+   "De nuevo borracho en Posadas con otra contrata",
+   "Ahogado en el Paraná cuando huía del obraje",
+   "Capturado y devuelto por la fuerza al obraje"
+  ],
+  "a": 1,
+  "w": "El Sílex lo devuelve a Posadas y a los diez minutos ya está borracho con nueva contrata."
+ },
+ {
+  "id": "q169",
+  "cat": "Yaguaí",
+  "q": "¿Qué animal es Yaguaí?",
+  "o": [
+   "Un caballo pardo",
+   "Un toro de raza",
+   "Un gato montés",
+   "Un fox-terrier"
+  ],
+  "a": 3,
+  "w": "Yaguaí es el fox-terrier de Cooper."
+ },
+ {
+  "id": "q170",
+  "cat": "Yaguaí",
+  "q": "En «Yaguaí», ¿cómo se llama su dueño?",
+  "o": [
+   "Fragoso",
+   "Candiyú",
+   "Cubilla",
+   "Cooper"
+  ],
+  "a": 3,
+  "w": "El dueño de Yaguaí es Cooper."
+ },
+ {
+  "id": "q171",
+  "cat": "Yaguaí",
+  "q": "¿Qué es lo que más le gusta cazar a Yaguaí al principio?",
+  "o": [
+   "Venados",
+   "Lagartijas",
+   "Jaguares",
+   "Pájaros"
+  ],
+  "a": 1,
+  "w": "Su gran encanto eran los saurios, es decir, las lagartijas."
+ },
+ {
+  "id": "q172",
+  "cat": "Yaguaí",
+  "q": "En «Yaguaí», ¿qué clima castiga la región durante el cuento?",
+  "o": [
+   "Una inundación que cubre toda la plantación",
+   "Una nevada fuera de temporada que hiela todo",
+   "Una fuerte sequía, con viento norte y mucho calor",
+   "Un huracán que arrasa los ranchos de la costa"
+  ],
+  "a": 2,
+  "w": "Se cuenta una sequía de calor extremo y viento norte en Misiones."
+ },
+ {
+  "id": "q173",
+  "cat": "Yaguaí",
+  "q": "¿A quién entrega Cooper a Yaguaí para que le enseñe a cazar?",
+  "o": [
+   "A Fragoso",
+   "A Candiyú",
+   "Al polaco Zaninski",
+   "A míster Hall"
+  ],
+  "a": 0,
+  "w": "Fragoso, hombre de selva, se lo lleva para adiestrarlo."
+ },
+ {
+  "id": "q174",
+  "cat": "Yaguaí",
+  "q": "¿Cómo muere Yaguaí?",
+  "o": [
+   "Lo muerde una serpiente venenosa en el monte mientras caza",
+   "Cooper le dispara de noche creyéndolo un perro ladrón",
+   "Lo atropella un tren de carga cerca de San Ignacio",
+   "Se pierde en la selva y muere de hambre y de sed"
+  ],
+  "a": 1,
+  "w": "Cooper dispara a un ladrón nocturno y al día siguiente halla muerto a Yaguaí."
+ },
+ {
+  "id": "q175",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿cómo se llama el pescador de vigas?",
+  "o": [
+   "Cubilla",
+   "Candiyú",
+   "Castelhum",
+   "Hall"
+  ],
+  "a": 1,
+  "w": "El protagonista es Candiyú, que vive en la costa del Paraná."
+ },
+ {
+  "id": "q176",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿qué quiere Candiyú a cambio de vigas?",
+  "o": [
+   "Una escopeta",
+   "Un acordeón",
+   "Un caballo",
+   "Un gramófono"
+  ],
+  "a": 3,
+  "w": "Quiere el gramófono de míster Hall."
+ },
+ {
+  "id": "q177",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿qué clase de madera pide míster Hall?",
+  "o": [
+   "Palo rosa",
+   "Quebracho",
+   "Lapacho",
+   "Urunday"
+  ],
+  "a": 0,
+  "w": "Hall le pide tres docenas de tablas de palo rosa."
+ },
+ {
+  "id": "q178",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿qué ocurre en el obraje de Castelhum que permite a Candiyú pescar vigas?",
+  "o": [
+   "Se incendia el campamento y se pierde toda la madera",
+   "Los peones se declaran en huelga por falta de pago",
+   "Se hunde un vapor cargado de vigas frente a Posadas",
+   "Rompen la maroma y las vigas bajan al Paraná en la creciente"
+  ],
+  "a": 3,
+  "w": "Con la creciente, la barrera se rompe y las vigas bajan al Paraná."
+ },
+ {
+  "id": "q179",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿qué hace Candiyú con la viga?",
+  "o": [
+   "La arrastra con su canoa fuera de la corriente tras una lucha durísima",
+   "La deja escapar río abajo tras una lucha durísima en la corriente",
+   "La abandona al ver el peligro de la crecida y vuelve a su rancho",
+   "Se queda dormido, agotado, junto a ella en la orilla del río"
+  ],
+  "a": 0,
+  "w": "Lucha toda la noche contra la corriente hasta salir de la canal."
+ },
+ {
+  "id": "q180",
+  "cat": "Los pescadores de vigas",
+  "q": "En «Los pescadores de vigas», ¿qué recibe Candiyú al final?",
+  "o": [
+   "Un bote de remos y una red nueva",
+   "Un gramófono con veinte discos",
+   "Una casa a orillas del Paraná",
+   "Una bolsa de dinero y un bote nuevo"
+  ],
+  "a": 1,
+  "w": "Tras un mes, Hall entrega el gramófono con veinte discos."
+ },
+ {
+  "id": "q181",
+  "cat": "La miel silvestre",
+  "q": "¿Cómo se llama el protagonista de «La miel silvestre»?",
+  "o": [
+   "Ernesto Kassim",
+   "Federico Mazzini",
+   "Eduardo Cooper",
+   "Gabriel Benincasa"
+  ],
+  "a": 3,
+  "w": "Gabriel Benincasa es contador público."
+ },
+ {
+  "id": "q182",
+  "cat": "La miel silvestre",
+  "q": "En «La miel silvestre», ¿cuál es su profesión?",
+  "o": [
+   "Médico del obraje",
+   "Contador público",
+   "Joyero de Corrientes",
+   "Peón de campo"
+  ],
+  "a": 1,
+  "w": "Acaba sus estudios de contaduría pública."
+ },
+ {
+  "id": "q183",
+  "cat": "La miel silvestre",
+  "q": "En «La miel silvestre», ¿qué hormigas invaden el chalet del obraje?",
+  "o": [
+   "Las hormigas rojas del jardín grande",
+   "La corrección, hormigas carnívoras",
+   "Las hormigas cortadoras de hojas",
+   "Hormigas de fuego de la selva"
+  ],
+  "a": 1,
+  "w": "La corrección devora todo lo que encuentra a su paso."
+ },
+ {
+  "id": "q184",
+  "cat": "La miel silvestre",
+  "q": "En «La miel silvestre», ¿qué encuentra Benincasa en un tronco hueco?",
+  "o": [
+   "Un nido de víboras enroscadas en el hueco",
+   "Un tesoro escondido por antiguos jesuitas",
+   "El esqueleto de un animal pequeño del monte",
+   "Panales de cera con miel de abejas sin aguijón"
+  ],
+  "a": 3,
+  "w": "Encuentra bolsitas de cera con miel de abejas diminutas."
+ },
+ {
+  "id": "q185",
+  "cat": "La miel silvestre",
+  "q": "En «La miel silvestre», ¿qué efecto tiene la miel en Benincasa?",
+  "o": [
+   "Le da energía para seguir caminando por el monte",
+   "Lo duerme un rato y sin más efecto",
+   "Lo cura de la mordedura que tenía en el pie",
+   "Lo paraliza, y la corrección lo devora indefenso"
+  ],
+  "a": 3,
+  "w": "La miel narcótica lo paraliza y la corrección lo devora."
+ },
+ {
+  "id": "q186",
+  "cat": "La miel silvestre",
+  "q": "En «La miel silvestre», ¿qué encuentra el padrino dos días después?",
+  "o": [
+   "A Benincasa dormido junto al tronco hueco, con fiebre",
+   "Al muchacho sano y salvo, que volvía solo al obraje",
+   "El esqueleto de Benincasa cubierto con su ropa",
+   "Un diario con el relato de sus últimas horas"
+  ],
+  "a": 2,
+  "w": "Halló el esqueleto cubierto de ropa."
+ },
+ {
+  "id": "q187",
+  "cat": "Nuestro primer cigarro",
+  "q": "¿Cómo se llama el narrador de «Nuestro primer cigarro»?",
+  "o": [
+   "Federico",
+   "Eduardo",
+   "Octavio",
+   "Paulino"
+  ],
+  "a": 1,
+  "w": "Es un niño de ocho años llamado Eduardo."
+ },
+ {
+  "id": "q188",
+  "cat": "Nuestro primer cigarro",
+  "q": "En «Nuestro primer cigarro», ¿qué enfermedad contrae la tía Inés?",
+  "o": [
+   "Rabia",
+   "Chucho",
+   "Viruela",
+   "Difteria"
+  ],
+  "a": 2,
+  "w": "Inés vuelve de Buenos Aires con viruela hemorrágica."
+ },
+ {
+  "id": "q189",
+  "cat": "Nuestro primer cigarro",
+  "q": "En «Nuestro primer cigarro», ¿dónde se instalan los niños tras la enfermedad de la tía?",
+  "o": [
+   "En un barco anclado en el puerto",
+   "En una vieja quinta de las afueras",
+   "En un hotel del centro de la ciudad",
+   "En la casa de unos amigos del padre"
+  ],
+  "a": 1,
+  "w": "Se mudan a una quinta abandonada."
+ },
+ {
+  "id": "q190",
+  "cat": "Nuestro primer cigarro",
+  "q": "En «Nuestro primer cigarro», ¿cómo se llama el tío que se enfurece con los niños?",
+  "o": [
+   "Julio",
+   "Pedro",
+   "Alfonso",
+   "Antenor"
+  ],
+  "a": 2,
+  "w": "El tío Alfonso, al que los niños llaman «padrastrillo»."
+ },
+ {
+  "id": "q191",
+  "cat": "Nuestro primer cigarro",
+  "q": "En «Nuestro primer cigarro», ¿qué hace el narrador para escapar de su tío?",
+  "o": [
+   "Se sube a un árbol del huerto y espera a que su tío se calme",
+   "Tira la piedra al pozo y se esconde, simulando que se ha matado",
+   "Llama a gritos a su madre desde el patio para que lo defienda",
+   "Se esconde en la cocina, detrás de la sirvienta y de su madre"
+  ],
+  "a": 1,
+  "w": "Tira la piedra y se oculta, haciendo creer que se arrojó al pozo."
+ },
+ {
+  "id": "q192",
+  "cat": "Nuestro primer cigarro",
+  "q": "En «Nuestro primer cigarro», ¿qué ocurre con el cigarro del tío?",
+  "o": [
+   "Es un cigarro viejo y mohoso, de años",
+   "Es un cohete escondido, el «cigarro pateador»",
+   "Es un cigarro robado a un vecino del pueblo",
+   "Es un cigarro de chocolate de la tienda"
+  ],
+  "a": 1,
+  "w": "Los niños ponen un cohete en un cigarrillo del tío."
+ },
+ {
+  "id": "q193",
+  "cat": "Comparar y relacionar",
+  "q": "¿En cuál de estos cuentos el protagonista termina loco, con delirios de víboras y arañas, tras ser mordido por un animal?",
+  "o": [
+   "El perro rabioso",
+   "A la deriva",
+   "La miel silvestre",
+   "Los mensú"
+  ],
+  "a": 0,
+  "w": "En «El perro rabioso», Federico delira creyendo que lo rodean víboras y arañas."
+ },
+ {
+  "id": "q194",
+  "cat": "Comparar y relacionar",
+  "q": "¿En qué cuento el protagonista muere por el veneno de una serpiente mientras baja a la deriva por un río?",
+  "o": [
+   "Los mensú",
+   "A la deriva",
+   "La insolación",
+   "El alambre de púa"
+  ],
+  "a": 1,
+  "w": "En «A la deriva», la yararacusú muerde a Paulino, que muere en su canoa."
+ },
+ {
+  "id": "q195",
+  "cat": "Comparar y relacionar",
+  "q": "¿En qué cuento lo que parece inexplicable tiene una causa real, un parásito gigante?",
+  "o": [
+   "Los buques suicidantes",
+   "La gallina degollada",
+   "El almohadón de plumas",
+   "El solitario"
+  ],
+  "a": 2,
+  "w": "En «El almohadón de plumas» se descubre un animal que chupaba la sangre de Alicia."
+ },
+ {
+  "id": "q196",
+  "cat": "Comparar y relacionar",
+  "q": "¿Qué tienen en común «El solitario» y «El almohadón de plumas»?",
+  "o": [
+   "Hay un matrimonio de relación fría o difícil que acaba con la muerte de ella",
+   "Ambos transcurren en un obraje de la selva misionera, lejos de la ciudad",
+   "Ambos están protagonizados por animales que hablan y piensan como personas",
+   "Ambos acaban con un matrimonio feliz y reconciliado tras una larga crisis"
+  ],
+  "a": 0,
+  "w": "Kassim y María, y Jordán y Alicia, forman matrimonios difíciles en los que ella muere."
+ },
+ {
+  "id": "q197",
+  "cat": "Comparar y relacionar",
+  "q": "¿Qué par de cuentos incluye personajes dependientes de drogas?",
+  "o": [
+   "Los buques suicidantes y El alambre de púa",
+   "El almohadón de plumas y La gallina degollada",
+   "El infierno artificial y Una estación de amor",
+   "El perro rabioso y Los pescadores de vigas"
+  ],
+  "a": 2,
+  "w": "En el primero abundan la cocaína y la morfina, y en el segundo la madre de Lidia abusa de la morfina."
+ },
+ {
+  "id": "q198",
+  "cat": "Comparar y relacionar",
+  "q": "¿En cuál de estos cuentos los perros anuncian la muerte de su amo al ver a la Muerte?",
+  "o": [
+   "Yaguaí",
+   "La insolación",
+   "El perro rabioso",
+   "El solitario"
+  ],
+  "a": 1,
+  "w": "En «La insolación» los fox-terriers ven una figura igual a míster Jones, que ellos llaman la Muerte."
+ },
+ {
+  "id": "q199",
+  "cat": "Comparar y relacionar",
+  "q": "¿Qué par de cuentos tiene fox-terriers como protagonistas?",
+  "o": [
+   "El perro rabioso y A la deriva",
+   "El alambre de púa y Los mensú",
+   "La insolación y Yaguaí",
+   "La gallina degollada y El solitario"
+  ],
+  "a": 2,
+  "w": "Old, Milk y los demás de «La insolación» y Yaguaí son fox-terriers."
+ },
+ {
+  "id": "q200",
+  "cat": "Comparar y relacionar",
+  "q": "¿En cuál de estos cuentos la muerte de una niña es provocada por sus propios hermanos?",
+  "o": [
+   "El almohadón de plumas",
+   "El perro rabioso",
+   "La gallina degollada",
+   "La miel silvestre"
+  ],
+  "a": 2,
+  "w": "En «La gallina degollada», los cuatro hermanos con grave discapacidad matan a Bertita."
+ }
+]
