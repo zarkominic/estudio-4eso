@@ -169,6 +169,14 @@ const CURRICULO = {
       saber:"Recursos del lenguaje literario.",
       entra:["Medir versos: sinalefa y acento final","Rima consonante y asonante","Estrofas: soneto, romance","Figuras: metáfora, hipérbaton, anáfora","Cómo se analiza un poema"],
       generadores:["medirVerso","tipoEstrofa","identificarFigura"] },
+    { id:"len-lectura-metamorfosis", trimestre:2, bloque:"Literatura", titulo:"Lectura: La metamorfosis (Kafka)",
+      saber:"Lectura de obras completas y comentario de textos literarios.",
+      entra:["Autor y contexto","Las tres partes del argumento","Personajes y su evolución","Simbolismo y temas","Narrador y estilo"],
+      generadores:[] },
+    { id:"len-lectura-quiroga", trimestre:2, bloque:"Literatura", titulo:"Lectura: Cuentos de amor de locura y de muerte (Quiroga)",
+      saber:"Lectura de obras completas y comentario de textos literarios.",
+      entra:["Autor y contexto","Los cuentos del libro","Temas: amor, locura y muerte","El cuento como género"],
+      generadores:[] },
   ],
 
   /* ══════════════ INGLÉS (4º ESO, nivel B2+) ══════════════ */

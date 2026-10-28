@@ -1,0 +1,39 @@
+/* libro-quiz.css — estilo del test de lectura. Se apoya en base.css. */
+.libro{max-width:780px;margin:0 auto;padding:1.6rem var(--margen) 4rem}
+.libro .mini{color:var(--gris);max-width:60ch}
+.modos{display:grid;gap:.7rem;margin:1rem 0;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.modo{display:grid;gap:.15rem;text-align:left;padding:.9rem 1rem;min-height:64px;background:#fff;border:1px solid var(--linea);
+  border-radius:var(--radio);font:inherit;color:var(--tinta);cursor:pointer}
+.modo b{font-size:1rem}.modo span{font-size:.85rem;color:var(--gris)}
+.modo:hover:not(:disabled){border-color:var(--repasar)}
+.modo:disabled{opacity:.5;cursor:default}
+.modo:focus-visible,.op:focus-visible,.atras:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.cabecera{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}
+.cabecera .cuenta{font-variant-numeric:tabular-nums;color:var(--gris);margin-left:auto}
+.cabecera .aciertos{font-weight:700;color:var(--repasar);font-variant-numeric:tabular-nums}
+.atras{min-height:44px;padding:.4rem .8rem;border:1px solid var(--linea);background:#fff;border-radius:10px;font:inherit;font-size:.9rem;color:var(--gris);cursor:pointer}
+.barrita{height:6px;background:var(--linea);border-radius:3px;overflow:hidden;margin-bottom:1.2rem}
+.barrita i{display:block;height:100%;background:var(--repasar)}
+.enun{margin:.2rem 0 1.1rem;font-size:clamp(1.2rem,4.2vw,1.55rem);line-height:1.35}
+.ops{display:grid;gap:.6rem}
+.op{display:flex;gap:.8rem;align-items:flex-start;text-align:left;min-height:56px;padding:.75rem .9rem;background:#fff;border:2px solid var(--linea);
+  border-radius:var(--radio);font:inherit;color:var(--tinta);cursor:pointer;width:100%}
+.op:hover:not(:disabled){border-color:var(--aprender)}
+.op .letra{flex:0 0 1.9rem;height:1.9rem;display:grid;place-items:center;border-radius:50%;background:var(--papel);border:1px solid var(--linea);font-weight:700;font-size:.9rem}
+.op .txt{padding-top:.15rem}
+.op:disabled{cursor:default}
+.op.correcta{border-color:var(--repasar);background:#eef8f2}
+.op.correcta .letra{background:var(--repasar);color:#fff;border-color:var(--repasar)}
+.op.incorrecta{border-color:var(--mal);background:#fbefec}
+.op.incorrecta .letra{background:var(--mal);color:#fff;border-color:var(--mal)}
+.veredicto{margin-top:1rem}
+.veredicto .ok,.veredicto .nook{padding:1rem 1.1rem;border-radius:var(--radio);border-left:6px solid}
+.veredicto .ok{background:#eef8f2;border-color:var(--repasar)}.veredicto .ok>b{color:var(--repasar);font-size:1.2rem}
+.veredicto .nook{background:#fbefec;border-color:var(--mal)}.veredicto .nook>b{color:var(--mal);font-size:1.2rem}
+.veredicto p{margin:.4rem 0;max-width:none}
+.veredicto .resp{font-size:1.05rem}
+.veredicto .btn{margin-top:.9rem;width:100%}
+@media(min-width:600px){.veredicto .btn{width:auto}}
+.fila{display:grid;grid-template-columns:1fr 90px auto;gap:.7rem;align-items:center;padding:.35rem 0;font-size:.95rem}
+.barra2{height:8px;background:var(--linea);border-radius:4px;overflow:hidden}.barra2 i{display:block;height:100%;background:var(--repasar)}
+@media(max-width:480px){.fila{grid-template-columns:1fr 60px auto}}
