@@ -78,7 +78,7 @@ const TEMAS = [
     estado:"listo" },
   { id:"len-lectura-metamorfosis", asignatura:"Lengua", titulo:"Lectura: La metamorfosis (Kafka)",
     resumen:"200 preguntas tipo test sobre el libro: argumento por partes, personajes, símbolos y estilo. Aciertas y te dice OK; fallas y te da la correcta.",
-    estado:"en camino" },
+    estado:"listo" },
   { id:"len-lectura-quiroga", asignatura:"Lengua", titulo:"Lectura: Cuentos de amor de locura y de muerte (Quiroga)",
     resumen:"200 preguntas tipo test: autor, El almohadón de plumas, A la deriva, La gallina degollada y el resto del libro.",
     estado:"en camino" },
