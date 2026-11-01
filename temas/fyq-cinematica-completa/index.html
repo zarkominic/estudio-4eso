@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinemática completa — Estudio 4º ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../comun/base.css?v=202611011135">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<style>
+  .en{font-size:.8em;color:var(--gris);font-weight:400;font-style:italic}
+  .form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;margin:1rem 0}
+  .form > div{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:.8rem 1rem;overflow-x:auto}
+  .form > div > b:first-child{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--aprender);margin-bottom:.3rem}
+  .graf{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,380px));gap:.7rem;margin:1rem 0}
+  .graf figure{margin:0;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:.5rem}
+  .graf figcaption{font-size:.85rem;color:var(--gris);padding:.2rem .4rem}
+  svg.plot{width:100%;height:auto;display:block}
+  .resuelto{background:#fff;border:1px solid var(--linea);border-left:5px solid var(--repasar);border-radius:var(--radio);padding:1.1rem 1.3rem;margin:1.2rem 0}
+  .resuelto h3{margin-top:0}
+  .resuelto ol{padding-left:1.2rem}
+  .resuelto li{margin:.35rem 0}
+  .sliders{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.4rem 1rem}
+  .sliders label{font-size:.9rem;color:var(--gris)}
+  .sliders b{color:var(--tinta);font-variant-numeric:tabular-nums}
+  .salida{background:#f4f7fb;border-radius:10px;padding:.7rem .9rem;margin-top:.6rem;font-size:.95rem}
+  .pista{position:relative;height:42px;border-bottom:3px solid #999;margin:.6rem 0}
+  .pista span{position:absolute;bottom:4px;transform:translateX(-50%);font-size:1.6rem;line-height:1;transition:left .05s}
+  table.glos{width:100%;border-collapse:collapse;font-size:.95rem}
+  table.glos td,table.glos th{border-bottom:1px solid var(--linea);padding:.4rem .5rem;text-align:left}
+  /* examen */
+  #examen .eq{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:1rem 1.1rem;margin:.8rem 0}
+  #examen .eq .num{font-weight:700;color:var(--aprender);margin-right:.3rem}
+  #examen .eq .pts{float:right;font-size:.8rem;color:var(--gris)}
+  #examen input.resp{font:inherit;font-size:1.05rem;padding:.55rem .7rem;border:1px solid #bbb;border-radius:10px;width:9rem;margin-right:.4rem}
+  #examen label.op{display:flex;gap:.6rem;align-items:flex-start;padding:.55rem .7rem;border:1px solid var(--linea);border-radius:10px;margin:.35rem 0;cursor:pointer}
+  #examen label.op input{margin-top:.25rem;width:1.1rem;height:1.1rem}
+  #examen .eq.bien{border-left:6px solid var(--repasar)}
+  #examen .eq.mal{border-left:6px solid var(--mal)}
+  #examen .corr{margin-top:.7rem;padding:.7rem .9rem;border-radius:10px;font-size:.95rem}
+  #examen .bien .corr{background:#eef8f2}
+  #examen .mal .corr{background:#fbefec}
+  #examen label.op.ok{border-color:var(--repasar);background:#eef8f2}
+  #examen label.op.ko{border-color:var(--mal);background:#fbefec}
+  #nota{font-size:1.4rem;font-weight:700}
+  .barra-ex{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+  @media print{.barra,.indice,.barra-ex button{display:none}}
+</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../../index.html">📘 Estudio 4º ESO</a>
+  <nav class="menu"><a href="../../index.html#curso">Todas las asignaturas</a></nav>
+  <span class="sep"></span>
+  <a href="../../repaso.html" class="repaso-link">Repaso</a>
+</div>
+
+<div class="tema">
+  <nav class="indice" aria-label="Índice del tema"></nav>
+
+  <div class="cuerpo">
+    <span class="etiqueta">Física y Química · 4º ESO</span>
+    <h1>Cinemática: el tema completo</h1>
+    <p class="mini">Sigue el esquema de clase punto por punto: conceptos básicos, MRU y MRUA con sus ecuaciones y gráficas, problemas de encuentro, persecución, caída libre y lanzamiento vertical, y movimiento circular uniforme. Cada apartado trae explicación, ejemplo resuelto y, al final, un <b>examen de 20 preguntas</b> que se corrige solo y cambia los números cada vez. Los nombres en inglés (<i>ULM, UALM, UCM…</i>) aparecen en gris por si tu clase es bilingüe.</p>
+
+    <div class="caja ojo">
+      <h3>Antes de leer: dos apuestas</h3>
+      <p>Contesta sin pensar mucho. Equivocarte ahora hace que luego se te quede mejor.</p>
+      <p><b>1.</b> Das una vuelta completa a una pista de atletismo de 400 m y acabas donde empezaste. ¿Cuál ha sido tu desplazamiento?</p>
+      <p><details><summary>Ver respuesta</summary><b>Cero.</b> Has recorrido 400 m de <i>distancia</i>, pero el desplazamiento mide de dónde a dónde has ido, y has vuelto al punto de salida. Lo explicamos en «Trayectoria, distancia y desplazamiento».</details></p>
+      <p><b>2.</b> Sueltas a la vez, desde la misma altura y sin aire, una bola de 1 kg y otra de 10 kg. ¿Cuál llega antes al suelo?</p>
+      <p><details><summary>Ver respuesta</summary><b>Llegan a la vez.</b> Sin aire, todos los cuerpos caen con la misma aceleración, g = 9,8 m/s², pesen lo que pesen. Lo vemos en «Caída libre».</details></p>
+    </div>
+
+    <!-- ═══════════════ 1 ═══════════════ -->
+    <h2>Sistema de referencia <span class="en">Frame of reference</span></h2>
+    <p>La cinemática describe <b>cómo</b> se mueven las cosas (dónde están, qué velocidad llevan, cómo cambia esa velocidad) sin preguntarse <b>por qué</b>. El porqué (las fuerzas) es la dinámica, el tema siguiente.</p>
+    <p>Para decir si algo se mueve necesitas un punto de comparación. Vas sentado en el tren: para tu compañero de asiento estás quieto; para alguien en el andén vas a 200 km/h. Los dos tienen razón. El movimiento siempre es <b>relativo</b> a algo.</p>
+    <div class="caja idea">
+      <h3>Definición</h3>
+      <p>Un <b>sistema de referencia</b> es un punto (el <b>origen</b>, O) más unos ejes con sentido positivo, desde los que medimos la posición. Un cuerpo <b>se mueve</b> si su posición respecto a ese sistema cambia con el tiempo.</p>
+    </div>
+    <p>En 4º casi siempre trabajamos en <b>una dimensión</b>: una recta (el eje X para movimientos horizontales, el eje Y para verticales). Entonces la <b>posición</b> es un número con signo:</p>
+    <ul>
+      <li>$x = +30$ m: el cuerpo está 30 m a la <b>derecha</b> del origen.</li>
+      <li>$x = -12$ m: está 12 m a la <b>izquierda</b> del origen.</li>
+      <li>$x = 0$: está justo en el origen.</li>
+    </ul>
+    <p>El origen y el sentido positivo los <b>eliges tú</b>, pero una vez elegidos no se cambian en todo el problema. Truco que ahorra errores: pon el origen donde empieza el cuerpo y el sentido positivo hacia donde se mueve al principio.</p>
+
+    <!-- ═══════════════ 2 ═══════════════ -->
+    <h2>Trayectoria, distancia y desplazamiento <span class="en">Path vs displacement</span></h2>
+    <p>Son tres ideas que se parecen y se confunden mucho. Míralas con un ejemplo: sales de casa, andas 300 m hacia el este y luego 400 m hacia el norte.</p>
+    <div class="graf">
+      <figure>
+        <svg class="plot" viewBox="0 0 320 230" role="img" aria-label="Camino en L de 300 m al este y 400 m al norte, con el desplazamiento en diagonal de 500 m">
+          <defs><marker id="fl" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#b3402b"/></marker>
+          <marker id="fa" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#1b5e8a"/></marker></defs>
+          <line x1="40" y1="200" x2="220" y2="200" stroke="#1b5e8a" stroke-width="4" marker-end="url(#fa)"/>
+          <line x1="220" y1="200" x2="220" y2="40" stroke="#1b5e8a" stroke-width="4" marker-end="url(#fa)"/>
+          <line x1="40" y1="200" x2="216" y2="44" stroke="#b3402b" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#fl)"/>
+          <circle cx="40" cy="200" r="6" fill="#17171a"/><text x="20" y="222" font-size="13">Casa (salida)</text>
+          <circle cx="220" cy="40" r="6" fill="#17171a"/><text x="200" y="28" font-size="13">Llegada</text>
+          <text x="105" y="218" font-size="13" fill="#1b5e8a">300 m</text>
+          <text x="228" y="125" font-size="13" fill="#1b5e8a">400 m</text>
+          <text x="70" y="110" font-size="13" fill="#b3402b">desplazamiento 500 m</text>
+        </svg>
+        <figcaption>Azul: la trayectoria (700 m andados). Rojo: el desplazamiento (500 m en línea recta).</figcaption>
+      </figure>
+    </div>
+    <div class="form">
+      <div><b>Trayectoria</b> La línea que dibuja el cuerpo al moverse. Puede ser recta (movimiento <i>rectilíneo</i>) o curva (<i>curvilíneo</i>; si es una circunferencia, <i>circular</i>).</div>
+      <div><b>Distancia recorrida</b> ($s$) La longitud de la trayectoria, lo que marcaría un cuentakilómetros. Siempre positiva y nunca disminuye. Aquí: $300+400 = 700$ m.</div>
+      <div><b>Desplazamiento</b> ($\Delta\vec{r}$) La flecha recta que va del punto de salida al de llegada. Solo importan el principio y el final. Aquí: $\sqrt{300^2+400^2}=500$ m hacia el noreste.</div>
+    </div>
+    <p>En una recta (una dimensión) el desplazamiento se calcula restando posiciones: $\Delta x = x_{\text{final}} - x_{\text{inicial}}$. Y <b>sí puede ser negativo</b>: si vas de $x=50$ m a $x=20$ m, $\Delta x = 20-50 = -30$ m (te has movido 30 m hacia el sentido negativo).</p>
+    <div class="caja ojo">
+      <h3>¿Cuándo coinciden distancia y desplazamiento?</h3>
+      <p>Solo cuando el movimiento es <b>en línea recta y sin dar la vuelta</b>. En cuanto la trayectoria se curva o el cuerpo retrocede, la distancia es mayor que el módulo del desplazamiento. Ejemplo: vas 80 m hacia delante y vuelves 30 m. Distancia: $80+30=110$ m. Desplazamiento: $80-30=50$ m.</p>
+    </div>
+
+    <!-- ═══════════════ 3 ═══════════════ -->
+    <h2>Magnitudes escalares y vectoriales <span class="en">Vectorial and scalar quantities</span></h2>
+    <p>Una <b>magnitud</b> es algo que se puede medir. Unas quedan totalmente dichas con un número y su unidad; otras, no.</p>
+    <div class="form">
+      <div><b>Escalar</b> Basta con <b>número + unidad</b>. Ejemplos: tiempo (5 s), masa (60 kg), temperatura (20 °C), <b>distancia recorrida</b> (700 m), rapidez (90 km/h).</div>
+      <div><b>Vectorial</b> Necesita además <b>dirección y sentido</b>. Se dibuja como una flecha ($\vec{v}$). Ejemplos: <b>posición, desplazamiento, velocidad, aceleración</b>, fuerza.</div>
+    </div>
+    <p>Un vector tiene cuatro elementos:</p>
+    <ol>
+      <li><b>Módulo</b>: su tamaño (la longitud de la flecha). Por ejemplo, 20 m/s.</li>
+      <li><b>Dirección</b>: la recta sobre la que está (horizontal, vertical, 30° con el suelo…).</li>
+      <li><b>Sentido</b>: hacia dónde apunta dentro de esa recta (derecha o izquierda, arriba o abajo).</li>
+      <li><b>Punto de aplicación</b>: dónde empieza la flecha.</li>
+    </ol>
+    <p>¿Por qué importa? «Un coche va a 90 km/h» no dice si va hacia Madrid o alejándose de Madrid. «Un coche va a 90 km/h hacia el norte por la A-1» sí. En una dimensión el sentido lo da el <b>signo</b>: $v=+20$ m/s va hacia el sentido positivo; $v=-20$ m/s, hacia el negativo, con la misma rapidez.</p>
+    <div class="caja idea"><h3>Rapidez frente a velocidad</h3><p>La <b>rapidez</b> (lo que marca el velocímetro) es escalar: solo el módulo. La <b>velocidad</b> es vectorial. Un coche que toma una curva a 60 km/h constantes mantiene la rapidez, pero su <b>velocidad cambia</b> porque cambia de dirección. Esto será clave en el movimiento circular.</p></div>
+
+    <!-- ═══════════════ 4 ═══════════════ -->
+    <h2>Velocidad y aceleración, media e instantánea <span class="en">Average and instantaneous velocity / acceleration</span></h2>
+    <h3>Velocidad media</h3>
+    <p>Es el desplazamiento dividido entre el tiempo que se ha tardado:</p>
+    <p>$$v_m = \frac{\Delta x}{\Delta t} = \frac{x_f - x_0}{t_f - t_0}$$</p>
+    <p>Unidad en el Sistema Internacional: <b>m/s</b>. Dice qué velocidad <b>constante</b> habría que llevar para hacer el mismo desplazamiento en el mismo tiempo; no dice lo que pasó en cada momento. (Si te piden «rapidez media», se divide la <b>distancia recorrida</b> entre el tiempo.)</p>
+    <h3>Velocidad instantánea</h3>
+    <p>Es la velocidad en un instante concreto: la media calculada en un intervalo de tiempo tan pequeño como queramos. Es lo que marca el velocímetro en cada momento (en módulo). En las gráficas x–t es la <b>pendiente</b> de la curva en ese punto.</p>
+    <h3>Aceleración media e instantánea</h3>
+    <p>La aceleración mide lo rápido que <b>cambia la velocidad</b>:</p>
+    <p>$$a_m = \frac{\Delta v}{\Delta t} = \frac{v_f - v_0}{t_f - t_0}\qquad \text{unidad: m/s}^2$$</p>
+    <p>«$a = 3$ m/s²» se lee: <b>cada segundo, la velocidad aumenta 3 m/s</b>. La aceleración instantánea es la misma idea en un intervalo muy pequeño; en los movimientos de este tema (MRUA) es constante, así que media e instantánea coinciden.</p>
+    <div class="caja ojo">
+      <h3>El signo de la aceleración no significa «frenar»</h3>
+      <p>Un cuerpo <b>acelera</b> (gana rapidez) cuando $v$ y $a$ tienen el <b>mismo signo</b>, y <b>frena</b> cuando tienen <b>signos contrarios</b>. Un coche que va marcha atrás ($v=-5$ m/s) y frena tiene $a>0$.</p>
+    </div>
+    <h3>Unidades: de km/h a m/s</h3>
+    <p>$1\ \text{km/h} = \dfrac{1000\ \text{m}}{3600\ \text{s}} = \dfrac{1}{3{,}6}$ m/s. Por eso: <b>de km/h a m/s se divide entre 3,6</b>; de m/s a km/h se multiplica por 3,6. Ejemplos: 72 km/h = 20 m/s; 108 km/h = 30 m/s; 10 m/s = 36 km/h.</p>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: velocidad y aceleración medias</h3>
+      <p>Un coche pasa de 0 a 100 km/h en 8 s. Después viaja 120 km en 1 h 30 min. Calcula su aceleración media en el arranque y su velocidad media en el viaje.</p>
+      <ol>
+        <li>Paso a m/s: $100 / 3{,}6 = 27{,}8$ m/s.</li>
+        <li>Aceleración media: $a_m = \dfrac{27{,}8 - 0}{8} = 3{,}47$ m/s². Cada segundo gana unos 3,5 m/s.</li>
+        <li>Viaje: $\Delta t = 1{,}5$ h, así que $v_m = \dfrac{120\ \text{km}}{1{,}5\ \text{h}} = 80$ km/h $= 80/3{,}6 = 22{,}2$ m/s.</li>
+        <li>Habrá ido a 120 km/h en autovía y a 50 km/h en pueblos: la media no cuenta eso, solo el total.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 5 ═══════════════ -->
+    <h2>MRU: movimiento rectilíneo uniforme <span class="en">ULM: Uniform Linear Motion</span></h2>
+    <p>El cuerpo va en <b>línea recta</b> con <b>velocidad constante</b> (mismo módulo, misma dirección, mismo sentido). Por tanto la aceleración es cero: $a = 0$. Recorre <b>distancias iguales en tiempos iguales</b>.</p>
+    <h3>Ecuaciones</h3>
+    <div class="form">
+      <div><b>Posición</b> $$x = x_0 + v\,t$$</div>
+      <div><b>Velocidad</b> $$v = \text{constante}$$</div>
+      <div><b>Aceleración</b> $$a = 0$$</div>
+    </div>
+    <p>Qué es cada letra: $x$ es la posición en el instante $t$; $x_0$, la posición en $t=0$ (donde empieza a contar el reloj); $v$, la velocidad, con su signo.</p>
+    <h3>Gráficas</h3>
+    <div class="graf">
+      <figure><svg class="plot" id="gMRUx"></svg><figcaption><b>x–t</b>: una recta. Su <b>pendiente es la velocidad</b>. Cuanto más inclinada, más rápido. Si baja, $v&lt;0$.</figcaption></figure>
+      <figure><svg class="plot" id="gMRUv"></svg><figcaption><b>v–t</b>: recta horizontal. El <b>área</b> bajo ella (un rectángulo, $v\cdot t$) es el desplazamiento.</figcaption></figure>
+      <figure><svg class="plot" id="gMRUa"></svg><figcaption><b>a–t</b>: pegada al eje, porque $a = 0$.</figcaption></figure>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: MRU con velocidad negativa</h3>
+      <p>Un ciclista está a 200 m a la derecha de un semáforo y se acerca a él a 18 km/h. Toma el semáforo como origen. (a) Escribe su ecuación de movimiento. (b) ¿Cuándo pasa por el semáforo? (c) ¿Dónde está a los 60 s?</p>
+      <ol>
+        <li>Datos: $x_0 = +200$ m. Se acerca al origen, o sea va hacia la izquierda: $v = -18/3{,}6 = -5$ m/s.</li>
+        <li>(a) $x = 200 - 5t$ (en metros y segundos).</li>
+        <li>(b) En el semáforo $x = 0$: $0 = 200 - 5t \Rightarrow t = 40$ s.</li>
+        <li>(c) $x = 200 - 5\cdot 60 = -100$ m: ya ha pasado el semáforo y está 100 m a su izquierda.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 6 ═══════════════ -->
+    <h2>MRUA: movimiento rectilíneo uniformemente acelerado <span class="en">UALM: Uniformly Accelerated Linear Motion</span></h2>
+    <p>En línea recta y con <b>aceleración constante</b> ($a \neq 0$). La velocidad cambia <b>lo mismo cada segundo</b>. Es el coche que arranca en un semáforo, el que frena antes de un paso de cebra y cualquier objeto que cae.</p>
+    <h3>Las tres ecuaciones</h3>
+    <div class="form">
+      <div><b>Velocidad</b> $$v = v_0 + a\,t$$</div>
+      <div><b>Posición</b> $$x = x_0 + v_0\,t + \tfrac12 a\,t^2$$</div>
+      <div><b>Sin tiempo</b> $$v^2 - v_0^2 = 2\,a\,\Delta x$$</div>
+    </div>
+    <p>La tercera sale de despejar $t$ en la primera y sustituirlo en la segunda. Úsala cuando el problema <b>no te da ni te pide el tiempo</b> (por ejemplo, la distancia de frenada).</p>
+    <p><b>Cómo elegir ecuación:</b> haz la lista de datos ($x_0$, $v_0$, $a$, $t$, $v$, $x$) y marca la incógnita. Escoge la ecuación que contiene la incógnita y solo datos que tengas. Si el cuerpo <b>se para</b>, eso es un dato escondido: $v = 0$. Si <b>parte del reposo</b>, $v_0 = 0$.</p>
+    <h3>Gráficas</h3>
+    <div class="graf">
+      <figure><svg class="plot" id="gMRUAx"></svg><figcaption><b>x–t</b>: una <b>parábola</b>. Si $a&gt;0$ se curva hacia arriba (cada vez más pendiente: va más rápido).</figcaption></figure>
+      <figure><svg class="plot" id="gMRUAv"></svg><figcaption><b>v–t</b>: recta inclinada. Su <b>pendiente es la aceleración</b>; el <b>área</b> bajo ella (trapecio) es el desplazamiento.</figcaption></figure>
+      <figure><svg class="plot" id="gMRUAa"></svg><figcaption><b>a–t</b>: recta horizontal a la altura de $a$.</figcaption></figure>
+    </div>
+    <div class="caja labo">
+      <h3>Laboratorio: mueve los mandos y mira las tres gráficas</h3>
+      <div class="sliders">
+        <label>Posición inicial $x_0$: <b id="vx0">0</b> m<input type="range" id="sx0" min="-50" max="50" step="5" value="0"></label>
+        <label>Velocidad inicial $v_0$: <b id="vv0">5</b> m/s<input type="range" id="sv0" min="-10" max="20" step="1" value="5"></label>
+        <label>Aceleración $a$: <b id="va">1</b> m/s²<input type="range" id="sa" min="-4" max="4" step="0.5" value="1"></label>
+      </div>
+      <div class="graf">
+        <figure><svg class="plot" id="labx"></svg><figcaption>x–t</figcaption></figure>
+        <figure><svg class="plot" id="labv"></svg><figcaption>v–t</figcaption></figure>
+        <figure><svg class="plot" id="laba"></svg><figcaption>a–t</figcaption></figure>
+      </div>
+      <div class="salida" id="labTxt"></div>
+      <p class="mini">Prueba: pon $a=0$ (MRU) y verás que la x–t se endereza. Pon $v_0=10$ y $a=-2$: el cuerpo frena, se para a los 5 s (la v–t corta el eje) y luego vuelve hacia atrás (la x–t alcanza su máximo y baja).</p>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: la frenada</h3>
+      <p>Un coche circula a 72 km/h y frena con una aceleración de 4 m/s² hasta pararse. ¿Cuánto tarda en pararse y cuántos metros recorre frenando?</p>
+      <ol>
+        <li>Sentido positivo: hacia donde va el coche. $v_0 = 72/3{,}6 = 20$ m/s. Frena, así que $a = -4$ m/s² (signo contrario a $v$). Se para: $v = 0$.</li>
+        <li>Tiempo: $v = v_0 + at \Rightarrow 0 = 20 - 4t \Rightarrow t = 5$ s.</li>
+        <li>Distancia: $\Delta x = v_0 t + \tfrac12 a t^2 = 20\cdot5 - \tfrac12\cdot4\cdot25 = 100 - 50 = 50$ m.</li>
+        <li>Comprobación con la ecuación sin tiempo: $0 - 20^2 = 2(-4)\Delta x \Rightarrow \Delta x = 400/8 = 50$ m. ✔</li>
+        <li>Fíjate: a 72 km/h necesita 50 m; a 144 km/h (el doble) necesitaría $40^2/8 = 200$ m, <b>el cuádruple</b>. La distancia de frenada crece con el cuadrado de la velocidad.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 7 ═══════════════ -->
+    <h2>Problemas de encuentro <span class="en">Meeting problems</span></h2>
+    <p>Dos móviles salen <b>uno hacia el otro</b> y hay que saber <b>cuándo y dónde se cruzan</b>. El método siempre es el mismo y funciona también con MRUA:</p>
+    <ol class="pasos">
+      <li><b>Un solo sistema de referencia para los dos.</b> Origen en uno de ellos, sentido positivo hacia el otro.</li>
+      <li><b>Una ecuación de posición para cada uno</b>: $x_A(t)$ y $x_B(t)$. Ojo con los signos: el que va hacia el sentido negativo lleva $v&lt;0$.</li>
+      <li><b>Se encuentran cuando están en el mismo sitio a la vez</b>: $x_A = x_B$. Despejas $t$.</li>
+      <li>Sustituyes ese $t$ en <b>cualquiera</b> de las dos ecuaciones y sale el lugar.</li>
+    </ol>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: dos coches en la misma carretera</h3>
+      <p>Dos pueblos, A y B, están separados 900 m. A la vez, sale un coche de A hacia B a 20 m/s y una moto de B hacia A a 25 m/s. ¿Cuándo y dónde se cruzan?</p>
+      <ol>
+        <li>Origen en A, positivo hacia B.</li>
+        <li>Coche: $x_A = 0 + 20t$. Moto: sale de $x=900$ y va hacia el origen: $x_B = 900 - 25t$.</li>
+        <li>$20t = 900 - 25t \Rightarrow 45t = 900 \Rightarrow t = 20$ s.</li>
+        <li>$x = 20\cdot20 = 400$ m de A (y $900-400 = 500$ m de B). Comprobación: $x_B = 900 - 25\cdot20 = 400$ ✔.</li>
+        <li>Atajo para este caso: se acercan a $20+25 = 45$ m/s, y tienen 900 m que cerrar: $900/45 = 20$ s.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 8 ═══════════════ -->
+    <h2>Problemas de persecución <span class="en">Chase problems</span></h2>
+    <p>Ahora los dos van en el <b>mismo sentido</b> y uno alcanza al otro. Es el mismo método (igualar posiciones), pero hay dos trampas típicas: que uno salga <b>más tarde</b> o que uno salga <b>desde el reposo acelerando</b>.</p>
+    <div class="caja idea"><h3>Si uno sale más tarde</h3><p>Si el perseguidor sale $3$ s después, su reloj va 3 s por detrás: en su ecuación pones $(t-3)$ en lugar de $t$, y la ecuación vale solo para $t \ge 3$. Ejemplo: $x_P = 30\,(t-3)$.</p></div>
+    <div class="caja labo">
+      <h3>Laboratorio: encuentro y persecución en la gráfica x–t</h3>
+      <div class="sliders">
+        <label>Tipo<select id="eTipo" style="font:inherit;padding:.4rem;border-radius:8px"><option value="enc">Encuentro (van uno hacia el otro)</option><option value="per">Persecución (mismo sentido)</option></select></label>
+        <label>Separación inicial: <b id="eDv">600</b> m<input type="range" id="eD" min="200" max="1000" step="50" value="600"></label>
+        <label>Velocidad de A: <b id="eAv">20</b> m/s<input type="range" id="eA" min="5" max="40" step="1" value="20"></label>
+        <label>Velocidad de B: <b id="eBv">10</b> m/s<input type="range" id="eB" min="5" max="40" step="1" value="10"></label>
+        <label>Instante: <b id="eTv">0</b> s<input type="range" id="eT" min="0" max="60" step="0.5" value="0"></label>
+      </div>
+      <div class="pista" id="ePista"><span id="eCA">🚗</span><span id="eCB">🏍️</span></div>
+      <div class="graf"><figure><svg class="plot" id="eG"></svg><figcaption>Azul: A. Rojo: B. Donde las rectas se cortan, están en el mismo sitio a la vez.</figcaption></figure></div>
+      <div class="salida" id="eTxt"></div>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: el policía y la moto</h3>
+      <p>Una moto pasa a 15 m/s (54 km/h) junto a un coche de policía parado. En ese mismo instante el coche arranca con aceleración constante de 2 m/s². ¿Cuánto tarda en alcanzarla, a qué distancia y a qué velocidad va el policía entonces?</p>
+      <ol>
+        <li>Origen en el coche patrulla, positivo en el sentido de la moto. $t = 0$ cuando la moto pasa.</li>
+        <li>Moto (MRU): $x_M = 15t$. Policía (MRUA desde el reposo): $x_P = \tfrac12\cdot2\cdot t^2 = t^2$.</li>
+        <li>$t^2 = 15t \Rightarrow t(t-15) = 0$. Dos soluciones: $t=0$ (el instante en que la moto pasa, que ya sabíamos) y <b>$t = 15$ s</b>.</li>
+        <li>Lugar: $x = 15\cdot15 = 225$ m.</li>
+        <li>Velocidad del policía: $v = 0 + 2\cdot15 = 30$ m/s $= 108$ km/h. Siempre alcanza con el doble de la velocidad de la moto cuando sale del reposo a la vez: es la única forma de que la velocidad media de los dos (15 m/s) coincida.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 9 ═══════════════ -->
+    <h2>Caída libre <span class="en">Free fall</span></h2>
+    <p>Si dejamos caer un cuerpo y el aire apenas influye, cae con un MRUA cuya aceleración es la de la gravedad: $g = 9{,}8$ m/s², <b>la misma para todos los cuerpos</b>, pesen lo que pesen. Galileo lo dedujo; un astronauta del Apolo 15 lo comprobó en la Luna soltando un martillo y una pluma, que llegaron a la vez al suelo.</p>
+    <div class="caja idea">
+      <h3>El criterio de signos (el que usamos en todo el tema)</h3>
+      <p>Eje Y vertical, <b>origen en el suelo</b> y <b>positivo hacia arriba</b>. Entonces la aceleración apunta hacia abajo: $a = -g = -9{,}8$ m/s², tanto si el cuerpo sube como si baja.</p>
+    </div>
+    <div class="form">
+      <div><b>Velocidad</b> $$v = v_0 - g\,t$$</div>
+      <div><b>Altura</b> $$y = y_0 + v_0\,t - \tfrac12 g\,t^2$$</div>
+      <div><b>Sin tiempo</b> $$v^2 - v_0^2 = -2\,g\,(y - y_0)$$</div>
+    </div>
+    <p>Son las del MRUA cambiando $x$ por $y$ y $a$ por $-g$. En la caída libre desde el reposo, $v_0 = 0$ e $y_0 = h$ (la altura desde la que se suelta).</p>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: soltar desde 45 m</h3>
+      <p>Se deja caer una piedra desde una azotea de 45 m. ¿Cuánto tarda en llegar al suelo y con qué velocidad llega?</p>
+      <ol>
+        <li>Datos: $y_0 = 45$ m, $v_0 = 0$, llega al suelo cuando $y = 0$.</li>
+        <li>$0 = 45 - 4{,}9\,t^2 \Rightarrow t^2 = 45/4{,}9 = 9{,}18 \Rightarrow t = 3{,}03$ s.</li>
+        <li>$v = 0 - 9{,}8\cdot3{,}03 = -29{,}7$ m/s. El signo menos dice que va hacia abajo; el módulo es 29,7 m/s ≈ 107 km/h.</li>
+        <li>Comprobación sin tiempo: $v^2 = 2\cdot9{,}8\cdot45 = 882 \Rightarrow |v| = 29{,}7$ m/s ✔.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 10 ═══════════════ -->
+    <h2>Lanzamiento vertical <span class="en">Vertical throw</span></h2>
+    <p>Mismas ecuaciones, pero ahora $v_0 \neq 0$: hacia arriba ($v_0 &gt; 0$) o hacia abajo ($v_0 &lt; 0$).</p>
+    <h3>Lanzar hacia arriba: lo que siempre se pregunta</h3>
+    <ul>
+      <li><b>Altura máxima.</b> Arriba del todo el cuerpo se para un instante: $v = 0$. De $0 = v_0 - g\,t$ sale $t_{\text{subida}} = v_0/g$, y de la ecuación sin tiempo, $h_{\text{máx}} = \dfrac{v_0^2}{2g}$ (sobre el punto de lanzamiento).</li>
+      <li><b>Tiempo de vuelo</b> (si vuelve a la misma altura): tarda lo mismo en bajar que en subir, así que $t_{\text{vuelo}} = 2v_0/g$.</li>
+      <li><b>Velocidad al volver</b> a la altura de salida: el mismo módulo con el que salió, pero hacia abajo.</li>
+      <li>En el punto más alto <b>$v = 0$, pero $a$ sigue siendo $-9{,}8$ m/s²</b>. Si la aceleración fuera cero ahí, se quedaría flotando.</li>
+    </ul>
+    <div class="graf">
+      <figure><svg class="plot" id="gLVy"></svg><figcaption><b>y–t</b> de un lanzamiento hacia arriba a 20 m/s: parábola con el vértice en la altura máxima (20,4 m a los 2,04 s).</figcaption></figure>
+      <figure><svg class="plot" id="gLVv"></svg><figcaption><b>v–t</b>: recta de pendiente $-9{,}8$. Corta el eje (v = 0) justo en el punto más alto.</figcaption></figure>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: lanzar desde lo alto de un edificio</h3>
+      <p>Desde una terraza a 25 m del suelo se lanza una pelota hacia arriba a 15 m/s. Calcula la altura máxima respecto al suelo, cuándo llega al suelo y con qué velocidad.</p>
+      <ol>
+        <li>Origen en el suelo, positivo hacia arriba: $y_0 = 25$ m, $v_0 = +15$ m/s, $a = -9{,}8$ m/s².</li>
+        <li>Subida: $t = 15/9{,}8 = 1{,}53$ s. Sube $\dfrac{15^2}{2\cdot9{,}8} = 11{,}5$ m sobre la terraza: <b>altura máxima 36,5 m</b> sobre el suelo.</li>
+        <li>Llega al suelo cuando $y=0$: $0 = 25 + 15t - 4{,}9t^2$, es decir $4{,}9t^2 - 15t - 25 = 0$.</li>
+        <li>$t = \dfrac{15 \pm \sqrt{225 + 490}}{9{,}8} = \dfrac{15 \pm 26{,}74}{9{,}8}$. La solución negativa no vale (sería antes de lanzarla): <b>$t = 4{,}26$ s</b>.</li>
+        <li>$v = 15 - 9{,}8\cdot4{,}26 = -26{,}7$ m/s: 26,7 m/s hacia abajo.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 11 ═══════════════ -->
+    <h2>Movimiento circular uniforme <span class="en">UCM: Uniform Circular Motion</span></h2>
+    <p>La trayectoria es una <b>circunferencia</b> y el cuerpo recorre <b>arcos iguales en tiempos iguales</b>: una noria, el plato de un tocadiscos, un punto de una rueda, la Luna alrededor de la Tierra (casi).</p>
+    <h3>Ángulos en radianes</h3>
+    <p>En física los ángulos se miden en <b>radianes</b> (rad): un radián es el ángulo cuyo arco mide lo mismo que el radio. Una vuelta completa son $2\pi$ rad $= 360°$. Por eso el arco recorrido es $s = \varphi\cdot R$ (con $\varphi$ en radianes).</p>
+    <h3>Magnitudes angulares y lineales</h3>
+    <div class="form">
+      <div><b>Posición angular</b> $\varphi$ (rad): el ángulo girado desde una referencia.</div>
+      <div><b>Velocidad angular</b> $\omega = \dfrac{\Delta\varphi}{\Delta t}$ (rad/s): cuánto ángulo gira por segundo. En el MCU es constante.</div>
+      <div><b>Velocidad lineal</b> $v = \omega\,R$ (m/s): la rapidez del punto sobre la circunferencia. Su dirección es <b>tangente</b> a la circunferencia.</div>
+      <div><b>Ecuación del movimiento</b> $$\varphi = \varphi_0 + \omega\,t$$ (igual que el MRU, pero con ángulos)</div>
+    </div>
+    <p>Fíjate en $v = \omega R$: todos los puntos de un disco giran con la <b>misma $\omega$</b>, pero los de fuera van <b>más rápido</b> porque recorren una circunferencia mayor en el mismo tiempo. En un tiovivo, los caballitos de fuera van más deprisa que los del centro.</p>
+    <h3>Periodo y frecuencia <span class="en">Period and frequency</span></h3>
+    <div class="form">
+      <div><b>Periodo</b> $T$ (s): tiempo que tarda en dar <b>una vuelta</b>. $$T = \frac{2\pi}{\omega}$$</div>
+      <div><b>Frecuencia</b> $f$ (Hz = s⁻¹): <b>vueltas por segundo</b>. $$f = \frac{1}{T},\qquad \omega = 2\pi f$$</div>
+      <div><b>rpm</b>: revoluciones (vueltas) por minuto. Para pasar a rad/s: $$\omega = \text{rpm}\cdot\frac{2\pi}{60}$$</div>
+    </div>
+    <h3>¿Hay aceleración si la rapidez no cambia?</h3>
+    <p><b>Sí.</b> La velocidad es un vector y en el MCU <b>cambia de dirección</b> continuamente. Ese cambio lo produce la <b>aceleración normal o centrípeta</b>, que apunta siempre <b>hacia el centro</b>:</p>
+    <p>$$a_n = \frac{v^2}{R} = \omega^2 R$$</p>
+    <p>Sin ella el cuerpo saldría en línea recta por la tangente (como el barro que despide una rueda). La aceleración <i>tangencial</i> (la que cambiaría la rapidez) es cero en el MCU.</p>
+    <h3>Gráficas del MCU</h3>
+    <div class="graf">
+      <figure><svg class="plot" id="gMCUphi"></svg><figcaption><b>φ–t</b>: recta. Su pendiente es $\omega$ (como la x–t del MRU).</figcaption></figure>
+      <figure><svg class="plot" id="gMCUw"></svg><figcaption><b>ω–t</b>: recta horizontal. El área bajo ella es el ángulo girado.</figcaption></figure>
+    </div>
+    <div class="caja labo">
+      <h3>Laboratorio: el MCU en marcha</h3>
+      <div class="sliders">
+        <label>Radio $R$: <b id="cRv">2</b> m<input type="range" id="cR" min="0.5" max="4" step="0.5" value="2"></label>
+        <label>Periodo $T$: <b id="cTv">4</b> s<input type="range" id="cT" min="1" max="10" step="0.5" value="4"></label>
+      </div>
+      <svg class="plot" id="cSvg" viewBox="-120 -120 240 240" style="max-width:320px;margin:auto"></svg>
+      <div class="salida" id="cTxt"></div>
+      <p class="mini">Azul: la velocidad, siempre tangente. Rojo: la aceleración normal, siempre hacia el centro. Si doblas el radio sin cambiar T, la velocidad se dobla.</p>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo resuelto: la noria</h3>
+      <p>Una noria de 20 m de radio da una vuelta cada 40 s. Calcula su frecuencia, su velocidad angular, la velocidad de una cabina y su aceleración normal. ¿Cuántas vueltas da en 10 min?</p>
+      <ol>
+        <li>$T = 40$ s, así que $f = 1/40 = 0{,}025$ Hz.</li>
+        <li>$\omega = 2\pi/T = 2\pi/40 = 0{,}157$ rad/s.</li>
+        <li>$v = \omega R = 0{,}157\cdot20 = 3{,}14$ m/s (unos 11 km/h).</li>
+        <li>$a_n = v^2/R = 3{,}14^2/20 = 0{,}49$ m/s², hacia el eje de la noria.</li>
+        <li>10 min = 600 s; vueltas $= 600/40 = 15$ (o bien $f\cdot t = 0{,}025\cdot600 = 15$).</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 12 ═══════════════ -->
+    <h2>Problemas de MCU <span class="en">UCM problems</span></h2>
+    <p>Casi todos se resuelven con cinco fórmulas y conversiones de unidades. Método: <b>pasa todo a rad, s y m</b>, calcula $\omega$ primero (casi siempre es la llave) y de ahí el resto.</p>
+    <div class="resuelto">
+      <h3>Ejemplo 1: la rueda de la bici</h3>
+      <p>Una bici va a 18 km/h y sus ruedas tienen 35 cm de radio. ¿A cuántas rpm gira la rueda?</p>
+      <ol>
+        <li>$v = 18/3{,}6 = 5$ m/s; $R = 0{,}35$ m. (Si la rueda no patina, el borde va a la misma velocidad que la bici.)</li>
+        <li>$\omega = v/R = 5/0{,}35 = 14{,}3$ rad/s.</li>
+        <li>rpm $= \omega\cdot\dfrac{60}{2\pi} = 14{,}3\cdot9{,}55 = 136$ rpm.</li>
+      </ol>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo 2: el ventilador</h3>
+      <p>Un ventilador gira a 1200 rpm y sus aspas miden 25 cm. ¿Qué ángulo gira en 5 s? ¿A qué velocidad va la punta del aspa?</p>
+      <ol>
+        <li>$\omega = 1200\cdot\dfrac{2\pi}{60} = 40\pi = 125{,}7$ rad/s. (También: 1200 rpm = 20 vueltas por segundo, $f = 20$ Hz.)</li>
+        <li>$\varphi = \omega t = 125{,}7\cdot5 = 628$ rad, que son $628/2\pi = 100$ vueltas.</li>
+        <li>$v = \omega R = 125{,}7\cdot0{,}25 = 31{,}4$ m/s ≈ 113 km/h. Por eso no se meten los dedos.</li>
+      </ol>
+    </div>
+    <div class="resuelto">
+      <h3>Ejemplo 3: las agujas del reloj</h3>
+      <p>¿Cuál es la velocidad angular del minutero? ¿Y la velocidad de su punta si mide 10 cm?</p>
+      <ol>
+        <li>El minutero da una vuelta por hora: $T = 3600$ s.</li>
+        <li>$\omega = 2\pi/3600 = 1{,}75\cdot10^{-3}$ rad/s.</li>
+        <li>$v = 1{,}75\cdot10^{-3}\cdot0{,}10 = 1{,}75\cdot10^{-4}$ m/s: menos de 0,2 mm por segundo.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 13 ═══════════════ -->
+    <h2>Los errores que más puntos cuestan</h2>
+    <div class="caja ojo">
+      <ol>
+        <li><b>Mezclar unidades.</b> km/h con segundos da resultados absurdos. Pasa siempre a m, s, m/s antes de operar.</li>
+        <li><b>Olvidar el signo de la velocidad o de g.</b> Si el cuerpo va hacia el sentido negativo, $v &lt; 0$. Con el eje Y hacia arriba, $a = -9{,}8$ m/s² siempre, también mientras sube.</li>
+        <li><b>Creer que en lo más alto $a = 0$.</b> Ahí $v = 0$, pero $a = -9{,}8$ m/s².</li>
+        <li><b>Confundir distancia con desplazamiento</b> cuando hay vuelta atrás o curva.</li>
+        <li><b>Velocidad media como media de velocidades.</b> 30 km a 60 km/h y 30 km a 90 km/h <b>no</b> dan 75 km/h: tardas 0,5 h + 0,333 h = 0,833 h en 60 km, así que $v_m = 72$ km/h. Divide siempre desplazamiento total entre tiempo total.</li>
+        <li><b>Usar grados en $v = \omega R$ o en $s = \varphi R$.</b> Solo funcionan en radianes.</li>
+        <li><b>Quedarte con la solución negativa del tiempo</b> en una ecuación de 2º grado. Un tiempo negativo es antes de empezar: se descarta.</li>
+      </ol>
+    </div>
+
+    <!-- ═══════════════ 14 ═══════════════ -->
+    <h2>Resumen de fórmulas</h2>
+    <div class="form">
+      <div><b>Medias</b> $v_m = \dfrac{\Delta x}{\Delta t}$<br>$a_m = \dfrac{\Delta v}{\Delta t}$<br>km/h ÷ 3,6 = m/s</div>
+      <div><b>MRU</b> $x = x_0 + vt$<br>$a = 0$</div>
+      <div><b>MRUA</b> $v = v_0 + at$<br>$x = x_0 + v_0t + \tfrac12at^2$<br>$v^2 - v_0^2 = 2a\Delta x$</div>
+      <div><b>Vertical</b> (Y hacia arriba) $v = v_0 - gt$<br>$y = y_0 + v_0t - \tfrac12gt^2$<br>$h_{máx} = \dfrac{v_0^2}{2g}$</div>
+      <div><b>MCU</b> $\varphi = \varphi_0 + \omega t$<br>$v = \omega R$<br>$T = \dfrac{2\pi}{\omega}$, $f = \dfrac1T$<br>$a_n = \dfrac{v^2}{R}$</div>
+      <div><b>Encuentro / persecución</b> Mismo sistema de referencia para los dos, una ecuación cada uno, y $x_A = x_B$.</div>
+    </div>
+
+    <!-- ═══════════════ 15 ═══════════════ -->
+    <h2>Glosario español–inglés</h2>
+    <table class="glos">
+      <tr><th>Español</th><th>English</th></tr>
+      <tr><td>Sistema de referencia</td><td>Frame of reference</td></tr>
+      <tr><td>Trayectoria / desplazamiento / distancia recorrida</td><td>Path / displacement / distance travelled</td></tr>
+      <tr><td>Magnitud escalar / vectorial</td><td>Scalar / vector quantity</td></tr>
+      <tr><td>Velocidad media / instantánea</td><td>Average / instantaneous velocity</td></tr>
+      <tr><td>Rapidez</td><td>Speed</td></tr>
+      <tr><td>MRU / MRUA</td><td>ULM / UALM (uniform / uniformly accelerated linear motion)</td></tr>
+      <tr><td>Encuentro / persecución</td><td>Meeting / chase</td></tr>
+      <tr><td>Caída libre / lanzamiento vertical</td><td>Free fall / vertical throw</td></tr>
+      <tr><td>MCU</td><td>UCM (uniform circular motion)</td></tr>
+      <tr><td>Velocidad angular / lineal</td><td>Angular / linear velocity</td></tr>
+      <tr><td>Periodo / frecuencia</td><td>Period / frequency</td></tr>
+      <tr><td>Aceleración normal (centrípeta)</td><td>Centripetal acceleration</td></tr>
+    </table>
+
+    <!-- ═══════════════ EXAMEN ═══════════════ -->
+    <h2>Examen</h2>
+    <div class="caja idea">
+      <h3>Cómo funciona</h3>
+      <p>20 preguntas: 12 problemas numéricos y 8 de teoría. Cada una vale 0,5 puntos. Escribe los números con coma o con punto; se acepta un margen del 2 % por redondeos. Toma $g = 9{,}8$ m/s². Cuando acabes, pulsa <b>Corregir</b>: verás tu nota y la resolución de cada pregunta. <b>Nuevo examen</b> cambia los números y las preguntas de teoría.</p>
+      <p class="mini">Para hacerlo como en clase: papel, calculadora, 50 minutos y sin mirar la teoría.</p>
+    </div>
+    <div id="examen"></div>
+    <div class="barra-ex">
+      <button class="btn repasar" id="bCorr">Corregir</button>
+      <button class="btn claro" id="bNuevo">Nuevo examen</button>
+      <button class="btn claro" onclick="window.print()">Imprimir</button>
+      <span id="nota"></span>
+    </div>
+
+    <div class="caja idea" style="margin-top:2.5rem">
+      <h3>¿Lo tienes?</h3>
+      <p>Si sacas un 8 o más en dos exámenes seguidos, el tema está dominado. Si no, repasa los apartados de las preguntas que fallaste y vuelve a intentarlo.</p>
+      <button class="btn claro" id="leido">Marcar como leído</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../comun/preguntas.js?v=202611011135"></script>
+<script src="../../comun/app.js?v=202611011135"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+const fmt = (n, d = 2) => { const r = Math.round(n * 10 ** d) / 10 ** d; return String(r).replace(".", ","); };
+const fm = (n, d) => fmt(n, d).replace(",", "{,}");
+const g = 9.8;
+
+/* ───── gráficas genéricas ───── */
+function plot(svg, o) {
+  // o: {tmax, ymin, ymax, series:[{f, color, t0, t1}], xl, yl, dots:[{t,y,color}], vlines:[t]}
+  const W = 320, H = 200, L = 42, R = 10, T = 12, B = 30;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  let { ymin, ymax } = o;
+  if (ymin === ymax) { ymin -= 1; ymax += 1; }
+  const X = t => L + (t / o.tmax) * (W - L - R);
+  const Y = y => T + (ymax - y) / (ymax - ymin) * (H - T - B);
+  let s = "";
+  // ejes
+  const y0 = Math.min(Math.max(0, ymin), ymax);
+  s += `<line x1="${L}" y1="${T}" x2="${L}" y2="${H - B}" stroke="#888"/>`;
+  s += `<line x1="${L}" y1="${Y(y0)}" x2="${W - R}" y2="${Y(y0)}" stroke="#888"/>`;
+  s += `<text x="${W - R}" y="${Y(y0) - 5}" font-size="12" text-anchor="end" fill="#555">${o.xl || "t (s)"}</text>`;
+  s += `<text x="${L + 5}" y="${T + 10}" font-size="12" fill="#555">${o.yl}</text>`;
+  s += `<text x="${L - 4}" y="${Y(ymax) + 4}" font-size="10" text-anchor="end" fill="#777">${fmt(ymax, 1)}</text>`;
+  s += `<text x="${L - 4}" y="${Y(ymin) + 4}" font-size="10" text-anchor="end" fill="#777">${fmt(ymin, 1)}</text>`;
+  s += `<text x="${W - R}" y="${H - 8}" font-size="10" text-anchor="end" fill="#777">${fmt(o.tmax, 1)}</text>`;
+  (o.vlines || []).forEach(t => s += `<line x1="${X(t)}" y1="${T}" x2="${X(t)}" y2="${H - B}" stroke="#bbb" stroke-dasharray="4 3"/>`);
+  (o.areas || []).forEach(a => {
+    const pts = []; for (let i = 0; i <= 40; i++) { const t = a.t0 + (a.t1 - a.t0) * i / 40; pts.push(`${X(t)},${Y(a.f(t))}`); }
+    s += `<polygon points="${X(a.t0)},${Y(0)} ${pts.join(" ")} ${X(a.t1)},${Y(0)}" fill="${a.color}" opacity=".18"/>`;
+  });
+  o.series.forEach(se => {
+    const t0 = se.t0 ?? 0, t1 = se.t1 ?? o.tmax, pts = [];
+    for (let i = 0; i <= 80; i++) { const t = t0 + (t1 - t0) * i / 80; pts.push(`${X(t).toFixed(1)},${Y(se.f(t)).toFixed(1)}`); }
+    s += `<polyline fill="none" stroke="${se.color}" stroke-width="2.5" points="${pts.join(" ")}"/>`;
+  });
+  (o.dots || []).forEach(d => s += `<circle cx="${X(d.t)}" cy="${Y(d.y)}" r="5" fill="${d.color || "#17171a"}"/>`);
+  svg.innerHTML = s;
+}
+const rango = (fs, tmax) => { let a = Infinity, b = -Infinity; fs.forEach(f => { for (let i = 0; i <= 100; i++) { const v = f(tmax * i / 100); a = Math.min(a, v); b = Math.max(b, v); } }); a = Math.min(a, 0); b = Math.max(b, 0); const m = (b - a) * .08 || 1; return [a - (a < 0 ? m : 0), b + m]; };
+
+// gráficas fijas
+plot($("gMRUx"), { tmax: 10, ymin: 0, ymax: 60, yl: "x (m)", series: [{ f: t => 10 + 4 * t, color: "#1b5e8a" }, { f: t => 50 - 3 * t, color: "#b3402b" }] });
+plot($("gMRUv"), { tmax: 10, ymin: -4, ymax: 5, yl: "v (m/s)", series: [{ f: t => 4, color: "#1b5e8a" }, { f: t => -3, color: "#b3402b" }], areas: [{ f: t => 4, t0: 0, t1: 10, color: "#1b5e8a" }] });
+plot($("gMRUa"), { tmax: 10, ymin: -1, ymax: 1, yl: "a (m/s²)", series: [{ f: t => 0, color: "#1b5e8a" }] });
+plot($("gMRUAx"), { tmax: 10, ymin: 0, ymax: 110, yl: "x (m)", series: [{ f: t => t * t, color: "#1b5e8a" }] });
+plot($("gMRUAv"), { tmax: 10, ymin: 0, ymax: 22, yl: "v (m/s)", series: [{ f: t => 2 * t, color: "#1b5e8a" }], areas: [{ f: t => 2 * t, t0: 0, t1: 10, color: "#1b5e8a" }] });
+plot($("gMRUAa"), { tmax: 10, ymin: 0, ymax: 3, yl: "a (m/s²)", series: [{ f: t => 2, color: "#1b5e8a" }] });
+plot($("gLVy"), { tmax: 4.2, ymin: 0, ymax: 23, yl: "y (m)", series: [{ f: t => 20 * t - 4.9 * t * t, color: "#1b5e8a", t1: 4.08 }], dots: [{ t: 20 / 9.8, y: 400 / 19.6, color: "#b3402b" }], vlines: [20 / 9.8] });
+plot($("gLVv"), { tmax: 4.2, ymin: -22, ymax: 22, yl: "v (m/s)", series: [{ f: t => 20 - 9.8 * t, color: "#b3402b", t1: 4.08 }], dots: [{ t: 20 / 9.8, y: 0 }] });
+plot($("gMCUphi"), { tmax: 10, ymin: 0, ymax: 17, yl: "φ (rad)", series: [{ f: t => 1.5 * t, color: "#1b5e8a" }] });
+plot($("gMCUw"), { tmax: 10, ymin: 0, ymax: 2, yl: "ω (rad/s)", series: [{ f: t => 1.5, color: "#1b5e8a" }], areas: [{ f: t => 1.5, t0: 0, t1: 10, color: "#1b5e8a" }] });
+
+/* ───── laboratorio MRUA ───── */
+function lab() {
+  const x0 = +$("sx0").value, v0 = +$("sv0").value, a = +$("sa").value, T = 10;
+  $("vx0").textContent = x0; $("vv0").textContent = v0; $("va").textContent = fmt(a, 1);
+  const fx = t => x0 + v0 * t + a * t * t / 2, fv = t => v0 + a * t;
+  let [m, M] = rango([fx], T); plot($("labx"), { tmax: T, ymin: m, ymax: M, yl: "x (m)", series: [{ f: fx, color: "#1b5e8a" }] });
+  [m, M] = rango([fv], T); plot($("labv"), { tmax: T, ymin: m, ymax: M, yl: "v (m/s)", series: [{ f: fv, color: "#b3402b" }], areas: [{ f: fv, t0: 0, t1: T, color: "#b3402b" }] });
+  plot($("laba"), { tmax: T, ymin: Math.min(0, a) - 1, ymax: Math.max(0, a) + 1, yl: "a (m/s²)", series: [{ f: t => a, color: "#1f7a4d" }] });
+  let txt = a === 0 ? (v0 === 0 ? "<b>Reposo</b>: ni velocidad ni aceleración." : "<b>MRU</b>: aceleración cero, velocidad constante, x–t recta.")
+    : "<b>MRUA</b>: " + (v0 * a > 0 ? "v y a tienen el mismo signo: <b>gana rapidez</b>." : v0 === 0 ? "parte del reposo." : "v y a tienen signos contrarios: <b>frena</b>.");
+  if (a !== 0 && v0 * a < 0) { const tp = -v0 / a; if (tp <= T) txt += ` Se para a los <b>${fmt(tp)} s</b> en x = ${fmt(fx(tp), 1)} m y después vuelve hacia atrás.`; }
+  txt += ` A los 10 s: x = <b>${fmt(fx(T), 1)} m</b>, v = <b>${fmt(fv(T), 1)} m/s</b>. Desplazamiento (área bajo la v–t): <b>${fmt(fx(T) - x0, 1)} m</b>.`;
+  $("labTxt").innerHTML = txt;
+}
+["sx0", "sv0", "sa"].forEach(id => $(id).oninput = lab); lab();
+
+/* ───── laboratorio encuentro / persecución ───── */
+function enc() {
+  const tipo = $("eTipo").value, D = +$("eD").value, vA = +$("eA").value, vB = +$("eB").value, t = +$("eT").value;
+  $("eDv").textContent = D; $("eAv").textContent = vA; $("eBv").textContent = vB; $("eTv").textContent = fmt(t, 1);
+  const xA = s => vA * s, xB = tipo === "enc" ? s => D - vB * s : s => D + vB * s;
+  let tc = tipo === "enc" ? D / (vA + vB) : (vA > vB ? D / (vA - vB) : null);
+  const tmax = Math.min(60, tc ? Math.max(tc * 1.6, 10) : 60);
+  $("eT").max = tmax;
+  const [m, M] = rango([xA, xB], tmax);
+  plot($("eG"), { tmax, ymin: m, ymax: M, yl: "x (m)", series: [{ f: xA, color: "#1b5e8a" }, { f: xB, color: "#b3402b" }],
+    dots: (tc ? [{ t: tc, y: xA(tc) }] : []).concat([{ t: Math.min(t, tmax), y: xA(Math.min(t, tmax)), color: "#1b5e8a" }, { t: Math.min(t, tmax), y: xB(Math.min(t, tmax)), color: "#b3402b" }]) });
+  const esc = x => 4 + 92 * (x - m) / (M - m || 1);
+  $("eCA").style.left = esc(xA(t)) + "%"; $("eCB").style.left = esc(xB(t)) + "%";
+  $("eCB").style.transform = "translateX(-50%)" + (tipo === "enc" ? "" : " scaleX(-1)");
+  $("eCA").style.transform = "translateX(-50%) scaleX(-1)";
+  if (tipo === "enc") $("eTxt").innerHTML = `A: $x_A = ${vA}t$. B: $x_B = ${D} - ${vB}t$. Igualando: $t = \\dfrac{${D}}{${vA}+${vB}} = ${fm(tc)}$ s, en $x = ${fm(xA(tc), 1)}$ m.`;
+  else if (tc) $("eTxt").innerHTML = `A: $x_A = ${vA}t$. B (va delante): $x_B = ${D} + ${vB}t$. A alcanza a B en $t = \\dfrac{${D}}{${vA}-${vB}} = ${fm(tc)}$ s, en $x = ${fm(xA(tc), 1)}$ m.`;
+  else $("eTxt").innerHTML = `A va a ${vA} m/s y B a ${vB} m/s: A <b>nunca alcanza</b> a B (las rectas no se cortan). Para alcanzar, el perseguidor tiene que ir más rápido.`;
+  if (window.renderMathInElement) renderMathInElement($("eTxt"), { delimiters: [{ left: "$", right: "$", display: false }] });
+}
+["eTipo", "eD", "eA", "eB", "eT"].forEach(id => $(id).oninput = enc);
+
+/* ───── laboratorio MCU ───── */
+let ang = 0, last = null;
+function mcuTxt() {
+  const R = +$("cR").value, T = +$("cT").value, w = 2 * Math.PI / T, v = w * R;
+  $("cRv").textContent = fmt(R, 1); $("cTv").textContent = fmt(T, 1);
+  $("cTxt").innerHTML = `$T = ${fm(T, 1)}$ s · $f = 1/T = ${fm(1 / T, 3)}$ Hz · $\\omega = 2\\pi/T = ${fm(w, 3)}$ rad/s · $v = \\omega R = ${fm(v)}$ m/s · $a_n = v^2/R = ${fm(v * v / R)}$ m/s²`;
+  if (window.renderMathInElement) renderMathInElement($("cTxt"), { delimiters: [{ left: "$", right: "$", display: false }] });
+}
+function mcuFrame(now) {
+  const R = +$("cR").value, T = +$("cT").value, w = 2 * Math.PI / T;
+  if (last != null) ang += w * (now - last) / 1000; last = now;
+  const r = R * 25, px = r * Math.cos(ang), py = -r * Math.sin(ang);
+  const v = w * R, vl = Math.min(75, 25 + v * 7), al = Math.min(75, 20 + v * v / R * 6);
+  const tx = -Math.sin(ang), ty = -Math.cos(ang);
+  $("cSvg").innerHTML = `<defs><marker id="mv" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#1b5e8a"/></marker><marker id="ma" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#b3402b"/></marker></defs>
+  <circle r="${r}" fill="none" stroke="#bbb" stroke-dasharray="4 4"/><circle r="3" fill="#555"/>
+  <line x1="0" y1="0" x2="${px}" y2="${py}" stroke="#ccc"/>
+  <line x1="${px}" y1="${py}" x2="${px + tx * vl}" y2="${py + ty * vl}" stroke="#1b5e8a" stroke-width="3" marker-end="url(#mv)"/>
+  <line x1="${px}" y1="${py}" x2="${px - px / r * al}" y2="${py - py / r * al}" stroke="#b3402b" stroke-width="3" marker-end="url(#ma)"/>
+  <circle cx="${px}" cy="${py}" r="7" fill="#17171a"/>`;
+  requestAnimationFrame(mcuFrame);
+}
+["cR", "cT"].forEach(id => $(id).oninput = mcuTxt);
+
+/* ═════════════ EXAMEN ═════════════ */
+const ri = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const mezcla = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+// Generadores numéricos: devuelven {q, ans, u, sol, sec}
+const GEN = [
+  () => { const k = ri(4, 16) * 9; return { q: `Un tren va a ${k} km/h. Expresa su velocidad en m/s.`, ans: k / 3.6, u: "m/s", sol: `${k} ÷ 3,6 = ${fmt(k / 3.6)} m/s.`, sec: "Velocidad y aceleración" }; },
+  () => { const [v1, v2] = pick([[60, 90], [40, 60], [30, 60], [80, 120], [45, 90]]); const d = pick([20, 30, 60]);
+    const t = d / v1 + d / v2, vm = 2 * d / t;
+    return { q: `Un coche recorre ${d} km a ${v1} km/h y después otros ${d} km, en el mismo sentido, a ${v2} km/h. ¿Cuál es su velocidad media en todo el viaje, en km/h?`, ans: vm, u: "km/h",
+      sol: `Tiempo 1: ${d}/${v1} = ${fmt(d / v1, 3)} h. Tiempo 2: ${d}/${v2} = ${fmt(d / v2, 3)} h. Total ${fmt(t, 3)} h. v_m = ${2 * d} km / ${fmt(t, 3)} h = ${fmt(vm)} km/h. (No es la media de ${v1} y ${v2}: pasa más tiempo yendo despacio.)`, sec: "Los errores que más puntos cuestan" }; },
+  () => { const [a, b, c] = pick([[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17]]); const k = pick([10, 20, 50]);
+    return { q: `Una persona camina ${a * k} m hacia el este y después ${b * k} m hacia el norte. ¿Cuál es el módulo de su desplazamiento?`, ans: c * k, u: "m",
+      sol: `El desplazamiento une salida y llegada: √(${a * k}² + ${b * k}²) = ${c * k} m. La distancia recorrida sería ${(a + b) * k} m.`, sec: "Trayectoria, distancia y desplazamiento" }; },
+  () => { const x0 = ri(2, 12) * 50, v = pick([2, 4, 5, 8, 10]);
+    return { q: `Un móvil con MRU está en x₀ = ${x0} m y se acerca al origen a ${v} m/s. ¿Cuánto tarda en llegar a x = 0?`, ans: x0 / v, u: "s",
+      sol: `x = ${x0} − ${v}t. Con x = 0: t = ${x0}/${v} = ${fmt(x0 / v)} s.`, sec: "MRU" }; },
+  () => { const vk = pick([36, 54, 72, 90, 108]), t = pick([4, 5, 6, 8, 10]);
+    return { q: `Un coche parte del reposo y alcanza ${vk} km/h en ${t} s. ¿Cuál es su aceleración?`, ans: vk / 3.6 / t, u: "m/s²",
+      sol: `v = ${vk}/3,6 = ${fmt(vk / 3.6)} m/s. a = (v − 0)/t = ${fmt(vk / 3.6)}/${t} = ${fmt(vk / 3.6 / t)} m/s².`, sec: "MRUA" }; },
+  () => { const vk = pick([54, 72, 90, 108, 126]), a = pick([4, 5, 6, 7.5]); const v = vk / 3.6;
+    return { q: `Un coche circula a ${vk} km/h y frena con aceleración constante de ${fmt(a, 1)} m/s² hasta pararse. ¿Qué distancia recorre frenando?`, ans: v * v / (2 * a), u: "m",
+      sol: `v₀ = ${fmt(v)} m/s, v = 0, a = −${fmt(a, 1)} m/s². v² − v₀² = 2aΔx → Δx = ${fmt(v)}² / (2·${fmt(a, 1)}) = ${fmt(v * v / (2 * a))} m.`, sec: "MRUA" }; },
+  () => { const v0 = ri(2, 10), a = pick([1, 2, 3, 4]), t = ri(3, 10);
+    return { q: `Un móvil sale de x₀ = 0 con v₀ = ${v0} m/s y aceleración ${a} m/s². ¿En qué posición está a los ${t} s?`, ans: v0 * t + a * t * t / 2, u: "m",
+      sol: `x = v₀t + ½at² = ${v0}·${t} + ½·${a}·${t}² = ${v0 * t} + ${a * t * t / 2} = ${v0 * t + a * t * t / 2} m.`, sec: "MRUA" }; },
+  () => { const vA = ri(10, 30), vB = ri(10, 30), t = ri(10, 30), D = (vA + vB) * t;
+    return { q: `Dos ciudades están a ${D} m. A la vez sale un coche de cada una, uno hacia el otro, a ${vA} m/s y a ${vB} m/s. ¿Cuántos segundos tardan en cruzarse?`, ans: t, u: "s",
+      sol: `x_A = ${vA}t; x_B = ${D} − ${vB}t. Igualando: ${vA + vB}t = ${D} → t = ${t} s (se cruzan a ${vA * t} m de la primera ciudad).`, sec: "Problemas de encuentro" }; },
+  () => { const v = pick([10, 12, 15, 20, 25]), a = pick([1, 2, 2.5, 4, 5]);
+    return { q: `Una moto pasa a ${v} m/s junto a un coche parado, que en ese instante arranca con a = ${fmt(a, 1)} m/s². ¿A qué distancia del punto de salida la alcanza?`, ans: 2 * v * v / a, u: "m",
+      sol: `Moto: x = ${v}t. Coche: x = ½·${fmt(a, 1)}·t². Igualando (t ≠ 0): t = 2·${v}/${fmt(a, 1)} = ${fmt(2 * v / a)} s. x = ${v}·${fmt(2 * v / a)} = ${fmt(2 * v * v / a)} m.`, sec: "Problemas de persecución" }; },
+  () => { const D = ri(4, 12) * 50, vA = ri(20, 35), vB = ri(5, vA - 5), t = D / (vA - vB);
+    return { q: `Un ladrón huye en coche a ${vB} m/s y lleva ${D} m de ventaja a la policía, que le persigue a ${vA} m/s. ¿Cuánto tarda la policía en alcanzarle?`, ans: t, u: "s",
+      sol: `Policía: x = ${vA}t. Ladrón: x = ${D} + ${vB}t. Igualando: ${vA - vB}t = ${D} → t = ${fmt(t)} s.`, sec: "Problemas de persecución" }; },
+  () => { const h = pick([5, 10, 20, 30, 45, 80, 100]); const t = Math.sqrt(2 * h / g);
+    return { q: `Se deja caer una piedra desde ${h} m de altura. ¿Cuánto tarda en llegar al suelo? (g = 9,8 m/s²)`, ans: t, u: "s",
+      sol: `0 = ${h} − ½·9,8·t² → t = √(2·${h}/9,8) = ${fmt(t)} s.`, sec: "Caída libre" }; },
+  () => { const h = pick([10, 20, 45, 60]); const v = Math.sqrt(2 * g * h);
+    return { q: `Una maceta cae desde un balcón a ${h} m de altura. ¿Con qué velocidad (en módulo) llega al suelo?`, ans: v, u: "m/s",
+      sol: `v² = 2gh = 2·9,8·${h} = ${fmt(2 * g * h, 1)} → v = ${fmt(v)} m/s (hacia abajo).`, sec: "Caída libre" }; },
+  () => { const v0 = pick([10, 14, 15, 20, 25, 30]); const h = v0 * v0 / (2 * g);
+    return { q: `Se lanza una pelota verticalmente hacia arriba a ${v0} m/s desde el suelo. ¿Qué altura máxima alcanza?`, ans: h, u: "m",
+      sol: `Arriba v = 0. 0 − ${v0}² = −2·9,8·h → h = ${v0 * v0}/19,6 = ${fmt(h)} m.`, sec: "Lanzamiento vertical" }; },
+  () => { const v0 = pick([9.8, 14.7, 19.6, 24.5, 29.4]); const t = 2 * v0 / g;
+    return { q: `Se lanza un objeto hacia arriba a ${fmt(v0, 1)} m/s y vuelve a la mano. ¿Cuánto tiempo está en el aire?`, ans: t, u: "s",
+      sol: `Subida: t = v₀/g = ${fmt(v0, 1)}/9,8 = ${fmt(v0 / g)} s. Bajada: lo mismo. Total ${fmt(t)} s.`, sec: "Lanzamiento vertical" }; },
+  () => { const rpm = pick([30, 45, 60, 120, 300]), R = pick([0.1, 0.15, 0.2, 0.3]); const w = rpm * 2 * Math.PI / 60;
+    return { q: `Un disco gira a ${rpm} rpm. ¿A qué velocidad lineal se mueve un punto situado a ${fmt(R * 100, 0)} cm del centro?`, ans: w * R, u: "m/s",
+      sol: `ω = ${rpm}·2π/60 = ${fmt(w, 3)} rad/s. v = ωR = ${fmt(w, 3)}·${fmt(R)} = ${fmt(w * R, 3)} m/s.`, sec: "Movimiento circular uniforme" }; },
+  () => { const n = pick([10, 15, 20, 30, 60]), t = pick([5, 10, 20, 30, 60]); const T = t / n, w = 2 * Math.PI / T;
+    return { q: `Una rueda da ${n} vueltas en ${t} s con MCU. ¿Cuál es su velocidad angular en rad/s?`, ans: w, u: "rad/s",
+      sol: `T = ${t}/${n} = ${fmt(T, 3)} s (f = ${fmt(n / t, 3)} Hz). ω = 2π/T = 2π·f = ${fmt(w, 3)} rad/s.`, sec: "Movimiento circular uniforme" }; },
+  () => { const R = pick([2, 5, 10, 20]), v = pick([2, 4, 5, 10]);
+    return { q: `Un coche de carreras de juguete recorre una pista circular de ${R} m de radio a ${v} m/s constantes. ¿Cuál es su aceleración normal?`, ans: v * v / R, u: "m/s²",
+      sol: `a_n = v²/R = ${v}²/${R} = ${fmt(v * v / R)} m/s², dirigida hacia el centro.`, sec: "Movimiento circular uniforme" }; },
+  () => { const tipo = pick([0, 1]); const v1 = ri(2, 6) * 2, t1 = ri(2, 5), t2 = ri(2, 5);
+    const d = v1 * t1 / 2 + v1 * t2;
+    const svg = `<svg class="plot" data-vt="${v1},${t1},${t2}" style="max-width:340px"></svg>`;
+    return { q: `La gráfica v–t de un móvil sube en línea recta de 0 a ${v1} m/s en ${t1} s y después se mantiene a ${v1} m/s durante ${t2} s más. ¿Qué distancia recorre en total?${svg}`, ans: d, u: "m",
+      sol: `Distancia = área bajo la v–t. Triángulo: ½·${t1}·${v1} = ${v1 * t1 / 2} m. Rectángulo: ${t2}·${v1} = ${v1 * t2} m. Total ${d} m.`, sec: "MRUA" }; },
+];
+
+// Preguntas de teoría: {q, o:[], a, w}
+const TEO = [
+  { q: "Un corredor da una vuelta completa a una pista de 400 m. ¿Qué es correcto?", o: ["Distancia 400 m, desplazamiento 0", "Distancia 0, desplazamiento 400 m", "Distancia y desplazamiento 400 m", "Distancia y desplazamiento 0"], a: 0, w: "La distancia es lo recorrido (400 m); el desplazamiento une salida y llegada, que coinciden: 0." },
+  { q: "¿Cuál de estas magnitudes es escalar?", o: ["El tiempo", "La velocidad", "El desplazamiento", "La aceleración"], a: 0, w: "El tiempo queda dicho con número y unidad. Velocidad, desplazamiento y aceleración necesitan dirección y sentido." },
+  { q: "En una gráfica x–t, una recta inclinada hacia arriba indica…", o: ["MRU con velocidad positiva", "MRUA con aceleración positiva", "Que el cuerpo está parado", "MRU con velocidad negativa"], a: 0, w: "En la x–t, recta = velocidad constante (MRU) y su pendiente es la velocidad: si sube, v > 0. Un MRUA daría una parábola." },
+  { q: "En una gráfica v–t, ¿qué representa el área bajo la línea?", o: ["El desplazamiento", "La aceleración", "La velocidad media", "El tiempo"], a: 0, w: "Área = velocidad × tiempo = desplazamiento. La pendiente de la v–t es la aceleración." },
+  { q: "Un coche que va marcha atrás (v < 0) está frenando. Su aceleración es…", o: ["Positiva", "Negativa", "Cero", "Depende de la masa"], a: 0, w: "Frenar = v y a de signos contrarios. Si v < 0, a > 0." },
+  { q: "Lanzamos una pelota hacia arriba. En el punto más alto…", o: ["v = 0 y a = −9,8 m/s²", "v = 0 y a = 0", "v = 9,8 m/s y a = 0", "v y a son máximas"], a: 0, w: "Se para un instante (v = 0) pero la gravedad sigue actuando: a = −9,8 m/s². Si a fuera 0 se quedaría flotando." },
+  { q: "Sin rozamiento con el aire, dejamos caer a la vez una bola de 1 kg y otra de 5 kg desde la misma altura.", o: ["Llegan a la vez", "Llega antes la de 5 kg", "Llega antes la de 1 kg", "Depende de la altura"], a: 0, w: "Todos los cuerpos caen con la misma aceleración g en el vacío, sea cual sea su masa." },
+  { q: "En un MCU, ¿cuál de estas afirmaciones es correcta?", o: ["La rapidez es constante pero la velocidad cambia de dirección", "No hay aceleración porque la rapidez es constante", "La aceleración apunta hacia fuera del círculo", "La velocidad angular aumenta con el tiempo"], a: 0, w: "La velocidad es un vector y gira; ese cambio lo produce la aceleración normal, hacia el centro. ω es constante." },
+  { q: "En un disco que gira, un punto del borde y otro cerca del centro tienen…", o: ["La misma ω, pero el del borde más v", "La misma v, pero el del borde más ω", "La misma ω y la misma v", "El del centro más v"], a: 0, w: "Todo el disco gira el mismo ángulo por segundo (misma ω). Como v = ωR, más radio da más velocidad lineal." },
+  { q: "Si el periodo de un MCU es 0,5 s, su frecuencia es…", o: ["2 Hz", "0,5 Hz", "5 Hz", "π Hz"], a: 0, w: "f = 1/T = 1/0,5 = 2 vueltas por segundo." },
+  { q: "¿Qué ecuación usarías para calcular la distancia de frenada si no te dan el tiempo?", o: ["v² − v₀² = 2aΔx", "x = x₀ + vt", "v = v₀ + at", "φ = φ₀ + ωt"], a: 0, w: "Es la única del MRUA que no lleva t." },
+  { q: "Un coche duplica su velocidad. Con la misma frenada, su distancia de frenado…", o: ["Se multiplica por 4", "Se duplica", "Es la misma", "Se reduce a la mitad"], a: 0, w: "Δx = v₀²/(2|a|): depende del cuadrado de la velocidad. 2² = 4." },
+  { q: "En un problema de encuentro, ¿qué condición se usa?", o: ["Que las posiciones de los dos móviles sean iguales en el mismo instante", "Que sus velocidades sean iguales", "Que hayan recorrido la misma distancia", "Que sus aceleraciones sean iguales"], a: 0, w: "Encontrarse = estar en el mismo sitio a la vez: x_A(t) = x_B(t), con el mismo sistema de referencia." },
+  { q: "La gráfica v–t de un MRUA es…", o: ["Una recta inclinada", "Una parábola", "Una recta horizontal", "Una hipérbola"], a: 0, w: "v = v₀ + at es de primer grado en t: recta con pendiente a. La parábola es la x–t." },
+  { q: "¿Qué indica que un movimiento sea relativo?", o: ["Que depende del sistema de referencia elegido", "Que la velocidad es variable", "Que la trayectoria es curva", "Que no se puede medir"], a: 0, w: "El mismo cuerpo puede estar quieto para un observador y moverse para otro." },
+  { q: "1 vuelta equivale a…", o: ["2π rad", "π rad", "1 rad", "360 rad"], a: 0, w: "360° = 2π rad ≈ 6,28 rad." },
+];
+
+let EX = [];
+function nuevoExamen() {
+  const nums = mezcla(GEN).slice(0, 12).map(f => ({ tipo: "num", ...f() }));
+  const teo = mezcla(TEO).slice(0, 8).map(p => { const orden = mezcla([0, 1, 2, 3]); return { tipo: "mc", q: p.q, o: orden.map(i => p.o[i]), a: orden.indexOf(p.a), w: p.w }; });
+  EX = mezcla(nums.concat(teo));
+  const cont = $("examen"); cont.innerHTML = ""; $("nota").textContent = "";
+  EX.forEach((p, i) => {
+    const d = document.createElement("div"); d.className = "eq"; d.id = "p" + i;
+    let h = `<span class="pts">0,5 pt</span><p><span class="num">${i + 1}.</span>${p.q}</p>`;
+    if (p.tipo === "num") h += `<input class="resp" inputmode="decimal" aria-label="Respuesta ${i + 1}"> ${p.u}`;
+    else h += p.o.map((o, k) => `<label class="op"><input type="radio" name="r${i}" value="${k}"><span>${o}</span></label>`).join("");
+    h += `<div class="corr" hidden></div>`;
+    d.innerHTML = h; cont.append(d);
+  });
+  cont.querySelectorAll("svg[data-vt]").forEach(s => { const [v, t1, t2] = s.dataset.vt.split(",").map(Number);
+    plot(s, { tmax: t1 + t2, ymin: 0, ymax: v * 1.15, yl: "v (m/s)", series: [{ f: t => t < t1 ? v * t / t1 : v, color: "#1b5e8a" }], vlines: [t1] }); });
+  $("bCorr").disabled = false;
+}
+function corregir() {
+  let pts = 0;
+  EX.forEach((p, i) => {
+    const d = $("p" + i), c = d.querySelector(".corr"); let ok = false;
+    if (p.tipo === "num") {
+      const raw = d.querySelector("input").value.trim().replace(",", ".");
+      const x = parseFloat(raw); ok = raw !== "" && isFinite(x) && Math.abs(x - p.ans) <= Math.max(0.02 * Math.abs(p.ans), 0.01);
+      c.innerHTML = `<b>${ok ? "✔ Bien" : "✘ " + (raw === "" ? "Sin contestar" : "No")}.</b> Respuesta: <b>${fmt(p.ans)} ${p.u}</b>.<br>${p.sol}<br><span class="mini">Repasa: «${p.sec}».</span>`;
+    } else {
+      const sel = d.querySelector("input:checked"), k = sel ? +sel.value : -1; ok = k === p.a;
+      d.querySelectorAll("label.op").forEach((l, j) => { l.classList.toggle("ok", j === p.a); l.classList.toggle("ko", j === k && !ok); });
+      c.innerHTML = `<b>${ok ? "✔ Bien" : "✘ " + (k < 0 ? "Sin contestar" : "No")}.</b> ${p.w}`;
+    }
+    if (ok) pts += 0.5;
+    d.classList.toggle("bien", ok); d.classList.toggle("mal", !ok); c.hidden = false;
+  });
+  $("nota").textContent = `Nota: ${fmt(pts, 1)} / 10`;
+  $("nota").style.color = pts >= 5 ? "var(--repasar)" : "var(--mal)";
+  $("nota").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+$("bCorr").onclick = corregir;
+$("bNuevo").onclick = () => { nuevoExamen(); $("examen").scrollIntoView({ behavior: "smooth" }); };
+
+/* arranque */
+renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }] });
+enc(); mcuTxt(); requestAnimationFrame(mcuFrame);
+nuevoExamen();
+indiceAutomatico();
+try { barraTutor(); } catch (e) {}
+$("leido").onclick = e => { Progreso.marcarLeido("fyq-cinematica-completa"); e.target.textContent = "✓ Leído"; e.target.disabled = true; };
+if (Progreso.leido("fyq-cinematica-completa")) { $("leido").textContent = "✓ Leído"; $("leido").disabled = true; }
+})();
+</script>
+</body>
+</html>
